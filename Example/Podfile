@@ -1,6 +1,6 @@
 use_frameworks!
 
-platform :ios, '8.0'
+platform :ios, '9.0'
 
 target 'AEObjCWorking_Example' do
   pod 'AEObjCWorking', :path => '../'
@@ -8,6 +8,6 @@ target 'AEObjCWorking_Example' do
   target 'AEObjCWorking_Tests' do
     inherit! :search_paths
 
-    pod 'FBSnapshotTestCase'
+    #pod 'FBSnapshotTestCase'
   end
 end

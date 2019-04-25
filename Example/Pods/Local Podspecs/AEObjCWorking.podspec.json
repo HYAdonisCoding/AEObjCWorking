@@ -1,8 +1,8 @@
 {
   "name": "AEObjCWorking",
   "version": "0.1.0",
-  "summary": "A short description of AEObjCWorking.",
-  "description": "TODO: Add long description of the pod here.",
+  "summary": "一个高效的Objective-C工具。",
+  "description": "一个高效的Objective-C工具。简单、易用、灵活",
   "homepage": "https://github.com/HYAdonisCoding/AEObjCWorking",
   "license": {
     "type": "MIT",
@@ -16,7 +16,7 @@
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
   "source_files": "AEObjCWorking/Classes/**/*"
 }

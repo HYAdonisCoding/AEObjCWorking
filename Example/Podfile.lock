@@ -1,0 +1,16 @@
+PODS:
+  - AEObjCWorking (0.1.0)
+
+DEPENDENCIES:
+  - AEObjCWorking (from `../`)
+
+EXTERNAL SOURCES:
+  AEObjCWorking:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AEObjCWorking: b0317ef59102766623be05e97648ee2d0fd28e31
+
+PODFILE CHECKSUM: 168579782d03a8836ed0eceacf327e93c415d629
+
+COCOAPODS: 1.6.1
