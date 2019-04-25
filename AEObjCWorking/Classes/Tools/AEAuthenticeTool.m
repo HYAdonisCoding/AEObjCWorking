@@ -1,12 +1,12 @@
 //
-//  HYAuthenticeTool.m
+//  AEAuthenticeTool.m
 //  Adam_20190424_TouchID_Demo
 //
-//  Created by Adonis_HongYang on 2019/4/24.
-//  Copyright © 2019 Nikoyo (China）Electronics Systems Co., Ltd. All rights reserved.
+//  Created by Adam on 2019/4/24.
+//  Copyright © 2019 HYAdonisCoding. All rights reserved.
 //
 
-#import "HYAuthenticeTool.h"
+#import "AEAuthenticeTool.h"
 #import <UIKit/UIKit.h>
 #import <LocalAuthentication/LocalAuthentication.h>
 
@@ -16,7 +16,7 @@
  */
 #define kIsIPhoneXSeries ((([[[UIDevice currentDevice] systemVersion] floatValue] >= 11.0f) && ([[[[UIApplication sharedApplication] delegate] window] safeAreaInsets].bottom > 0.0))? YES : NO)
 
-@interface HYAuthenticeTool ()
+@interface AEAuthenticeTool ()
 
 /** 是否是第一次调用 */
 @property (nonatomic, assign) BOOL isFirstVerify;
@@ -31,10 +31,10 @@
 
 @end
 
-@implementation HYAuthenticeTool
+@implementation AEAuthenticeTool
 
 +(void)authenticatedByBiometryOrDevicePasscodeCompletionHandlers:(CompletionHandlers)completionHandlers {
-    HYAuthenticeTool *tool = [HYAuthenticeTool new];
+    AEAuthenticeTool *tool = [AEAuthenticeTool new];
     tool.context = [[LAContext alloc] init];
     tool.isFirstVerify = YES;
     [tool authenticatedByBiometryOrDevicePasscodeCompletionHandlers:completionHandlers];

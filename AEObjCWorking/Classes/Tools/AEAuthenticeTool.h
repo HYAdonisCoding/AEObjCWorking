@@ -1,9 +1,9 @@
 //
-//  HYAuthenticeTool.h
+//  AEAuthenticeTool.h
 //  Adam_20190424_TouchID_Demo
 //
-//  Created by Adonis_HongYang on 2019/4/24.
-//  Copyright © 2019 Nikoyo (China）Electronics Systems Co., Ltd. All rights reserved.
+//  Created by Adam on 2019/4/24.
+//  Copyright © 2019 HYAdonisCoding. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -33,9 +33,9 @@ typedef void(^CompletionHandlers)(BOOL success, HYAuthenticationVerifyType type,
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HYAuthenticeTool : NSObject
+@interface AEAuthenticeTool : NSObject
 
-+ (void)authenticatedByBiometryOrDevicePasscodeCompletionHandlers:(CompletionHandlers)completionHandlers;
++(void)authenticatedByBiometryOrDevicePasscodeCompletionHandlers:(CompletionHandlers)completionHandlers;
 
 
 @end

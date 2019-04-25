@@ -7,7 +7,7 @@
 //
 
 #import "AEViewController.h"
-#import <HYAuthenticeTool.h>
+#import <AEAuthenticeTool.h>
 
 @interface AEViewController ()
 
@@ -24,7 +24,7 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [HYAuthenticeTool authenticatedByBiometryOrDevicePasscodeCompletionHandlers:^(BOOL success, HYAuthenticationVerifyType type, NSString * _Nullable descString, NSError * _Nullable error) {
+    [AEAuthenticeTool authenticatedByBiometryOrDevicePasscodeCompletionHandlers:^(BOOL success, HYAuthenticationVerifyType type, NSString * _Nullable descString, NSError * _Nullable error) {
         NSString *typeStr = @"";
         
         switch (type) {
