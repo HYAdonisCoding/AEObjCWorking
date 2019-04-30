@@ -1,0 +1,27 @@
+//
+//  AEPrefixHeader.pch
+//  AEObjCWorking
+//
+//  Created by Adonis_HongYang on 2019/4/30.
+//  Copyright © 2019 HYAdonisCoding. All rights reserved.
+//
+
+#ifndef AEPrefixHeader_pch
+#define AEPrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#ifdef DEBUG
+
+/// 解决log 打印不全的问题
+#define NSLog(...) printf("[%s] %s [第%d行]: %s\n", __TIME__ ,__PRETTY_FUNCTION__ ,__LINE__, [[NSString stringWithFormat:__VA_ARGS__] UTF8String])
+
+
+#else
+#define NSLog(...)
+
+
+#endif
+
+#endif /* AEPrefixHeader_pch */

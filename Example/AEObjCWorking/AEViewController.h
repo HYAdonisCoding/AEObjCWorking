@@ -6,8 +6,8 @@
 //  Copyright (c) 2019 HYAdonisCoding. All rights reserved.
 //
 
-@import UIKit;
+#import "AEBaseViewController.h"
 
-@interface AEViewController : UIViewController
+@interface AEViewController : AEBaseViewController
 
 @end

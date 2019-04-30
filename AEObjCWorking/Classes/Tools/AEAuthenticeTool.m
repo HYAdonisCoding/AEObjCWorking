@@ -37,23 +37,24 @@
     AEAuthenticeTool *tool = [AEAuthenticeTool new];
     tool.context = [[LAContext alloc] init];
     tool.isFirstVerify = YES;
-    [tool authenticatedByBiometryOrDevicePasscodeCompletionHandlers:completionHandlers];
+
+    [tool authenticatedByBiometryOrDevicePasscodeVerifyWithContext:tool.context completionHandlers:completionHandlers];
 }
 
 
--(void)authenticatedByBiometryOrDevicePasscodeCompletionHandlers:(CompletionHandlers)completionHandlers {
-    
-    //开始验证
-    [self authenticatedByBiometryOrDevicePasscodeVerifyWithContext:self.context completionHandlers:^(BOOL success, HYAuthenticationVerifyType type, NSString * _Nullable descString, NSError * _Nullable error) {
-        if (success) {
-            completionHandlers(YES, self.verifyType, @"Verify success", error);
-        } else {
-            [self callBackWithFaceIDOrTouchIDWithContext:self.context andError:error completionHandlers:^(BOOL success, HYAuthenticationVerifyType type, NSString * _Nullable descString, NSError * _Nullable error) {
-                completionHandlers(success, type, descString, error);
-            }];
-        }
-    }];
-}
+//-(void)authenticatedByBiometryOrDevicePasscodeCompletionHandlers:(CompletionHandlers)completionHandlers {
+//
+//    //开始验证
+//    [self authenticatedByBiometryOrDevicePasscodeVerifyWithContext:self.context completionHandlers:^(BOOL success, HYAuthenticationVerifyType type, NSString * _Nullable descString, NSError * _Nullable error) {
+//        if (success) {
+//            completionHandlers(YES, self.verifyType, @"Verify success", error);
+//        } else {
+//            [self callBackWithFaceIDOrTouchIDWithContext:self.context andError:error completionHandlers:^(BOOL success, HYAuthenticationVerifyType type, NSString * _Nullable descString, NSError * _Nullable error) {
+//                completionHandlers(success, type, descString, error);
+//            }];
+//        }
+//    }];
+//}
 
 ///开始验证
 -(void)authenticatedByBiometryOrDevicePasscodeVerifyWithContext:(LAContext *)context completionHandlers:(CompletionHandlers)completionHandlers {
@@ -67,18 +68,13 @@
     } else {
         // Fallback on earlier versions
     }
-    if (!self.isFirstVerify) {
-        self.verifyType = HYAuthenticationVerifyTypeSecretCode;
-    }
+
     NSError *error;
     
     NSString *localizedReason = [NSString stringWithFormat:@"请使用%@验证", self.typeString];
     
     if ([context canEvaluatePolicy:(LAPolicyDeviceOwnerAuthentication) error:&error]) {
         [context evaluatePolicy:(LAPolicyDeviceOwnerAuthentication) localizedReason:localizedReason reply:^(BOOL success, NSError * _Nullable error) {
-            if (!self.isFirstVerify) {
-                self.verifyType = HYAuthenticationVerifyTypeSecretCode;
-            }
             if (success) {
                 completionHandlers(YES, self.verifyType, @"verify success", error);
             } else {
@@ -98,7 +94,6 @@
 ///错误的系统回调
 -(void)callBackWithFaceIDOrTouchIDWithContext:(LAContext *)context andError:(NSError *)error completionHandlers:(CompletionHandlers)completionHandlers {
     NSLog(@"%s - %@", __func__, @"here");
-    
     if (!self.isFirstVerify) {
         self.verifyType = HYAuthenticationVerifyTypeSecretCode;
     } else {
@@ -109,7 +104,7 @@
             /// Authentication was not successful, because user failed to provide valid credentials.身份验证失败，因为用户无法提供有效的凭据。
         case LAErrorAuthenticationFailed: {
             if (self.verifyType != HYAuthenticationVerifyTypeSecretCode) {
-                [self authenticatedByBiometryOrDevicePasscodeCompletionHandlers:^(BOOL success, HYAuthenticationVerifyType type, NSString * _Nullable descString, NSError * _Nullable error) {
+                [self authenticatedByBiometryOrDevicePasscodeVerifyWithContext:context completionHandlers:^(BOOL success, HYAuthenticationVerifyType type, NSString * _Nullable descString, NSError * _Nullable error) {
                     completionHandlers(success, type, descString, error);
                 }];
             }
@@ -121,7 +116,7 @@
             break;
             /// Authentication was canceled, because the user tapped the fallback button (Enter Password).验证已取消，因为用户点击了后备按钮（输入密码）
         case LAErrorUserFallback: {
-            [self authenticatedByBiometryOrDevicePasscodeCompletionHandlers:^(BOOL success, HYAuthenticationVerifyType type, NSString * _Nullable descString, NSError * _Nullable error) {
+            [self authenticatedByBiometryOrDevicePasscodeVerifyWithContext:context completionHandlers:^(BOOL success, HYAuthenticationVerifyType type, NSString * _Nullable descString, NSError * _Nullable error) {
                 completionHandlers(success, type, descString, error);
             }];
             break;
@@ -153,7 +148,7 @@
             /// biometry is now locked. Passcode is required to unlock biometry, e.g. evaluating
             /// LAPolicyDeviceOwnerAuthenticationWithBiometrics will ask for passcode as a prerequisite.身份验证不成功，因为有太多失败的生物测定尝试和生物测定现已锁定。需要密码来解锁生物测定，例如评估将要求输入密码作为先决条件。
         case LAErrorBiometryLockout: {
-            [self authenticatedByBiometryOrDevicePasscodeCompletionHandlers:^(BOOL success, HYAuthenticationVerifyType type, NSString * _Nullable descString, NSError * _Nullable error) {
+            [self authenticatedByBiometryOrDevicePasscodeVerifyWithContext:context completionHandlers:^(BOOL success, HYAuthenticationVerifyType type, NSString * _Nullable descString, NSError * _Nullable error) {
                 completionHandlers(success, type, descString, error);
             }];
             break;
@@ -167,7 +162,6 @@
 
 - (void)setVerifyType:(HYAuthenticationVerifyType)verifyType {
     _verifyType = verifyType;
-    NSLog(@"%@ = %lu", self.typeString, verifyType);
     
     switch (self.verifyType) {
         case HYAuthenticationVerifyTypeFaceID:
@@ -183,6 +177,7 @@
             self.typeString = @"NullID";
             break;
     }
+    NSLog(@"%@ = %lu", self.typeString, verifyType);
 }
 
 @end
