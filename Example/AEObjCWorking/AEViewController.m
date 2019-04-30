@@ -8,6 +8,7 @@
 
 #import "AEViewController.h"
 #import <AEAuthenticeTool.h>
+#import "AECustomOptioinViewController.h"
 
 @interface AEViewController ()
 
@@ -20,7 +21,12 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    self.view.backgroundColor = [UIColor magentaColor];
+//    self.view.backgroundColor = [UIColor magentaColor];
+}
+
+- (IBAction)editActiion:(UIBarButtonItem *)sender {
+    AECustomOptioinViewController *vc = [AECustomOptioinViewController new];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

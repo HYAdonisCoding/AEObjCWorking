@@ -10,8 +10,3 @@
 #endif
 #endif
 
-#import "AEAuthenticeTool.h"
-
-FOUNDATION_EXPORT double AEObjCWorkingVersionNumber;
-FOUNDATION_EXPORT const unsigned char AEObjCWorkingVersionString[];
-

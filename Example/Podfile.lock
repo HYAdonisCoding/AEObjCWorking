@@ -1,8 +1,14 @@
 PODS:
   - AEObjCWorking (0.1.0)
+  - Masonry (1.1.0)
 
 DEPENDENCIES:
   - AEObjCWorking (from `../`)
+  - Masonry (~> 1.1.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Masonry
 
 EXTERNAL SOURCES:
   AEObjCWorking:
@@ -10,7 +16,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AEObjCWorking: b0317ef59102766623be05e97648ee2d0fd28e31
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
-PODFILE CHECKSUM: 168579782d03a8836ed0eceacf327e93c415d629
+PODFILE CHECKSUM: a76b9e13992839142adbc8cae96cb7b69e325792
 
 COCOAPODS: 1.6.1
