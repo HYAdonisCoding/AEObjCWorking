@@ -9,6 +9,7 @@
 #import "AEViewController.h"
 #import <AEAuthenticeTool.h>
 #import "AECustomOptioinViewController.h"
+#import "AEDynamicLabel/AEDynamicLabel.h"
 
 @interface AEViewController ()
 
@@ -22,6 +23,10 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
 //    self.view.backgroundColor = [UIColor magentaColor];
+    AEDynamicLabel *labe = [AEDynamicLabel sharedWithText:@"我不想说再见,不说再见,越长大越孤单" speed:.6 frame:CGRectMake(100, 100, 100, 40)];
+    labe.backgroundColor = [UIColor greenColor];
+    [self.view addSubview:labe];
+    
 }
 
 - (IBAction)editActiion:(UIBarButtonItem *)sender {

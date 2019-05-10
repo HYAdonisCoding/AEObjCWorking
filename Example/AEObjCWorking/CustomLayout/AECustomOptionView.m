@@ -43,11 +43,10 @@
 }
 
 - (void)makeInterface {
-    self.backgroundColor = [UIColor magentaColor];
     
     CGRect collectionViewFrame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
     
-    AECustomViewFlowLayout *flowLayout = [[AECustomViewFlowLayout alloc] initWithType:(AEAlignmentFlowLayoutTypeLeft) cellSpace:10.0f];
+    AECustomViewFlowLayout *flowLayout = [[AECustomViewFlowLayout alloc] initWithType:(AEAlignmentFlowLayoutTypeLeft) cellSpace:8.0f];
         // 设置UICollectionView为横向滚动
     flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;//UICollectionViewScrollDirectionHorizontal;
         // 每一行cell之间的间距
@@ -95,12 +94,17 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     if (self.block) {
-        self.block(self.dataArray[indexPath.row]);
+        self.block(self.dataArray[indexPath.row].title);
     }
 }
 
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds {
     return YES;
+}
+
+- (void)setDataArray:(NSArray<AECustomOptionModel *> *)dataArray {
+    _dataArray = dataArray;
+    [self.collectionView reloadData];
 }
 
 @end

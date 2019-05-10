@@ -32,6 +32,7 @@
 		7A9CD79722783544004E6D2A /* AECustomOptioinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CD79622783544004E6D2A /* AECustomOptioinViewController.m */; };
 		7A9CD79B22783AC9004E6D2A /* AEConvenientTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CD79A22783AC9004E6D2A /* AEConvenientTool.m */; };
 		7A9CD79E22784703004E6D2A /* AECustomViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CD79D22784703004E6D2A /* AECustomViewFlowLayout.m */; };
+		7AF4CD2D228577000007FD12 /* AEDynamicLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF4CD2C228577000007FD12 /* AEDynamicLabel.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +90,8 @@
 		7A9CD79A22783AC9004E6D2A /* AEConvenientTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEConvenientTool.m; sourceTree = "<group>"; };
 		7A9CD79C22784703004E6D2A /* AECustomViewFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AECustomViewFlowLayout.h; sourceTree = "<group>"; };
 		7A9CD79D22784703004E6D2A /* AECustomViewFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AECustomViewFlowLayout.m; sourceTree = "<group>"; };
+		7AF4CD2B228577000007FD12 /* AEDynamicLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEDynamicLabel.h; sourceTree = "<group>"; };
+		7AF4CD2C228577000007FD12 /* AEDynamicLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEDynamicLabel.m; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9B55D63D400D4580DC7E0A24 /* Pods-AEObjCWorking_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AEObjCWorking_Tests.debug.xcconfig"; path = "Target Support Files/Pods-AEObjCWorking_Tests/Pods-AEObjCWorking_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		B3248278C97182942419AF43 /* Pods_AEObjCWorking_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AEObjCWorking_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +163,7 @@
 		6003F593195388D20070C39A /* Example for AEObjCWorking */ = {
 			isa = PBXGroup;
 			children = (
+				7AF4CD2A2285761C0007FD12 /* AEDynamicLabel */,
 				7A9CD79822783A93004E6D2A /* Tools */,
 				7A9CD78B22782EC4004E6D2A /* CustomLayout */,
 				7A52EB8A22782688009BC207 /* BaseClase */,
@@ -262,6 +266,15 @@
 				7A9CD79A22783AC9004E6D2A /* AEConvenientTool.m */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		7AF4CD2A2285761C0007FD12 /* AEDynamicLabel */ = {
+			isa = PBXGroup;
+			children = (
+				7AF4CD2B228577000007FD12 /* AEDynamicLabel.h */,
+				7AF4CD2C228577000007FD12 /* AEDynamicLabel.m */,
+			);
+			path = AEDynamicLabel;
 			sourceTree = "<group>";
 		};
 		81F40E56F2EAB5C2E9363911 /* Pods */ = {
@@ -464,6 +477,7 @@
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				7A9CD78E22783033004E6D2A /* AECustomOptionView.m in Sources */,
 				7A52EB90227827A1009BC207 /* AEBaseView.m in Sources */,
+				7AF4CD2D228577000007FD12 /* AEDynamicLabel.m in Sources */,
 				7A9CD78A22782E85004E6D2A /* AEBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

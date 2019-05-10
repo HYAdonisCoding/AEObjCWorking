@@ -57,6 +57,14 @@
     //底部高度
 #define kHYAreaBottomHeight ((IS_IPHONE_X || IS_IPHONE_Xs || IS_IPHONE_Xr || IS_IPHONE_Xs_Max) ? 34 : 0)
 
+    //将self转换成弱引用
+#define WK(weakSelf) \
+__weak __typeof(self)weakSelf = self;
+
+    //将weakSelf转换成强引用
+#define SG(strongSelf) \
+__strong __typeof(self)strongSelf = weakSelf;
+
 #ifdef DEBUG
 
 /// 解决log 打印不全的问题
