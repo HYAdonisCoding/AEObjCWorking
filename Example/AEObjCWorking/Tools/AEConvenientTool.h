@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AEConvenientTool : AEBaseModel
 
+    ///随机颜色
++ (UIColor *)randomColor;
     ///随机汉字
 + (NSMutableString*)randomCreatChinese:(NSInteger)count;
 

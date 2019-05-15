@@ -10,6 +10,16 @@
 
 @implementation AEConvenientTool
 
+///随机颜色
++ (UIColor *)randomColor {
+    
+    return [UIColor colorWithRed:[AEConvenientTool randomValue] green:[AEConvenientTool randomValue] blue:[AEConvenientTool randomValue] alpha:1];
+}
+
++ (CGFloat)randomValue {
+    
+    return arc4random() % 256 / 255.f;
+}
 
 ///随机汉字
 + (NSMutableString*)randomCreatChinese:(NSInteger)count {

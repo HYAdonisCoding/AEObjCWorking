@@ -10,8 +10,11 @@
 #import <AEAuthenticeTool.h>
 #import "AECustomOptioinViewController.h"
 #import "AEDynamicLabel/AEDynamicLabel.h"
+#import "UI_Component/UIFont+AEFonts.h"
+#import "UI_Component/NSString+AELabelWidthAndHeight.h"
+#import "UI_Component/UIView+AEGlowView.h"
 
-@interface AEViewController ()
+@interface AEViewController () <AEDynamicLabelDelegate>
 
 @end
 
@@ -23,10 +26,50 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
 //    self.view.backgroundColor = [UIColor magentaColor];
-    AEDynamicLabel *labe = [AEDynamicLabel sharedWithText:@"我不想说再见,不说再见,越长大越孤单" speed:.6 frame:CGRectMake(100, 100, 100, 40)];
-    labe.backgroundColor = [UIColor greenColor];
-    [self.view addSubview:labe];
+    AEDynamicLabel *label = [[AEDynamicLabel alloc] initWithFrame:CGRectMake(100, 100, 150, 30)];
+    label.layer.borderColor = [UIColor grayColor].CGColor;
+    label.layer.borderWidth = .5f;
+    [label addContentView:[self createLabelWithText:@"我不想说再见,不说再见,越长大越孤单" textColor:[AEConvenientTool randomColor]]];
+    label.backgroundColor = [AEConvenientTool randomColor];
+    label.speed = .5f;
+    label.delegate = self;
+    label.direction = AEDynamicDirectionLeft;
     
+    [self.view addSubview:label];
+    
+    [label startAnimation];
+    
+}
+
+- (UILabel *)createLabelWithText:(NSString *)text textColor:(UIColor *)textColor {
+    
+    NSString *string = [NSString stringWithFormat:@" %@ ", text];
+    CGFloat   width  = [string widthWithStringAttribute:@{NSFontAttributeName : [UIFont HeitiSCWithFontSize:14.f]}];
+    UILabel  *label  = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, width, 20)];
+    label.font       = [UIFont HeitiSCWithFontSize:14.f];
+    label.text       = string;
+    label.textColor  = textColor;
+    
+    label.glowRadius            = @(2.f);
+    label.glowOpacity           = @(1.f);
+    label.glowColor             = [textColor colorWithAlphaComponent:0.86];
+    label.glowDuration          = @(1.f);
+    label.hideDuration          = @(3.f);
+    label.glowAnimationDuration = @(2.f);
+    [label createGlowLayer];
+    [label insertGlowLayer];
+    [label startGlowLoop];
+    
+    return label;
+}
+
+#pragma mark - AEDynamicLabelDelegate
+- (void)drawDynamicLabel:(AEDynamicLabel *_Nullable)dynamicLabel animationDidStopFinished:(BOOL)finished {
+    [dynamicLabel stopAnimation];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [dynamicLabel addContentView:[self createLabelWithText:[AEConvenientTool randomCreatChinese:20]  textColor:[AEConvenientTool randomColor]]];
+        [dynamicLabel startAnimation];
+    });
 }
 
 - (IBAction)editActiion:(UIBarButtonItem *)sender {

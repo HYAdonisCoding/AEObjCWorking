@@ -7,71 +7,134 @@
 //
 
 #import "AEDynamicLabel.h"
+#import "../UI_Component/NSString+AELabelWidthAndHeight.h"
+#import "../UI_Component/UIFont+AEFonts.h"
+#import "../UI_Component/UIView+AEGlowView.h"
 
-static CGFloat space = 1;
+static NSString *animationViewPosition = @"animationViewPosition";
 
-@interface AEDynamicLabel () <CAAnimationDelegate>
+@interface AEDynamicLabel () <CAAnimationDelegate> {
+    CGFloat _width;
+    CGFloat _height;
+    
+    CGFloat _animationViewWidth;
+    CGFloat _animationViewHeight;
+    
+    BOOL    _stoped;
+    UIView *_contentView;
+}
 
-    /// label
-@property (nonatomic, strong) UILabel *label;
+@property (nonatomic, strong) UIView *animationView;
 
 @end
 
 @implementation AEDynamicLabel
 
-+ (instancetype)sharedWithText:(NSString *)text speed:(double)speed frame:(CGRect)frame {
-    AEDynamicLabel *aeLabel = [[AEDynamicLabel alloc] initWithFrame:frame];
-    aeLabel.speed = speed;
-    aeLabel.text = text;
-    return aeLabel;
-}
-
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        [self makeInterface];
+        _width = frame.size.width;
+        _height = frame.size.height;
+        
+        self.speed = 1.f;
+        self.direction = AEDynamicDirectionLeft;
+        self.layer .masksToBounds = YES;
+        self.animationView = [[UIView alloc] initWithFrame:CGRectMake(_width, 0, _width, _height)];
+        [self addSubview:self.animationView];
     }
+    
     return self;
 }
 
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        [self makeInterface];
+- (void)addContentView:(UIView *)view {
+    [_contentView removeFromSuperview];
+    
+    view.frame = view.bounds;
+    _contentView = view;
+    self.animationView.frame = view.bounds;
+    [self.animationView addSubview:_contentView];
+    
+    _animationViewWidth = self.animationView.frame.size.width;
+    _animationViewHeight = self.animationView.frame.size.height;
+}
+
+- (void)addText:(NSString *)text {
+    NSString *string = [NSString stringWithFormat:@" %@ ", text];
+    CGFloat   width  = [string widthWithStringAttribute:@{NSFontAttributeName : [UIFont HeitiSCWithFontSize:14.f]}];
+    UILabel  *label  = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, width, 20)];
+    label.font       = [UIFont HeitiSCWithFontSize:14.f];
+    label.text       = string;
+    label.textColor  = self.;
+    
+    label.glowRadius            = @(2.f);
+    label.glowOpacity           = @(1.f);
+    label.glowColor             = [textColor colorWithAlphaComponent:0.86];
+    label.glowDuration          = @(1.f);
+    label.hideDuration          = @(3.f);
+    label.glowAnimationDuration = @(2.f);
+    [label createGlowLayer];
+    [label insertGlowLayer];
+    [label startGlowLoop];
+}
+
+- (void)startAnimation {
+    [self.animationView.layer removeAnimationForKey:animationViewPosition];
+    _stoped = NO;
+    
+    CGPoint pointRightCenter = CGPointMake(_width + _animationViewWidth / 2.f, _animationViewHeight / 2.f);
+    CGPoint pointLeftCenter  = CGPointMake(-_animationViewHeight / 2.f, _animationViewHeight / 2.f);
+    CGPoint fromPoint = self.direction == AEDynamicDirectionLeft ? pointRightCenter : pointLeftCenter;
+    CGPoint toPoint = self.direction == AEDynamicDirectionLeft ? pointLeftCenter : pointRightCenter;
+    
+    self.animationView.center = fromPoint;
+    UIBezierPath *movePath = [UIBezierPath bezierPath];
+    [movePath moveToPoint:fromPoint];
+    [movePath addLineToPoint:toPoint];
+    
+    CAKeyframeAnimation *moveAnimation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+    moveAnimation.path = movePath.CGPath;
+    moveAnimation.removedOnCompletion = YES;
+    moveAnimation.duration = _animationViewWidth / 30.f * (1 / self.speed);
+    moveAnimation.delegate = self;
+    [self.animationView.layer addAnimation:moveAnimation forKey:animationViewPosition];
+}
+
+- (void)stopAnimation {
+    _stoped = YES;
+    [self.animationView.layer removeAnimationForKey:animationViewPosition];
+}
+
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(drawDynamicLabel:animationDidStopFinished:)]) {
+        [self.delegate drawDynamicLabel:self animationDidStopFinished:flag];
     }
-    return self;
+    
+    if (flag && !_stoped) {
+        [self stopAnimation];
+    }
 }
 
-
-
-- (void)makeInterface {
-    self.label = [[UILabel alloc] initWithFrame:self.bounds];
-    [self.label sizeToFit];
-    self.label.textColor = [UIColor purpleColor];
-    self.label.backgroundColor = [UIColor clearColor];
-    [self addSubview:self.label];
-
-    
-    //给内容view的layer添加一个mask层, 并且设置其范围为整个view的bounds, 这样就让超出view的内容不会显示出来
-    CAShapeLayer* maskLayer = [CAShapeLayer layer];
-    maskLayer.path = [UIBezierPath bezierPathWithRect:self.bounds].CGPath;
-    self.layer.mask = maskLayer;
-    
-    //给label添加动画
-    CAKeyframeAnimation* keyFrame = [CAKeyframeAnimation animation];
-    keyFrame.keyPath = @"transform.translation.x";
-    keyFrame.values = @[@(0), @(-space), @(0)];
-    keyFrame.repeatCount = NSIntegerMax;
-    keyFrame.duration = self.speed * self.text.length;
-    keyFrame.timingFunctions = @[[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut], [CAMediaTimingFunction functionWithControlPoints:0 :0 :0.5 :0.5]];
-    keyFrame.delegate = self;
-    [self.label.layer addAnimation:keyFrame forKey:nil];
+- (void)pauseAnimation {
+    [self pauseLayer:self.animationView.layer];
 }
 
+- (void)resumeAnimation {
+    [self resumeLayer:self.animationView.layer];
+}
 
-- (void)setText:(NSString *)text {
-    _text = text;
-    self.label.text = text;
+- (void)pauseLayer:(CALayer *)layer {
+    CFTimeInterval pausedTime = [layer convertTime:CACurrentMediaTime() fromLayer:nil];
+    layer.speed = 0.0;
+    layer.timeOffset = pausedTime;
+}
+
+- (void)resumeLayer:(CALayer *)layer {
+    CFTimeInterval pausedTime = layer.timeOffset;
+    layer.speed = 1.0;
+    layer.timeOffset = 0.0;
+    layer.beginTime = 0.0;
+    CFTimeInterval timeSincePause = [layer convertTime:CACurrentMediaTime() fromLayer:nil] - pausedTime;
+    layer.beginTime = timeSincePause;
 }
 
 @end
