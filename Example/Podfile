@@ -4,7 +4,8 @@ platform :ios, '9.0'
 
 target 'AEObjCWorking_Example' do
   pod 'AEObjCWorking', :path => '../'
-  pod 'Masonry', '~> 1.1.0' 
+  pod 'Masonry', '~> 1.1.0'
+  pod 'YYModel',      '~> 1.0.4'        #数据解析
   target 'AEObjCWorking_Tests' do
     inherit! :search_paths
 

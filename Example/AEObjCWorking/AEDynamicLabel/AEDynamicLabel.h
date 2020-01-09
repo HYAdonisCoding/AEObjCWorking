@@ -52,7 +52,15 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Start the animation.
  */
-- (void)startAnimation;
+- (void)startDynamicAnimation;
+
+
+/**
+ Start the animation.
+
+ @param circulatoryPlay 是否循环播放
+ */
+- (void)startDynamicAnimationWithCirculatoryPlay:(BOOL)circulatoryPlay;
 
 /**
  *  Stop the animation.
@@ -72,8 +80,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - 自定义设置
 
-/// 文字颜色 
-@property (nonatomic, strong) <#TYPE#> *<#name#>;
+/// 文字颜色 默认黑色
+@property (nonatomic, strong) UIColor *textColor;
+
+/// 文字字体 默认为[UIFont systemFontOfSize:14.f]
+@property (nonatomic, strong) UIFont *font;
+
+/// 文字
+@property (nonatomic, copy) NSString *text;
+
 
 @end
 

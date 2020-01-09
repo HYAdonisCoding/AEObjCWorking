@@ -26,6 +26,10 @@ static NSString *animationViewPosition = @"animationViewPosition";
 
 @property (nonatomic, strong) UIView *animationView;
 
+@property (nonatomic, strong) UILabel *label;
+
+    /// 是否循环播放
+@property (nonatomic, assign) BOOL circulatoryPlay;
 @end
 
 @implementation AEDynamicLabel
@@ -41,6 +45,8 @@ static NSString *animationViewPosition = @"animationViewPosition";
         self.layer .masksToBounds = YES;
         self.animationView = [[UIView alloc] initWithFrame:CGRectMake(_width, 0, _width, _height)];
         [self addSubview:self.animationView];
+        self.label = [[UILabel alloc] initWithFrame:frame];
+        [self addSubview:self.label];
     }
     
     return self;
@@ -61,23 +67,66 @@ static NSString *animationViewPosition = @"animationViewPosition";
 - (void)addText:(NSString *)text {
     NSString *string = [NSString stringWithFormat:@" %@ ", text];
     CGFloat   width  = [string widthWithStringAttribute:@{NSFontAttributeName : [UIFont HeitiSCWithFontSize:14.f]}];
-    UILabel  *label  = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, width, 20)];
-    label.font       = [UIFont HeitiSCWithFontSize:14.f];
-    label.text       = string;
-    label.textColor  = self.;
+    self.label.frame = CGRectMake(0, 0, width, 20);
+    self.label.font       = [UIFont HeitiSCWithFontSize:14.f];
+    self.label.text       = string;
+    self.label.textColor  = self.textColor ?: [UIColor blackColor];
     
-    label.glowRadius            = @(2.f);
-    label.glowOpacity           = @(1.f);
-    label.glowColor             = [textColor colorWithAlphaComponent:0.86];
-    label.glowDuration          = @(1.f);
-    label.hideDuration          = @(3.f);
-    label.glowAnimationDuration = @(2.f);
-    [label createGlowLayer];
-    [label insertGlowLayer];
-    [label startGlowLoop];
+    self.label.glowRadius            = @(2.f);
+    self.label.glowOpacity           = @(1.f);
+    self.label.glowColor             = [self.label.textColor colorWithAlphaComponent:0.86];
+    self.label.glowDuration          = @(1.f);
+    self.label.hideDuration          = @(3.f);
+    self.label.glowAnimationDuration = @(2.f);
+    [self.label createGlowLayer];
+    [self.label insertGlowLayer];
+    [self.label startGlowLoop];
 }
 
-- (void)startAnimation {
+@synthesize text = _text;
+
+- (void)setText:(NSString *)text {
+    _text = text;
+    NSString *string = [NSString stringWithFormat:@" %@ ", text];
+    CGFloat   width  = [string widthWithStringAttribute:@{NSFontAttributeName : [UIFont HeitiSCWithFontSize:14.f]}];
+    self.label.frame = CGRectMake(0, 0, width, 20);
+    self.label.font       = [UIFont systemFontOfSize:14.f]; 
+    self.label.text       = string;
+    self.label.textColor  = self.textColor ?: [UIColor blackColor];
+
+    self.label.glowRadius            = @(2.f);
+    self.label.glowOpacity           = @(1.f);
+    self.label.glowColor             = [self.label.textColor colorWithAlphaComponent:0.86];
+    self.label.glowDuration          = @(1.f);
+    self.label.hideDuration          = @(3.f);
+    self.label.glowAnimationDuration = @(2.f);
+    [self.label createGlowLayer];
+    [self.label insertGlowLayer];
+    [self.label startGlowLoop];
+    
+    
+    _contentView = self.label;
+    self.animationView.frame = self.label.bounds;
+    [self.animationView addSubview:_contentView];
+    
+    _animationViewWidth = self.animationView.frame.size.width;
+    _animationViewHeight = self.animationView.frame.size.height;
+}
+
+- (NSString *)text {
+    return [self.label.text substringWithRange:NSMakeRange(1, self.label.text.length-1)];
+}
+- (void)setTextColor:(UIColor *)textColor {
+    _textColor = textColor;
+    self.label.textColor  = textColor;
+    self.label.glowColor  = [textColor colorWithAlphaComponent:0.86];
+}
+
+- (void)setFont:(UIFont *)font {
+    _font = font;
+    self.label.font = font;
+}
+- (void)startDynamicAnimation {
     [self.animationView.layer removeAnimationForKey:animationViewPosition];
     _stoped = NO;
     
@@ -97,6 +146,29 @@ static NSString *animationViewPosition = @"animationViewPosition";
     moveAnimation.duration = _animationViewWidth / 30.f * (1 / self.speed);
     moveAnimation.delegate = self;
     [self.animationView.layer addAnimation:moveAnimation forKey:animationViewPosition];
+}
+
+- (void)startDynamicAnimationWithCirculatoryPlay:(BOOL)circulatoryPlay {
+    [self.animationView.layer removeAnimationForKey:animationViewPosition];
+    _stoped = NO;
+    
+    CGPoint pointRightCenter = CGPointMake(_width + _animationViewWidth / 2.f, _animationViewHeight / 2.f);
+    CGPoint pointLeftCenter  = CGPointMake(-_animationViewHeight / 2.f, _animationViewHeight / 2.f);
+    CGPoint fromPoint = self.direction == AEDynamicDirectionLeft ? pointRightCenter : pointLeftCenter;
+    CGPoint toPoint = self.direction == AEDynamicDirectionLeft ? pointLeftCenter : pointRightCenter;
+    
+    self.animationView.center = fromPoint;
+    UIBezierPath *movePath = [UIBezierPath bezierPath];
+    [movePath moveToPoint:fromPoint];
+    [movePath addLineToPoint:toPoint];
+    
+    CAKeyframeAnimation *moveAnimation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+    moveAnimation.path = movePath.CGPath;
+    moveAnimation.removedOnCompletion = YES;
+    moveAnimation.duration = _animationViewWidth / 30.f * (1 / self.speed);
+    moveAnimation.delegate = self;
+    [self.animationView.layer addAnimation:moveAnimation forKey:animationViewPosition];
+    
 }
 
 - (void)stopAnimation {

@@ -1,14 +1,17 @@
 PODS:
   - AEObjCWorking (0.1.0)
   - Masonry (1.1.0)
+  - YYModel (1.0.4)
 
 DEPENDENCIES:
   - AEObjCWorking (from `../`)
   - Masonry (~> 1.1.0)
+  - YYModel (~> 1.0.4)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Masonry
+    - YYModel
 
 EXTERNAL SOURCES:
   AEObjCWorking:
@@ -17,7 +20,8 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AEObjCWorking: b0317ef59102766623be05e97648ee2d0fd28e31
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: a76b9e13992839142adbc8cae96cb7b69e325792
+PODFILE CHECKSUM: bb53f2f58a5a159a877a9709042105a0d65556d2
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.8.4

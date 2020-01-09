@@ -35,6 +35,12 @@
 		7A9CD79722783544004E6D2A /* AECustomOptioinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CD79622783544004E6D2A /* AECustomOptioinViewController.m */; };
 		7A9CD79B22783AC9004E6D2A /* AEConvenientTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CD79A22783AC9004E6D2A /* AEConvenientTool.m */; };
 		7A9CD79E22784703004E6D2A /* AECustomViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CD79D22784703004E6D2A /* AECustomViewFlowLayout.m */; };
+		7AA0E92A23C4124B0092DE5B /* AECardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA0E92923C4124B0092DE5B /* AECardViewController.m */; };
+		7AA0E92D23C4125C0092DE5B /* AECardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA0E92C23C4125C0092DE5B /* AECardView.m */; };
+		7AA0E93023C412DD0092DE5B /* AECardTransformLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA0E92F23C412DD0092DE5B /* AECardTransformLayout.m */; };
+		7AA0E93323C413040092DE5B /* AECardViewCCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA0E93223C413040092DE5B /* AECardViewCCell.m */; };
+		7AA0E93623C456BD0092DE5B /* AEHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA0E93523C456BD0092DE5B /* AEHomeViewController.m */; };
+		7AA0E93D23C462A90092DE5B /* AECardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA0E93C23C462A90092DE5B /* AECardModel.m */; };
 		7AF4CD2D228577000007FD12 /* AEDynamicLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF4CD2C228577000007FD12 /* AEDynamicLabel.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -99,6 +105,18 @@
 		7A9CD79A22783AC9004E6D2A /* AEConvenientTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEConvenientTool.m; sourceTree = "<group>"; };
 		7A9CD79C22784703004E6D2A /* AECustomViewFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AECustomViewFlowLayout.h; sourceTree = "<group>"; };
 		7A9CD79D22784703004E6D2A /* AECustomViewFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AECustomViewFlowLayout.m; sourceTree = "<group>"; };
+		7AA0E92823C4124B0092DE5B /* AECardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AECardViewController.h; sourceTree = "<group>"; };
+		7AA0E92923C4124B0092DE5B /* AECardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AECardViewController.m; sourceTree = "<group>"; };
+		7AA0E92B23C4125C0092DE5B /* AECardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AECardView.h; sourceTree = "<group>"; };
+		7AA0E92C23C4125C0092DE5B /* AECardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AECardView.m; sourceTree = "<group>"; };
+		7AA0E92E23C412DD0092DE5B /* AECardTransformLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AECardTransformLayout.h; sourceTree = "<group>"; };
+		7AA0E92F23C412DD0092DE5B /* AECardTransformLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AECardTransformLayout.m; sourceTree = "<group>"; };
+		7AA0E93123C413040092DE5B /* AECardViewCCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AECardViewCCell.h; sourceTree = "<group>"; };
+		7AA0E93223C413040092DE5B /* AECardViewCCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AECardViewCCell.m; sourceTree = "<group>"; };
+		7AA0E93423C456BD0092DE5B /* AEHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEHomeViewController.h; sourceTree = "<group>"; };
+		7AA0E93523C456BD0092DE5B /* AEHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEHomeViewController.m; sourceTree = "<group>"; };
+		7AA0E93B23C462A90092DE5B /* AECardModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AECardModel.h; sourceTree = "<group>"; };
+		7AA0E93C23C462A90092DE5B /* AECardModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AECardModel.m; sourceTree = "<group>"; };
 		7AF4CD2B228577000007FD12 /* AEDynamicLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEDynamicLabel.h; sourceTree = "<group>"; };
 		7AF4CD2C228577000007FD12 /* AEDynamicLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEDynamicLabel.m; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -172,6 +190,7 @@
 		6003F593195388D20070C39A /* Example for AEObjCWorking */ = {
 			isa = PBXGroup;
 			children = (
+				7AA0E92423C40BBF0092DE5B /* AECardView */,
 				7A44DE49228A46F30078B6A0 /* UI_Component */,
 				7AF4CD2A2285761C0007FD12 /* AEDynamicLabel */,
 				7A9CD79822783A93004E6D2A /* Tools */,
@@ -182,6 +201,9 @@
 				6003F59D195388D20070C39A /* AEAppDelegate.m */,
 				6003F5A5195388D20070C39A /* AEViewController.h */,
 				6003F5A6195388D20070C39A /* AEViewController.m */,
+				7AA0E93423C456BD0092DE5B /* AEHomeViewController.h */,
+				7AA0E93523C456BD0092DE5B /* AEHomeViewController.m */,
+				7AA0E93723C458120092DE5B /* Home */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
 			name = "Example for AEObjCWorking";
@@ -289,6 +311,54 @@
 				7A9CD79A22783AC9004E6D2A /* AEConvenientTool.m */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		7AA0E92423C40BBF0092DE5B /* AECardView */ = {
+			isa = PBXGroup;
+			children = (
+				7AA0E93A23C462720092DE5B /* View */,
+				7AA0E93923C462680092DE5B /* Model */,
+				7AA0E92823C4124B0092DE5B /* AECardViewController.h */,
+				7AA0E92923C4124B0092DE5B /* AECardViewController.m */,
+			);
+			path = AECardView;
+			sourceTree = "<group>";
+		};
+		7AA0E93723C458120092DE5B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				7AA0E93823C4581D0092DE5B /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		7AA0E93823C4581D0092DE5B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7AA0E93923C462680092DE5B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7AA0E93B23C462A90092DE5B /* AECardModel.h */,
+				7AA0E93C23C462A90092DE5B /* AECardModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7AA0E93A23C462720092DE5B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7AA0E92B23C4125C0092DE5B /* AECardView.h */,
+				7AA0E92C23C4125C0092DE5B /* AECardView.m */,
+				7AA0E92E23C412DD0092DE5B /* AECardTransformLayout.h */,
+				7AA0E92F23C412DD0092DE5B /* AECardTransformLayout.m */,
+				7AA0E93123C413040092DE5B /* AECardViewCCell.h */,
+				7AA0E93223C413040092DE5B /* AECardViewCCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		7AF4CD2A2285761C0007FD12 /* AEDynamicLabel */ = {
@@ -419,19 +489,17 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-AEObjCWorking_Example/Pods-AEObjCWorking_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AEObjCWorking/AEObjCWorking.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AEObjCWorking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -490,16 +558,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A9CD794227833D7004E6D2A /* AECustomOptionModel.m in Sources */,
+				7AA0E92A23C4124B0092DE5B /* AECardViewController.m in Sources */,
 				7A44DE4F228A481A0078B6A0 /* UIFont+AEFonts.m in Sources */,
 				7A9CD79E22784703004E6D2A /* AECustomViewFlowLayout.m in Sources */,
 				7A44DE4C228A471F0078B6A0 /* NSString+AELabelWidthAndHeight.m in Sources */,
 				6003F59E195388D20070C39A /* AEAppDelegate.m in Sources */,
+				7AA0E93323C413040092DE5B /* AECardViewCCell.m in Sources */,
+				7AA0E93D23C462A90092DE5B /* AECardModel.m in Sources */,
 				7A9CD79722783544004E6D2A /* AECustomOptioinViewController.m in Sources */,
 				7A9CD791227830BE004E6D2A /* AEAECustomOptionCell.m in Sources */,
 				6003F5A7195388D20070C39A /* AEViewController.m in Sources */,
 				7A52EB8D2278274F009BC207 /* AEBaseModel.m in Sources */,
+				7AA0E92D23C4125C0092DE5B /* AECardView.m in Sources */,
 				7A9CD79B22783AC9004E6D2A /* AEConvenientTool.m in Sources */,
+				7AA0E93623C456BD0092DE5B /* AEHomeViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				7AA0E93023C412DD0092DE5B /* AECardTransformLayout.m in Sources */,
 				7A9CD78E22783033004E6D2A /* AECustomOptionView.m in Sources */,
 				7A44DE52228A4A9D0078B6A0 /* UIView+AEGlowView.m in Sources */,
 				7A52EB90227827A1009BC207 /* AEBaseView.m in Sources */,

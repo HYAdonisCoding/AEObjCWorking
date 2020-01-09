@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AECustomViewFlowLayout : UICollectionViewFlowLayout
 
-    //全能初始化方法 其他方式初始化最终都会走到这里
+/// 全能初始化方法 其他方式初始化最终都会走到这里
 -(instancetype)initWithType:(AEAlignmentFlowLayoutType)type cellSpace:(CGFloat)cellSpace;
 
 @end
