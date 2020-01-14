@@ -33,8 +33,8 @@
 
 - (NSArray *)dataArray {
     if (!_dataArray) {
-        _dataArray = @[@"CardView", @"DynamicLabel", @"CustomOptioin"];
-        _controllerArray = @[@"AECardViewController", @"AEViewController", @"AECustomOptioinViewController"];
+        _dataArray = @[@"CardView", @"DynamicLabel", @"CustomOptioin", @"AETabBar"];
+        _controllerArray = @[@"AECardViewController", @"AEViewController", @"AECustomOptioinViewController", @"AEMainTabBarViewController"];
     }
     return _dataArray;
 }

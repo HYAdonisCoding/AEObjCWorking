@@ -28,6 +28,10 @@
 		7A44DE52228A4A9D0078B6A0 /* UIView+AEGlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A44DE51228A4A9D0078B6A0 /* UIView+AEGlowView.m */; };
 		7A52EB8D2278274F009BC207 /* AEBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A52EB8C2278274F009BC207 /* AEBaseModel.m */; };
 		7A52EB90227827A1009BC207 /* AEBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A52EB8F227827A1009BC207 /* AEBaseView.m */; };
+		7A6E01F323C702DC00D34AB6 /* AETabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6E01F223C702DC00D34AB6 /* AETabBar.m */; };
+		7A6E01F623C7100200D34AB6 /* AEMainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6E01F523C7100200D34AB6 /* AEMainTabBarViewController.m */; };
+		7A6E01F923C7124900D34AB6 /* AETabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6E01F823C7124900D34AB6 /* AETabBarItem.m */; };
+		7A77FC5323CDB2F9008E6F1A /* AETabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A77FC5223CDB2F9008E6F1A /* AETabBarButton.m */; };
 		7A9CD78A22782E85004E6D2A /* AEBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CD78922782E85004E6D2A /* AEBaseViewController.m */; };
 		7A9CD78E22783033004E6D2A /* AECustomOptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CD78D22783032004E6D2A /* AECustomOptionView.m */; };
 		7A9CD791227830BE004E6D2A /* AEAECustomOptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CD790227830BE004E6D2A /* AEAECustomOptionCell.m */; };
@@ -91,6 +95,14 @@
 		7A52EB8C2278274F009BC207 /* AEBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEBaseModel.m; sourceTree = "<group>"; };
 		7A52EB8E227827A1009BC207 /* AEBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEBaseView.h; sourceTree = "<group>"; };
 		7A52EB8F227827A1009BC207 /* AEBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEBaseView.m; sourceTree = "<group>"; };
+		7A6E01F123C702DC00D34AB6 /* AETabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AETabBar.h; sourceTree = "<group>"; };
+		7A6E01F223C702DC00D34AB6 /* AETabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AETabBar.m; sourceTree = "<group>"; };
+		7A6E01F423C7100200D34AB6 /* AEMainTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEMainTabBarViewController.h; sourceTree = "<group>"; };
+		7A6E01F523C7100200D34AB6 /* AEMainTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEMainTabBarViewController.m; sourceTree = "<group>"; };
+		7A6E01F723C7124900D34AB6 /* AETabBarItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AETabBarItem.h; sourceTree = "<group>"; };
+		7A6E01F823C7124900D34AB6 /* AETabBarItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AETabBarItem.m; sourceTree = "<group>"; };
+		7A77FC5123CDB2F9008E6F1A /* AETabBarButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AETabBarButton.h; sourceTree = "<group>"; };
+		7A77FC5223CDB2F9008E6F1A /* AETabBarButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AETabBarButton.m; sourceTree = "<group>"; };
 		7A9CD78822782E85004E6D2A /* AEBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEBaseViewController.h; sourceTree = "<group>"; };
 		7A9CD78922782E85004E6D2A /* AEBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEBaseViewController.m; sourceTree = "<group>"; };
 		7A9CD78C22783032004E6D2A /* AECustomOptionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AECustomOptionView.h; sourceTree = "<group>"; };
@@ -190,6 +202,7 @@
 		6003F593195388D20070C39A /* Example for AEObjCWorking */ = {
 			isa = PBXGroup;
 			children = (
+				7A6E01F023C702B200D34AB6 /* AETabBar */,
 				7AA0E92423C40BBF0092DE5B /* AECardView */,
 				7A44DE49228A46F30078B6A0 /* UI_Component */,
 				7AF4CD2A2285761C0007FD12 /* AEDynamicLabel */,
@@ -285,6 +298,21 @@
 				7A9CD78922782E85004E6D2A /* AEBaseViewController.m */,
 			);
 			path = BaseClase;
+			sourceTree = "<group>";
+		};
+		7A6E01F023C702B200D34AB6 /* AETabBar */ = {
+			isa = PBXGroup;
+			children = (
+				7A6E01F123C702DC00D34AB6 /* AETabBar.h */,
+				7A6E01F223C702DC00D34AB6 /* AETabBar.m */,
+				7A77FC5123CDB2F9008E6F1A /* AETabBarButton.h */,
+				7A77FC5223CDB2F9008E6F1A /* AETabBarButton.m */,
+				7A6E01F723C7124900D34AB6 /* AETabBarItem.h */,
+				7A6E01F823C7124900D34AB6 /* AETabBarItem.m */,
+				7A6E01F423C7100200D34AB6 /* AEMainTabBarViewController.h */,
+				7A6E01F523C7100200D34AB6 /* AEMainTabBarViewController.m */,
+			);
+			path = AETabBar;
 			sourceTree = "<group>";
 		};
 		7A9CD78B22782EC4004E6D2A /* CustomLayout */ = {
@@ -571,12 +599,16 @@
 				7A52EB8D2278274F009BC207 /* AEBaseModel.m in Sources */,
 				7AA0E92D23C4125C0092DE5B /* AECardView.m in Sources */,
 				7A9CD79B22783AC9004E6D2A /* AEConvenientTool.m in Sources */,
+				7A6E01F923C7124900D34AB6 /* AETabBarItem.m in Sources */,
+				7A77FC5323CDB2F9008E6F1A /* AETabBarButton.m in Sources */,
 				7AA0E93623C456BD0092DE5B /* AEHomeViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				7AA0E93023C412DD0092DE5B /* AECardTransformLayout.m in Sources */,
 				7A9CD78E22783033004E6D2A /* AECustomOptionView.m in Sources */,
 				7A44DE52228A4A9D0078B6A0 /* UIView+AEGlowView.m in Sources */,
+				7A6E01F323C702DC00D34AB6 /* AETabBar.m in Sources */,
 				7A52EB90227827A1009BC207 /* AEBaseView.m in Sources */,
+				7A6E01F623C7100200D34AB6 /* AEMainTabBarViewController.m in Sources */,
 				7AF4CD2D228577000007FD12 /* AEDynamicLabel.m in Sources */,
 				7A9CD78A22782E85004E6D2A /* AEBaseViewController.m in Sources */,
 			);
