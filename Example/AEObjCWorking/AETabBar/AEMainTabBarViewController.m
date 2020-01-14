@@ -37,7 +37,7 @@
             [self addOneChildVc:vc1 title:@"我的" image:[UIImage systemImageNamed:@"person"] selectedImage:[UIImage systemImageNamed:@"person.fill"]];
             [self addOneChildVc:vc2 title:@"222" image:[UIImage systemImageNamed:@"plus.circle"] selectedImage:[UIImage systemImageNamed:@"plus.circle.fill"]];
             [self addOneChildVc:vc3 title:@"热门" image:[UIImage systemImageNamed:@"flame"] selectedImage:[UIImage systemImageNamed:@"flame.fill"]];
-            [self addOneChildVc:vc1 title:@"bolt" image:[UIImage systemImageNamed:@"bolt"] selectedImage:[UIImage systemImageNamed:@"bolt.fill"]];
+            [self addOneChildVc:vc4 title:@"bolt" image:[UIImage systemImageNamed:@"bolt"] selectedImage:[UIImage systemImageNamed:@"bolt.fill"]];
         } else {
             // Fallback on earlier versions
         }
@@ -55,7 +55,6 @@
 - (void)addOneChildVc:(UIViewController *)childVc title:(NSString *)title image:(UIImage *)image selectedImage:(UIImage *)selectedImage
 {
     // 1.设置子控制器的属性
-    childVc.view.backgroundColor = [UIColor whiteColor];
     childVc.title = title;
     
     childVc.tabBarItem.image = image;
@@ -76,10 +75,11 @@
     self.mainTabBar.frame = self.tabBar.bounds;
     [self.tabBar addSubview:self.mainTabBar];
     self.mainTabBar.delegate = self;
+    self.selectedIndex = 0;
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     // 遍历系统的tabbar移除不需要的控件
     for (UIView *subView in self.tabBar.subviews) {
         // UITabBarButton私有API, 普通开发者不能使用

@@ -14,7 +14,7 @@
 /**
  *  加好按钮
  */
-@property (nonatomic, weak) UIButton *plusBtn;
+//@property (nonatomic, weak) UIButton *plusBtn;
 /**
  *  保存所有选项卡按钮
  */
@@ -33,7 +33,7 @@
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
         // 1.设置添加按钮的frame
-        [self setupPlusBtnFrame];
+//        [self setupPlusBtnFrame];
     }
     return self;
 }
@@ -78,21 +78,21 @@
         }
     }
 }
-/**
- *  设置添加按钮的frame
- */
-- (void)setupPlusBtnFrame
-{
-    // 2.设置宽高
-    // 2.1获取黄色图片的size
-    CGSize imageSize = self.plusBtn.currentBackgroundImage.size;
-    self.plusBtn.frame = CGRectMake(0, 0, imageSize.width, imageSize.height);
-    
-    // 1.设置位置
-    self.plusBtn.center = CGPointMake(self.frame.size.width * 0.5, self.frame.size.height * 0.5);
-    
-    
-}
+///**
+// *  设置添加按钮的frame
+// */
+//- (void)setupPlusBtnFrame
+//{
+//    // 2.设置宽高
+//    // 2.1获取黄色图片的size
+//    CGSize imageSize = self.plusBtn.currentBackgroundImage.size;
+//    self.plusBtn.frame = CGRectMake(0, 0, imageSize.width, imageSize.height);
+//
+//    // 1.设置位置
+//    self.plusBtn.center = CGPointMake(self.frame.size.width * 0.5, self.frame.size.height * 0.5);
+//
+//
+//}
 
 #pragma mark - 添加按钮方法
 - (void)addTabBarButton:(UITabBarItem *)item {
@@ -149,21 +149,21 @@
     return _buttons;
 }
 
-- (UIButton *)plusBtn
-{
-    if (_plusBtn == nil) {
-        UIButton *plusBtn = [[UIButton alloc] init];
-        // 1.2.设置背景图片
-        [plusBtn setBackgroundImage:[UIImage imageNamed:@"tabbar_compose_button"] forState:UIControlStateNormal];
-        [plusBtn setBackgroundImage:[UIImage imageNamed:@"tabbar_compose_button_highlighted"] forState:UIControlStateHighlighted];
-        // 1.3.设置图标
-        [plusBtn setImage:[UIImage imageNamed:@"tabbar_compose_icon_add"] forState:UIControlStateNormal];
-        [plusBtn setImage:[UIImage imageNamed:@"tabbar_compose_icon_add_highlighted"] forState:UIControlStateHighlighted];
-        // 1.4.添加
-        [self addSubview:plusBtn];
-        _plusBtn = plusBtn;
-        
-    }
-    return _plusBtn;
-}
+//- (UIButton *)plusBtn
+//{
+//    if (_plusBtn == nil) {
+//        UIButton *plusBtn = [[UIButton alloc] init];
+//        // 1.2.设置背景图片
+//        [plusBtn setBackgroundImage:[UIImage imageNamed:@"tabbar_compose_button"] forState:UIControlStateNormal];
+//        [plusBtn setBackgroundImage:[UIImage imageNamed:@"tabbar_compose_button_highlighted"] forState:UIControlStateHighlighted];
+//        // 1.3.设置图标
+//        [plusBtn setImage:[UIImage imageNamed:@"tabbar_compose_icon_add"] forState:UIControlStateNormal];
+//        [plusBtn setImage:[UIImage imageNamed:@"tabbar_compose_icon_add_highlighted"] forState:UIControlStateHighlighted];
+//        // 1.4.添加
+//        [self addSubview:plusBtn];
+//        _plusBtn = plusBtn;
+//
+//    }
+//    return _plusBtn;
+//}
 @end
