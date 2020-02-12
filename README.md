@@ -9,6 +9,8 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+### update
+Add array sorting and grouping functions, support Chinese and English symbol spaces, etc.
 ## Requirements
 
 ## Installation
