@@ -15,7 +15,7 @@
 		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
 		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
 		6003F59E195388D20070C39A /* AEAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* AEAppDelegate.m */; };
-		6003F5A7195388D20070C39A /* AEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* AEViewController.m */; };
+		6003F5A7195388D20070C39A /* AECustomOptioinController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* AECustomOptioinController.m */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -29,8 +29,10 @@
 		7A52EB8D2278274F009BC207 /* AEBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A52EB8C2278274F009BC207 /* AEBaseModel.m */; };
 		7A52EB90227827A1009BC207 /* AEBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A52EB8F227827A1009BC207 /* AEBaseView.m */; };
 		7A6E01F323C702DC00D34AB6 /* AETabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6E01F223C702DC00D34AB6 /* AETabBar.m */; };
-		7A6E01F623C7100200D34AB6 /* AEMainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6E01F523C7100200D34AB6 /* AEMainTabBarViewController.m */; };
+		7A6E01F623C7100200D34AB6 /* AEMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6E01F523C7100200D34AB6 /* AEMainTabBarController.m */; };
 		7A6E01F923C7124900D34AB6 /* AETabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6E01F823C7124900D34AB6 /* AETabBarItem.m */; };
+		7A76520A23F3CBD300A303DE /* AEIntelligentSortingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A76520923F3CBD300A303DE /* AEIntelligentSortingController.m */; };
+		7A76520E23F3CCB400A303DE /* Goods.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A76520D23F3CCB400A303DE /* Goods.m */; };
 		7A77FC5323CDB2F9008E6F1A /* AETabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A77FC5223CDB2F9008E6F1A /* AETabBarButton.m */; };
 		7A9CD78A22782E85004E6D2A /* AEBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CD78922782E85004E6D2A /* AEBaseViewController.m */; };
 		7A9CD78E22783033004E6D2A /* AECustomOptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CD78D22783032004E6D2A /* AECustomOptionView.m */; };
@@ -39,7 +41,7 @@
 		7A9CD79722783544004E6D2A /* AECustomOptioinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CD79622783544004E6D2A /* AECustomOptioinViewController.m */; };
 		7A9CD79B22783AC9004E6D2A /* AEConvenientTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CD79A22783AC9004E6D2A /* AEConvenientTool.m */; };
 		7A9CD79E22784703004E6D2A /* AECustomViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CD79D22784703004E6D2A /* AECustomViewFlowLayout.m */; };
-		7AA0E92A23C4124B0092DE5B /* AECardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA0E92923C4124B0092DE5B /* AECardViewController.m */; };
+		7AA0E92A23C4124B0092DE5B /* AEDynamicCardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA0E92923C4124B0092DE5B /* AEDynamicCardController.m */; };
 		7AA0E92D23C4125C0092DE5B /* AECardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA0E92C23C4125C0092DE5B /* AECardView.m */; };
 		7AA0E93023C412DD0092DE5B /* AECardTransformLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA0E92F23C412DD0092DE5B /* AECardTransformLayout.m */; };
 		7AA0E93323C413040092DE5B /* AECardViewCCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA0E93223C413040092DE5B /* AECardViewCCell.m */; };
@@ -72,8 +74,8 @@
 		6003F59B195388D20070C39A /* AEObjCWorking-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AEObjCWorking-Prefix.pch"; sourceTree = "<group>"; };
 		6003F59C195388D20070C39A /* AEAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEAppDelegate.h; sourceTree = "<group>"; };
 		6003F59D195388D20070C39A /* AEAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEAppDelegate.m; sourceTree = "<group>"; };
-		6003F5A5195388D20070C39A /* AEViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEViewController.h; sourceTree = "<group>"; };
-		6003F5A6195388D20070C39A /* AEViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEViewController.m; sourceTree = "<group>"; };
+		6003F5A5195388D20070C39A /* AECustomOptioinController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AECustomOptioinController.h; sourceTree = "<group>"; };
+		6003F5A6195388D20070C39A /* AECustomOptioinController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AECustomOptioinController.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6003F5AE195388D20070C39A /* AEObjCWorking_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AEObjCWorking_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -97,10 +99,14 @@
 		7A52EB8F227827A1009BC207 /* AEBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEBaseView.m; sourceTree = "<group>"; };
 		7A6E01F123C702DC00D34AB6 /* AETabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AETabBar.h; sourceTree = "<group>"; };
 		7A6E01F223C702DC00D34AB6 /* AETabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AETabBar.m; sourceTree = "<group>"; };
-		7A6E01F423C7100200D34AB6 /* AEMainTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEMainTabBarViewController.h; sourceTree = "<group>"; };
-		7A6E01F523C7100200D34AB6 /* AEMainTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEMainTabBarViewController.m; sourceTree = "<group>"; };
+		7A6E01F423C7100200D34AB6 /* AEMainTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEMainTabBarController.h; sourceTree = "<group>"; };
+		7A6E01F523C7100200D34AB6 /* AEMainTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEMainTabBarController.m; sourceTree = "<group>"; };
 		7A6E01F723C7124900D34AB6 /* AETabBarItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AETabBarItem.h; sourceTree = "<group>"; };
 		7A6E01F823C7124900D34AB6 /* AETabBarItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AETabBarItem.m; sourceTree = "<group>"; };
+		7A76520823F3CBD300A303DE /* AEIntelligentSortingController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEIntelligentSortingController.h; sourceTree = "<group>"; };
+		7A76520923F3CBD300A303DE /* AEIntelligentSortingController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEIntelligentSortingController.m; sourceTree = "<group>"; };
+		7A76520C23F3CCB400A303DE /* Goods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goods.h; sourceTree = "<group>"; };
+		7A76520D23F3CCB400A303DE /* Goods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Goods.m; sourceTree = "<group>"; };
 		7A77FC5123CDB2F9008E6F1A /* AETabBarButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AETabBarButton.h; sourceTree = "<group>"; };
 		7A77FC5223CDB2F9008E6F1A /* AETabBarButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AETabBarButton.m; sourceTree = "<group>"; };
 		7A9CD78822782E85004E6D2A /* AEBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEBaseViewController.h; sourceTree = "<group>"; };
@@ -117,8 +123,8 @@
 		7A9CD79A22783AC9004E6D2A /* AEConvenientTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEConvenientTool.m; sourceTree = "<group>"; };
 		7A9CD79C22784703004E6D2A /* AECustomViewFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AECustomViewFlowLayout.h; sourceTree = "<group>"; };
 		7A9CD79D22784703004E6D2A /* AECustomViewFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AECustomViewFlowLayout.m; sourceTree = "<group>"; };
-		7AA0E92823C4124B0092DE5B /* AECardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AECardViewController.h; sourceTree = "<group>"; };
-		7AA0E92923C4124B0092DE5B /* AECardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AECardViewController.m; sourceTree = "<group>"; };
+		7AA0E92823C4124B0092DE5B /* AEDynamicCardController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEDynamicCardController.h; sourceTree = "<group>"; };
+		7AA0E92923C4124B0092DE5B /* AEDynamicCardController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEDynamicCardController.m; sourceTree = "<group>"; };
 		7AA0E92B23C4125C0092DE5B /* AECardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AECardView.h; sourceTree = "<group>"; };
 		7AA0E92C23C4125C0092DE5B /* AECardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AECardView.m; sourceTree = "<group>"; };
 		7AA0E92E23C412DD0092DE5B /* AECardTransformLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AECardTransformLayout.h; sourceTree = "<group>"; };
@@ -202,6 +208,7 @@
 		6003F593195388D20070C39A /* Example for AEObjCWorking */ = {
 			isa = PBXGroup;
 			children = (
+				7A76520423F3CB7200A303DE /* IntelligentSorting */,
 				7A6E01F023C702B200D34AB6 /* AETabBar */,
 				7AA0E92423C40BBF0092DE5B /* AECardView */,
 				7A44DE49228A46F30078B6A0 /* UI_Component */,
@@ -212,8 +219,8 @@
 				7A52EB8922782676009BC207 /* Resources */,
 				6003F59C195388D20070C39A /* AEAppDelegate.h */,
 				6003F59D195388D20070C39A /* AEAppDelegate.m */,
-				6003F5A5195388D20070C39A /* AEViewController.h */,
-				6003F5A6195388D20070C39A /* AEViewController.m */,
+				6003F5A5195388D20070C39A /* AECustomOptioinController.h */,
+				6003F5A6195388D20070C39A /* AECustomOptioinController.m */,
 				7AA0E93423C456BD0092DE5B /* AEHomeViewController.h */,
 				7AA0E93523C456BD0092DE5B /* AEHomeViewController.m */,
 				7AA0E93723C458120092DE5B /* Home */,
@@ -309,10 +316,29 @@
 				7A77FC5223CDB2F9008E6F1A /* AETabBarButton.m */,
 				7A6E01F723C7124900D34AB6 /* AETabBarItem.h */,
 				7A6E01F823C7124900D34AB6 /* AETabBarItem.m */,
-				7A6E01F423C7100200D34AB6 /* AEMainTabBarViewController.h */,
-				7A6E01F523C7100200D34AB6 /* AEMainTabBarViewController.m */,
+				7A6E01F423C7100200D34AB6 /* AEMainTabBarController.h */,
+				7A6E01F523C7100200D34AB6 /* AEMainTabBarController.m */,
 			);
 			path = AETabBar;
+			sourceTree = "<group>";
+		};
+		7A76520423F3CB7200A303DE /* IntelligentSorting */ = {
+			isa = PBXGroup;
+			children = (
+				7A76520823F3CBD300A303DE /* AEIntelligentSortingController.h */,
+				7A76520923F3CBD300A303DE /* AEIntelligentSortingController.m */,
+				7A76520B23F3CCA900A303DE /* Model */,
+			);
+			path = IntelligentSorting;
+			sourceTree = "<group>";
+		};
+		7A76520B23F3CCA900A303DE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7A76520C23F3CCB400A303DE /* Goods.h */,
+				7A76520D23F3CCB400A303DE /* Goods.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		7A9CD78B22782EC4004E6D2A /* CustomLayout */ = {
@@ -346,8 +372,8 @@
 			children = (
 				7AA0E93A23C462720092DE5B /* View */,
 				7AA0E93923C462680092DE5B /* Model */,
-				7AA0E92823C4124B0092DE5B /* AECardViewController.h */,
-				7AA0E92923C4124B0092DE5B /* AECardViewController.m */,
+				7AA0E92823C4124B0092DE5B /* AEDynamicCardController.h */,
+				7AA0E92923C4124B0092DE5B /* AEDynamicCardController.m */,
 			);
 			path = AECardView;
 			sourceTree = "<group>";
@@ -586,16 +612,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A9CD794227833D7004E6D2A /* AECustomOptionModel.m in Sources */,
-				7AA0E92A23C4124B0092DE5B /* AECardViewController.m in Sources */,
+				7AA0E92A23C4124B0092DE5B /* AEDynamicCardController.m in Sources */,
 				7A44DE4F228A481A0078B6A0 /* UIFont+AEFonts.m in Sources */,
 				7A9CD79E22784703004E6D2A /* AECustomViewFlowLayout.m in Sources */,
+				7A76520A23F3CBD300A303DE /* AEIntelligentSortingController.m in Sources */,
 				7A44DE4C228A471F0078B6A0 /* NSString+AELabelWidthAndHeight.m in Sources */,
+				7A76520E23F3CCB400A303DE /* Goods.m in Sources */,
 				6003F59E195388D20070C39A /* AEAppDelegate.m in Sources */,
 				7AA0E93323C413040092DE5B /* AECardViewCCell.m in Sources */,
 				7AA0E93D23C462A90092DE5B /* AECardModel.m in Sources */,
 				7A9CD79722783544004E6D2A /* AECustomOptioinViewController.m in Sources */,
 				7A9CD791227830BE004E6D2A /* AEAECustomOptionCell.m in Sources */,
-				6003F5A7195388D20070C39A /* AEViewController.m in Sources */,
+				6003F5A7195388D20070C39A /* AECustomOptioinController.m in Sources */,
 				7A52EB8D2278274F009BC207 /* AEBaseModel.m in Sources */,
 				7AA0E92D23C4125C0092DE5B /* AECardView.m in Sources */,
 				7A9CD79B22783AC9004E6D2A /* AEConvenientTool.m in Sources */,
@@ -608,7 +636,7 @@
 				7A44DE52228A4A9D0078B6A0 /* UIView+AEGlowView.m in Sources */,
 				7A6E01F323C702DC00D34AB6 /* AETabBar.m in Sources */,
 				7A52EB90227827A1009BC207 /* AEBaseView.m in Sources */,
-				7A6E01F623C7100200D34AB6 /* AEMainTabBarViewController.m in Sources */,
+				7A6E01F623C7100200D34AB6 /* AEMainTabBarController.m in Sources */,
 				7AF4CD2D228577000007FD12 /* AEDynamicLabel.m in Sources */,
 				7A9CD78A22782E85004E6D2A /* AEBaseViewController.m in Sources */,
 			);

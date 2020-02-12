@@ -1,5 +1,5 @@
 //
-//  AEViewController.h
+//  AECustomOptioinController.h
 //  AEObjCWorking
 //
 //  Created by HYAdonisCoding on 04/25/2019.
@@ -8,6 +8,6 @@
 
 #import "AEBaseViewController.h"
 
-@interface AEViewController : AEBaseViewController
+@interface AECustomOptioinController : AEBaseViewController
 
 @end

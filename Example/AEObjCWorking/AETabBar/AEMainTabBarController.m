@@ -1,22 +1,22 @@
 //
-//  AEMainTabBarViewController.m
+//  AEMainTabBarController.m
 //  AEObjCWorking_Example
 //
 //  Created by Adonis_HongYang on 2020/1/9.
 //  Copyright © 2020 HYAdonisCoding. All rights reserved.
 //
 
-#import "AEMainTabBarViewController.h"
+#import "AEMainTabBarController.h"
 #import "AETabBar.h"
 #import "AETabBarItem.h"
 
-@interface AEMainTabBarViewController ()<AETabBarDelegate>
+@interface AEMainTabBarController ()<AETabBarDelegate>
 
 /// 按钮
 @property (nonatomic, strong) AETabBar *mainTabBar;
 @end
 
-@implementation AEMainTabBarViewController
+@implementation AEMainTabBarController
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {

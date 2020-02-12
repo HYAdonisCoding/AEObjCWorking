@@ -1,12 +1,12 @@
 //
-//  AEViewController.m
+//  AECustomOptioinController.m
 //  AEObjCWorking
 //
 //  Created by HYAdonisCoding on 04/25/2019.
 //  Copyright (c) 2019 HYAdonisCoding. All rights reserved.
 //
 
-#import "AEViewController.h"
+#import "AECustomOptioinController.h"
 #import <AEAuthenticeTool.h>
 #import "AECustomOptioinViewController.h"
 #import "AEDynamicLabel/AEDynamicLabel.h"
@@ -14,11 +14,11 @@
 #import "UI_Component/NSString+AELabelWidthAndHeight.h"
 #import "UI_Component/UIView+AEGlowView.h"
 
-@interface AEViewController () <AEDynamicLabelDelegate>
+@interface AECustomOptioinController () <AEDynamicLabelDelegate>
 
 @end
 
-@implementation AEViewController
+@implementation AECustomOptioinController
 
 - (void)viewDidLoad
 {

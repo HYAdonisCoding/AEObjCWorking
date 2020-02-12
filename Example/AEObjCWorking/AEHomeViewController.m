@@ -33,8 +33,7 @@
 
 - (NSArray *)dataArray {
     if (!_dataArray) {
-        _dataArray = @[@"CardView", @"DynamicLabel", @"CustomOptioin", @"AETabBar"];
-        _controllerArray = @[@"AECardViewController", @"AEViewController", @"AECustomOptioinViewController", @"AEMainTabBarViewController"];
+        _dataArray = @[@"AEIntelligentSortingController",@"AEDynamicCardController", @"AECustomOptioinController", @"AECustomOptioinViewController", @"AEMainTabBarController"];
     }
     return _dataArray;
 }
@@ -70,7 +69,9 @@
 #pragma mark - UITableViewDelegate, UITableViewDataSource
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class]) forIndexPath:indexPath];
-    cell.textLabel.text = self.dataArray[indexPath.row];
+    NSString *string = self.dataArray[indexPath.row];
+    string = [string substringWithRange:NSMakeRange(2, string.length-12)];
+    cell.textLabel.text = string;
     return cell;
 }
 
@@ -81,9 +82,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    UIViewController *vc = [NSClassFromString(self.controllerArray[indexPath.row]) new];
+    UIViewController *vc = [NSClassFromString(self.dataArray[indexPath.row]) new];
     if (vc) {
-        vc.title = self.dataArray[indexPath.row];
+        NSString *string = self.dataArray[indexPath.row];
+        string = [string substringWithRange:NSMakeRange(2, string.length-12)];
+        vc.title = string;
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

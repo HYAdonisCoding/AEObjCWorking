@@ -1,5 +1,5 @@
 //
-//  AEMainTabBarViewController.h
+//  AEMainTabBarController.h
 //  AEObjCWorking_Example
 //
 //  Created by Adonis_HongYang on 2020/1/9.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AEMainTabBarViewController : UITabBarController
+@interface AEMainTabBarController : UITabBarController
 
 @end
 

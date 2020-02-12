@@ -1,20 +1,20 @@
 //
-//  AECardViewController.m
+//  AEDynamicCardController.m
 //  AEObjCWorking_Example
 //
 //  Created by Adonis_HongYang on 2020/1/7.
 //  Copyright © 2020 HYAdonisCoding. All rights reserved.
 //
 
-#import "AECardViewController.h"
+#import "AEDynamicCardController.h"
 #import "AECardView.h"
 #import "AECardModel.h"
 
-@interface AECardViewController ()
+@interface AEDynamicCardController ()
 
 @end
 
-@implementation AECardViewController
+@implementation AEDynamicCardController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

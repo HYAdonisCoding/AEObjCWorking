@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"edit";
+//    self.title = @"edit";
     
     self.selectedArray = [NSMutableArray array];
     

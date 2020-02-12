@@ -12,9 +12,9 @@
 @interface AETabBar ()
 
 /**
- *  加好按钮
+ * 上一次选中按钮
  */
-//@property (nonatomic, weak) UIButton *plusBtn;
+@property (nonatomic, weak) UIButton *lastButton;
 /**
  *  保存所有选项卡按钮
  */
@@ -68,10 +68,17 @@
 //        if (i >= count / 2) {
 //            btn.frame = CGRectMake((i + 1) * btnWidth, 0, btnWidth, btnHeigth);
 //        }
-        if (self.selectedButton == btn) {
-            NSLog(@"%@ - %@", @"选中", btn);
-            [UIView animateWithDuration:0.25 animations:^{
-                btn.frame = CGRectMake( i * btnWidth, -btnHeigth*0.25, btnWidth, btnHeigth*1.3);
+        if (self.lastButton == btn) {
+//            NSLog(@"%@ - %@", @"选中", btn);
+//            [UIView animateWithDuration:0.25 animations:^{
+//                btn.frame = CGRectMake( i * btnWidth, -btnHeigth*0.25, btnWidth, btnHeigth*1.3);
+//            }];
+            [UIView animateWithDuration:0.4 delay:0 options:(UIViewAnimationOptionCurveLinear) animations:^{
+                btn.frame = CGRectMake( i * btnWidth, 0, btnWidth, btnHeigth);
+                btn.selected = NO;
+            } completion:^(BOOL finished) {
+                self.selectedButton.selected = YES;
+                self.selectedButton.frame = CGRectMake( i * btnWidth, -btnHeigth*0.25, btnWidth, btnHeigth*1.3);
             }];
         } else {
             NSLog(@"%@ - %@", @"未选中", btn);
@@ -131,9 +138,10 @@
     }
     
     // 1.取消上一次选中的按钮
-    self.selectedButton.selected = NO;
+//    self.selectedButton.selected = NO;
+    self.lastButton = self.selectedButton;
     // 2.选中当前按钮
-    btn.selected = YES;
+//    btn.selected = YES;
     // 3.记录当前选中的按钮
     self.selectedButton = btn;
     
