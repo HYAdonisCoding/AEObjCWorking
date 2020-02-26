@@ -31,6 +31,13 @@
 		7A6E01F323C702DC00D34AB6 /* AETabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6E01F223C702DC00D34AB6 /* AETabBar.m */; };
 		7A6E01F623C7100200D34AB6 /* AEMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6E01F523C7100200D34AB6 /* AEMainTabBarController.m */; };
 		7A6E01F923C7124900D34AB6 /* AETabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6E01F823C7124900D34AB6 /* AETabBarItem.m */; };
+		7A6F9B5F24061873006A923D /* AEHTMLParsingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6F9B5E24061873006A923D /* AEHTMLParsingController.m */; };
+		7A6F9B62240618BC006A923D /* AEHTMLParsingTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6F9B61240618BC006A923D /* AEHTMLParsingTool.m */; };
+		7A6F9B642406192E006A923D /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A6F9B632406192D006A923D /* libxml2.tbd */; };
+		7A6F9B6C24061A64006A923D /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6F9B6824061A63006A923D /* TFHpple.m */; };
+		7A6F9B6D24061A64006A923D /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6F9B6924061A63006A923D /* TFHppleElement.m */; };
+		7A6F9B6E24061A64006A923D /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6F9B6B24061A64006A923D /* XPathQuery.m */; };
+		7A6F9B7024061B1C006A923D /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 7A6F9B6F24061B1C006A923D /* index.html */; };
 		7A76520A23F3CBD300A303DE /* AEIntelligentSortingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A76520923F3CBD300A303DE /* AEIntelligentSortingController.m */; };
 		7A76520E23F3CCB400A303DE /* Goods.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A76520D23F3CCB400A303DE /* Goods.m */; };
 		7A77FC5323CDB2F9008E6F1A /* AETabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A77FC5223CDB2F9008E6F1A /* AETabBarButton.m */; };
@@ -103,6 +110,18 @@
 		7A6E01F523C7100200D34AB6 /* AEMainTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEMainTabBarController.m; sourceTree = "<group>"; };
 		7A6E01F723C7124900D34AB6 /* AETabBarItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AETabBarItem.h; sourceTree = "<group>"; };
 		7A6E01F823C7124900D34AB6 /* AETabBarItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AETabBarItem.m; sourceTree = "<group>"; };
+		7A6F9B5D24061873006A923D /* AEHTMLParsingController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEHTMLParsingController.h; sourceTree = "<group>"; };
+		7A6F9B5E24061873006A923D /* AEHTMLParsingController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEHTMLParsingController.m; sourceTree = "<group>"; };
+		7A6F9B60240618BC006A923D /* AEHTMLParsingTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEHTMLParsingTool.h; sourceTree = "<group>"; };
+		7A6F9B61240618BC006A923D /* AEHTMLParsingTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEHTMLParsingTool.m; sourceTree = "<group>"; };
+		7A6F9B632406192D006A923D /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		7A6F9B6624061A63006A923D /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
+		7A6F9B6724061A63006A923D /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
+		7A6F9B6824061A63006A923D /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
+		7A6F9B6924061A63006A923D /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
+		7A6F9B6A24061A64006A923D /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		7A6F9B6B24061A64006A923D /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		7A6F9B6F24061B1C006A923D /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		7A76520823F3CBD300A303DE /* AEIntelligentSortingController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEIntelligentSortingController.h; sourceTree = "<group>"; };
 		7A76520923F3CBD300A303DE /* AEIntelligentSortingController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEIntelligentSortingController.m; sourceTree = "<group>"; };
 		7A76520C23F3CCB400A303DE /* Goods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goods.h; sourceTree = "<group>"; };
@@ -150,6 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A6F9B642406192E006A923D /* libxml2.tbd in Frameworks */,
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
@@ -195,6 +215,7 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7A6F9B632406192D006A923D /* libxml2.tbd */,
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
@@ -208,6 +229,7 @@
 		6003F593195388D20070C39A /* Example for AEObjCWorking */ = {
 			isa = PBXGroup;
 			children = (
+				7A6F9B5C2406183F006A923D /* HTMLParsing */,
 				7A76520423F3CB7200A303DE /* IntelligentSorting */,
 				7A6E01F023C702B200D34AB6 /* AETabBar */,
 				7AA0E92423C40BBF0092DE5B /* AECardView */,
@@ -320,6 +342,32 @@
 				7A6E01F523C7100200D34AB6 /* AEMainTabBarController.m */,
 			);
 			path = AETabBar;
+			sourceTree = "<group>";
+		};
+		7A6F9B5C2406183F006A923D /* HTMLParsing */ = {
+			isa = PBXGroup;
+			children = (
+				7A6F9B6F24061B1C006A923D /* index.html */,
+				7A6F9B6524061A50006A923D /* Hpple */,
+				7A6F9B5D24061873006A923D /* AEHTMLParsingController.h */,
+				7A6F9B5E24061873006A923D /* AEHTMLParsingController.m */,
+				7A6F9B60240618BC006A923D /* AEHTMLParsingTool.h */,
+				7A6F9B61240618BC006A923D /* AEHTMLParsingTool.m */,
+			);
+			path = HTMLParsing;
+			sourceTree = "<group>";
+		};
+		7A6F9B6524061A50006A923D /* Hpple */ = {
+			isa = PBXGroup;
+			children = (
+				7A6F9B6724061A63006A923D /* TFHpple.h */,
+				7A6F9B6824061A63006A923D /* TFHpple.m */,
+				7A6F9B6624061A63006A923D /* TFHppleElement.h */,
+				7A6F9B6924061A63006A923D /* TFHppleElement.m */,
+				7A6F9B6A24061A64006A923D /* XPathQuery.h */,
+				7A6F9B6B24061A64006A923D /* XPathQuery.m */,
+			);
+			path = Hpple;
 			sourceTree = "<group>";
 		};
 		7A76520423F3CB7200A303DE /* IntelligentSorting */ = {
@@ -520,6 +568,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A6F9B7024061B1C006A923D /* index.html in Resources */,
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
@@ -612,15 +661,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A9CD794227833D7004E6D2A /* AECustomOptionModel.m in Sources */,
+				7A6F9B5F24061873006A923D /* AEHTMLParsingController.m in Sources */,
 				7AA0E92A23C4124B0092DE5B /* AEDynamicCardController.m in Sources */,
 				7A44DE4F228A481A0078B6A0 /* UIFont+AEFonts.m in Sources */,
+				7A6F9B6E24061A64006A923D /* XPathQuery.m in Sources */,
 				7A9CD79E22784703004E6D2A /* AECustomViewFlowLayout.m in Sources */,
+				7A6F9B62240618BC006A923D /* AEHTMLParsingTool.m in Sources */,
 				7A76520A23F3CBD300A303DE /* AEIntelligentSortingController.m in Sources */,
 				7A44DE4C228A471F0078B6A0 /* NSString+AELabelWidthAndHeight.m in Sources */,
+				7A6F9B6D24061A64006A923D /* TFHppleElement.m in Sources */,
 				7A76520E23F3CCB400A303DE /* Goods.m in Sources */,
 				6003F59E195388D20070C39A /* AEAppDelegate.m in Sources */,
 				7AA0E93323C413040092DE5B /* AECardViewCCell.m in Sources */,
 				7AA0E93D23C462A90092DE5B /* AECardModel.m in Sources */,
+				7A6F9B6C24061A64006A923D /* TFHpple.m in Sources */,
 				7A9CD79722783544004E6D2A /* AECustomOptioinViewController.m in Sources */,
 				7A9CD791227830BE004E6D2A /* AEAECustomOptionCell.m in Sources */,
 				6003F5A7195388D20070C39A /* AECustomOptioinController.m in Sources */,
@@ -770,6 +824,13 @@
 				DEVELOPMENT_TEAM = 53VUVA3CT9;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AEObjCWorking/Resources/AEPrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AEObjCWorking/AEObjCWorking.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry/Masonry.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYModel/YYModel.framework/Headers\"",
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = "AEObjCWorking/AEObjCWorking-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MODULE_NAME = ExampleApp;
@@ -789,6 +850,13 @@
 				DEVELOPMENT_TEAM = 53VUVA3CT9;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AEObjCWorking/Resources/AEPrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AEObjCWorking/AEObjCWorking.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry/Masonry.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYModel/YYModel.framework/Headers\"",
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = "AEObjCWorking/AEObjCWorking-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MODULE_NAME = ExampleApp;
