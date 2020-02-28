@@ -33,7 +33,7 @@
 
 - (NSArray *)dataArray {
     if (!_dataArray) {
-        _dataArray = @[@"AEHTMLParsingController", @"AEIntelligentSortingController",@"AEDynamicCardController", @"AECustomOptioinController", @"AECustomOptioinViewController", @"AEMainTabBarController"];
+        _dataArray = @[@"AEPopoverShowController",@"AEHTMLParsingController", @"AEIntelligentSortingController",@"AEDynamicCardController", @"AECustomOptioinController", @"AECustomOptioinViewController", @"AEMainTabBarController"];
     }
     return _dataArray;
 }

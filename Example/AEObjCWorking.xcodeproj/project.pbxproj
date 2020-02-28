@@ -54,6 +54,9 @@
 		7AA0E93323C413040092DE5B /* AECardViewCCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA0E93223C413040092DE5B /* AECardViewCCell.m */; };
 		7AA0E93623C456BD0092DE5B /* AEHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA0E93523C456BD0092DE5B /* AEHomeViewController.m */; };
 		7AA0E93D23C462A90092DE5B /* AECardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA0E93C23C462A90092DE5B /* AECardModel.m */; };
+		7AEF4511240912AD0065B265 /* AEPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AEF4510240912AD0065B265 /* AEPopoverController.m */; };
+		7AEF45142409131E0065B265 /* AEPopoverShowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AEF45132409131E0065B265 /* AEPopoverShowController.m */; };
+		7AEF4517240914540065B265 /* AEPopSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AEF4516240914540065B265 /* AEPopSheetController.m */; };
 		7AF4CD2D228577000007FD12 /* AEDynamicLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF4CD2C228577000007FD12 /* AEDynamicLabel.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -154,6 +157,12 @@
 		7AA0E93523C456BD0092DE5B /* AEHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEHomeViewController.m; sourceTree = "<group>"; };
 		7AA0E93B23C462A90092DE5B /* AECardModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AECardModel.h; sourceTree = "<group>"; };
 		7AA0E93C23C462A90092DE5B /* AECardModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AECardModel.m; sourceTree = "<group>"; };
+		7AEF450F240912AD0065B265 /* AEPopoverController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEPopoverController.h; sourceTree = "<group>"; };
+		7AEF4510240912AD0065B265 /* AEPopoverController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEPopoverController.m; sourceTree = "<group>"; };
+		7AEF45122409131E0065B265 /* AEPopoverShowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEPopoverShowController.h; sourceTree = "<group>"; };
+		7AEF45132409131E0065B265 /* AEPopoverShowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEPopoverShowController.m; sourceTree = "<group>"; };
+		7AEF4515240914540065B265 /* AEPopSheetController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEPopSheetController.h; sourceTree = "<group>"; };
+		7AEF4516240914540065B265 /* AEPopSheetController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEPopSheetController.m; sourceTree = "<group>"; };
 		7AF4CD2B228577000007FD12 /* AEDynamicLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEDynamicLabel.h; sourceTree = "<group>"; };
 		7AF4CD2C228577000007FD12 /* AEDynamicLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEDynamicLabel.m; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -229,6 +238,7 @@
 		6003F593195388D20070C39A /* Example for AEObjCWorking */ = {
 			isa = PBXGroup;
 			children = (
+				7AEF450E240912830065B265 /* Popover */,
 				7A6F9B5C2406183F006A923D /* HTMLParsing */,
 				7A76520423F3CB7200A303DE /* IntelligentSorting */,
 				7A6E01F023C702B200D34AB6 /* AETabBar */,
@@ -463,6 +473,19 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		7AEF450E240912830065B265 /* Popover */ = {
+			isa = PBXGroup;
+			children = (
+				7AEF45122409131E0065B265 /* AEPopoverShowController.h */,
+				7AEF45132409131E0065B265 /* AEPopoverShowController.m */,
+				7AEF450F240912AD0065B265 /* AEPopoverController.h */,
+				7AEF4510240912AD0065B265 /* AEPopoverController.m */,
+				7AEF4515240914540065B265 /* AEPopSheetController.h */,
+				7AEF4516240914540065B265 /* AEPopSheetController.m */,
+			);
+			path = Popover;
+			sourceTree = "<group>";
+		};
 		7AF4CD2A2285761C0007FD12 /* AEDynamicLabel */ = {
 			isa = PBXGroup;
 			children = (
@@ -669,6 +692,7 @@
 				7A6F9B62240618BC006A923D /* AEHTMLParsingTool.m in Sources */,
 				7A76520A23F3CBD300A303DE /* AEIntelligentSortingController.m in Sources */,
 				7A44DE4C228A471F0078B6A0 /* NSString+AELabelWidthAndHeight.m in Sources */,
+				7AEF45142409131E0065B265 /* AEPopoverShowController.m in Sources */,
 				7A6F9B6D24061A64006A923D /* TFHppleElement.m in Sources */,
 				7A76520E23F3CCB400A303DE /* Goods.m in Sources */,
 				6003F59E195388D20070C39A /* AEAppDelegate.m in Sources */,
@@ -682,6 +706,7 @@
 				7AA0E92D23C4125C0092DE5B /* AECardView.m in Sources */,
 				7A9CD79B22783AC9004E6D2A /* AEConvenientTool.m in Sources */,
 				7A6E01F923C7124900D34AB6 /* AETabBarItem.m in Sources */,
+				7AEF4517240914540065B265 /* AEPopSheetController.m in Sources */,
 				7A77FC5323CDB2F9008E6F1A /* AETabBarButton.m in Sources */,
 				7AA0E93623C456BD0092DE5B /* AEHomeViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
@@ -689,6 +714,7 @@
 				7A9CD78E22783033004E6D2A /* AECustomOptionView.m in Sources */,
 				7A44DE52228A4A9D0078B6A0 /* UIView+AEGlowView.m in Sources */,
 				7A6E01F323C702DC00D34AB6 /* AETabBar.m in Sources */,
+				7AEF4511240912AD0065B265 /* AEPopoverController.m in Sources */,
 				7A52EB90227827A1009BC207 /* AEBaseView.m in Sources */,
 				7A6E01F623C7100200D34AB6 /* AEMainTabBarController.m in Sources */,
 				7AF4CD2D228577000007FD12 /* AEDynamicLabel.m in Sources */,
