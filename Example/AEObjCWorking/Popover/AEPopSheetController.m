@@ -94,6 +94,7 @@ static CGFloat const space = 2;
     self = [super initWithSourceView:sourceView bySourceRect:rect andContentSize:size andDirection:direction];
     if (self) {
         self.dataArray = datas;
+        self.block = completionHandler;
     }
     return self;
 }
