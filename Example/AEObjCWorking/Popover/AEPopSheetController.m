@@ -7,6 +7,10 @@
 //
 
 #import "AEPopSheetController.h"
+/// 行高
+static CGFloat const rowHeight = 40;
+/// 间隙
+static CGFloat const space = 2;
 
 @interface AEPopSheetController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -18,44 +22,70 @@
 @implementation AEPopSheetController
 
 - (instancetype)initWithSourceView:(UIView *)sourceView datas:(NSArray *)datas contentWidth:(CGFloat)contentWidth andDirection:(UIPopoverArrowDirection)direction completionHandler:(AEPopSheetBlock)completionHandler {
-    CGSize size = CGSizeMake(contentWidth, 40*datas.count);
-    CGRect rect = CGRectMake(CGRectGetMidX(sourceView.bounds), CGRectGetMaxY(sourceView.bounds), 0, 5);
+    CGSize size = CGSizeMake(contentWidth, rowHeight*datas.count);
+    CGRect rect = CGRectMake(CGRectGetMidX(sourceView.bounds), CGRectGetMaxY(sourceView.bounds), 0, space);
     CGFloat height = [UIScreen mainScreen].bounds.size.height;
     CGFloat width = [UIScreen mainScreen].bounds.size.width;
-    
+    if (size.height > height - 88) {
+        size.height = height - 88;
+    }
+    /// 上下左右距离
+    CGFloat up = height - CGRectGetMinY(sourceView.frame), down = height - CGRectGetMaxY(sourceView.frame), left = width - CGRectGetMinX(sourceView.frame), right = width - CGRectGetMaxX(sourceView.frame);
     /// 防止显示范围不够导致异常
-    if (direction == UIPopoverArrowDirectionUp && (height - CGRectGetMaxY(sourceView.frame)) < size.height && height != CGRectGetMaxY(sourceView.frame)) {
-        direction = UIPopoverArrowDirectionDown;
-        rect = CGRectMake(CGRectGetMidX(sourceView.bounds), CGRectGetMinY(sourceView.bounds), 0, -5);
-    } else if (direction == UIPopoverArrowDirectionDown && (height - CGRectGetMaxY(sourceView.frame)) > size.height && height != CGRectGetMaxY(sourceView.frame)) {
-        direction = UIPopoverArrowDirectionUp;
-        rect = CGRectMake(CGRectGetMidX(sourceView.bounds), CGRectGetMaxY(sourceView.bounds), 0, 5);
-    } else if (direction == UIPopoverArrowDirectionRight && (width - CGRectGetMaxX(sourceView.frame)) > size.width && width != CGRectGetMaxX(sourceView.frame)) {
-        direction = UIPopoverArrowDirectionLeft;
-        rect = CGRectMake(CGRectGetMaxX(sourceView.bounds), CGRectGetMidY(sourceView.bounds), 5, 0);
-    } else if (direction == UIPopoverArrowDirectionLeft && (width - CGRectGetMaxX(sourceView.frame)) < size.width && width != CGRectGetMaxX(sourceView.frame)) {
+    if (direction == UIPopoverArrowDirectionUp) {
+        if (down < size.height && height != CGRectGetMaxY(sourceView.frame)) {
+            direction = UIPopoverArrowDirectionDown;
+            if (up < size.height) {
+                if (right > size.width) {
+                    direction = UIPopoverArrowDirectionLeft;
+                } else {
+                    direction = UIPopoverArrowDirectionRight;
+                }
+            }
+
+        }
+    } else if (direction == UIPopoverArrowDirectionDown) {
+        if (up > size.height && height != CGRectGetMaxY(sourceView.frame)) {
+            direction = UIPopoverArrowDirectionUp;
+            if (down < size.height) {
+                if (right > size.width) {
+                    direction = UIPopoverArrowDirectionLeft;
+                } else {
+                    direction = UIPopoverArrowDirectionRight;
+                }
+            }
+        } else if (down < size.height && height != CGRectGetMaxY(sourceView.frame)) {
+            if (down < size.height) {
+                if (right > size.width) {
+                    direction = UIPopoverArrowDirectionLeft;
+                } else {
+                    direction = UIPopoverArrowDirectionRight;
+                }
+            }
+        }
+    } else if (direction == UIPopoverArrowDirectionRight && right > size.width && width != CGRectGetMaxX(sourceView.frame)) {
+        direction = UIPopoverArrowDirectionLeft;    } else if (direction == UIPopoverArrowDirectionLeft && left < size.width && width != CGRectGetMaxX(sourceView.frame)) {
         direction = UIPopoverArrowDirectionRight;
-        rect = CGRectMake(CGRectGetMinX(sourceView.bounds), CGRectGetMidY(sourceView.bounds), -5, 0);
     }
 
     switch (direction) {
         case UIPopoverArrowDirectionUp:
         {
-            rect = CGRectMake(CGRectGetMidX(sourceView.bounds), CGRectGetMaxY(sourceView.bounds), 0, 5);
+            rect = CGRectMake(CGRectGetMidX(sourceView.bounds), CGRectGetMaxY(sourceView.bounds), 0, space);
         }
             break;
         case UIPopoverArrowDirectionDown:
         {
-            rect = CGRectMake(CGRectGetMidX(sourceView.bounds), CGRectGetMinY(sourceView.bounds), 0, -5);
+            rect = CGRectMake(CGRectGetMidX(sourceView.bounds), CGRectGetMinY(sourceView.bounds), 0, -space);
         }
         case UIPopoverArrowDirectionLeft:
             {
-                rect = CGRectMake(CGRectGetMaxX(sourceView.bounds), CGRectGetMidY(sourceView.bounds), 5, 0);
+                rect = CGRectMake(CGRectGetMaxX(sourceView.bounds), CGRectGetMidY(sourceView.bounds), space, 0);
             }
             break;
         case UIPopoverArrowDirectionRight:
             {
-                rect = CGRectMake(CGRectGetMinX(sourceView.bounds), CGRectGetMidY(sourceView.bounds), -5, 0);
+                rect = CGRectMake(CGRectGetMinX(sourceView.bounds), CGRectGetMidY(sourceView.bounds), -space, 0);
             }
             break;
         default:
@@ -75,10 +105,16 @@
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+        _tableView.backgroundColor = self.backViewColor ?: [UIColor whiteColor];
         [self.view addSubview:_tableView];
         [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
         [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.mas_equalTo(0);
+            if (self.direction == UIPopoverArrowDirectionUp) {
+                make.top.mas_equalTo(13);
+            } else {
+                make.top.mas_equalTo(0);
+            }
+            make.left.right.bottom.mas_equalTo(0);
         }];
     }
     return _tableView;
@@ -90,14 +126,14 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor whiteColor];
-    cell.textLabel.textColor = [UIColor systemTealColor];
+    cell.backgroundColor = self.backViewColor ?: [UIColor whiteColor];
+    cell.textLabel.textColor = self.textColor ?: [UIColor blackColor];
     cell.textLabel.font = [UIFont systemFontOfSize:13];
     NSInteger row = indexPath.row;
     
     cell.textLabel.text = self.dataArray[row];
 //    cell.imageView.image = [UIImage imageNamed:self.dataArray[row].icon];
-    
+    cell.separatorInset = UIEdgeInsetsMake(0, 10, 0, 10);
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -115,11 +151,12 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 40;
+    return rowHeight;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.tableView reloadData];
-    self.view.backgroundColor = [UIColor grayColor];
+    self.tableView.scrollEnabled = self.scrollable;
+    self.view.backgroundColor =  self.backViewColor ?: [UIColor whiteColor];
 }
 @end

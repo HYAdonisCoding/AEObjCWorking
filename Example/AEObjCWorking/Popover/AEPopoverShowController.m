@@ -60,27 +60,10 @@
         view = sender;
         rect = CGRectMake(CGRectGetMidX(view.bounds), CGRectGetMaxY(view.bounds), 0, 5);
     }
-    NSArray *data = @[@"测试", @"生产", @"渗透"];
-//    CGSize size = CGSizeMake(80, 40*data.count);
-//    UIPopoverArrowDirection direction = UIPopoverArrowDirectionUp;
-//    if ((self.view.frame.size.height - CGRectGetMaxY(view.frame)) < size.height && self.view.frame.size.height != CGRectGetMaxY(view.frame)) {
-//        direction = UIPopoverArrowDirectionDown;
-//        rect = CGRectMake(CGRectGetMidX(view.bounds), CGRectGetMinY(view.bounds), 0, -5);
-//    }
-//    AEPopSheetController *vc = [[AEPopSheetController alloc] initWithSourceView:view bySourceRect:rect andContentSize:(size) andDirection:(direction)];
-//    vc.dataArray = data;
-//    vc.block = ^(NSInteger index, id  _Nonnull object) {
-//        NSLog(@"选中了 %d - %@", index, object);
-//        if ([object isKindOfClass:[NSString class]]) {
-//            if ([sender isKindOfClass:[UIButton class]]) {
-//                [((UIButton *)sender) setTitle:(NSString *)object forState:(UIControlStateNormal)];
-//            } else if ([sender isKindOfClass:[UIBarButtonItem class]]) {
-//                [((UIBarButtonItem *)sender) setTitle:(NSString *)object];
-//            }
-//
-//        }
-//    };
-    AEPopSheetController *vc = [[AEPopSheetController alloc] initWithSourceView:view datas:data contentWidth:120.f andDirection:(UIPopoverArrowDirectionRight) completionHandler:^(NSInteger index, id  _Nonnull object) {
+    NSArray *data = @[@"测试", @"生产", @"渗透",
+                      @"小孙", @"豪哥", @"超超", @"阿潘", @"晓东", @"阿牛", @"小李", @"晓东", @"阿牛", @"小李", @"晓东", @"阿牛", @"小李", @"小菜", @"小争", @"小张", @"老大", @"二哥", @"三哥", @"燕三"
+    ];
+    AEPopSheetController *vc = [[AEPopSheetController alloc] initWithSourceView:view datas:data contentWidth:120.f andDirection:(UIPopoverArrowDirectionDown) completionHandler:^(NSInteger index, id  _Nonnull object) {
         NSLog(@"选中了 %d - %@", index, object);
         if ([object isKindOfClass:[NSString class]]) {
             if ([sender isKindOfClass:[UIButton class]]) {
@@ -90,6 +73,9 @@
             }
         }
     }];
+    vc.textColor = [UIColor magentaColor];
+//    vc.backViewColor = [UIColor lightGrayColor];
+    vc.scrollable = YES;
     [self presentViewController:vc animated:YES completion:^{
         
     }];

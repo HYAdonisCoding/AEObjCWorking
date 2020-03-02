@@ -39,6 +39,13 @@ typedef void(^AEPopSheetBlock)(NSInteger index, id object);
 /// @param completionHandler 回调
 - (instancetype)initWithSourceView:(UIView *)sourceView datas:(NSArray *)datas contentWidth: (CGFloat)contentWidth andDirection:(UIPopoverArrowDirection)direction completionHandler:(AEPopSheetBlock)completionHandler;
 
+/// 背景颜色 默认白色
+@property (nonatomic, strong) UIColor *backViewColor;
+/// 文字颜色 默认黑色
+@property (nonatomic, strong) UIColor *textColor;
+/// 是否可滚动 默认不可滚动
+@property (nonatomic, assign) BOOL scrollable;
+
 
 
 @end
