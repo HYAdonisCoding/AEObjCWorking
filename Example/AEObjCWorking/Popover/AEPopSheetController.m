@@ -17,6 +17,57 @@
 
 @implementation AEPopSheetController
 
+- (instancetype)initWithSourceView:(UIView *)sourceView datas:(NSArray *)datas contentWidth:(CGFloat)contentWidth andDirection:(UIPopoverArrowDirection)direction completionHandler:(AEPopSheetBlock)completionHandler {
+    CGSize size = CGSizeMake(contentWidth, 40*datas.count);
+    CGRect rect = CGRectMake(CGRectGetMidX(sourceView.bounds), CGRectGetMaxY(sourceView.bounds), 0, 5);
+    CGFloat height = [UIScreen mainScreen].bounds.size.height;
+    CGFloat width = [UIScreen mainScreen].bounds.size.width;
+    
+    /// 防止显示范围不够导致异常
+    if (direction == UIPopoverArrowDirectionUp && (height - CGRectGetMaxY(sourceView.frame)) < size.height && height != CGRectGetMaxY(sourceView.frame)) {
+        direction = UIPopoverArrowDirectionDown;
+        rect = CGRectMake(CGRectGetMidX(sourceView.bounds), CGRectGetMinY(sourceView.bounds), 0, -5);
+    } else if (direction == UIPopoverArrowDirectionDown && (height - CGRectGetMaxY(sourceView.frame)) > size.height && height != CGRectGetMaxY(sourceView.frame)) {
+        direction = UIPopoverArrowDirectionUp;
+        rect = CGRectMake(CGRectGetMidX(sourceView.bounds), CGRectGetMaxY(sourceView.bounds), 0, 5);
+    } else if (direction == UIPopoverArrowDirectionRight && (width - CGRectGetMaxX(sourceView.frame)) > size.width && width != CGRectGetMaxX(sourceView.frame)) {
+        direction = UIPopoverArrowDirectionLeft;
+        rect = CGRectMake(CGRectGetMaxX(sourceView.bounds), CGRectGetMidY(sourceView.bounds), 5, 0);
+    } else if (direction == UIPopoverArrowDirectionLeft && (width - CGRectGetMaxX(sourceView.frame)) < size.width && width != CGRectGetMaxX(sourceView.frame)) {
+        direction = UIPopoverArrowDirectionRight;
+        rect = CGRectMake(CGRectGetMinX(sourceView.bounds), CGRectGetMidY(sourceView.bounds), -5, 0);
+    }
+
+    switch (direction) {
+        case UIPopoverArrowDirectionUp:
+        {
+            rect = CGRectMake(CGRectGetMidX(sourceView.bounds), CGRectGetMaxY(sourceView.bounds), 0, 5);
+        }
+            break;
+        case UIPopoverArrowDirectionDown:
+        {
+            rect = CGRectMake(CGRectGetMidX(sourceView.bounds), CGRectGetMinY(sourceView.bounds), 0, -5);
+        }
+        case UIPopoverArrowDirectionLeft:
+            {
+                rect = CGRectMake(CGRectGetMaxX(sourceView.bounds), CGRectGetMidY(sourceView.bounds), 5, 0);
+            }
+            break;
+        case UIPopoverArrowDirectionRight:
+            {
+                rect = CGRectMake(CGRectGetMinX(sourceView.bounds), CGRectGetMidY(sourceView.bounds), -5, 0);
+            }
+            break;
+        default:
+            break;
+    }
+    self = [super initWithSourceView:sourceView bySourceRect:rect andContentSize:size andDirection:direction];
+    if (self) {
+        self.dataArray = datas;
+    }
+    return self;
+}
+
 #pragma mark -- Lazy Load
 - (UITableView *)tableView {
     if (!_tableView) {

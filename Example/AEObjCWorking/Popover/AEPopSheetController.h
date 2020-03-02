@@ -31,6 +31,16 @@ typedef void(^AEPopSheetBlock)(NSInteger index, id object);
 /// 回调
 @property (nonatomic, copy) AEPopSheetBlock block;
 
+/// 弹出的控制器 可根据目标视图位置自动判断左右及上下
+/// @param sourceView 目标视图
+/// @param datas 显示数据
+/// @param contentWidth 显示宽度
+/// @param direction 方向
+/// @param completionHandler 回调
+- (instancetype)initWithSourceView:(UIView *)sourceView datas:(NSArray *)datas contentWidth: (CGFloat)contentWidth andDirection:(UIPopoverArrowDirection)direction completionHandler:(AEPopSheetBlock)completionHandler;
+
+
+
 @end
 
 NS_ASSUME_NONNULL_END
