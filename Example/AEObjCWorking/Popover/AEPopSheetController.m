@@ -66,8 +66,11 @@ static CGFloat const space = 2;
     } else if (direction == UIPopoverArrowDirectionRight && right > size.width && width != CGRectGetMaxX(sourceView.frame)) {
         direction = UIPopoverArrowDirectionLeft;    } else if (direction == UIPopoverArrowDirectionLeft && left < size.width && width != CGRectGetMaxX(sourceView.frame)) {
         direction = UIPopoverArrowDirectionRight;
+    }  else if (direction == UIPopoverArrowDirectionRight && right > size.width && width != CGRectGetMaxX(sourceView.frame)) {
+            direction = UIPopoverArrowDirectionLeft;    } else if (direction == UIPopoverArrowDirectionLeft && left < size.width && width != CGRectGetMaxX(sourceView.frame)) {
+                direction = UIPopoverArrowDirectionRight;
     }
-
+            
     switch (direction) {
         case UIPopoverArrowDirectionUp:
         {
