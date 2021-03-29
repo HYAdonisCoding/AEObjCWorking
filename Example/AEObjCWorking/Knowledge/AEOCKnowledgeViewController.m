@@ -26,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.dataArray = @[@"AEReusePoolViewController", @"AEEventViewController"];
+    self.dataArray = @[@"AEReusePoolViewController", @"AEEventViewController",@"AEKVOViewController"];
     /// test
     BOOL ret1 = [[NSObject class] isKindOfClass:[NSObject class]];
     BOOL ret2 = [[NSObject class] isMemberOfClass:[NSObject class]];
