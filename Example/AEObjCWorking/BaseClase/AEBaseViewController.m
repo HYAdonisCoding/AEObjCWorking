@@ -24,6 +24,10 @@
 - (void)dealloc {
     NSLog(@"%@", self.class);
 }
+
+- (NSString *)testString {
+    return @"BaseViewController";
+}
 /*
 #pragma mark - Navigation
 

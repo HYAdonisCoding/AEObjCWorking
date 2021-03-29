@@ -25,15 +25,15 @@
     // Do any additional setup after loading the view.
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass([UITableViewCell class])];
+    
 }
-
 
 
 #pragma mark -- Lazy Load
 
 - (NSArray *)dataArray {
     if (!_dataArray) {
-        _dataArray = @[@"AEPopoverShowController",@"AEHTMLParsingController", @"AEIntelligentSortingController",@"AEDynamicCardController", @"AECustomOptioinController", @"AECustomOptioinViewController", @"AEMainTabBarController"];
+        _dataArray = @[@"AEPopoverShowController",@"AEHTMLParsingController", @"AEIntelligentSortingController",@"AEDynamicCardController", @"AECustomOptioinController", @"AECustomOptioinViewController", @"AEMainTabBarController",@"AEOCKnowledgeViewController"];
     }
     return _dataArray;
 }
