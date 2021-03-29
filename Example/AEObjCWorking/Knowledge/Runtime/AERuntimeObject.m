@@ -11,7 +11,7 @@
 
 @implementation AERuntimeObject
 
-void testImp(void)
+void testIMP(void)
 {
     NSLog(@"%@", @"invoke");
 }
@@ -20,7 +20,7 @@ void testImp(void)
     if (sel == @selector(test)) {
         NSLog(@"%@", @"");
         // 动态添加test方法的实现
-        class_addMethod(self, @selector(test), (IMP)testImp, "v@:");
+        class_addMethod(self, @selector(test), (IMP)testIMP, "v@:");
         return YES;
         //测试消息转发流程
 //        return NO;
