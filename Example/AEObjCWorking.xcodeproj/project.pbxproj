@@ -26,6 +26,8 @@
 		666CF0072611669D00BCDF1E /* AEReusePoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 666CF0062611669D00BCDF1E /* AEReusePoolViewController.m */; };
 		666CF00E261166DB00BCDF1E /* AEReusePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 666CF00D261166DB00BCDF1E /* AEReusePool.m */; };
 		666CF013261169B500BCDF1E /* AEIndexedTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 666CF012261169B500BCDF1E /* AEIndexedTableView.m */; };
+		666CF01B26117B0E00BCDF1E /* AEEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 666CF01A26117B0E00BCDF1E /* AEEventViewController.m */; };
+		666CF02226117B2B00BCDF1E /* AECustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 666CF02126117B2B00BCDF1E /* AECustomButton.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		7A44DE4C228A471F0078B6A0 /* NSString+AELabelWidthAndHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A44DE4B228A471F0078B6A0 /* NSString+AELabelWidthAndHeight.m */; };
 		7A44DE4F228A481A0078B6A0 /* UIFont+AEFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A44DE4E228A481A0078B6A0 /* UIFont+AEFonts.m */; };
@@ -106,6 +108,10 @@
 		666CF00D261166DB00BCDF1E /* AEReusePool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEReusePool.m; sourceTree = "<group>"; };
 		666CF011261169B500BCDF1E /* AEIndexedTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEIndexedTableView.h; sourceTree = "<group>"; };
 		666CF012261169B500BCDF1E /* AEIndexedTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEIndexedTableView.m; sourceTree = "<group>"; };
+		666CF01926117B0E00BCDF1E /* AEEventViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEEventViewController.h; sourceTree = "<group>"; };
+		666CF01A26117B0E00BCDF1E /* AEEventViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEEventViewController.m; sourceTree = "<group>"; };
+		666CF02026117B2B00BCDF1E /* AECustomButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AECustomButton.h; sourceTree = "<group>"; };
+		666CF02126117B2B00BCDF1E /* AECustomButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AECustomButton.m; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		799148480B939A5DDB5260BD /* Pods-AEObjCWorking_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AEObjCWorking_Example.debug.xcconfig"; path = "Target Support Files/Pods-AEObjCWorking_Example/Pods-AEObjCWorking_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		7A44DE4A228A471F0078B6A0 /* NSString+AELabelWidthAndHeight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+AELabelWidthAndHeight.h"; sourceTree = "<group>"; };
@@ -318,6 +324,7 @@
 		666CEFFF26115D6600BCDF1E /* Knowledge */ = {
 			isa = PBXGroup;
 			children = (
+				666CF01826117AF500BCDF1E /* Event */,
 				666CEFFA26115D5E00BCDF1E /* AEOCKnowledgeViewController.h */,
 				666CEFFB26115D5E00BCDF1E /* AEOCKnowledgeViewController.m */,
 				666CF0042611667B00BCDF1E /* ReusePool */,
@@ -336,6 +343,17 @@
 				666CF012261169B500BCDF1E /* AEIndexedTableView.m */,
 			);
 			path = ReusePool;
+			sourceTree = "<group>";
+		};
+		666CF01826117AF500BCDF1E /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				666CF01926117B0E00BCDF1E /* AEEventViewController.h */,
+				666CF01A26117B0E00BCDF1E /* AEEventViewController.m */,
+				666CF02026117B2B00BCDF1E /* AECustomButton.h */,
+				666CF02126117B2B00BCDF1E /* AECustomButton.m */,
+			);
+			path = Event;
 			sourceTree = "<group>";
 		};
 		7A44DE49228A46F30078B6A0 /* UI_Component */ = {
@@ -725,6 +743,7 @@
 				7A44DE4F228A481A0078B6A0 /* UIFont+AEFonts.m in Sources */,
 				7A6F9B6E24061A64006A923D /* XPathQuery.m in Sources */,
 				7A9CD79E22784703004E6D2A /* AECustomViewFlowLayout.m in Sources */,
+				666CF02226117B2B00BCDF1E /* AECustomButton.m in Sources */,
 				7A6F9B62240618BC006A923D /* AEHTMLParsingTool.m in Sources */,
 				7A76520A23F3CBD300A303DE /* AEIntelligentSortingController.m in Sources */,
 				666CEFFC26115D5E00BCDF1E /* AEOCKnowledgeViewController.m in Sources */,
@@ -745,6 +764,7 @@
 				666CF00E261166DB00BCDF1E /* AEReusePool.m in Sources */,
 				7A9CD79B22783AC9004E6D2A /* AEConvenientTool.m in Sources */,
 				666CF013261169B500BCDF1E /* AEIndexedTableView.m in Sources */,
+				666CF01B26117B0E00BCDF1E /* AEEventViewController.m in Sources */,
 				7A6E01F923C7124900D34AB6 /* AETabBarItem.m in Sources */,
 				7AEF4517240914540065B265 /* AEPopSheetController.m in Sources */,
 				7A77FC5323CDB2F9008E6F1A /* AETabBarButton.m in Sources */,
