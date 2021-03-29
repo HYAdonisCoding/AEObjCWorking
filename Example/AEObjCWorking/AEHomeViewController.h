@@ -10,7 +10,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AEHomeViewController : AEBaseViewController
+@interface AEHomeViewController : AEBaseViewController<UITableViewDelegate, UITableViewDataSource>
+/** 数据 */
+@property (nonatomic, copy) NSArray *dataArray;
+/** 页面 */
+@property (nonatomic, copy) NSArray *controllerArray;
+/** 列表 */
+@property (nonatomic, strong) UITableView *tableView;
 
 @end
 

@@ -23,6 +23,9 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		666CEFFC26115D5E00BCDF1E /* AEOCKnowledgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 666CEFFB26115D5E00BCDF1E /* AEOCKnowledgeViewController.m */; };
+		666CF0072611669D00BCDF1E /* AEReusePoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 666CF0062611669D00BCDF1E /* AEReusePoolViewController.m */; };
+		666CF00E261166DB00BCDF1E /* AEReusePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 666CF00D261166DB00BCDF1E /* AEReusePool.m */; };
+		666CF013261169B500BCDF1E /* AEIndexedTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 666CF012261169B500BCDF1E /* AEIndexedTableView.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		7A44DE4C228A471F0078B6A0 /* NSString+AELabelWidthAndHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A44DE4B228A471F0078B6A0 /* NSString+AELabelWidthAndHeight.m */; };
 		7A44DE4F228A481A0078B6A0 /* UIFont+AEFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A44DE4E228A481A0078B6A0 /* UIFont+AEFonts.m */; };
@@ -97,6 +100,12 @@
 		6407D1651B08F82B58F210B4 /* Pods_AEObjCWorking_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AEObjCWorking_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		666CEFFA26115D5E00BCDF1E /* AEOCKnowledgeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEOCKnowledgeViewController.h; sourceTree = "<group>"; };
 		666CEFFB26115D5E00BCDF1E /* AEOCKnowledgeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEOCKnowledgeViewController.m; sourceTree = "<group>"; };
+		666CF0052611669D00BCDF1E /* AEReusePoolViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEReusePoolViewController.h; sourceTree = "<group>"; };
+		666CF0062611669D00BCDF1E /* AEReusePoolViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEReusePoolViewController.m; sourceTree = "<group>"; };
+		666CF00C261166DB00BCDF1E /* AEReusePool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEReusePool.h; sourceTree = "<group>"; };
+		666CF00D261166DB00BCDF1E /* AEReusePool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEReusePool.m; sourceTree = "<group>"; };
+		666CF011261169B500BCDF1E /* AEIndexedTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEIndexedTableView.h; sourceTree = "<group>"; };
+		666CF012261169B500BCDF1E /* AEIndexedTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEIndexedTableView.m; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		799148480B939A5DDB5260BD /* Pods-AEObjCWorking_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AEObjCWorking_Example.debug.xcconfig"; path = "Target Support Files/Pods-AEObjCWorking_Example/Pods-AEObjCWorking_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		7A44DE4A228A471F0078B6A0 /* NSString+AELabelWidthAndHeight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+AELabelWidthAndHeight.h"; sourceTree = "<group>"; };
@@ -311,8 +320,22 @@
 			children = (
 				666CEFFA26115D5E00BCDF1E /* AEOCKnowledgeViewController.h */,
 				666CEFFB26115D5E00BCDF1E /* AEOCKnowledgeViewController.m */,
+				666CF0042611667B00BCDF1E /* ReusePool */,
 			);
 			path = Knowledge;
+			sourceTree = "<group>";
+		};
+		666CF0042611667B00BCDF1E /* ReusePool */ = {
+			isa = PBXGroup;
+			children = (
+				666CF0052611669D00BCDF1E /* AEReusePoolViewController.h */,
+				666CF0062611669D00BCDF1E /* AEReusePoolViewController.m */,
+				666CF00C261166DB00BCDF1E /* AEReusePool.h */,
+				666CF00D261166DB00BCDF1E /* AEReusePool.m */,
+				666CF011261169B500BCDF1E /* AEIndexedTableView.h */,
+				666CF012261169B500BCDF1E /* AEIndexedTableView.m */,
+			);
+			path = ReusePool;
 			sourceTree = "<group>";
 		};
 		7A44DE49228A46F30078B6A0 /* UI_Component */ = {
@@ -709,6 +732,7 @@
 				7AEF45142409131E0065B265 /* AEPopoverShowController.m in Sources */,
 				7A6F9B6D24061A64006A923D /* TFHppleElement.m in Sources */,
 				7A76520E23F3CCB400A303DE /* Goods.m in Sources */,
+				666CF0072611669D00BCDF1E /* AEReusePoolViewController.m in Sources */,
 				6003F59E195388D20070C39A /* AEAppDelegate.m in Sources */,
 				7AA0E93323C413040092DE5B /* AECardViewCCell.m in Sources */,
 				7AA0E93D23C462A90092DE5B /* AECardModel.m in Sources */,
@@ -718,7 +742,9 @@
 				6003F5A7195388D20070C39A /* AECustomOptioinController.m in Sources */,
 				7A52EB8D2278274F009BC207 /* AEBaseModel.m in Sources */,
 				7AA0E92D23C4125C0092DE5B /* AECardView.m in Sources */,
+				666CF00E261166DB00BCDF1E /* AEReusePool.m in Sources */,
 				7A9CD79B22783AC9004E6D2A /* AEConvenientTool.m in Sources */,
+				666CF013261169B500BCDF1E /* AEIndexedTableView.m in Sources */,
 				7A6E01F923C7124900D34AB6 /* AETabBarItem.m in Sources */,
 				7AEF4517240914540065B265 /* AEPopSheetController.m in Sources */,
 				7A77FC5323CDB2F9008E6F1A /* AETabBarButton.m in Sources */,

@@ -8,13 +8,7 @@
 
 #import "AEHomeViewController.h"
 
-@interface AEHomeViewController ()<UITableViewDelegate, UITableViewDataSource>
-/** 数据 */
-@property (nonatomic, copy) NSArray *dataArray;
-/** 页面 */
-@property (nonatomic, copy) NSArray *controllerArray;
-/** 列表 */
-@property (nonatomic, strong) UITableView *tableView;
+@interface AEHomeViewController ()
 
 @end
 
