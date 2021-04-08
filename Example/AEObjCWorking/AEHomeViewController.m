@@ -64,7 +64,9 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class]) forIndexPath:indexPath];
     NSString *string = self.dataArray[indexPath.row];
-    string = [string substringWithRange:NSMakeRange(2, string.length-12)];
+    if (string.length>14) {
+        string = [string substringWithRange:NSMakeRange(2, string.length-12)];
+    }
     cell.textLabel.text = string;
     return cell;
 }

@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AEMCBlock : AEBaseModel
 - (void)method;
+- (void)method1;
+- (void)method2;
 @end
 
 NS_ASSUME_NONNULL_END

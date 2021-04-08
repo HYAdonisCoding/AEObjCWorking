@@ -20,6 +20,20 @@
     // Do any additional setup after loading the view.
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"环境" style:(UIBarButtonItemStyleDone) target:self action:@selector(filter:)];
     
+    UITextField *textfield = [[UITextField alloc] initWithFrame:CGRectMake(100, 150, 100, 40)];
+    textfield.placeholder = @"请输入邮箱";
+    [self.view addSubview:textfield];
+    [textfield addTarget:self action:@selector(filter:) forControlEvents:(UIControlEventEditingChanged)];
+    UITextField *textfield2 = [[UITextField alloc] initWithFrame:CGRectMake(100, SCREEN_HEIGHT/2, 100, 40)];
+    textfield2.placeholder = @"请输入邮箱";
+    [self.view addSubview:textfield2];
+    [textfield2 addTarget:self action:@selector(filter:) forControlEvents:(UIControlEventEditingChanged)];
+    
+    UITextField *textfield1 = [[UITextField alloc] initWithFrame:CGRectMake(100, SCREEN_HEIGHT - 120, 100, 40)];
+    textfield1.placeholder = @"请输入邮箱";
+    [self.view addSubview:textfield1];
+    [textfield1 addTarget:self action:@selector(filter:) forControlEvents:(UIControlEventEditingChanged)];
+    
     UIButton *button = [UIButton buttonWithType:(UIButtonTypeCustom)];
     [button setTitle:@"环境" forState:(UIControlStateNormal)];
     [button setTitleColor:[UIColor magentaColor] forState:(UIControlStateNormal)];
@@ -60,8 +74,13 @@
         view = sender;
         rect = CGRectMake(CGRectGetMidX(view.bounds), CGRectGetMaxY(view.bounds), 0, 5);
     }
-    NSArray *data = @[@"测试", @"生产", @"渗透",
-                      @"小孙", @"豪哥", @"超超", @"阿潘", @"晓东", @"阿牛", @"小李", @"晓东", @"阿牛", @"小李", @"晓东", @"阿牛", @"小李", @"小菜", @"小争", @"小张", @"老大", @"二哥", @"三哥", @"燕三"
+    NSArray *data = @[@"@163.com",
+                      @"@126.com",
+                      @"@qq.com",
+                      @"@sina.com",
+                      @"@sina.com.cn",
+                      @"@sohu.com",
+                      @"@yahoo.com.cn"
     ];
     AEPopSheetController *vc = [[AEPopSheetController alloc] initWithSourceView:view datas:data contentWidth:120.f andDirection:(UIPopoverArrowDirectionLeft) completionHandler:^(NSInteger index, id  _Nonnull object) {
         NSLog(@"选中了 %d - %@", index, object);
@@ -70,6 +89,9 @@
                 [((UIButton *)sender) setTitle:(NSString *)object forState:(UIControlStateNormal)];
             } else if ([sender isKindOfClass:[UIBarButtonItem class]]) {
                 [((UIBarButtonItem *)sender) setTitle:(NSString *)object];
+            } else if ([sender isKindOfClass:[UITextField class]]) {
+                UITextField *text = sender;
+                text.text = [text.text stringByAppendingString:(NSString *)object];
             }
         }
     }];

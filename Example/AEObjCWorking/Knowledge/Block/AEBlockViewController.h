@@ -6,11 +6,11 @@
 //  Copyright © 2021 HYAdonisCoding. All rights reserved.
 //
 
-#import "AEBaseViewController.h"
+#import "AEHomeViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AEBlockViewController : AEBaseViewController
+@interface AEBlockViewController : AEHomeViewController
 
 @end
 

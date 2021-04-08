@@ -18,17 +18,35 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.dataArray = @[@"MCBlock", @"testBlock1", @"testBlock2", @"testBlock3"];
+
+    
+    
+}
+- (void)MCBlock{
     [[[AEMCBlock alloc] init] method];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)testBlock1 {
+    [[[AEMCBlock alloc] init] method1];
 }
-*/
+
+- (void)testBlock2 {
+    [[[AEMCBlock alloc] init] method2];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    NSString *method = self.dataArray[indexPath.row];
+    SEL sel = NSSelectorFromString(method);
+    if (sel && [self respondsToSelector:sel]) {
+        [self performSelector:sel];
+    } else {
+        // 没有这个方法
+        NSLog(@"%@ -- %@", @"没有这个方法", method);
+    }
+
+}
 
 @end
