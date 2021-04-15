@@ -9,7 +9,8 @@
 #import "AEArithmeticViewController.h"
 #import "AENormalArithmetic.h"
 #import "AEReverseList.h"
-
+#import "AEBaseView.h"
+#import "AECommonSuperFind.h"
 @interface AEArithmeticViewController ()
 
 @end
@@ -18,6 +19,45 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    AEBaseView *view1;
+    AEBaseView *view2;
+    AEBaseView *view3;
+    for (int i = 0; i < 11; i++) {
+        AEBaseView *view = [AEBaseView new];
+        view.backgroundColor = [UIColor yellowColor];
+        view.layer.borderWidth = 1;
+        view.frame = CGRectMake(10+i*10, 100+i*10, 100, 100);
+        if (i == 0) {
+            
+            [self.view addSubview:view];
+        } else {
+            [view3 addSubview:view];
+        }
+        view3 = view;
+        if (i == 9) {
+            view1 = view;
+        }
+    }
+    for (int i = 0; i < 11; i++) {
+        AEBaseView *view = [AEBaseView new];
+        view.backgroundColor = [UIColor greenColor];
+        view.layer.borderWidth = 1;
+        view.frame = CGRectMake(20-i*10, 100+i*10, 100, 100);
+        if (i == 0) {
+            
+            [self.view addSubview:view];
+        } else {
+            [view3 addSubview:view];
+        }
+        view3 = view;
+        if (i == 9) {
+            view2 = view;
+        }
+    }
+    AECommonSuperFind *find = [AECommonSuperFind new];
+    NSArray *resultArray = [find findCommonSuperView:view1 other:view2];
+    NSLog(@"resultArray- %lu: %@", (unsigned long)resultArray.count, resultArray);
+    
     // 无序数组查找中位数
     int list[10] = {12,3,10,8,6,7,11,13,9};
     // 3 6 7 8 9 10 11 12 13

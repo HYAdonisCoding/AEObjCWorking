@@ -27,6 +27,7 @@
 		661EF3602627DE43009E7037 /* AENormalArithmetic.m in Sources */ = {isa = PBXBuildFile; fileRef = 661EF35F2627DE43009E7037 /* AENormalArithmetic.m */; };
 		661EF3672627E1FD009E7037 /* AEArithmeticViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 661EF3662627E1FD009E7037 /* AEArithmeticViewController.m */; };
 		661EF3732627F665009E7037 /* AEReverseList.m in Sources */ = {isa = PBXBuildFile; fileRef = 661EF3722627F665009E7037 /* AEReverseList.m */; };
+		661EF37A26280D7A009E7037 /* AECommonSuperFind.m in Sources */ = {isa = PBXBuildFile; fileRef = 661EF37926280D7A009E7037 /* AECommonSuperFind.m */; };
 		666CEFFC26115D5E00BCDF1E /* AEOCKnowledgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 666CEFFB26115D5E00BCDF1E /* AEOCKnowledgeViewController.m */; };
 		666CF0072611669D00BCDF1E /* AEReusePoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 666CF0062611669D00BCDF1E /* AEReusePoolViewController.m */; };
 		666CF00E261166DB00BCDF1E /* AEReusePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 666CF00D261166DB00BCDF1E /* AEReusePool.m */; };
@@ -125,6 +126,8 @@
 		661EF3662627E1FD009E7037 /* AEArithmeticViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEArithmeticViewController.m; sourceTree = "<group>"; };
 		661EF3712627F665009E7037 /* AEReverseList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEReverseList.h; sourceTree = "<group>"; };
 		661EF3722627F665009E7037 /* AEReverseList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEReverseList.m; sourceTree = "<group>"; };
+		661EF37826280D7A009E7037 /* AECommonSuperFind.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AECommonSuperFind.h; sourceTree = "<group>"; };
+		661EF37926280D7A009E7037 /* AECommonSuperFind.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AECommonSuperFind.m; sourceTree = "<group>"; };
 		666CEFFA26115D5E00BCDF1E /* AEOCKnowledgeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEOCKnowledgeViewController.h; sourceTree = "<group>"; };
 		666CEFFB26115D5E00BCDF1E /* AEOCKnowledgeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEOCKnowledgeViewController.m; sourceTree = "<group>"; };
 		666CF0052611669D00BCDF1E /* AEReusePoolViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEReusePoolViewController.h; sourceTree = "<group>"; };
@@ -384,6 +387,8 @@
 				661EF35F2627DE43009E7037 /* AENormalArithmetic.m */,
 				661EF3712627F665009E7037 /* AEReverseList.h */,
 				661EF3722627F665009E7037 /* AEReverseList.m */,
+				661EF37826280D7A009E7037 /* AECommonSuperFind.h */,
+				661EF37926280D7A009E7037 /* AECommonSuperFind.m */,
 				661EF3652627E1FD009E7037 /* AEArithmeticViewController.h */,
 				661EF3662627E1FD009E7037 /* AEArithmeticViewController.m */,
 			);
@@ -883,6 +888,7 @@
 				7AEF45142409131E0065B265 /* AEPopoverShowController.m in Sources */,
 				666CF05E2611ADF100BCDF1E /* NSTimer+AEWeakTimer.m in Sources */,
 				666CF02B2611806700BCDF1E /* AEKVOViewController.m in Sources */,
+				661EF37A26280D7A009E7037 /* AECommonSuperFind.m in Sources */,
 				7A6F9B6D24061A64006A923D /* TFHppleElement.m in Sources */,
 				7A76520E23F3CCB400A303DE /* Goods.m in Sources */,
 				666CF0592611ADC100BCDF1E /* AEMemoryViewController.m in Sources */,
