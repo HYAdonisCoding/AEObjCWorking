@@ -22,6 +22,11 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
+		661EF3532627C588009E7037 /* AEBaseModel+AECategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 661EF3522627C588009E7037 /* AEBaseModel+AECategory.m */; };
+		661EF3582627C598009E7037 /* AEBaseModel+AECategoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 661EF3572627C598009E7037 /* AEBaseModel+AECategoryTest.m */; };
+		661EF3602627DE43009E7037 /* AENormalArithmetic.m in Sources */ = {isa = PBXBuildFile; fileRef = 661EF35F2627DE43009E7037 /* AENormalArithmetic.m */; };
+		661EF3672627E1FD009E7037 /* AEArithmeticViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 661EF3662627E1FD009E7037 /* AEArithmeticViewController.m */; };
+		661EF3732627F665009E7037 /* AEReverseList.m in Sources */ = {isa = PBXBuildFile; fileRef = 661EF3722627F665009E7037 /* AEReverseList.m */; };
 		666CEFFC26115D5E00BCDF1E /* AEOCKnowledgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 666CEFFB26115D5E00BCDF1E /* AEOCKnowledgeViewController.m */; };
 		666CF0072611669D00BCDF1E /* AEReusePoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 666CF0062611669D00BCDF1E /* AEReusePoolViewController.m */; };
 		666CF00E261166DB00BCDF1E /* AEReusePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 666CF00D261166DB00BCDF1E /* AEReusePool.m */; };
@@ -110,6 +115,16 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		6407D1651B08F82B58F210B4 /* Pods_AEObjCWorking_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AEObjCWorking_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		661EF3512627C588009E7037 /* AEBaseModel+AECategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AEBaseModel+AECategory.h"; sourceTree = "<group>"; };
+		661EF3522627C588009E7037 /* AEBaseModel+AECategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AEBaseModel+AECategory.m"; sourceTree = "<group>"; };
+		661EF3562627C598009E7037 /* AEBaseModel+AECategoryTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AEBaseModel+AECategoryTest.h"; sourceTree = "<group>"; };
+		661EF3572627C598009E7037 /* AEBaseModel+AECategoryTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AEBaseModel+AECategoryTest.m"; sourceTree = "<group>"; };
+		661EF35E2627DE43009E7037 /* AENormalArithmetic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AENormalArithmetic.h; sourceTree = "<group>"; };
+		661EF35F2627DE43009E7037 /* AENormalArithmetic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AENormalArithmetic.m; sourceTree = "<group>"; };
+		661EF3652627E1FD009E7037 /* AEArithmeticViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEArithmeticViewController.h; sourceTree = "<group>"; };
+		661EF3662627E1FD009E7037 /* AEArithmeticViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEArithmeticViewController.m; sourceTree = "<group>"; };
+		661EF3712627F665009E7037 /* AEReverseList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEReverseList.h; sourceTree = "<group>"; };
+		661EF3722627F665009E7037 /* AEReverseList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEReverseList.m; sourceTree = "<group>"; };
 		666CEFFA26115D5E00BCDF1E /* AEOCKnowledgeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEOCKnowledgeViewController.h; sourceTree = "<group>"; };
 		666CEFFB26115D5E00BCDF1E /* AEOCKnowledgeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEOCKnowledgeViewController.m; sourceTree = "<group>"; };
 		666CF0052611669D00BCDF1E /* AEReusePoolViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEReusePoolViewController.h; sourceTree = "<group>"; };
@@ -351,9 +366,35 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		661EF3502627C545009E7037 /* OC */ = {
+			isa = PBXGroup;
+			children = (
+				661EF3512627C588009E7037 /* AEBaseModel+AECategory.h */,
+				661EF3522627C588009E7037 /* AEBaseModel+AECategory.m */,
+				661EF3562627C598009E7037 /* AEBaseModel+AECategoryTest.h */,
+				661EF3572627C598009E7037 /* AEBaseModel+AECategoryTest.m */,
+			);
+			path = OC;
+			sourceTree = "<group>";
+		};
+		661EF35D2627DDA5009E7037 /* Arithmetic */ = {
+			isa = PBXGroup;
+			children = (
+				661EF35E2627DE43009E7037 /* AENormalArithmetic.h */,
+				661EF35F2627DE43009E7037 /* AENormalArithmetic.m */,
+				661EF3712627F665009E7037 /* AEReverseList.h */,
+				661EF3722627F665009E7037 /* AEReverseList.m */,
+				661EF3652627E1FD009E7037 /* AEArithmeticViewController.h */,
+				661EF3662627E1FD009E7037 /* AEArithmeticViewController.m */,
+			);
+			path = Arithmetic;
+			sourceTree = "<group>";
+		};
 		666CEFFF26115D6600BCDF1E /* Knowledge */ = {
 			isa = PBXGroup;
 			children = (
+				661EF35D2627DDA5009E7037 /* Arithmetic */,
+				661EF3502627C545009E7037 /* OC */,
 				666CEFFA26115D5E00BCDF1E /* AEOCKnowledgeViewController.h */,
 				666CEFFB26115D5E00BCDF1E /* AEOCKnowledgeViewController.m */,
 				666CF0632611B0FA00BCDF1E /* Block */,
@@ -819,11 +860,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				661EF3532627C588009E7037 /* AEBaseModel+AECategory.m in Sources */,
 				7A9CD794227833D7004E6D2A /* AECustomOptionModel.m in Sources */,
 				7A6F9B5F24061873006A923D /* AEHTMLParsingController.m in Sources */,
 				7AA0E92A23C4124B0092DE5B /* AEDynamicCardController.m in Sources */,
+				661EF3732627F665009E7037 /* AEReverseList.m in Sources */,
 				7A44DE4F228A481A0078B6A0 /* UIFont+AEFonts.m in Sources */,
 				666CF0302611808900BCDF1E /* AEMObject.m in Sources */,
+				661EF3672627E1FD009E7037 /* AEArithmeticViewController.m in Sources */,
 				7A6F9B6E24061A64006A923D /* XPathQuery.m in Sources */,
 				7A9CD79E22784703004E6D2A /* AECustomViewFlowLayout.m in Sources */,
 				666CF06D2611B34A00BCDF1E /* AEMCBlock.m in Sources */,
@@ -833,6 +877,7 @@
 				7A76520A23F3CBD300A303DE /* AEIntelligentSortingController.m in Sources */,
 				666CEFFC26115D5E00BCDF1E /* AEOCKnowledgeViewController.m in Sources */,
 				666CF0412611A02100BCDF1E /* AERuntimeObject.m in Sources */,
+				661EF3602627DE43009E7037 /* AENormalArithmetic.m in Sources */,
 				7A44DE4C228A471F0078B6A0 /* NSString+AELabelWidthAndHeight.m in Sources */,
 				666CF035261180BB00BCDF1E /* AEMObserver.m in Sources */,
 				7AEF45142409131E0065B265 /* AEPopoverShowController.m in Sources */,
@@ -850,6 +895,7 @@
 				7A9CD79722783544004E6D2A /* AECustomOptioinViewController.m in Sources */,
 				7A9CD791227830BE004E6D2A /* AEAECustomOptionCell.m in Sources */,
 				6003F5A7195388D20070C39A /* AECustomOptioinController.m in Sources */,
+				661EF3582627C598009E7037 /* AEBaseModel+AECategoryTest.m in Sources */,
 				7A52EB8D2278274F009BC207 /* AEBaseModel.m in Sources */,
 				7AA0E92D23C4125C0092DE5B /* AECardView.m in Sources */,
 				666CF0482611A03400BCDF1E /* AERuntimeViewController.m in Sources */,

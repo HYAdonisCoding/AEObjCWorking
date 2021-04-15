@@ -10,6 +10,9 @@
 #import <objc/runtime.h>
 
 @implementation AEBaseModel
+- (void)getSport {
+    NSLog(@"%@", @"AEBaseModel");
+}
 
 - (NSString *)getSelfPropertyAndValue {
     NSMutableString *string = [NSMutableString string];

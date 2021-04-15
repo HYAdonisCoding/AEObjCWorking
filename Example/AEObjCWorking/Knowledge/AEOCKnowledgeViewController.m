@@ -7,7 +7,8 @@
 //
 
 #import "AEOCKnowledgeViewController.h"
-
+#import "AEBaseModel+AECategory.h"
+#import "AEBaseModel+AECategoryTest.h"
 /// test
 @interface Sark : NSObject
 
@@ -26,7 +27,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.dataArray = @[@"AEBlockViewController",
+    self.dataArray = @[@"AEArithmeticViewController",
+                       @"AEBlockViewController",
                        @"AEMemoryViewController",
                        @"AEReusePoolViewController",
                        @"AEEventViewController",
@@ -47,6 +49,9 @@
     
     // 多线程
 //    [self thread];
+    
+    AEBaseModel *model = [AEBaseModel new];
+    [model getSport];
 }
 
 - (void)thread {

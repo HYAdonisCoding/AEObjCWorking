@@ -43,5 +43,15 @@ static int static_global_var = 5;
     
     NSLog(@"result is %d", Block(2));
 }
+- (void)method3 {
+    
+    static int multipier = 6;
+    int(^Block)(int) = ^(int num) {
+        return num*multipier;
+    };
+    multipier = 4;
+    
+    NSLog(@"result is %d", Block(2));
+}
 
 @end

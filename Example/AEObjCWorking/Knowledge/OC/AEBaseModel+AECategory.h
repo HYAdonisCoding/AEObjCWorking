@@ -1,8 +1,8 @@
 //
-//  AEMCBlock.h
+//  AEBaseModel+AECategory.h
 //  AEObjCWorking_Example
 //
-//  Created by Adam on 2021/3/29.
+//  Created by Adam on 2021/4/15.
 //  Copyright © 2021 HYAdonisCoding. All rights reserved.
 //
 
@@ -10,11 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AEMCBlock : AEBaseModel
-- (void)method;
-- (void)method1;
-- (void)method2;
-- (void)method3;
+@interface AEBaseModel (AECategory)
+- (void)getSport;
 @end
 
 NS_ASSUME_NONNULL_END

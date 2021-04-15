@@ -35,6 +35,10 @@
     [[[AEMCBlock alloc] init] method2];
 }
 
+- (void)testBlock3 {
+    [[[AEMCBlock alloc] init] method3];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
