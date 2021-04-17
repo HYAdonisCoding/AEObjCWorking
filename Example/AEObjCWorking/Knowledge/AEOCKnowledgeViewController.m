@@ -27,7 +27,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.dataArray = @[@"AEArithmeticViewController",
+    self.dataArray = @[@"AEGCDViewController",
+                       @"AEArithmeticViewController",
                        @"AEBlockViewController",
                        @"AEMemoryViewController",
                        @"AEReusePoolViewController",
