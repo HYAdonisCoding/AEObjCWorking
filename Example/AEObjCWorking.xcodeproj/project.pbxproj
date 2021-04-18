@@ -297,6 +297,13 @@
 			path = GCD;
 			sourceTree = "<group>";
 		};
+		0C2C0AC6262B1F950038859D /* DesignPatten */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DesignPatten;
+			sourceTree = "<group>";
+		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
@@ -427,6 +434,7 @@
 		666CEFFF26115D6600BCDF1E /* Knowledge */ = {
 			isa = PBXGroup;
 			children = (
+				0C2C0AC6262B1F950038859D /* DesignPatten */,
 				0C2C0AB2262B17050038859D /* GCD */,
 				0C2C0AA6262A7EF20038859D /* RunLoop */,
 				661EF35D2627DDA5009E7037 /* Arithmetic */,
