@@ -11,6 +11,8 @@
 		0C2C0AB5262B17290038859D /* AEGroupObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2C0AB4262B17290038859D /* AEGroupObject.m */; };
 		0C2C0ABC262B173A0038859D /* AEUserCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2C0ABB262B173A0038859D /* AEUserCenter.m */; };
 		0C2C0AC1262B1A7F0038859D /* AEGCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2C0AC0262B1A7F0038859D /* AEGCDViewController.m */; };
+		0CD128572635A75B0066F449 /* AEUnconventionalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD128562635A75B0066F449 /* AEUnconventionalViewController.m */; };
+		0CD1285E2635A7860066F449 /* AEScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD1285D2635A7860066F449 /* AEScrollViewController.m */; };
 		29416AB1E7CDF60B1F7C0E68 /* Pods_AEObjCWorking_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3248278C97182942419AF43 /* Pods_AEObjCWorking_Example.framework */; };
 		5106C988FC001BC4CF2FDCA1 /* Pods_AEObjCWorking_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6407D1651B08F82B58F210B4 /* Pods_AEObjCWorking_Tests.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -106,6 +108,10 @@
 		0C2C0ABB262B173A0038859D /* AEUserCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEUserCenter.m; sourceTree = "<group>"; };
 		0C2C0ABF262B1A7F0038859D /* AEGCDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEGCDViewController.h; sourceTree = "<group>"; };
 		0C2C0AC0262B1A7F0038859D /* AEGCDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEGCDViewController.m; sourceTree = "<group>"; };
+		0CD128552635A75B0066F449 /* AEUnconventionalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEUnconventionalViewController.h; sourceTree = "<group>"; };
+		0CD128562635A75B0066F449 /* AEUnconventionalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEUnconventionalViewController.m; sourceTree = "<group>"; };
+		0CD1285C2635A7860066F449 /* AEScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEScrollViewController.h; sourceTree = "<group>"; };
+		0CD1285D2635A7860066F449 /* AEScrollViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEScrollViewController.m; sourceTree = "<group>"; };
 		3B8F5098F45FE6165059236E /* Pods-AEObjCWorking_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AEObjCWorking_Example.release.xcconfig"; path = "Target Support Files/Pods-AEObjCWorking_Example/Pods-AEObjCWorking_Example.release.xcconfig"; sourceTree = "<group>"; };
 		5E941048C9C5F30874F6C1D2 /* AEObjCWorking.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AEObjCWorking.podspec; path = ../AEObjCWorking.podspec; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* AEObjCWorking_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AEObjCWorking_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -307,6 +313,17 @@
 			path = DesignPatten;
 			sourceTree = "<group>";
 		};
+		0CD128542635A7280066F449 /* Unconventional */ = {
+			isa = PBXGroup;
+			children = (
+				0CD128552635A75B0066F449 /* AEUnconventionalViewController.h */,
+				0CD128562635A75B0066F449 /* AEUnconventionalViewController.m */,
+				0CD1285C2635A7860066F449 /* AEScrollViewController.h */,
+				0CD1285D2635A7860066F449 /* AEScrollViewController.m */,
+			);
+			path = Unconventional;
+			sourceTree = "<group>";
+		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
@@ -345,6 +362,7 @@
 		6003F593195388D20070C39A /* Example for AEObjCWorking */ = {
 			isa = PBXGroup;
 			children = (
+				0CD128542635A7280066F449 /* Unconventional */,
 				666CEFFF26115D6600BCDF1E /* Knowledge */,
 				7AEF450E240912830065B265 /* Popover */,
 				7A6F9B5C2406183F006A923D /* HTMLParsing */,
@@ -938,6 +956,7 @@
 				7A6F9B6D24061A64006A923D /* TFHppleElement.m in Sources */,
 				7A76520E23F3CCB400A303DE /* Goods.m in Sources */,
 				666CF0592611ADC100BCDF1E /* AEMemoryViewController.m in Sources */,
+				0CD1285E2635A7860066F449 /* AEScrollViewController.m in Sources */,
 				666CF0072611669D00BCDF1E /* AEReusePoolViewController.m in Sources */,
 				6003F59E195388D20070C39A /* AEAppDelegate.m in Sources */,
 				666CF0662611B11C00BCDF1E /* AEBlockViewController.m in Sources */,
@@ -950,6 +969,7 @@
 				661EF3582627C598009E7037 /* AEBaseModel+AECategoryTest.m in Sources */,
 				7A52EB8D2278274F009BC207 /* AEBaseModel.m in Sources */,
 				7AA0E92D23C4125C0092DE5B /* AECardView.m in Sources */,
+				0CD128572635A75B0066F449 /* AEUnconventionalViewController.m in Sources */,
 				666CF0482611A03400BCDF1E /* AERuntimeViewController.m in Sources */,
 				666CF00E261166DB00BCDF1E /* AEReusePool.m in Sources */,
 				7A9CD79B22783AC9004E6D2A /* AEConvenientTool.m in Sources */,
