@@ -1133,9 +1133,9 @@
 				INFOPLIST_FILE = "AEObjCWorking/AEObjCWorking-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = com.cebbank.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cebbank.test.AEObjCWorking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "ccccfk-test-development";
+				PROVISIONING_PROFILE_SPECIFIER = "Test*_dev_20200730";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1159,9 +1159,9 @@
 				INFOPLIST_FILE = "AEObjCWorking/AEObjCWorking-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = com.cebbank.test;
+				PRODUCT_BUNDLE_IDENTIFIER = m.cebbank.test.AEObjCWorking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "ccccfk-test-development";
+				PROVISIONING_PROFILE_SPECIFIER = "Test*_dev_20200730";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
