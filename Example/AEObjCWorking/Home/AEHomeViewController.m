@@ -27,7 +27,8 @@
 
 - (NSArray *)dataArray {
     if (!_dataArray) {
-        _dataArray = @[@"AEUnconventionalViewController",
+        _dataArray = @[@"AEPlistViewController",
+                       @"AEUnconventionalViewController",
                        @"AEOCKnowledgeViewController",
                        @"AEPopoverShowController",
                        @"AEHTMLParsingController",

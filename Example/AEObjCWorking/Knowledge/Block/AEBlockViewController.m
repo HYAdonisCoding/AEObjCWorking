@@ -18,7 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.dataArray = @[@"MCBlock", @"testBlock1", @"testBlock2", @"testBlock3"];
+    self.dataArray = @[@"MCBlock",
+                       @"testBlock1",
+                       @"testBlock2",
+                       @"testBlock3",
+                       @"testBlock4"];
 
     
     
@@ -37,6 +41,19 @@
 
 - (void)testBlock3 {
     [[[AEMCBlock alloc] init] method3];
+}
+
+- (void)testBlock4 {
+
+    __block NSMutableArray *mArray = @[@"iPhone"].mutableCopy;
+    int(^Myblock)(int num) = ^(int num) {
+        [mArray addObject:@"iPhone X"];
+        NSLog(@"mArray:%@",  mArray);
+        return num*(int)mArray.count;
+    };
+    
+    
+    NSLog(@"%d\nmArray:%@", Myblock(2), mArray);
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
