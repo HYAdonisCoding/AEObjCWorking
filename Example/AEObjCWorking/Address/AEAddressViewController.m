@@ -8,6 +8,7 @@
 
 #import "AEAddressViewController.h"
 #import "AEAddressSelectView.h"
+#import "AEAddressSelectViewController.h"
 
 @interface AEAddressViewController ()
 /// <#DESC#>
@@ -29,21 +30,36 @@
     [self.aButton addTarget:self action:@selector(selectAddress:) forControlEvents:(UIControlEventTouchUpInside)];
     self.aButton.frame = CGRectMake(0, 100, SCREEN_WIDTH, 200);
     [self.view addSubview:self.aButton];
-    [self.view addSubview:[self.aView initAddressView]];
+    
+//    [self.view addSubview:[self.aView initAddressView]];
 }
 
 - (void)selectAddress:(UIButton *)btn {
-    if ([btn.currentTitle isEqualToString:@"请选择"]) {
-        self.aView.isChangeAddress = NO;
-    } else {
-        self.aView.isChangeAddress = YES;
-    }
+//    if ([btn.currentTitle isEqualToString:@"请选择"]) {
+//        self.aView.isChangeAddress = NO;
+//    } else {
+//        self.aView.isChangeAddress = YES;
+//    }
+//
+//    WK(weakSelf);
+//    [self.aView addAnimateCompationHandler:^(NSString * _Nullable titleAddress, NSString * _Nullable titleID) {
+//        if (titleAddress.length > 0) {
+//            [weakSelf.aButton setTitle:titleAddress forState:(UIControlStateNormal)];
+//        }
+//    }];
     
     WK(weakSelf);
-    [self.aView addAnimateCompationHandler:^(NSString * _Nullable titleAddress, NSString * _Nullable titleID) {
+    AEAddressSelectViewController *vc = [AEAddressSelectViewController standardLocationViewWithProvince:@"" city:@"" district:@"" completionHandler:^(NSString * _Nullable titleAddress, NSString * _Nullable titleID) {
         if (titleAddress.length > 0) {
             [weakSelf.aButton setTitle:titleAddress forState:(UIControlStateNormal)];
         }
+    }];
+    //全屏幕覆盖
+//   vc.modalPresentationStyle = UIModalPresentationOverCurrentContext|UIModalPresentationFullScreen;
+//   //设置弹出动画：淡入淡出
+//    vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve; 
+    [self presentViewController:vc animated:YES completion:^{
+            //
     }];
 }
 

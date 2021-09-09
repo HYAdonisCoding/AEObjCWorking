@@ -483,7 +483,10 @@
     if (self.tableViewMarr.count >= addressID){
         UITableView* tableView1   = self.tableViewMarr[addressID - 1];
         [tableView1 reloadData];
-        [tableView1 layoutIfNeeded];
+        /// 防止报错 UITableView was told to layout its visible cells and other contents without being in the view hierarchy (the table view or one of its superviews has not been added to a window). 
+        if (tableView1.window != nil) {
+            [tableView1 layoutIfNeeded];
+        }
         if (self.isChangeAddress == true){
             //保证列表刷新之后才进行滚动处理
             dispatch_async(dispatch_get_main_queue(), ^{

@@ -8,7 +8,7 @@
 
 #import "AEBaseViewController.h"
 
-typedef void(^HYChooseLocationBlock)(NSString * _Nonnull address, NSString * _Nonnull province, NSString *  _Nonnull city, NSString * _Nonnull district, NSString * _Nullable adcode);
+#import "AEAddressSelectView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param city 已选择市
 /// @param district 已选择区
 /// @param chooseLocationBlock 选择完成回调
-+ (instancetype)standardLocationViewWithProvince:(NSString *)province city:(NSString *)city district:(NSString *)district completionHandler:(HYChooseLocationBlock)chooseLocationBlock;
++ (instancetype)standardLocationViewWithProvince:(NSString *)province city:(NSString *)city district:(NSString *)district completionHandler:(AEAddressSelectBlock)chooseLocationBlock;
 
 @end
 
