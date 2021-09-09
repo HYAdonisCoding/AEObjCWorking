@@ -18,6 +18,8 @@
 #import <YYModel/YYModel.h>
 
 #import "AEConvenientTool.h"
+#import "UIFont+AEFonts.h"
+#import "UIColor+AECategory.h"
 
 
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
