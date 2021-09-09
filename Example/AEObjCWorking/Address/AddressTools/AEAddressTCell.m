@@ -13,14 +13,14 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         // 昵称
-       self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 0, 30, 40)];
-        self.nameLabel.font = [UIFont systemFontOfSize:13];
-        self.nameLabel.textColor = UIColor.grayColor;
+       self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 0, SCREEN_WIDTH - 40, 40)];
+        self.nameLabel.font = [UIFont systemFontOfSize:14];
+        self.nameLabel.textColor = AddressGray;
         [self addSubview:self.nameLabel];
-        self.imageIcon = [[UIImageView alloc] init];
-        self.imageIcon.image  = [UIImage imageNamed:@"right"];
-        [self.imageIcon setHidden: true];
-        [self addSubview:self.imageIcon];
+//        self.imageIcon = [[UIImageView alloc] init];
+//        self.imageIcon.image  = [UIImage imageNamed:@"right"];
+//        [self.imageIcon setHidden: true];
+//        [self addSubview:self.imageIcon];
     }
     
     return self;

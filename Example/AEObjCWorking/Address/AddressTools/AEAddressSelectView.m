@@ -37,63 +37,63 @@
 
 @implementation AEAddressSelectView
 
--(NSMutableArray *)titleBtns
+- (NSMutableArray *)titleBtns
 {
     if (_titleBtns == nil) {
         _titleBtns = [[NSMutableArray alloc]init];
     }
     return _titleBtns;
 }
--(NSMutableArray *)titleMarr
+- (NSMutableArray *)titleMarr
 {
     if (_titleMarr == nil) {
         _titleMarr = [[NSMutableArray alloc]init];
     }
     return _titleMarr;
 }
--(NSMutableArray *)tableViewMarr
+- (NSMutableArray *)tableViewMarr
 {
     if (_tableViewMarr == nil) {
         _tableViewMarr = [[NSMutableArray alloc]init];
     }
     return _tableViewMarr;
 }
--(NSMutableArray *)titleIDMarr
+- (NSMutableArray *)titleIDMarr
 {
     if (_titleIDMarr == nil) {
         _titleIDMarr = [[NSMutableArray alloc]init];
     }
     return _titleIDMarr;
 }
--(NSMutableArray *)provinceMarr
+- (NSMutableArray *)provinceMarr
 {
     if (_provinceMarr == nil) {
         _provinceMarr = [[NSMutableArray alloc]init];
     }
     return _provinceMarr;
 }
--(NSMutableArray *)cityMarr
+- (NSMutableArray *)cityMarr
 {
     if (_cityMarr == nil) {
         _cityMarr = [[NSMutableArray alloc]init];
     }
     return _cityMarr;
 }
--(NSMutableArray *)countyMarr
+- (NSMutableArray *)countyMarr
 {
     if (_countyMarr == nil) {
         _countyMarr = [[NSMutableArray alloc]init];
     }
     return _countyMarr;
 }
--(NSMutableArray *)townMarr
+- (NSMutableArray *)townMarr
 {
     if (_townMarr == nil) {
         _townMarr = [[NSMutableArray alloc]init];
     }
     return _townMarr;
 }
--(UIView *)initAddressView{
+- (UIView *)initAddressView{
     //初始化本地数据（如果是网络请求请注释掉-----
     NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"location" ofType:@"txt"];
     NSString *string = [[NSString alloc] initWithContentsOfFile:imagePath encoding:NSUTF8StringEncoding error:nil];
@@ -114,15 +114,24 @@
     UILabel * titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(40, 10, screen_width - 80, 30)];
     titleLabel.text = _title;
     titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.textColor = [UIColor grayColor];
+    titleLabel.textColor = [UIColor colorWithString:@"#000000"];
     titleLabel.font = [UIFont systemFontOfSize:17];
     [self.addAddressView addSubview:titleLabel];
     UIButton *cancelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    cancelBtn.frame =CGRectMake(CGRectGetMaxX(self.addAddressView.frame) - 40, 10, 30, 30);
+    cancelBtn.frame = CGRectMake(20, 10, 30, 30);
     cancelBtn.tag = 1;
-    [cancelBtn setImage:[UIImage imageNamed:@"cancel"] forState:UIControlStateNormal];
+    [cancelBtn setImage:[UIImage imageNamed:@"icon_back"] forState:UIControlStateNormal];
     [cancelBtn addTarget:self action:@selector(tapBtnAndcancelBtnClick) forControlEvents:UIControlEventTouchUpInside];
     [self.addAddressView addSubview:cancelBtn];
+    
+    UIButton *ensureBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    ensureBtn.frame = CGRectMake(CGRectGetMaxX(self.addAddressView.frame) - 40, 10, 30, 30);
+    ensureBtn.tag = 1;
+    [ensureBtn setTitleColor:[UIColor colorWithString:@"#7E38D2"] forState:(UIControlStateNormal)];
+    [ensureBtn setTitle:@"确定" forState:(UIControlStateNormal)];
+    ensureBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    [ensureBtn addTarget:self action:@selector(tapBtnAndcancelBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.addAddressView addSubview:ensureBtn];
     
     [self addTableViewAndTitle:0];
     //1.添加标题滚动视图
@@ -133,13 +142,13 @@
     self.hidden = YES;
     return self;
 }
--(void)addAnimate{
+- (void)addAnimate{
     self.hidden = NO;
     [UIView animateWithDuration:0.2 animations:^{
         self.addAddressView.frame = CGRectMake(0, screen_height - self.defaultHeight, screen_width, self.defaultHeight);
     }];
 }
--(void)tapBtnAndcancelBtnClick{
+- (void)tapBtnAndcancelBtnClick{
     self.hidden = NO;
     [UIView animateWithDuration:0.2 animations:^{
          self.addAddressView.frame = CGRectMake(0, screen_height, screen_width, 200);
@@ -167,16 +176,16 @@
         [self.delegate1 cancelBtnClick:titleAddress titleID:titleID];
     }];
 }
--(void)setupTitleScrollView{
+- (void)setupTitleScrollView{
     //TitleScrollView和分割线
     self.titleScrollView = [[UIScrollView alloc]init];
     self.titleScrollView.frame = CGRectMake(0, 50, screen_width, _titleScrollViewH);
     [self.addAddressView addSubview:self.titleScrollView];
     UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.titleScrollView.frame), screen_width, 0.5)];
-    lineView.backgroundColor = [UIColor grayColor];
+    lineView.backgroundColor = [UIColor colorWithString:@"#F2F2F2"];
     [self.addAddressView addSubview:(lineView)];
 }
--(void)setupContentScrollView{
+- (void)setupContentScrollView{
     //ContentScrollView
     CGFloat y  =  CGRectGetMaxY(self.titleScrollView.frame) + 1;
      self.contentScrollView = [[UIScrollView alloc]init];
@@ -186,14 +195,14 @@
     self.contentScrollView.pagingEnabled = YES;
     self.contentScrollView.bounces = NO;
 }
--(void)setupAllTitle:(NSInteger)selectId{
+- (void)setupAllTitle:(NSInteger)selectId{
     for ( UIView * view in [self.titleScrollView subviews]) {
          [view removeFromSuperview];
     }
     [self.titleBtns removeAllObjects];
     CGFloat btnH = self.titleScrollViewH;
     _lineLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 1, 1)];
-    _lineLabel.backgroundColor = [UIColor redColor];
+    _lineLabel.backgroundColor = [UIColor colorWithString:@"#7E38D2"];
     [self.titleScrollView addSubview:(_lineLabel)];
     CGFloat x = 10;
     for (int i = 0; i < self.titleMarr.count ; i++) {
@@ -203,15 +212,19 @@
         [titleBtn setTitle:title forState:UIControlStateNormal];
         titleBtn.tag = i;
         [titleBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-         [titleBtn setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
+//         [titleBtn setTitleColor:[UIColor colorWithString:@"#333333"] forState:UIControlStateSelected];
+        
         titleBtn.selected = NO;
         titleBtn.frame = CGRectMake(x, 0, titlelenth, btnH);
         x  = titlelenth + 10 + x;
-        [titleBtn.titleLabel setFont:[UIFont systemFontOfSize:13.0]];
+        
         [titleBtn addTarget:self action:@selector(titleBtnClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.titleBtns addObject:titleBtn];
         if (i == selectId) {
             [self titleBtnClick:titleBtn];
+            [titleBtn.titleLabel setFont:[UIFont boldSystemFontOfSize:14.0]];
+        } else {
+            [titleBtn.titleLabel setFont:[UIFont systemFontOfSize:14.0]];
         }
         [self.titleScrollView addSubview:(titleBtn)];
         self.titleScrollView.contentSize =CGSizeMake(x, 0);
@@ -220,7 +233,7 @@
         self.contentScrollView.showsHorizontalScrollIndicator = NO;
     }
 }
--(void)titleBtnClick:(UIButton *)titleBtn{
+- (void)titleBtnClick:(UIButton *)titleBtn{
     self.radioBtn.selected = NO;
     titleBtn.selected = YES;
     [self setupOneTableView:titleBtn.tag];
@@ -232,7 +245,7 @@
     self.radioBtn = titleBtn;
     self.isclick = YES;
     }
--(void)setupOneTableView:(NSInteger)btnTag{
+- (void)setupOneTableView:(NSInteger)btnTag{
     UITableView  * contentView= self.tableViewMarr[btnTag];
     if  (btnTag == 0) {
         [self getAddressMessageDataAddressID:1 provinceIdOrCityId:0];
@@ -246,7 +259,7 @@
     contentView.dataSource = self;
     [self.contentScrollView addSubview:(contentView)];
 }
--(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     NSInteger leftI  = scrollView.contentOffset.x / screen_width;
     if (scrollView.contentOffset.x / screen_width != leftI){
         self.isclick = NO;
@@ -258,10 +271,10 @@
         }
     }
 }
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (tableView.tag == 0) {
         return self.provinceMarr.count;
     }
@@ -308,24 +321,24 @@
         NSInteger  pcctId  =  [self.titleIDMarr[tableView.tag] integerValue];
         if (self.PCCTID == pcctId){
             [cell.nameLabel setTextColor:[UIColor colorWithString:@"#7E38D2"]];
-            [cell.imageIcon setHidden:false];
+//            [cell.imageIcon setHidden:false];
             if (self.isChangeAddress == true){
                 [self tableView:tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
             }
         }
         else{
-            [cell.nameLabel setTextColor:UIColor.grayColor];
-            [cell.imageIcon setHidden:true];
+            [cell.nameLabel setTextColor:AddressGray];
+//            [cell.imageIcon setHidden:true];
         }
     }
-    CGSize sizeNew = [cell.nameLabel.text sizeWithAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:13]}];
+//    CGSize sizeNew = [cell.nameLabel.text sizeWithAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:14]}];
     // 重新设置frame
-    cell.nameLabel.frame = CGRectMake(20, 0, sizeNew.width, 40);
-    cell.imageIcon.frame = CGRectMake(20 + sizeNew.width + 5, 25/2, 15, 15);
+//    cell.nameLabel.frame = CGRectMake(20, 0, sizeNew.width, 40);
+//    cell.imageIcon.frame = CGRectMake(20 + sizeNew.width + 5, 25/2, 15, 15);
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (self.isChangeAddress == false) {
         //先刷新当前选中的tableView
         UITableView * tableView1   = self.tableViewMarr[tableView.tag];
@@ -391,17 +404,17 @@
         }
         [self setupAllTitle:tableView.tag];
         if (self.isChangeAddress == false){
-            [self tapBtnAndcancelBtnClick];
+//            [self tapBtnAndcancelBtnClick];
         }
         else{
             self.isChangeAddress = false;
         }
     }
 }
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return  40;
 }
--(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
 {
     if ([NSStringFromClass(touch.view.classForCoder) isEqualToString: @"UITableViewCellContentView"] || touch.view == self.addAddressView || touch.view == self.titleScrollView) {
         return NO;
@@ -409,7 +422,7 @@
     return YES;
 }
 //添加tableView和title
--(void)addTableViewAndTitle:(NSInteger)tableViewTag{
+- (void)addTableViewAndTitle:(NSInteger)tableViewTag{
     UITableView * tableView2 = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, screen_width, 200) style:UITableViewStylePlain];
     tableView2.separatorStyle = UITableViewCellSeparatorStyleNone;
     [tableView2 registerClass:[AEAddressTCell class] forCellReuseIdentifier:@"AddressAdministerCellIdentifier"];
@@ -418,7 +431,7 @@
     [self.titleMarr addObject:@"请选择"];
 }
 //改变title
--(void)changeTitle:(NSInteger)replaceTitleMarrIndex{
+- (void)changeTitle:(NSInteger)replaceTitleMarrIndex{
     [self.titleMarr replaceObjectAtIndex:replaceTitleMarrIndex withObject:@"请选择"];
     NSInteger index = [self.titleMarr indexOfObject:@"请选择"];
     NSInteger count = self.titleMarr.count;
@@ -428,7 +441,7 @@
     [self.tableViewMarr removeObjectsInRange:NSMakeRange(loc, range - 1)];
 }
 //移除多余的title和tableView,收回选择器
--(void)removeTitleAndTableViewCancel:(NSInteger)index{
+- (void)removeTitleAndTableViewCancel:(NSInteger)index{
     NSInteger indexAddOne = index + 1;
     NSInteger indexsubOne = index - 1;
     if (self.tableViewMarr.count >= indexAddOne){
@@ -444,7 +457,7 @@
     }
 }
 //本地数据
--(void)getAddressMessageDataAddressID:(NSInteger)addressID  provinceIdOrCityId: (NSString *)provinceIdOrCityId{
+- (void)getAddressMessageDataAddressID:(NSInteger)addressID  provinceIdOrCityId: (NSString *)provinceIdOrCityId{
     if (addressID == 1) {
         [self caseProvinceArr:_resultArr];
     }
@@ -472,7 +485,7 @@
         }
     }
 }
--(void)caseProvinceArr:(NSArray *)provinceArr{
+- (void)caseProvinceArr:(NSArray *)provinceArr{
     [self.provinceMarr removeAllObjects];
     NSInteger j = -1;
     if (provinceArr.count > 0){
@@ -502,7 +515,7 @@
         }
     }
 }
--(void)caseCityArr:(NSArray *)cityArr withSelectedID:(NSString *)selectedID{
+- (void)caseCityArr:(NSArray *)cityArr withSelectedID:(NSString *)selectedID{
     BOOL isAddress = NO;
     [self.cityMarr removeAllObjects];
     NSInteger j = -1;
@@ -539,7 +552,7 @@
         self.isChangeAddress = false;
     }
 }
--(void)caseCountyArr:(NSArray *)countyArr withSelectedID:(NSString *)selectedID{
+- (void)caseCountyArr:(NSArray *)countyArr withSelectedID:(NSString *)selectedID{
     [self.countyMarr removeAllObjects];
     BOOL isAddress = NO;
     NSInteger j = -1;
@@ -576,7 +589,7 @@
         self.isChangeAddress = false;
     }
 }
--(void)caseTownArr:(NSArray *)countyArr withSelectedID:(NSString *)selectedID{
+- (void)caseTownArr:(NSArray *)countyArr withSelectedID:(NSString *)selectedID{
     [self.townMarr removeAllObjects];
     NSInteger j = -1;
     for (NSDictionary *dic in countyArr) {
@@ -609,7 +622,7 @@
     }
 }
 //(以下注释部分是网络请求)
-//-(void)getAddressMessageDataAddressID:(NSInteger)addressID  provinceIdOrCityId: (NSString *)provinceIdOrCityId{
+//- (void)getAddressMessageDataAddressID:(NSInteger)addressID  provinceIdOrCityId: (NSString *)provinceIdOrCityId{
 //        NSString * addressUrl = [[NSString alloc]init];
 //        NSDictionary *parameters = [[NSDictionary alloc]init];
 //        NSString * UserID = [[NSString alloc]initWithFormat:@"%ld",self.userID];
@@ -681,7 +694,7 @@
 //          NSLog(@"网络请求失败");
 //    }];
 //}
-//-(void)caseProvinceArr:(NSArray *)provinceArr{
+//- (void)caseProvinceArr:(NSArray *)provinceArr{
 //    if (provinceArr.count > 0){
 //        [self.provinceMarr removeAllObjects];
 //        for (int i = 0; i < provinceArr.count; i++) {
@@ -693,7 +706,7 @@
 //        [self tapBtnAndcancelBtnClick];
 //    }
 //}
-//-(void)caseCityArr:(NSArray *)cityArr{
+//- (void)caseCityArr:(NSArray *)cityArr{
 //    if (cityArr.count > 0){
 //        [self.cityMarr removeAllObjects];
 //        for (int i = 0; i < cityArr.count; i++) {
@@ -715,7 +728,7 @@
 //    }
 //}
 //
-//-(void)caseCountyArr:(NSArray *)countyArr{
+//- (void)caseCountyArr:(NSArray *)countyArr{
 //    if (countyArr.count > 0){
 //        [self.countyMarr removeAllObjects];
 //        for (int i = 0; i < countyArr.count; i++) {
@@ -737,7 +750,7 @@
 //    }
 //}
 //
-//-(void)caseTownArr:(NSArray *)townArr{
+//- (void)caseTownArr:(NSArray *)townArr{
 //    if (townArr.count > 0){
 //        [self.townMarr removeAllObjects];
 //        for (int i = 0; i < townArr.count; i++) {
