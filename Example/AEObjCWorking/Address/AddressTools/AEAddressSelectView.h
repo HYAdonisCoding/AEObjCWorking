@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^AEAddressSelectBlock)(NSString * _Nullable titleAddress, NSString * _Nullable titleID);
+
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol  AEAddressSelectViewDelegate <NSObject>
@@ -16,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AEAddressSelectView : UIView
 
-@property(nonatomic, weak) id<AEAddressSelectViewDelegate>delegate1;
+@property(nonatomic, weak) id<AEAddressSelectViewDelegate> delegate;
 
 @property(nonatomic, assign) NSUInteger defaultHeight;
 
@@ -33,6 +35,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (UIView *)initAddressView;
 
 - (void)addAnimate;
+
+- (void)addAnimateCompationHandler:(AEAddressSelectBlock)compationHandler;
 
 @end
 

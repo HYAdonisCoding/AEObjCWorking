@@ -39,8 +39,12 @@
         self.aView.isChangeAddress = YES;
     }
     
-    
-    [self.aView addAnimate];
+    WK(weakSelf);
+    [self.aView addAnimateCompationHandler:^(NSString * _Nullable titleAddress, NSString * _Nullable titleID) {
+        if (titleAddress.length > 0) {
+            [weakSelf.aButton setTitle:titleAddress forState:(UIControlStateNormal)];
+        }
+    }];
 }
 
 
@@ -48,7 +52,7 @@
     if (!_aView) {
         _aView = [[AEAddressSelectView alloc] init];
         _aView.title = @"请选择所在地区";
-//        _aView.delegate1 = self;
+//        _aView.delegate = self;
         _aView.defaultHeight = SCREEN_HEIGHT*0.72;
         _aView.titleScrollViewH = 37;
     }

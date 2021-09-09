@@ -32,6 +32,8 @@
 @property(nonatomic,strong)NSArray *resultArr;//本地数组
 @property(nonatomic,assign)NSInteger PCCTID;
 @property(nonatomic,assign)NSInteger scroolToRow; //确定在更改地址的时候能滚到对应的位置请求到下一级
+/// 回调
+@property (nonatomic, copy) AEAddressSelectBlock addressSelectBlock;
 
 @end
 
@@ -148,6 +150,10 @@
         self.addAddressView.frame = CGRectMake(0, screen_height - self.defaultHeight, screen_width, self.defaultHeight);
     }];
 }
+- (void)addAnimateCompationHandler:(AEAddressSelectBlock)compationHandler {
+    self.addressSelectBlock = compationHandler;
+    [self addAnimate];
+}
 - (void)tapBtnAndcancelBtnClick{
     self.hidden = NO;
     [UIView animateWithDuration:0.2 animations:^{
@@ -173,7 +179,11 @@
                 [titleID appendString:[[NSString alloc]initWithFormat:@"%@ =",self.titleIDMarr[i]]];
             }
         }
-        [self.delegate1 cancelBtnClick:titleAddress titleID:titleID];
+        [self.delegate cancelBtnClick:titleAddress titleID:titleID];
+        
+        if (self.addressSelectBlock) {
+            self.addressSelectBlock(titleAddress, titleID);
+        }
     }];
 }
 - (void)setupTitleScrollView{

@@ -7,8 +7,23 @@
 //
 
 #import "AEAddressSelectViewController.h"
+#import "AEAddressSelectView.h"
 
 @interface AEAddressSelectViewController ()
+/// 回调
+@property (nonatomic, copy) HYChooseLocationBlock chooseLocationBlock;
+
+/// 标题
+@property (nonatomic, copy) NSString *centerTitle;
+
+@property (nonatomic, copy) NSString * address;
+
+@property (nonatomic,strong) NSMutableArray * tableViews;//有几个tableView
+
+@property (nonatomic,strong) NSArray * dataSouce;
+
+/// <#DESC#>
+@property (nonatomic, strong) AEAddressSelectView *addressSelectView;
 
 @end
 
@@ -17,16 +32,40 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self.view addSubview:[self.addressSelectView initAddressView]];
+    
+    [self.addressSelectView addAnimateCompationHandler:^(NSString * _Nullable titleAddress, NSString * _Nullable titleID) {
+        if (titleAddress.length > 0) {
+            
+        }
+    }];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
++ (instancetype)standardLocationViewWithProvince:(NSString *)province city:(NSString *)city district:(NSString *)district completionHandler:(HYChooseLocationBlock)chooseLocationBlock {
+    AEAddressSelectViewController *vc = [[self alloc] init];
+    
+    vc.centerTitle = @"城市地区选择";
+    vc.chooseLocationBlock = chooseLocationBlock;
+//    vc.province = province;
+//    vc.city = city;
+//    vc.district = district;
+    
+    return vc;
+    
 }
-*/
+
+
+- (AEAddressSelectView *)addressSelectView {
+    if (!_addressSelectView) {
+        _addressSelectView = [[AEAddressSelectView alloc] init];
+        _addressSelectView.title = @"请选择所在地区";
+//        _aView.delegate = self;
+        _addressSelectView.defaultHeight = SCREEN_HEIGHT*0.72;
+        _addressSelectView.titleScrollViewH = 37;
+    }
+    
+    return _addressSelectView;
+}
 
 @end
