@@ -18,6 +18,11 @@
 
 @property (nonatomic, copy) NSString * address;
 
+@property (nonatomic, copy) NSString * province;
+@property (nonatomic, copy) NSString * city;
+@property (nonatomic, copy) NSString * district;
+
+
 @property (nonatomic,strong) NSMutableArray * tableViews;//有几个tableView
 
 @property (nonatomic,strong) NSArray * dataSouce;
@@ -37,6 +42,13 @@
 
 
 - (void)show {
+    self.addressSelectView.title = self.centerTitle;
+    if (self.city.length > 0) {
+        NSArray *arr = [[self.city stringByReplacingOccurrencesOfString:@" " withString:@""] componentsSeparatedByString:@"="];
+        self.addressSelectView.titleIDMarr = arr.mutableCopy;
+        self.addressSelectView.isChangeAddress = YES;
+    }
+
     [self.view addSubview:[self.addressSelectView initAddressView]];
     
     WK(weakSelf);
@@ -52,10 +64,22 @@
     }];
 }
 
+- (instancetype)initWithTitle:(NSString *)title province:(NSString *)province city:(NSString *)city district:(NSString *)district {
+    self = [super init];
+    if (self) {
+        self.centerTitle = title;
+        self.province = province;
+        self.city = city;
+        self.district = district;
+        self.modalPresentationStyle = UIModalPresentationOverFullScreen;
+        self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        self.view.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.4];
+    }
+    return self;
+}
+
 + (instancetype)standardLocationViewWithProvince:(NSString *)province city:(NSString *)city district:(NSString *)district completionHandler:(AEAddressSelectBlock)chooseLocationBlock {
-    AEAddressSelectViewController *vc = [[self alloc] init];
-    
-    vc.centerTitle = @"请选择所在地区";
+    AEAddressSelectViewController *vc = [[self alloc] initWithTitle:@"请选择所在地区" province:province city:city district:district];
     vc.chooseLocationBlock = chooseLocationBlock;
 
     
@@ -77,7 +101,6 @@
 - (AEAddressSelectView *)addressSelectView {
     if (!_addressSelectView) {
         _addressSelectView = [[AEAddressSelectView alloc] init];
-        _addressSelectView.title = self.centerTitle;
 //        _aView.delegate = self;
         _addressSelectView.defaultHeight = SCREEN_HEIGHT*0.72;
         _addressSelectView.titleScrollViewH = 37;

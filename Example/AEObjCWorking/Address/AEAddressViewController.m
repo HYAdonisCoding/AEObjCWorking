@@ -49,9 +49,20 @@
 //    }];
     
     WK(weakSelf);
-    AEAddressSelectViewController *vc = [AEAddressSelectViewController standardLocationViewWithProvince:@"" city:@"" district:@"" completionHandler:^(NSString * _Nullable titleAddress, NSString * _Nullable titleID) {
+    NSString * titleAddress, *titleID;
+        if ([btn.currentTitle isEqualToString:@"请选择"]) {
+            self.aView.isChangeAddress = NO;
+        } else {
+            self.aView.isChangeAddress = YES;
+            NSArray *arr = [btn.currentTitle componentsSeparatedByString:@"\n"];
+            if (arr.count > 1) {
+                titleAddress = arr[0];
+                titleID = arr[1];
+            }
+        }
+    AEAddressSelectViewController *vc = [AEAddressSelectViewController standardLocationViewWithProvince:titleAddress city:titleID district:@"" completionHandler:^(NSString * _Nullable titleAddress, NSString * _Nullable titleID) {
         if (titleAddress.length > 0) {
-            [weakSelf.aButton setTitle:titleAddress forState:(UIControlStateNormal)];
+            [weakSelf.aButton setTitle:[titleAddress stringByAppendingFormat:@"\n%@", titleID] forState:(UIControlStateNormal)];
         }
     }];
     //全屏幕覆盖

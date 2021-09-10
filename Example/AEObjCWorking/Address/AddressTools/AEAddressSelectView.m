@@ -16,22 +16,25 @@
 #define screen_height [UIScreen mainScreen].bounds.size.height
 
 @interface AEAddressSelectView ()<UIScrollViewDelegate,UIGestureRecognizerDelegate,UITableViewDelegate,UITableViewDataSource>
-@property(nonatomic,strong)UIScrollView *titleScrollView;
-@property(nonatomic,strong)UIScrollView *contentScrollView;
-@property(nonatomic,strong)UIButton *radioBtn;
-@property(nonatomic,strong)NSMutableArray *titleBtns;
-@property(nonatomic,strong)NSMutableArray *titleMarr;
-@property(nonatomic,strong)NSMutableArray *tableViewMarr;
-@property(nonatomic,strong)UILabel *lineLabel;
-@property(nonatomic,assign)BOOL isInitalize;
-@property(nonatomic,assign)BOOL isclick; //判断是滚动还是点击
-@property(nonatomic,strong)NSMutableArray *provinceMarr;//省
-@property(nonatomic,strong)NSMutableArray *cityMarr;//市
-@property(nonatomic,strong)NSMutableArray *countyMarr;//县
-@property(nonatomic,strong)NSMutableArray *townMarr;//乡
-@property(nonatomic,strong)NSArray *resultArr;//本地数组
-@property(nonatomic,assign)NSInteger PCCTID;
-@property(nonatomic,assign)NSInteger scroolToRow; //确定在更改地址的时候能滚到对应的位置请求到下一级
+/// 标题
+@property (nonatomic, strong) UILabel *titleLabel;
+
+@property (nonatomic, strong) UIScrollView *titleScrollView;
+@property (nonatomic, strong) UIScrollView *contentScrollView;
+@property (nonatomic, strong) UIButton *radioBtn;
+@property (nonatomic, strong) NSMutableArray *titleBtns;
+@property (nonatomic, strong) NSMutableArray *titleMarr;
+@property (nonatomic, strong) NSMutableArray *tableViewMarr;
+@property (nonatomic, strong) UILabel *lineLabel;
+@property (nonatomic, assign) BOOL isInitalize;
+@property (nonatomic, assign) BOOL isclick; //判断是滚动还是点击
+@property (nonatomic, strong) NSMutableArray *provinceMarr;//省
+@property (nonatomic, strong) NSMutableArray *cityMarr;//市
+@property (nonatomic, strong) NSMutableArray *countyMarr;//县
+@property (nonatomic, strong) NSMutableArray *townMarr;//乡
+@property (nonatomic, strong) NSArray *resultArr;//本地数组
+@property (nonatomic, assign) NSInteger PCCTID;
+@property (nonatomic, assign) NSInteger scroolToRow; //确定在更改地址的时候能滚到对应的位置请求到下一级
 /// 回调
 @property (nonatomic, copy) AEAddressSelectBlock addressSelectBlock;
 
@@ -39,63 +42,8 @@
 
 @implementation AEAddressSelectView
 
-- (NSMutableArray *)titleBtns
-{
-    if (_titleBtns == nil) {
-        _titleBtns = [[NSMutableArray alloc]init];
-    }
-    return _titleBtns;
-}
-- (NSMutableArray *)titleMarr
-{
-    if (_titleMarr == nil) {
-        _titleMarr = [[NSMutableArray alloc]init];
-    }
-    return _titleMarr;
-}
-- (NSMutableArray *)tableViewMarr
-{
-    if (_tableViewMarr == nil) {
-        _tableViewMarr = [[NSMutableArray alloc]init];
-    }
-    return _tableViewMarr;
-}
-- (NSMutableArray *)titleIDMarr
-{
-    if (_titleIDMarr == nil) {
-        _titleIDMarr = [[NSMutableArray alloc]init];
-    }
-    return _titleIDMarr;
-}
-- (NSMutableArray *)provinceMarr
-{
-    if (_provinceMarr == nil) {
-        _provinceMarr = [[NSMutableArray alloc]init];
-    }
-    return _provinceMarr;
-}
-- (NSMutableArray *)cityMarr
-{
-    if (_cityMarr == nil) {
-        _cityMarr = [[NSMutableArray alloc]init];
-    }
-    return _cityMarr;
-}
-- (NSMutableArray *)countyMarr
-{
-    if (_countyMarr == nil) {
-        _countyMarr = [[NSMutableArray alloc]init];
-    }
-    return _countyMarr;
-}
-- (NSMutableArray *)townMarr
-{
-    if (_townMarr == nil) {
-        _townMarr = [[NSMutableArray alloc]init];
-    }
-    return _townMarr;
-}
-- (UIView *)initAddressView{
+
+- (UIView *)initAddressView {
     //初始化本地数据（如果是网络请求请注释掉-----
     NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"location" ofType:@"txt"];
     NSString *string = [[NSString alloc] initWithContentsOfFile:imagePath encoding:NSUTF8StringEncoding error:nil];
@@ -113,12 +61,14 @@
     self.addAddressView.frame = CGRectMake(0, screen_height, screen_width, _defaultHeight);
     self.addAddressView.backgroundColor = [UIColor whiteColor];
     [self addSubview:self.addAddressView];
-    UILabel * titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(40, 10, screen_width - 80, 30)];
+    UILabel * titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(50, 10, screen_width - 100, 30)];
     titleLabel.text = _title;
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.textColor = [UIColor colorWithString:@"#000000"];
     titleLabel.font = [UIFont systemFontOfSize:17];
     [self.addAddressView addSubview:titleLabel];
+    self.titleLabel = titleLabel;
+    
     UIButton *cancelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     cancelBtn.frame = CGRectMake(20, 10, 30, 30);
     cancelBtn.tag = 1;
@@ -133,6 +83,7 @@
     [ensureBtn setTitle:@"确定" forState:(UIControlStateNormal)];
     ensureBtn.titleLabel.font = [UIFont systemFontOfSize:14];
     [ensureBtn addTarget:self action:@selector(tapBtnAndcancelBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    
     [self.addAddressView addSubview:ensureBtn];
     
     [self addTableViewAndTitle:0];
@@ -191,8 +142,8 @@
     self.titleScrollView = [[UIScrollView alloc]init];
     self.titleScrollView.frame = CGRectMake(0, 50, screen_width, _titleScrollViewH);
     [self.addAddressView addSubview:self.titleScrollView];
-    UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.titleScrollView.frame), screen_width, 0.5)];
-    lineView.backgroundColor = [UIColor colorWithString:@"#F2F2F2"];
+    UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.titleLabel.frame)+5, screen_width, 0.5)];
+    lineView.backgroundColor = AddressGray;//[UIColor colorWithString:@"#F2F2F2"];
     [self.addAddressView addSubview:(lineView)];
 }
 - (void)setupContentScrollView{
@@ -784,5 +735,66 @@
 //        [self removeTitleAndTableViewCancel:3];
 //    }
 //}
+- (void)setTitle:(NSString *)title {
+    _title = title;
+    self.titleLabel.text = title;
+}
 
+#pragma mark - Lazy Load
+- (NSMutableArray *)titleBtns
+{
+    if (_titleBtns == nil) {
+        _titleBtns = [[NSMutableArray alloc]init];
+    }
+    return _titleBtns;
+}
+- (NSMutableArray *)titleMarr
+{
+    if (_titleMarr == nil) {
+        _titleMarr = [[NSMutableArray alloc]init];
+    }
+    return _titleMarr;
+}
+- (NSMutableArray *)tableViewMarr
+{
+    if (_tableViewMarr == nil) {
+        _tableViewMarr = [[NSMutableArray alloc]init];
+    }
+    return _tableViewMarr;
+}
+- (NSMutableArray *)titleIDMarr
+{
+    if (_titleIDMarr == nil) {
+        _titleIDMarr = [[NSMutableArray alloc]init];
+    }
+    return _titleIDMarr;
+}
+- (NSMutableArray *)provinceMarr
+{
+    if (_provinceMarr == nil) {
+        _provinceMarr = [[NSMutableArray alloc]init];
+    }
+    return _provinceMarr;
+}
+- (NSMutableArray *)cityMarr
+{
+    if (_cityMarr == nil) {
+        _cityMarr = [[NSMutableArray alloc]init];
+    }
+    return _cityMarr;
+}
+- (NSMutableArray *)countyMarr
+{
+    if (_countyMarr == nil) {
+        _countyMarr = [[NSMutableArray alloc]init];
+    }
+    return _countyMarr;
+}
+- (NSMutableArray *)townMarr
+{
+    if (_townMarr == nil) {
+        _townMarr = [[NSMutableArray alloc]init];
+    }
+    return _townMarr;
+}
 @end

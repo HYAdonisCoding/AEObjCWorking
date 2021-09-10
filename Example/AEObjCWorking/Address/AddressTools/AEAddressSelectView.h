@@ -18,19 +18,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AEAddressSelectView : UIView
 
-@property(nonatomic, weak) id<AEAddressSelectViewDelegate> delegate;
+@property (nonatomic, weak) id<AEAddressSelectViewDelegate> delegate;
 
-@property(nonatomic, assign) NSUInteger defaultHeight;
+@property (nonatomic, assign) NSUInteger defaultHeight;
 
-@property(nonatomic, assign) CGFloat titleScrollViewH;
+@property (nonatomic, assign) CGFloat titleScrollViewH;
 
-@property(nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *title;
 
-@property(nonatomic, strong) NSMutableArray *titleIDMarr;
+@property (nonatomic, strong) NSMutableArray *titleIDMarr;
 
-@property(nonatomic, strong) UIView *addAddressView;
+@property (nonatomic, strong) UIView *addAddressView;
 
-@property(nonatomic, assign) BOOL isChangeAddress; //这个属性如果是新增地址的时候设置成false
+@property (nonatomic, assign) BOOL isChangeAddress; //这个属性如果是新增地址的时候设置成false
 
 - (UIView *)initAddressView;
 
