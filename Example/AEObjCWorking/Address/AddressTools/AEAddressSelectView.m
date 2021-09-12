@@ -44,9 +44,10 @@
 
 - (UIView *)initAddressView {
     //初始化本地数据（如果是网络请求请注释掉-----
-//    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"location" ofType:@"txt"];
-
-    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"Address" ofType:@"txt"];
+    /// 直辖市分2级  Address
+//    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"Address" ofType:@"txt"];
+    /// 直辖市分3级  Address1
+    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"Address1" ofType:@"txt"];
 
     NSString *string = [[NSString alloc] initWithContentsOfFile:imagePath encoding:NSUTF8StringEncoding error:nil];
     NSData * resData = [[NSData alloc]initWithData:[string dataUsingEncoding:NSUTF8StringEncoding]];
