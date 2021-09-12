@@ -32,7 +32,6 @@
 		6604B74226E9DC8E00D9BA56 /* AEAddressSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6604B74126E9DC8C00D9BA56 /* AEAddressSelectViewController.m */; };
 		6604B74526E9DCD500D9BA56 /* AEAddressTCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6604B74426E9DCD500D9BA56 /* AEAddressTCell.m */; };
 		6604B74826E9DDF600D9BA56 /* AEAddressSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6604B74726E9DDF600D9BA56 /* AEAddressSelectView.m */; };
-		6604B74A26E9DE8C00D9BA56 /* location.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6604B74926E9DE8C00D9BA56 /* location.txt */; };
 		6604B74D26E9DEF100D9BA56 /* AEAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6604B74C26E9DEF100D9BA56 /* AEAddressModel.m */; };
 		661EF3532627C588009E7037 /* AEBaseModel+AECategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 661EF3522627C588009E7037 /* AEBaseModel+AECategory.m */; };
 		661EF3582627C598009E7037 /* AEBaseModel+AECategoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 661EF3572627C598009E7037 /* AEBaseModel+AECategoryTest.m */; };
@@ -60,6 +59,7 @@
 		666CF05E2611ADF100BCDF1E /* NSTimer+AEWeakTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 666CF05D2611ADF100BCDF1E /* NSTimer+AEWeakTimer.m */; };
 		666CF0662611B11C00BCDF1E /* AEBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 666CF0652611B11C00BCDF1E /* AEBlockViewController.m */; };
 		666CF06D2611B34A00BCDF1E /* AEMCBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 666CF06C2611B34A00BCDF1E /* AEMCBlock.m */; };
+		666D7CE226EDE34F00CC131B /* Address.txt in Resources */ = {isa = PBXBuildFile; fileRef = 666D7CE126EDE34F00CC131B /* Address.txt */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		7A44DE4C228A471F0078B6A0 /* NSString+AELabelWidthAndHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A44DE4B228A471F0078B6A0 /* NSString+AELabelWidthAndHeight.m */; };
 		7A44DE4F228A481A0078B6A0 /* UIFont+AEFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A44DE4E228A481A0078B6A0 /* UIFont+AEFonts.m */; };
@@ -152,7 +152,6 @@
 		6604B74426E9DCD500D9BA56 /* AEAddressTCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEAddressTCell.m; sourceTree = "<group>"; };
 		6604B74626E9DDF600D9BA56 /* AEAddressSelectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEAddressSelectView.h; sourceTree = "<group>"; };
 		6604B74726E9DDF600D9BA56 /* AEAddressSelectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEAddressSelectView.m; sourceTree = "<group>"; };
-		6604B74926E9DE8C00D9BA56 /* location.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = location.txt; sourceTree = "<group>"; };
 		6604B74B26E9DEF100D9BA56 /* AEAddressModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEAddressModel.h; sourceTree = "<group>"; };
 		6604B74C26E9DEF100D9BA56 /* AEAddressModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEAddressModel.m; sourceTree = "<group>"; };
 		661EF3512627C588009E7037 /* AEBaseModel+AECategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AEBaseModel+AECategory.h"; sourceTree = "<group>"; };
@@ -206,6 +205,7 @@
 		666CF0652611B11C00BCDF1E /* AEBlockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEBlockViewController.m; sourceTree = "<group>"; };
 		666CF06B2611B34A00BCDF1E /* AEMCBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEMCBlock.h; sourceTree = "<group>"; };
 		666CF06C2611B34A00BCDF1E /* AEMCBlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEMCBlock.m; sourceTree = "<group>"; };
+		666D7CE126EDE34F00CC131B /* Address.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Address.txt; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		799148480B939A5DDB5260BD /* Pods-AEObjCWorking_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AEObjCWorking_Example.debug.xcconfig"; path = "Target Support Files/Pods-AEObjCWorking_Example/Pods-AEObjCWorking_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		7A44DE4A228A471F0078B6A0 /* NSString+AELabelWidthAndHeight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+AELabelWidthAndHeight.h"; sourceTree = "<group>"; };
@@ -457,7 +457,7 @@
 		6604B73C26E9A84C00D9BA56 /* AddressTools */ = {
 			isa = PBXGroup;
 			children = (
-				6604B74926E9DE8C00D9BA56 /* location.txt */,
+				666D7CE126EDE34F00CC131B /* Address.txt */,
 				6604B74026E9DC8C00D9BA56 /* AEAddressSelectViewController.h */,
 				6604B74126E9DC8C00D9BA56 /* AEAddressSelectViewController.m */,
 				6604B74626E9DDF600D9BA56 /* AEAddressSelectView.h */,
@@ -906,12 +906,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A6F9B7024061B1C006A923D /* index.html in Resources */,
-				6604B74A26E9DE8C00D9BA56 /* location.txt in Resources */,
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 				663F593D26B8DDF000B92C3A /* AEDataPropertyList.plist in Resources */,
+				666D7CE226EDE34F00CC131B /* Address.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

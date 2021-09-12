@@ -11,6 +11,19 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AEAddressModel : NSObject
+/// 编码
+@property (nonatomic, copy) NSString *code;
+/// 名称
+@property (nonatomic, copy) NSString *area;
+
+// 辖区列表 只有省编码说明是市,既有省编码又有市编码说明是区
+/// 辖区列表
+@property (nonatomic, strong) NSArray<AEAddressModel *> *list;
+/// 省编码
+@property (nonatomic, copy) NSString * pCode;
+/// 市编码
+@property (nonatomic, copy) NSString * cCode;
+
 
 @end
 
