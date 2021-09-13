@@ -12,10 +12,12 @@
 //设备物理尺寸
 #define screen_width [UIScreen mainScreen].bounds.size.width
 #define screen_height [UIScreen mainScreen].bounds.size.height
-
+#define kPlaceChoose @"请选择"
 @interface AEAddressSelectView ()<UIScrollViewDelegate,UIGestureRecognizerDelegate,UITableViewDelegate,UITableViewDataSource>
 /// 标题
 @property (nonatomic, strong) UILabel *titleLabel;
+/// 背景视图
+@property (nonatomic, strong) UIView *addAddressView;
 
 @property (nonatomic, strong) UIScrollView *titleScrollView;
 @property (nonatomic, strong) UIScrollView *contentScrollView;
@@ -51,12 +53,11 @@
 
     NSString *string = [[NSString alloc] initWithContentsOfFile:imagePath encoding:NSUTF8StringEncoding error:nil];
     NSData * resData = [[NSData alloc]initWithData:[string dataUsingEncoding:NSUTF8StringEncoding]];
-//    _resultArr = [NSJSONSerialization JSONObjectWithData:resData options:NSJSONReadingMutableLeaves error:nil];
     _resultArr = [NSArray yy_modelArrayWithClass:[AEAddressModel class] json:[NSJSONSerialization JSONObjectWithData:resData options:NSJSONReadingMutableLeaves error:nil]];
     //------到这里
     self.frame = CGRectMake(0, 0, screen_width, screen_height);
     self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.4];
-//    self.hidden = YES;
+    self.hidden = YES;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapBtnAndcancelBtnClick)];
     tap.delegate = self;
     [self addGestureRecognizer:tap];
@@ -96,7 +97,7 @@
     //2.添加内容滚动视图
     [self setupContentScrollView];
     [self setupAllTitle:0];
-    self.hidden = YES;
+//    self.hidden = YES;
     return self;
 }
 - (void)addAnimate{
@@ -119,7 +120,7 @@
         NSMutableString * titleID = [[NSMutableString alloc]init];
         NSInteger  count = 0;
         NSString * str = self.titleMarr[self.titleMarr.count - 1];
-        if ([str isEqualToString:@"请选择"]) {
+        if ([str isEqualToString:kPlaceChoose]) {
             count = self.titleMarr.count - 1;
         }
         else{
@@ -154,7 +155,13 @@
     //ContentScrollView
     CGFloat y  =  CGRectGetMaxY(self.titleScrollView.frame) + 1;
      self.contentScrollView = [[UIScrollView alloc]init];
-    self.contentScrollView.frame = CGRectMake(0, y, screen_width, self.defaultHeight - y);
+    CGFloat bottom = 0;
+    if (@available(iOS 11.0, *)) {
+        bottom = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bottom;
+    } else {
+        // Fallback on earlier versions
+    }
+    self.contentScrollView.frame = CGRectMake(0, y, screen_width, self.defaultHeight - y - bottom);
     [self.addAddressView addSubview:self.contentScrollView];
     self.contentScrollView.delegate = self;
     self.contentScrollView.pagingEnabled = YES;
@@ -275,24 +282,24 @@
         model = self.countyMarr[indexPath.row];
         cell.nameLabel.text = model.area;
     }
-    else if (tableView.tag == 3){
-        model  = self.townMarr[indexPath.row];
-        cell.nameLabel.text = model.area;
-    }
+//    else if (tableView.tag == 3){
+//        model  = self.townMarr[indexPath.row];
+//        cell.nameLabel.text = model.area;
+//    }
     self.PCCTID = model.code.integerValue;
 
     if (self.titleIDMarr.count > tableView.tag){
         NSInteger  pcctId  =  [self.titleIDMarr[tableView.tag] integerValue];
         if (self.PCCTID == pcctId){
             [cell.nameLabel setTextColor:[UIColor colorWithString:@"#7E38D2"]];
-//            [cell.imageIcon setHidden:false];
-            if (self.isChangeAddress == true){
+//            [cell.imageIcon setHidden:NO];
+            if (self.isChangeAddress == YES){
                 [self tableView:tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
             }
         }
         else{
             [cell.nameLabel setTextColor:AddressGray];
-//            [cell.imageIcon setHidden:true];
+//            [cell.imageIcon setHidden:YES];
         }
     }
 //    CGSize sizeNew = [cell.nameLabel.text sizeWithAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:14]}];
@@ -303,76 +310,47 @@
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (self.isChangeAddress == false) {
+    if (self.isChangeAddress == NO) {
         //先刷新当前选中的tableView
         UITableView * tableView1   = self.tableViewMarr[tableView.tag];
         [tableView1 reloadData];
     }
     AEAddressModel *model;
-    if (tableView.tag == 0 || tableView.tag == 1){
-        if (tableView.tag == 0){
+    
+    switch (tableView.tag) {
+        case 0:
             model = self.provinceMarr[indexPath.row];
-            NSString *provinceID = model.code;
-            //1. 修改选中ID
-            if (self.titleIDMarr.count > 0){
-                [self.titleIDMarr replaceObjectAtIndex:tableView.tag withObject:provinceID];
-            }
-            else{
-                [self.titleIDMarr addObject:provinceID];
-            }
-            //2.修改标题
-              [self.titleMarr replaceObjectAtIndex:tableView.tag withObject:model.area];
-            //请求网络 添加市区
-            [self getAddressMessageDataAddressID:2 provinceIdOrCityId:provinceID];
-        }
-        else if (tableView.tag == 1){
+            break;
+        case 1:
             model = self.cityMarr[indexPath.row];
-            NSString * cityID = model.code;
-             [self.titleMarr replaceObjectAtIndex:tableView.tag withObject:model.area];
-            //1. 修改选中ID
-            if (self.titleIDMarr.count > 1){
-                [self.titleIDMarr replaceObjectAtIndex:tableView.tag withObject:cityID];
-            }
-            else{
-                 [self.titleIDMarr addObject:cityID];
-            }
-            //网络请求，添加县城
-            [self getAddressMessageDataAddressID:3 provinceIdOrCityId:cityID];
-        }
-        
+            break;
+        case 2:
+            model = self.countyMarr[indexPath.row];
+            
+        default:
+            break;
     }
-    else if (tableView.tag == 2) {
-        model = self.countyMarr[indexPath.row];
-        NSString * countyID = model.code;
-        [self.titleMarr replaceObjectAtIndex:tableView.tag withObject:model.area];
-        //1. 修改选中ID
-        if (self.titleIDMarr.count > 2){
-            [self.titleIDMarr replaceObjectAtIndex:tableView.tag withObject:countyID];
-        }
-        else{
-            [self.titleIDMarr addObject:countyID];
-        }
-        //2.修改标题
-        [self.titleMarr replaceObjectAtIndex:tableView.tag withObject:model.area];
-        //网络请求，添加县城
-        [self getAddressMessageDataAddressID:4 provinceIdOrCityId:countyID];
-
-//        model = self.townMarr[indexPath.row];
-//        NSString * townID = [NSString stringWithFormat:@"%ld",(long)model.code];
-//        [self.titleMarr replaceObjectAtIndex:tableView.tag withObject:model.area];
-//        //1. 修改选中ID
-//        if (self.titleIDMarr.count > 3){
-//            [self.titleIDMarr replaceObjectAtIndex:tableView.tag withObject:townID];
-//        }
-//        else{
-//            [self.titleIDMarr addObject:townID];
-//        }
+    NSString *provinceID = model.code;
+    //1. 修改选中ID
+    if (self.titleIDMarr.count > tableView.tag){
+        [self.titleIDMarr replaceObjectAtIndex:tableView.tag withObject:provinceID];
+    }
+    else{
+        [self.titleIDMarr addObject:provinceID];
+    }
+    //2.修改标题
+    [self.titleMarr replaceObjectAtIndex:tableView.tag withObject:model.area];
+    //请求网络 添加市区
+    [self getAddressMessageDataAddressID:tableView.tag+2 provinceIdOrCityId:provinceID];
+    
+    if (tableView.tag == 2) {
+        
         [self setupAllTitle:tableView.tag];
-        if (self.isChangeAddress == false){
-//            [self tapBtnAndcancelBtnClick];
+        if (self.isChangeAddress == NO) {
+////            [self tapBtnAndcancelBtnClick];
         }
         else{
-            self.isChangeAddress = false;
+            self.isChangeAddress = NO;
         }
     }
 }
@@ -386,26 +364,28 @@
     }
     return YES;
 }
-//添加tableView和title
+//添加tableView和title title加请选择
 - (void)addTableViewAndTitle:(NSInteger)tableViewTag{
     UITableView * tableView2 = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, screen_width, 200) style:UITableViewStylePlain];
     tableView2.separatorStyle = UITableViewCellSeparatorStyleNone;
     [tableView2 registerClass:[AEAddressTCell class] forCellReuseIdentifier:@"AddressAdministerCellIdentifier"];
     tableView2.tag = tableViewTag;
     [self.tableViewMarr addObject:tableView2];
-    [self.titleMarr addObject:@"请选择"];
+    [self.titleMarr addObject:kPlaceChoose];
 }
 //改变title
 - (void)changeTitle:(NSInteger)replaceTitleMarrIndex{
-    [self.titleMarr replaceObjectAtIndex:replaceTitleMarrIndex withObject:@"请选择"];
-    NSInteger index = [self.titleMarr indexOfObject:@"请选择"];
+    [self.titleMarr replaceObjectAtIndex:replaceTitleMarrIndex withObject:kPlaceChoose];
+    NSInteger index = [self.titleMarr indexOfObject:kPlaceChoose];
     NSInteger count = self.titleMarr.count;
     NSInteger loc = index + 1;
     NSInteger range = count - index;
     [self.titleMarr removeObjectsInRange:NSMakeRange(loc, range - 1)];
     [self.tableViewMarr removeObjectsInRange:NSMakeRange(loc, range - 1)];
 }
-//移除多余的title和tableView,收回选择器
+
+/// 移除多余的title和tableView
+/// @param index 1 市    2 县
 - (void)removeTitleAndTableViewCancel:(NSInteger)index{
     NSInteger indexAddOne = index + 1;
     NSInteger indexsubOne = index - 1;
@@ -413,12 +393,22 @@
         [self.titleMarr removeObjectsInRange:NSMakeRange(index, self.titleMarr.count - indexAddOne)];
         [self.tableViewMarr removeObjectsInRange:NSMakeRange(index, self.tableViewMarr.count - indexAddOne)];
     }
+    /// 去掉请选择
+    if ([self.titleMarr containsObject:kPlaceChoose]) {
+        NSInteger idx = [self.titleMarr indexOfObject:kPlaceChoose];
+        [self.titleMarr removeObjectAtIndex:idx];
+        if (self.tableViewMarr.count > idx) {
+            [self.tableViewMarr removeObjectAtIndex:idx];
+        }
+
+    }
+
     [self setupAllTitle:indexsubOne];
-    if (self.isChangeAddress == false){
-        [self tapBtnAndcancelBtnClick];
+    if (self.isChangeAddress == NO){
+//        [self tapBtnAndcancelBtnClick];
     }
     else{
-        self.isChangeAddress = false;
+        self.isChangeAddress = NO;
     }
 }
 //本地数据
@@ -442,16 +432,13 @@
         if (tableView1.window != nil) {
             [tableView1 layoutIfNeeded];
         }
-        if (self.isChangeAddress == true){
+        if (self.isChangeAddress == YES) {
             //保证列表刷新之后才进行滚动处理
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                NSLog(@"%ld",self.scroolToRow);
-                if ([tableView1 numberOfRowsInSection:0] >= self.scroolToRow && [tableView1 numberOfRowsInSection:0] != nil) {
-                    [tableView1 scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.scroolToRow  inSection:0 ] atScrollPosition: UITableViewScrollPositionBottom animated:false];
+                if ([tableView1 numberOfRowsInSection:0] >= self.scroolToRow && self.scroolToRow >= 0) {
+                    NSLog(@"addressID: %ld , scroolToRow: %ld", (long)addressID, self.scroolToRow);
+                    [tableView1 scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.scroolToRow  inSection:0] atScrollPosition: UITableViewScrollPositionTop animated:YES];
                 }
-            });
-            dispatch_async(dispatch_get_main_queue(), ^{
-                
             });
         }
     }
@@ -478,14 +465,15 @@
         }
     }
     else{
-        if (self.isChangeAddress == false){
+        if (self.isChangeAddress == NO){
             [self tapBtnAndcancelBtnClick];
         }
         else{
-            self.isChangeAddress = false;
+            self.isChangeAddress = NO;
         }
     }
 }
+// 市
 - (void)caseCityArr:(NSArray *)cityArr withSelectedID:(NSString *)selectedID{
     BOOL isAddress = NO;
     [self.cityMarr removeAllObjects];
@@ -497,28 +485,41 @@
             *stop = YES;
         }
     }];
-    if (self.titleIDMarr.count > 2) {
-        self.scroolToRow = j;
-        isAddress = YES;
-    }
     
-    if (self.tableViewMarr.count >= 2){
+    
+    if (self.tableViewMarr.count >= 2) {
         [self changeTitle:1];
     }
-    else{
+    else if (self.cityMarr.count > 0) {
         [self addTableViewAndTitle:1];
+        if (self.isChangeAddress) {
+            [self changeTitle:1];
+        }
     }
     if (self.cityMarr.count > 0) {
         [self setupAllTitle:1];
+        [self.cityMarr enumerateObjectsUsingBlock:^(AEAddressModel * _Nonnull model, NSUInteger idx, BOOL * _Nonnull stop) {
+                        
+            if ([model.code isEqualToString:self.titleIDMarr.lastObject]) {
+                j = idx;
+                *stop = YES;
+            }
+        }];
     }
     else{
         //没有对应的市
         [self removeTitleAndTableViewCancel:1];
     }
+    if (self.titleIDMarr.count > 2 ||
+        ![self.titleIDMarr.lastObject hasSuffix:@"00"] ) {
+        self.scroolToRow = j;
+        isAddress = YES;
+    }
    if (!isAddress) {
-        self.isChangeAddress = false;
+        self.isChangeAddress = NO;
     }
 }
+// 区
 - (void)caseCountyArr:(NSArray *)countyArr withSelectedID:(NSString *)selectedID{
     [self.countyMarr removeAllObjects];
     BOOL isAddress = NO;
@@ -530,10 +531,7 @@
             *stop = YES;
         }
     }];
-    if (self.titleIDMarr.count > 2) {
-        self.scroolToRow = j;
-        isAddress = YES;
-    }
+    
     for (AEAddressModel *model in self.cityMarr) {
         if ([selectedID isEqualToString:model.code]) {
             self.countyMarr = model.list.mutableCopy;
@@ -543,18 +541,30 @@
     if (self.tableViewMarr.count >= 3){
         [self changeTitle:2];
     }
-    else{
+    else if (self.countyMarr.count > 0) {
         [self addTableViewAndTitle:2];
     }
     if (self.countyMarr.count > 0){
         [self setupAllTitle:2];
+        [self.countyMarr enumerateObjectsUsingBlock:^(AEAddressModel * _Nonnull model, NSUInteger idx, BOOL * _Nonnull stop) {
+                    
+            if ([model.code isEqualToString:self.titleIDMarr.lastObject]) {
+                j = idx;
+                *stop = YES;
+            }
+        }];
     }
     else{
         //没有对应的县
         [self removeTitleAndTableViewCancel:2];
     }
- if (!isAddress) {
-        self.isChangeAddress = false;
+    /// 有两个的时
+    if (self.titleIDMarr.count > 2 || self.countyMarr.count <= 0) {
+        self.scroolToRow = j;
+        isAddress = YES;
+    }
+    if (!isAddress) {
+        self.isChangeAddress = NO;
     }
 }
 
@@ -709,6 +719,7 @@
 //        [self removeTitleAndTableViewCancel:3];
 //    }
 //}
+
 - (void)setTitle:(NSString *)title {
     _title = title;
     self.titleLabel.text = title;
