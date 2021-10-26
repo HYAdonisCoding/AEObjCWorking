@@ -43,6 +43,7 @@
 		663F593D26B8DDF000B92C3A /* AEDataPropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 663F593C26B8DDF000B92C3A /* AEDataPropertyList.plist */; };
 		663F594026B8DF3100B92C3A /* AEDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 663F593F26B8DF3100B92C3A /* AEDataHelper.m */; };
 		663F594326B8E5F200B92C3A /* AEPlistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 663F594226B8E5F200B92C3A /* AEPlistViewController.m */; };
+		664AA8BC2723042500D31930 /* AELifeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 664AA8BB2723042500D31930 /* AELifeViewController.m */; };
 		666CEFFC26115D5E00BCDF1E /* AEOCKnowledgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 666CEFFB26115D5E00BCDF1E /* AEOCKnowledgeViewController.m */; };
 		666CF0072611669D00BCDF1E /* AEReusePoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 666CF0062611669D00BCDF1E /* AEReusePoolViewController.m */; };
 		666CF00E261166DB00BCDF1E /* AEReusePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 666CF00D261166DB00BCDF1E /* AEReusePool.m */; };
@@ -174,6 +175,8 @@
 		663F593F26B8DF3100B92C3A /* AEDataHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEDataHelper.m; sourceTree = "<group>"; };
 		663F594126B8E5F200B92C3A /* AEPlistViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEPlistViewController.h; sourceTree = "<group>"; };
 		663F594226B8E5F200B92C3A /* AEPlistViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEPlistViewController.m; sourceTree = "<group>"; };
+		664AA8BA2723042500D31930 /* AELifeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AELifeViewController.h; sourceTree = "<group>"; };
+		664AA8BB2723042500D31930 /* AELifeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AELifeViewController.m; sourceTree = "<group>"; };
 		666CEFFA26115D5E00BCDF1E /* AEOCKnowledgeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEOCKnowledgeViewController.h; sourceTree = "<group>"; };
 		666CEFFB26115D5E00BCDF1E /* AEOCKnowledgeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEOCKnowledgeViewController.m; sourceTree = "<group>"; };
 		666CF0052611669D00BCDF1E /* AEReusePoolViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEReusePoolViewController.h; sourceTree = "<group>"; };
@@ -392,6 +395,7 @@
 		6003F593195388D20070C39A /* Example for AEObjCWorking */ = {
 			isa = PBXGroup;
 			children = (
+				664AA8B9272303DE00D31930 /* Life */,
 				6604B73826E9A7DA00D9BA56 /* Address */,
 				0CD128542635A7280066F449 /* Unconventional */,
 				666CEFFF26115D6600BCDF1E /* Knowledge */,
@@ -520,6 +524,15 @@
 				663F594226B8E5F200B92C3A /* AEPlistViewController.m */,
 			);
 			path = Plist;
+			sourceTree = "<group>";
+		};
+		664AA8B9272303DE00D31930 /* Life */ = {
+			isa = PBXGroup;
+			children = (
+				664AA8BA2723042500D31930 /* AELifeViewController.h */,
+				664AA8BB2723042500D31930 /* AELifeViewController.m */,
+			);
+			path = Life;
 			sourceTree = "<group>";
 		};
 		666CEFFF26115D6600BCDF1E /* Knowledge */ = {
@@ -1014,6 +1027,7 @@
 				7A6F9B6E24061A64006A923D /* XPathQuery.m in Sources */,
 				7A9CD79E22784703004E6D2A /* AECustomViewFlowLayout.m in Sources */,
 				6604B73B26E9A82600D9BA56 /* AEAddressViewController.m in Sources */,
+				664AA8BC2723042500D31930 /* AELifeViewController.m in Sources */,
 				666CF06D2611B34A00BCDF1E /* AEMCBlock.m in Sources */,
 				666CF02226117B2B00BCDF1E /* AECustomButton.m in Sources */,
 				0C2C0AA9262A7F8D0038859D /* AEMCObject.m in Sources */,
