@@ -13,6 +13,12 @@
 @interface AEFileOperationViewController ()<UIDocumentPickerDelegate>
 /// 显示pdf
 @property (nonatomic, strong) WKWebView *webView;
+/// 预览
+@property (nonatomic, strong) UIImageView *imageView;
+
+/// 文件路径
+@property (nonatomic, copy) NSString *path;
+@property (nonatomic, copy) NSString *directory;
 
 @end
 
@@ -20,15 +26,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.webView = [WKWebView new];
-    self.webView.backgroundColor = UIColor.grayColor;
-    [self.view addSubview:self.webView];
-    [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
+    self.imageView = [[UIImageView alloc] init];
+    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    self.imageView.backgroundColor = UIColor.yellowColor;
+    self.imageView.userInteractionEnabled = YES;
+    [self.view addSubview:self.imageView];
+    [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.mas_topLayoutGuideBottom).offset(20);
-        make.left.right.mas_equalTo(0);
-        make.height.mas_equalTo(200);
+        make.height.width.mas_equalTo(150);
+        make.centerX.mas_equalTo(0);
     }];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(show)];
+    [self.imageView addGestureRecognizer:tap];
+    
     
     UIButton *upload = [UIButton buttonWithType:(UIButtonTypeCustom)];
     upload.backgroundColor = UIColor.purpleColor;
@@ -36,13 +47,32 @@
     [upload addTarget:self action:@selector(presentDocumentCloud) forControlEvents:(UIControlEventTouchUpInside)];
     [self.view addSubview:upload];
     [upload mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.webView.mas_bottom).offset(20);
+        make.top.mas_equalTo(self.imageView.mas_bottom).offset(20);
         make.height.mas_equalTo(50);
         make.width.mas_equalTo(SCREEN_WIDTH * 0.5);
         make.centerX.mas_equalTo(0);
     }];
+    
+    self.webView = [WKWebView new];
+    self.webView.backgroundColor = UIColor.grayColor;
+    [self.view addSubview:self.webView];
+    [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(upload.mas_bottom).offset(20);
+        make.left.right.mas_equalTo(0);
+        make.bottom.mas_equalTo(self.mas_bottomLayoutGuideTop);
+    }];
 }
 
+- (void)show {
+    if (self.path.length <= 0 || self.directory.length <= 0) {
+        NSLog(@"%@", @"路径有误， 请重新选择文件");
+        return;
+    }
+    //打开文件:testPath
+    NSURL *fileUrl = [NSURL fileURLWithPath:self.path];
+    NSURL *parentUrl = [NSURL fileURLWithPath:self.directory];
+    [self.webView loadFileURL:fileUrl allowingReadAccessToURL:parentUrl];
+}
 //打开文件APP
 - (void)presentDocumentCloud {
 //    NSArray *documentTypes = @[@"public.content", @"public.text", @"public.source-code ", @"public.image", @"public.audiovisual-content", @"com.adobe.pdf", @"com.apple.keynote.key", @"com.microsoft.word.doc", @"com.microsoft.excel.xls", @"com.microsoft.powerpoint.ppt"];
@@ -109,20 +139,42 @@
         //  写入文件
 
         [fileManger createFileAtPath:testPath contents:doubi attributes:nil];
-
+        self.path = testPath;
+        self.directory = testDirectory;
+        
         dispatch_sync(dispatch_get_main_queue(), ^{
 
-            //打开文件:testPath
-            NSURL *fileUrl = [NSURL fileURLWithPath:testPath];
-            NSURL *parentUrl = [NSURL fileURLWithPath:testDirectory];
-            [self.webView loadFileURL:fileUrl allowingReadAccessToURL:parentUrl];
+            // 预览图
+            if ([testPath hasSuffix:@".pdf"] || [testPath hasSuffix:@".PDF"]) {
+                NSURL *pdfUrl = [NSURL fileURLWithPath:testPath];
+                CGPDFDocumentRef pdfRef = CGPDFDocumentCreateWithURL((CFURLRef)pdfUrl);
+                self.imageView.image = [self imageFromPDFWithDocumentRef:pdfRef];
+                CGPDFDocumentRelease(pdfRef);
+            } else {
+                self.imageView.image = [UIImage imageWithContentsOfFile:testPath];
+            }
+            
+            
         });
     });
-    
-    //打开文件:testPath
-//    NSURL *parentUrl = [NSURL fileURLWithPath:@"/private/var/mobile/Containers/Shared/AppGroup/44230A92-5135-4DCE-B8A2-0B58F92034FA/File Provider Storage/其他/"];
-//    [self.webView loadFileURL:url allowingReadAccessToURL:parentUrl];
 
 }
                    
+// 生成缩略图：
+- (UIImage *)imageFromPDFWithDocumentRef:(CGPDFDocumentRef)documentRef
+{
+    CGPDFPageRef pageRef = CGPDFDocumentGetPage(documentRef, 1);
+    CGRect pageRect = CGPDFPageGetBoxRect(pageRef, kCGPDFCropBox);
+
+    UIGraphicsBeginImageContext(pageRect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextTranslateCTM(context, CGRectGetMinX(pageRect),CGRectGetMaxY(pageRect));
+    CGContextScaleCTM(context, 1, -1);
+    CGContextTranslateCTM(context, -(pageRect.origin.x), -(pageRect.origin.y));
+    CGContextDrawPDFPage(context, pageRef);
+
+    UIImage *finalImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return finalImage;
+}
 @end
