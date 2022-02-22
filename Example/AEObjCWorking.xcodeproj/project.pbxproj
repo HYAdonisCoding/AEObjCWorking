@@ -62,6 +62,7 @@
 		666CF06D2611B34A00BCDF1E /* AEMCBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 666CF06C2611B34A00BCDF1E /* AEMCBlock.m */; };
 		666D7CE226EDE34F00CC131B /* Address.txt in Resources */ = {isa = PBXBuildFile; fileRef = 666D7CE126EDE34F00CC131B /* Address.txt */; };
 		666D7CE426EE014A00CC131B /* Address1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 666D7CE326EE014900CC131B /* Address1.txt */; };
+		668F57E927C4CDB00045AED4 /* AEFileOperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 668F57E827C4CDB00045AED4 /* AEFileOperationViewController.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		7A44DE4C228A471F0078B6A0 /* NSString+AELabelWidthAndHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A44DE4B228A471F0078B6A0 /* NSString+AELabelWidthAndHeight.m */; };
 		7A44DE4F228A481A0078B6A0 /* UIFont+AEFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A44DE4E228A481A0078B6A0 /* UIFont+AEFonts.m */; };
@@ -211,6 +212,8 @@
 		666CF06C2611B34A00BCDF1E /* AEMCBlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEMCBlock.m; sourceTree = "<group>"; };
 		666D7CE126EDE34F00CC131B /* Address.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Address.txt; sourceTree = "<group>"; };
 		666D7CE326EE014900CC131B /* Address1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Address1.txt; sourceTree = "<group>"; };
+		668F57E727C4CDB00045AED4 /* AEFileOperationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEFileOperationViewController.h; sourceTree = "<group>"; };
+		668F57E827C4CDB00045AED4 /* AEFileOperationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEFileOperationViewController.m; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		799148480B939A5DDB5260BD /* Pods-AEObjCWorking_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AEObjCWorking_Example.debug.xcconfig"; path = "Target Support Files/Pods-AEObjCWorking_Example/Pods-AEObjCWorking_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		7A44DE4A228A471F0078B6A0 /* NSString+AELabelWidthAndHeight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+AELabelWidthAndHeight.h"; sourceTree = "<group>"; };
@@ -395,6 +398,7 @@
 		6003F593195388D20070C39A /* Example for AEObjCWorking */ = {
 			isa = PBXGroup;
 			children = (
+				668F57E627C4CD730045AED4 /* FileOperation */,
 				664AA8B9272303DE00D31930 /* Life */,
 				6604B73826E9A7DA00D9BA56 /* Address */,
 				0CD128542635A7280066F449 /* Unconventional */,
@@ -626,6 +630,15 @@
 				666CF06C2611B34A00BCDF1E /* AEMCBlock.m */,
 			);
 			path = Block;
+			sourceTree = "<group>";
+		};
+		668F57E627C4CD730045AED4 /* FileOperation */ = {
+			isa = PBXGroup;
+			children = (
+				668F57E727C4CDB00045AED4 /* AEFileOperationViewController.h */,
+				668F57E827C4CDB00045AED4 /* AEFileOperationViewController.m */,
+			);
+			path = FileOperation;
 			sourceTree = "<group>";
 		};
 		7A44DE49228A46F30078B6A0 /* UI_Component */ = {
@@ -888,8 +901,8 @@
 				ORGANIZATIONNAME = HYAdonisCoding;
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
-						DevelopmentTeam = 53VUVA3CT9;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = N2KQ965WEJ;
+						ProvisioningStyle = Automatic;
 					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
@@ -1082,6 +1095,7 @@
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				7AA0E93023C412DD0092DE5B /* AECardTransformLayout.m in Sources */,
 				7A9CD78E22783033004E6D2A /* AECustomOptionView.m in Sources */,
+				668F57E927C4CDB00045AED4 /* AEFileOperationViewController.m in Sources */,
 				7A44DE52228A4A9D0078B6A0 /* UIView+AEGlowView.m in Sources */,
 				7A6E01F323C702DC00D34AB6 /* AETabBar.m in Sources */,
 				7AEF4511240912AD0065B265 /* AEPopoverController.m in Sources */,
@@ -1216,8 +1230,9 @@
 			baseConfigurationReference = 799148480B939A5DDB5260BD /* Pods-AEObjCWorking_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 53VUVA3CT9;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N2KQ965WEJ;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AEObjCWorking/Resources/AEPrefixHeader.pch";
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
@@ -1233,7 +1248,7 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cebbank.test.AEObjCWorking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Test*_dev_20200730";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;

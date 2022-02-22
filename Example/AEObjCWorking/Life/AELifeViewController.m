@@ -53,6 +53,12 @@
     [super viewDidLoad];
     
     [self configUI];
+    
+    NSMutableDictionary *dic = @{@"name": @"adam", @"age": @"18", @"height": @"180cm", @"edu": @"un"}.mutableCopy;
+    NSLog(@"%@", dic);
+    [dic removeObjectsForKeys:@[@"height", @"edu"]];
+    NSLog(@"%@", dic);
+    
 }
 
 
