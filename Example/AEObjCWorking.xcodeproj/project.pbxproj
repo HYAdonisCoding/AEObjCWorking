@@ -62,6 +62,10 @@
 		666CF06D2611B34A00BCDF1E /* AEMCBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 666CF06C2611B34A00BCDF1E /* AEMCBlock.m */; };
 		666D7CE226EDE34F00CC131B /* Address.txt in Resources */ = {isa = PBXBuildFile; fileRef = 666D7CE126EDE34F00CC131B /* Address.txt */; };
 		666D7CE426EE014A00CC131B /* Address1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 666D7CE326EE014900CC131B /* Address1.txt */; };
+		666DC53827C7784500FBDF41 /* AECategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 666DC53727C7784500FBDF41 /* AECategoryViewController.m */; };
+		666DC53B27C7788B00FBDF41 /* AEStudyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 666DC53A27C7788B00FBDF41 /* AEStudyModel.m */; };
+		666DC53E27C7796D00FBDF41 /* AEStudyModel+StudyCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 666DC53D27C7796D00FBDF41 /* AEStudyModel+StudyCategory.m */; };
+		666DC54127C77BCC00FBDF41 /* AEStudyModel+AEDouble.m in Sources */ = {isa = PBXBuildFile; fileRef = 666DC54027C77BCB00FBDF41 /* AEStudyModel+AEDouble.m */; };
 		668F57E927C4CDB00045AED4 /* AEFileOperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 668F57E827C4CDB00045AED4 /* AEFileOperationViewController.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		7A44DE4C228A471F0078B6A0 /* NSString+AELabelWidthAndHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A44DE4B228A471F0078B6A0 /* NSString+AELabelWidthAndHeight.m */; };
@@ -212,6 +216,14 @@
 		666CF06C2611B34A00BCDF1E /* AEMCBlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEMCBlock.m; sourceTree = "<group>"; };
 		666D7CE126EDE34F00CC131B /* Address.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Address.txt; sourceTree = "<group>"; };
 		666D7CE326EE014900CC131B /* Address1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Address1.txt; sourceTree = "<group>"; };
+		666DC53627C7784500FBDF41 /* AECategoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AECategoryViewController.h; sourceTree = "<group>"; };
+		666DC53727C7784500FBDF41 /* AECategoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AECategoryViewController.m; sourceTree = "<group>"; };
+		666DC53927C7788B00FBDF41 /* AEStudyModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEStudyModel.h; sourceTree = "<group>"; };
+		666DC53A27C7788B00FBDF41 /* AEStudyModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEStudyModel.m; sourceTree = "<group>"; };
+		666DC53C27C7796D00FBDF41 /* AEStudyModel+StudyCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AEStudyModel+StudyCategory.h"; sourceTree = "<group>"; };
+		666DC53D27C7796D00FBDF41 /* AEStudyModel+StudyCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AEStudyModel+StudyCategory.m"; sourceTree = "<group>"; };
+		666DC53F27C77BCB00FBDF41 /* AEStudyModel+AEDouble.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AEStudyModel+AEDouble.h"; sourceTree = "<group>"; };
+		666DC54027C77BCB00FBDF41 /* AEStudyModel+AEDouble.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AEStudyModel+AEDouble.m"; sourceTree = "<group>"; };
 		668F57E727C4CDB00045AED4 /* AEFileOperationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEFileOperationViewController.h; sourceTree = "<group>"; };
 		668F57E827C4CDB00045AED4 /* AEFileOperationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEFileOperationViewController.m; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -542,14 +554,15 @@
 		666CEFFF26115D6600BCDF1E /* Knowledge */ = {
 			isa = PBXGroup;
 			children = (
+				666CEFFA26115D5E00BCDF1E /* AEOCKnowledgeViewController.h */,
+				666CEFFB26115D5E00BCDF1E /* AEOCKnowledgeViewController.m */,
+				666DC53527C7781900FBDF41 /* Category */,
 				663F593B26B8DD9E00B92C3A /* Plist */,
 				0C2C0AC6262B1F950038859D /* DesignPatten */,
 				0C2C0AB2262B17050038859D /* GCD */,
 				0C2C0AA6262A7EF20038859D /* RunLoop */,
 				661EF35D2627DDA5009E7037 /* Arithmetic */,
 				661EF3502627C545009E7037 /* OC */,
-				666CEFFA26115D5E00BCDF1E /* AEOCKnowledgeViewController.h */,
-				666CEFFB26115D5E00BCDF1E /* AEOCKnowledgeViewController.m */,
 				666CF0632611B0FA00BCDF1E /* Block */,
 				666CF0562611AD9D00BCDF1E /* Memory */,
 				666CF03E2611A00900BCDF1E /* Runtime */,
@@ -630,6 +643,21 @@
 				666CF06C2611B34A00BCDF1E /* AEMCBlock.m */,
 			);
 			path = Block;
+			sourceTree = "<group>";
+		};
+		666DC53527C7781900FBDF41 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				666DC53627C7784500FBDF41 /* AECategoryViewController.h */,
+				666DC53727C7784500FBDF41 /* AECategoryViewController.m */,
+				666DC53927C7788B00FBDF41 /* AEStudyModel.h */,
+				666DC53A27C7788B00FBDF41 /* AEStudyModel.m */,
+				666DC53C27C7796D00FBDF41 /* AEStudyModel+StudyCategory.h */,
+				666DC53D27C7796D00FBDF41 /* AEStudyModel+StudyCategory.m */,
+				666DC53F27C77BCB00FBDF41 /* AEStudyModel+AEDouble.h */,
+				666DC54027C77BCB00FBDF41 /* AEStudyModel+AEDouble.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		668F57E627C4CD730045AED4 /* FileOperation */ = {
@@ -1067,7 +1095,10 @@
 				666CF0592611ADC100BCDF1E /* AEMemoryViewController.m in Sources */,
 				0CD1285E2635A7860066F449 /* AEScrollViewController.m in Sources */,
 				666CF0072611669D00BCDF1E /* AEReusePoolViewController.m in Sources */,
+				666DC53827C7784500FBDF41 /* AECategoryViewController.m in Sources */,
 				6604B74D26E9DEF100D9BA56 /* AEAddressModel.m in Sources */,
+				666DC53E27C7796D00FBDF41 /* AEStudyModel+StudyCategory.m in Sources */,
+				666DC54127C77BCC00FBDF41 /* AEStudyModel+AEDouble.m in Sources */,
 				6003F59E195388D20070C39A /* AEAppDelegate.m in Sources */,
 				666CF0662611B11C00BCDF1E /* AEBlockViewController.m in Sources */,
 				7AA0E93323C413040092DE5B /* AECardViewCCell.m in Sources */,
@@ -1093,6 +1124,7 @@
 				7A77FC5323CDB2F9008E6F1A /* AETabBarButton.m in Sources */,
 				7AA0E93623C456BD0092DE5B /* AEHomeViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				666DC53B27C7788B00FBDF41 /* AEStudyModel.m in Sources */,
 				7AA0E93023C412DD0092DE5B /* AECardTransformLayout.m in Sources */,
 				7A9CD78E22783033004E6D2A /* AECustomOptionView.m in Sources */,
 				668F57E927C4CDB00045AED4 /* AEFileOperationViewController.m in Sources */,

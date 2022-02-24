@@ -80,6 +80,9 @@
         string = [string substringWithRange:NSMakeRange(2, string.length-12)];
     }
     cell.textLabel.text = string;
+    cell.backgroundColor = ((indexPath.row%2) != 0) ? UIColor.cyanColor : UIColor.yellowColor;
+    cell.textLabel.textColor = ((indexPath.row%2) != 0) ? UIColor.purpleColor : UIColor.magentaColor;
+    
     return cell;
 }
 
