@@ -8,7 +8,21 @@
 
 #import "AEStudyModel.h"
 
+@interface AEStudyModel ()
+
+
+//@property (nonatomic, retain) id obj;
+
+@end
+
 @implementation AEStudyModel
+
+//- (void)setObj:(id)obj {
+//    if (_obj != obj) {
+//        [_obj release];
+//        _obj = [obj retain];
+//    }
+//}
 
 - (void)study:(NSString *)content {
     NSLog(@"%@", content);
