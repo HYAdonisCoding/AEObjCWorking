@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AECustomTitleView : UIView
 
-+ (instancetype)defaultTitleViewWith:(NSString *)title imageName:(NSString *)imageName tapAction:(void(^)(id data))tapAction;
++ (instancetype)defaultTitleViewWith:(NSString *)title imageName:(NSString *)imageName tapAction:(NSString *(^)(id data))tapAction;
 
 @end
 
