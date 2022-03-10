@@ -8,7 +8,7 @@
 
 #import "AEFileOperationViewController.h"
 #import <WebKit/WebKit.h>
-
+#import "AEGetFile.h"
 
 @interface AEFileOperationViewController ()<UIDocumentPickerDelegate>
 /// 显示pdf
@@ -19,7 +19,8 @@
 /// 文件路径
 @property (nonatomic, copy) NSString *path;
 @property (nonatomic, copy) NSString *directory;
-
+/// <#Description#>
+@property (nonatomic, strong) AEGetFile *f;
 @end
 
 @implementation AEFileOperationViewController
@@ -70,19 +71,30 @@
     }
     //打开文件:testPath
     NSURL *fileUrl = [NSURL fileURLWithPath:self.path];
-    NSURL *parentUrl = [NSURL fileURLWithPath:self.directory];
+    NSURL *parentUrl = [NSURL fileURLWithPath:[self.path stringByDeletingLastPathComponent]];
     [self.webView loadFileURL:fileUrl allowingReadAccessToURL:parentUrl];
 }
-//打开文件APP
 - (void)presentDocumentCloud {
-//    NSArray *documentTypes = @[@"public.content", @"public.text", @"public.source-code ", @"public.image", @"public.audiovisual-content", @"com.adobe.pdf", @"com.apple.keynote.key", @"com.microsoft.word.doc", @"com.microsoft.excel.xls", @"com.microsoft.powerpoint.ppt"];
-    NSArray *documentTypes = @[ @"public.image", @"com.adobe.pdf"];
-
-    UIDocumentPickerViewController *documentPickerViewController = [[UIDocumentPickerViewController alloc] initWithDocumentTypes:documentTypes inMode:UIDocumentPickerModeOpen];
-    documentPickerViewController.delegate = self;
-    documentPickerViewController.modalPresentationStyle = UIModalPresentationFullScreen;
-    [self presentViewController:documentPickerViewController animated:YES completion:nil];
+    AEGetFile *f = [AEGetFile new];
+    [f choosePdfAndPicture];
+    f.block = ^(UIImage *icon, NSData *data, NSString *path, NSString *directory) {
+        
+        self.imageView.image = icon;
+        self.path = path;
+        self.directory = directory;
+    };
+    self.f = f;
 }
+//打开文件APP
+//- (void)presentDocumentCloud {
+////    NSArray *documentTypes = @[@"public.content", @"public.text", @"public.source-code ", @"public.image", @"public.audiovisual-content", @"com.adobe.pdf", @"com.apple.keynote.key", @"com.microsoft.word.doc", @"com.microsoft.excel.xls", @"com.microsoft.powerpoint.ppt"];
+//    NSArray *documentTypes = @[ @"public.image", @"com.adobe.pdf"];
+//
+//    UIDocumentPickerViewController *documentPickerViewController = [[UIDocumentPickerViewController alloc] initWithDocumentTypes:documentTypes inMode:UIDocumentPickerModeOpen];
+//    documentPickerViewController.delegate = self;
+//    documentPickerViewController.modalPresentationStyle = UIModalPresentationFullScreen;
+//    [self presentViewController:documentPickerViewController animated:YES completion:nil];
+//}
 
 #pragma mark - UIDocumentPickerDelegate
 #pragma mark - UIDocumentPickerDelegate

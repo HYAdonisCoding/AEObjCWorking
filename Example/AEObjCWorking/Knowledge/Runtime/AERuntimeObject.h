@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AERuntimeObject : AEBaseModel
 - (void)test;
+- (void)otherTest;
+- (void)test1;
 @end
 
 NS_ASSUME_NONNULL_END

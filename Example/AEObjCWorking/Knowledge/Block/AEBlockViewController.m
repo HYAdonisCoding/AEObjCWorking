@@ -9,7 +9,11 @@
 #import "AEBlockViewController.h"
 #import "AEMCBlock.h"
 
+typedef int(^MyBlock)(int);
+
 @interface AEBlockViewController ()
+/// <#Description#>
+@property (nonatomic, copy) MyBlock blk;
 
 @end
 
@@ -24,9 +28,31 @@
                        @"testBlock3",
                        @"testBlock4"];
 
+    __block int multipier = 6;
+    int(^Block)(int) = ^(int num) {
+        return num*multipier;
+    };
+    multipier = 4;
+    NSLog(@" result is %d", Block(2));
     
-    
+    [self testForwarding];
 }
+
+//
+- (void)testForwarding {
+    __block int multipier = 10;
+    self.blk = ^(int num) {
+        return num*multipier;
+    };
+    multipier = 6;
+    [self excuteBlock];
+}
+- (void)excuteBlock {
+    int reslut = self.blk(4);
+    NSLog(@" result is %d", reslut);
+
+}
+
 - (void)MCBlock{
     [[[AEMCBlock alloc] init] method];
 }

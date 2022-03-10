@@ -22,6 +22,9 @@
     AERuntimeObject *runtimeObject = [[AERuntimeObject alloc] init];
     // 调用test方法，只有声明，没有实现
     [runtimeObject test];
+    /// 方法交换
+    [runtimeObject test1];
+    
     
     AEAccount *account = [[AEAccount alloc] init];
     account.name = @"imooc";

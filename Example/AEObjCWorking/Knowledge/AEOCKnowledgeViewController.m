@@ -18,6 +18,34 @@
 
 @end
 
+// MARK: - 笔试题
+@interface Mobile : NSObject
+
+@end
+
+@implementation Mobile
+
+
+
+@end
+
+@interface Phone : Mobile
+
+@end
+
+@implementation Phone
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        NSLog(@"self - %@", NSStringFromClass([self class]));
+        NSLog(@"super - %@", NSStringFromClass([super class]));
+    }
+    return self;
+}
+
+@end
+
 @interface AEOCKnowledgeViewController ()
 
 @end
@@ -54,6 +82,8 @@
     
     AEBaseModel *model = [AEBaseModel new];
     [model getSport];
+    
+    Phone *p = [Phone new];
 }
 
 - (void)thread {

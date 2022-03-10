@@ -67,6 +67,7 @@
 		666DC53E27C7796D00FBDF41 /* AEStudyModel+StudyCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 666DC53D27C7796D00FBDF41 /* AEStudyModel+StudyCategory.m */; };
 		666DC54127C77BCC00FBDF41 /* AEStudyModel+AEDouble.m in Sources */ = {isa = PBXBuildFile; fileRef = 666DC54027C77BCB00FBDF41 /* AEStudyModel+AEDouble.m */; };
 		668F57E927C4CDB00045AED4 /* AEFileOperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 668F57E827C4CDB00045AED4 /* AEFileOperationViewController.m */; };
+		669ACDFB27CDBB080013C239 /* AEGetFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 669ACDFA27CDBB080013C239 /* AEGetFile.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		7A44DE4C228A471F0078B6A0 /* NSString+AELabelWidthAndHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A44DE4B228A471F0078B6A0 /* NSString+AELabelWidthAndHeight.m */; };
 		7A44DE4F228A481A0078B6A0 /* UIFont+AEFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A44DE4E228A481A0078B6A0 /* UIFont+AEFonts.m */; };
@@ -226,6 +227,8 @@
 		666DC54027C77BCB00FBDF41 /* AEStudyModel+AEDouble.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AEStudyModel+AEDouble.m"; sourceTree = "<group>"; };
 		668F57E727C4CDB00045AED4 /* AEFileOperationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEFileOperationViewController.h; sourceTree = "<group>"; };
 		668F57E827C4CDB00045AED4 /* AEFileOperationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEFileOperationViewController.m; sourceTree = "<group>"; };
+		669ACDF927CDBB080013C239 /* AEGetFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEGetFile.h; sourceTree = "<group>"; };
+		669ACDFA27CDBB080013C239 /* AEGetFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEGetFile.m; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		799148480B939A5DDB5260BD /* Pods-AEObjCWorking_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AEObjCWorking_Example.debug.xcconfig"; path = "Target Support Files/Pods-AEObjCWorking_Example/Pods-AEObjCWorking_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		7A44DE4A228A471F0078B6A0 /* NSString+AELabelWidthAndHeight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+AELabelWidthAndHeight.h"; sourceTree = "<group>"; };
@@ -665,6 +668,8 @@
 			children = (
 				668F57E727C4CDB00045AED4 /* AEFileOperationViewController.h */,
 				668F57E827C4CDB00045AED4 /* AEFileOperationViewController.m */,
+				669ACDF927CDBB080013C239 /* AEGetFile.h */,
+				669ACDFA27CDBB080013C239 /* AEGetFile.m */,
 			);
 			path = FileOperation;
 			sourceTree = "<group>";
@@ -1091,6 +1096,7 @@
 				666CF02B2611806700BCDF1E /* AEKVOViewController.m in Sources */,
 				661EF37A26280D7A009E7037 /* AECommonSuperFind.m in Sources */,
 				7A6F9B6D24061A64006A923D /* TFHppleElement.m in Sources */,
+				669ACDFB27CDBB080013C239 /* AEGetFile.m in Sources */,
 				7A76520E23F3CCB400A303DE /* Goods.m in Sources */,
 				666CF0592611ADC100BCDF1E /* AEMemoryViewController.m in Sources */,
 				0CD1285E2635A7860066F449 /* AEScrollViewController.m in Sources */,

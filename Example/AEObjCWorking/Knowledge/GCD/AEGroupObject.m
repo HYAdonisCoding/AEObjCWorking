@@ -10,6 +10,7 @@
 
 @interface AEGroupObject ()
 {
+    /// 并发队列
     dispatch_queue_t concurrent_queue;
     NSMutableArray <NSURL *> *arrayURLs;
 }
@@ -42,7 +43,7 @@
     }
     
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
-        // 当添加到组中的所有任务执行完成之后会调用该Block
+        /// 当添加到组中的所有任务执行完成之后会调用该Block
         NSLog(@"所有图片已全部下载完成");
     });
 }

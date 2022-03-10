@@ -39,11 +39,13 @@ static BOOL runAways = YES;
     // 如果可以运行
     while (runAways) {
         @autoreleasepool {
-            // 令当前RunLoop运行在DefaultMode下面
+            // 令当前RunLoop运行在DefaultMode下面   1.0e10 自然对数 遥远的未来
             CFRunLoopRunInMode(kCFRunLoopDefaultMode, 1.0e10, true);
         }
     }
-    
+    // 某一时机 静态变量runAways = NO时 可以保证跳出RunLoop,线程退出
+    CFRunLoopRemoveSource(CFRunLoopGetCurrent(), source, kCFRunLoopDefaultMode);
+    CFRelease(source);
 }
 
 @end

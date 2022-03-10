@@ -25,6 +25,7 @@
             [self.target performSelector:self.selector withObject:timer.userInfo];
         }
     } else {
+        NSLog(@"原对象释放了");
         [self.timer invalidate];
     }
 }
@@ -32,7 +33,10 @@
 @end
 
 @implementation NSTimer (AEWeakTimer)
+- (void)dealloc {
+    NSLog(@"NSTimer对象释放了");
 
+}
 + (NSTimer *)scheduledWeakTimerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector userInfo:(id)userInfo repeats:(BOOL)yesOrNo {
     TimerWeakObject *obj = [[TimerWeakObject alloc] init];
     obj.target = aTarget;

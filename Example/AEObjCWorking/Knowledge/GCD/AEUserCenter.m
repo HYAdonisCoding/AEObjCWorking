@@ -31,7 +31,7 @@
 }
 - (id)AE_objectForKey:(NSString *)key {
     __block id obj;
-    // 同步读取指定数据
+    // 同步读取指定数据 立刻返回调用结果
     dispatch_sync(concurrent_queue, ^{
         obj = [userCenterDic objectForKey:key];
     });
