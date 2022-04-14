@@ -44,6 +44,7 @@
 		663F594026B8DF3100B92C3A /* AEDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 663F593F26B8DF3100B92C3A /* AEDataHelper.m */; };
 		663F594326B8E5F200B92C3A /* AEPlistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 663F594226B8E5F200B92C3A /* AEPlistViewController.m */; };
 		664AA8BC2723042500D31930 /* AELifeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 664AA8BB2723042500D31930 /* AELifeViewController.m */; };
+		6667E25E27E1E64100D9BA78 /* UIButton+AEImagePlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 6667E25D27E1E64000D9BA78 /* UIButton+AEImagePlace.m */; };
 		666CEFFC26115D5E00BCDF1E /* AEOCKnowledgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 666CEFFB26115D5E00BCDF1E /* AEOCKnowledgeViewController.m */; };
 		666CF0072611669D00BCDF1E /* AEReusePoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 666CF0062611669D00BCDF1E /* AEReusePoolViewController.m */; };
 		666CF00E261166DB00BCDF1E /* AEReusePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 666CF00D261166DB00BCDF1E /* AEReusePool.m */; };
@@ -185,6 +186,8 @@
 		663F594226B8E5F200B92C3A /* AEPlistViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEPlistViewController.m; sourceTree = "<group>"; };
 		664AA8BA2723042500D31930 /* AELifeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AELifeViewController.h; sourceTree = "<group>"; };
 		664AA8BB2723042500D31930 /* AELifeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AELifeViewController.m; sourceTree = "<group>"; };
+		6667E25C27E1E64000D9BA78 /* UIButton+AEImagePlace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+AEImagePlace.h"; sourceTree = "<group>"; };
+		6667E25D27E1E64000D9BA78 /* UIButton+AEImagePlace.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+AEImagePlace.m"; sourceTree = "<group>"; };
 		666CEFFA26115D5E00BCDF1E /* AEOCKnowledgeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEOCKnowledgeViewController.h; sourceTree = "<group>"; };
 		666CEFFB26115D5E00BCDF1E /* AEOCKnowledgeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEOCKnowledgeViewController.m; sourceTree = "<group>"; };
 		666CF0052611669D00BCDF1E /* AEReusePoolViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEReusePoolViewController.h; sourceTree = "<group>"; };
@@ -709,6 +712,8 @@
 				7A44DE4E228A481A0078B6A0 /* UIFont+AEFonts.m */,
 				7A44DE50228A4A9D0078B6A0 /* UIView+AEGlowView.h */,
 				7A44DE51228A4A9D0078B6A0 /* UIView+AEGlowView.m */,
+				6667E25C27E1E64000D9BA78 /* UIButton+AEImagePlace.h */,
+				6667E25D27E1E64000D9BA78 /* UIButton+AEImagePlace.m */,
 			);
 			path = UI_Component;
 			sourceTree = "<group>";
@@ -1155,6 +1160,7 @@
 				6604B74226E9DC8E00D9BA56 /* AEAddressSelectViewController.m in Sources */,
 				7A6E01F923C7124900D34AB6 /* AETabBarItem.m in Sources */,
 				7AEF4517240914540065B265 /* AEPopSheetController.m in Sources */,
+				6667E25E27E1E64100D9BA78 /* UIButton+AEImagePlace.m in Sources */,
 				7A77FC5323CDB2F9008E6F1A /* AETabBarButton.m in Sources */,
 				7AA0E93623C456BD0092DE5B /* AEHomeViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
