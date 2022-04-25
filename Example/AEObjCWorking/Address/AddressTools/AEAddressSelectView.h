@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^AEAddressSelectBlock)(NSString * _Nullable titleAddress, NSString * _Nullable titleID);
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -9,10 +9,12 @@
 #import "AEAddressViewController.h"
 #import "AEAddressSelectView.h"
 #import "AEAddressSelectViewController.h"
+#import "AEProfessionSelectViewController.h"
 
 @interface AEAddressViewController ()
 /// <#DESC#>
 @property (nonatomic, strong) UIButton *aButton;
+@property (nonatomic, strong) UIButton *bButton;
 /// <#DESC#>
 @property (nonatomic, strong) AEAddressSelectView *aView;
 
@@ -32,6 +34,13 @@
     [self.view addSubview:self.aButton];
     
 //    [self.view addSubview:[self.aView initAddressView]];
+    
+    self.bButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    [self.bButton setTitle:@"请选择职业" forState:(UIControlStateNormal)];
+    [self.bButton setTitleColor:[UIColor purpleColor] forState:(UIControlStateNormal)];
+    [self.bButton addTarget:self action:@selector(selectProfession:) forControlEvents:(UIControlEventTouchUpInside)];
+    self.bButton.frame = CGRectMake(0, 350, SCREEN_WIDTH, 200);
+    [self.view addSubview:self.bButton];
 }
 
 - (void)selectAddress:(UIButton *)btn {
@@ -75,6 +84,22 @@
     }];
 }
 
+- (void)selectProfession:(UIButton *)sender {
+    WK(weakSelf);
+
+    AEProfessionSelectViewController *vc = [AEProfessionSelectViewController standardView:@"" code:@"" completionHandler:^(NSString * _Nullable titleAddress, NSString * _Nullable titleID) {
+        if (titleAddress.length > 0) {
+            [weakSelf.bButton setTitle:[titleAddress stringByAppendingFormat:@"\n%@", titleID] forState:(UIControlStateNormal)];
+        }
+    }];
+    //全屏幕覆盖
+//   vc.modalPresentationStyle = UIModalPresentationOverCurrentContext|UIModalPresentationFullScreen;
+//   //设置弹出动画：淡入淡出
+//    vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:vc animated:YES completion:^{
+            //
+    }];
+}
 
 - (AEAddressSelectView *)aView {
     if (!_aView) {

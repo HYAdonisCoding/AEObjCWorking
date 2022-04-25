@@ -1,0 +1,61 @@
+[{
+        "code": "70000",
+        "name": "军人  ",
+        "subProfession": [{
+            "code": "70000",
+            "name": "军人",
+            "profession": [{
+                "code": "70000",
+                "name": "军人"
+            }]
+        }]
+    },
+    {
+        "code": "80000",
+        "name": "无职业 ",
+        "subProfession": [{
+            "code": "80100",
+            "name": "学生",
+            "profession": [{
+                "code": "80100",
+                "name": "学生"
+            }]
+        }]
+    },
+    {
+        "code": "80000",
+        "name": "无职业 ",
+        "subProfession": [{
+            "code": "80200",
+            "name": "退休人员",
+            "profession": [{
+                "code": "80200",
+                "name": "退休人员"
+            }]
+        }]
+    },
+    {
+        "code": "80000",
+        "name": "无职业 ",
+        "subProfession": [{
+            "code": "80400",
+            "name": "无业人员",
+            "profession": [{
+                "code": "80400",
+                "name": "无业人员"
+            }]
+        }]
+    },
+    {
+        "code": "90000",
+        "name": "自由职业",
+        "subProfession": [{
+            "code": "90000",
+            "name": "自由职业",
+            "profession": [{
+                "code": "90000",
+                "name": "自由职业"
+            }]
+        }]
+    }
+]
