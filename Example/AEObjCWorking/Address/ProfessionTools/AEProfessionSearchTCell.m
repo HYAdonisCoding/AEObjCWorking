@@ -46,6 +46,18 @@
     self.selectFirstLabel.text = searchModel.profession1;
     self.selectSecondaryLabel.text = searchModel.profession2;
     self.titleLabel.text = searchModel.profession3;
+    NSRange range = NSRangeFromString(searchModel.mark);
+    if ([searchModel.profession3 substringWithRange:range].length > 0) {
+        
+        
+        NSMutableAttributedString * aStr = [[NSMutableAttributedString alloc]initWithString: searchModel.profession3];
+        [aStr addAttributes:
+         @{NSForegroundColorAttributeName:[UIColor colorWithString:@"#666666"]} range:NSMakeRange(0, searchModel.profession3.length)];
+        [aStr addAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"PingFangSC-Regular" size:16]} range:NSMakeRange(0, searchModel.profession3.length)];
+        
+        [aStr addAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithString:@"#FE8E0A"]} range:range];
+        self.titleLabel.attributedText = aStr;
+    }
 }
 
 - (UILabel *)selectFirstLabel {

@@ -10,6 +10,7 @@
 #import "AEProfessionTCell.h"
 #import "AEProfessionSearchTCell.h"
 #import "AEProfessionModel.h"
+#import "UITableView+AEEmpty.h"
 //设备物理尺寸
 #define screen_width [UIScreen mainScreen].bounds.size.width
 #define screen_height [UIScreen mainScreen].bounds.size.height
@@ -63,12 +64,15 @@ typedef NS_ENUM(NSUInteger, AELevelListType) {
 
     NSString *string = [[NSString alloc] initWithContentsOfFile:imagePath encoding:NSUTF8StringEncoding error:nil];
     NSData * resData = [[NSData alloc]initWithData:[string dataUsingEncoding:NSUTF8StringEncoding]];
-    self.resultArray = [NSArray yy_modelArrayWithClass:[AEProfessionSumModel class] json:[NSJSONSerialization JSONObjectWithData:resData options:NSJSONReadingMutableLeaves error:nil]];
-    AEProfessionSearchModel *model = [AEProfessionSearchModel new];
-    model.profession1 = @"党的机关、国家机关、群众团体和社会组织、企事业单位负责人";
-    model.profession2 = @"人民团体和群众团体、社会组织及其他成员组织负责人";
-    model.profession3 = @"人民团体和群众团体负责人";
-    self.searchArray = @[model, model];
+    NSError *error;
+    self.resultArray = [NSArray yy_modelArrayWithClass:[AEProfessionSumModel class] json:[NSJSONSerialization JSONObjectWithData:resData options:NSJSONReadingMutableLeaves error:&error]];
+    if (error) {
+        NSLog(@"error: %@", error);
+    }
+    self.resultArray = [self.resultArray sortedArrayUsingComparator:^NSComparisonResult(AEProfessionSumModel * _Nonnull obj1, AEProfessionSumModel * _Nonnull obj2) {
+        return [obj1.code1 integerValue] > [obj2.code1 integerValue];
+    }];
+    
     self.frame = CGRectMake(0, 0, screen_width, screen_height);
     self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.4];
     self.hidden = YES;
@@ -109,7 +113,7 @@ typedef NS_ENUM(NSUInteger, AELevelListType) {
     lineView.backgroundColor = [UIColor colorWithString:@"#F0F0F0"];
     [self.backView addSubview:lineView];
     [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(40);
+        make.top.mas_equalTo(47);
         make.left.mas_equalTo(15);
         make.right.mas_equalTo(-15);
         make.height.mas_equalTo(1);
@@ -123,6 +127,8 @@ typedef NS_ENUM(NSUInteger, AELevelListType) {
     self.textField.clearButtonMode = UITextFieldViewModeWhileEditing;
     self.textField.delegate = self;
     self.textField.returnKeyType = UIReturnKeySearch;
+    [self.textField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    [self.textField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventValueChanged];
     //设置放大镜图标
     UIImageView *searchIcon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_sousuo"]];
     searchIcon.contentMode = UIViewContentModeCenter;
@@ -184,7 +190,17 @@ typedef NS_ENUM(NSUInteger, AELevelListType) {
 
 - (void)searchProfession {
     // 获取数据
-    
+    NSLog(@"search text: %@", self.textField.text);
+    if ([self.textField.text isEqualToString:@"人民"]) {
+        AEProfessionSearchModel *model = [AEProfessionSearchModel new];
+        model.profession1 = @"党的机关、国家机关、群众团体和社会组织、企事业单位负责人";
+        model.profession2 = @"人民团体和群众团体、社会组织及其他成员组织负责人";
+        model.profession3 = @"人民团体和群众团体负责人";
+        model.mark = @"(0,2)";
+        self.searchArray = @[model, model];
+    } else {
+        self.searchArray = @[];
+    }
     // 成功后
     self.listType = search;
     [self configData];
@@ -201,7 +217,7 @@ typedef NS_ENUM(NSUInteger, AELevelListType) {
     
     // 定义好动作
     void (^animation)(void) = ^void(void) {
-        self.backView.frame = CGRectMake(0, screen_height * 0.1, screen_width, screen_height * 0.9);
+        self.backView.frame = CGRectMake(0, screen_height * 0.1, screen_width, screen_height * 0.9 - keyBoardBounds.size.height);
     };
     
     if (animationTime > 0) {
@@ -242,21 +258,27 @@ typedef NS_ENUM(NSUInteger, AELevelListType) {
     self.backView.layer.mask = maskLayer;
 }
 - (void)backBtnClick {
-    if (self.listType == search || self.listType == secondary || self.listType == three) {
+    if (self.listType == secondary || self.listType == three) {
         self.listType -= 1;
-        [self configData];
+        
+    } else if (self.listType == search) {
+        self.textField.text = @"";
+        [self.textField resignFirstResponder];
+        self.listType = first;
     }
+    [self configData];
 }
 - (void)configData {
     self.selectFirstLabel.hidden = YES;
     self.selectSecondaryLabel.hidden = YES;
     self.iconImageView.hidden = YES;
+    NSInteger count = 0;
     switch (self.listType) {
         case first: {
             self.firstArray = self.resultArray;
             self.backButton.hidden = YES;
             self.textField.hidden = NO;
-
+            count = self.firstArray.count;
             break;
         }
         case secondary: {
@@ -269,6 +291,7 @@ typedef NS_ENUM(NSUInteger, AELevelListType) {
                 make.right.mas_equalTo(-15);
                 make.height.mas_equalTo(55);
             }];
+            count = self.secondaryArray.count;
             break;
         }
         case three: {
@@ -295,11 +318,12 @@ typedef NS_ENUM(NSUInteger, AELevelListType) {
                 make.width.mas_equalTo(16);
                 make.centerY.mas_equalTo(self.selectSecondaryLabel.mas_centerY);
             }];
+            count = self.threeArray.count;
             break;
         }
         case search: {
             self.backButton.hidden = NO;
-
+            count = self.searchArray.count;
             break;
         }
         default:
@@ -307,6 +331,7 @@ typedef NS_ENUM(NSUInteger, AELevelListType) {
     }
     
     [UIView animateWithDuration:0.2 animations:^{
+        [self.tableView showMessage:@"暂无数据，请稍后再试！" count: count];
         [self.tableView reloadData];
     } completion:^(BOOL finished) {
         [self.tableView scrollsToTop];
@@ -341,11 +366,11 @@ typedef NS_ENUM(NSUInteger, AELevelListType) {
         
         switch (self.listType) {
             case first:
-                title = self.firstArray[row].name;
+                title = self.firstArray[row].profession1;
                 cell.imageIcon.hidden = NO;
                 break;
             case secondary:
-                title = self.secondaryArray[row].name;
+                title = self.secondaryArray[row].profession2;
                 cell.imageIcon.hidden = NO;
                 break;
             case three:
@@ -388,15 +413,15 @@ typedef NS_ENUM(NSUInteger, AELevelListType) {
         case first: {
             AEProfessionSumModel *model = self.firstArray[row];
             self.secondaryArray = model.subProfession;
-            self.selectFirstLabel.text = model.name;
+            self.selectFirstLabel.text = model.profession1;
             self.listType = secondary;
             [self configData];
             break;
         }
         case secondary: {
             AEProfessionSubModel *model = self.secondaryArray[row];
-            self.threeArray = model.profession;
-            self.selectSecondaryLabel.text = model.name;
+            self.threeArray = model.professionList;
+            self.selectSecondaryLabel.text = model.profession2;
             self.listType = three;
             [self configData];
             break;
@@ -428,15 +453,17 @@ typedef NS_ENUM(NSUInteger, AELevelListType) {
 }
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     [textField resignFirstResponder];
+    [self searchProfession];
 }
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    if (string.length == 0) {
-        return YES;
-    }
-    if (textField.text.length >= 2) {
-        [self searchProfession];
-    }
+- (BOOL)textFieldShouldClear:(UITextField *)textField {
+    [self configData];
     return YES;
+}
+
+-(void)textFieldDidChange:(UITextField *)textField {
+    if (textField.markedTextRange == nil) {
+        [self searchProfession];//搜索方法
+    }
 }
 
 // MARK: - UIGestureRecognizerDelegate

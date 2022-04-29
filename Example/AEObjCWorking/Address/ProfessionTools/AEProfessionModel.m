@@ -17,7 +17,7 @@
 + (NSDictionary *)modelContainerPropertyGenericClass {
     // value使用[YYEatModel class]或YYEatModel.class或@"YYEatModel"没有区别
     return @{
-        @"profession" : NSStringFromClass([AEProfessionModel class]),
+        @"professionList" : NSStringFromClass([AEProfessionModel class]),
     };
 }
 @end

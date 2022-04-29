@@ -20,16 +20,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AEProfessionSubModel : NSObject
 /// 二级列表
-@property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSString *code;
-@property (nonatomic, copy) NSArray<AEProfessionModel *> *profession;
+@property (nonatomic, copy) NSString *profession2;
+@property (nonatomic, copy) NSString *code2;
+@property (nonatomic, copy) NSArray<AEProfessionModel *> *professionList;
 
 @end
 
 @interface AEProfessionSumModel : NSObject
 /// 一级列表
-@property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSString *code;
+@property (nonatomic, copy) NSString *profession1;
+@property (nonatomic, copy) NSString *code1;
 @property (nonatomic, copy) NSArray<AEProfessionSubModel *> *subProfession;
 
 @end
