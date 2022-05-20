@@ -27,7 +27,9 @@
 
 - (NSArray *)dataArray {
     if (!_dataArray) {
-        _dataArray = @[@"AECustomTitleViewController",
+        _dataArray = @[@"AEGifViewController",
+                       @"AEGradientViewController",
+                       @"AECustomTitleViewController",
                        @"AEFileOperationViewController",
                        @"AELifeViewController",
                        @"AEAddressViewController",

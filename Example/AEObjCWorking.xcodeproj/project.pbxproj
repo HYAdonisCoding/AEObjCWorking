@@ -74,6 +74,9 @@
 		669ACDFB27CDBB080013C239 /* AEGetFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 669ACDFA27CDBB080013C239 /* AEGetFile.m */; };
 		669E7F0027D9892900086068 /* AECustomTitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 669E7EFF27D9892900086068 /* AECustomTitleViewController.m */; };
 		669E7F0427D9906E00086068 /* AECustomTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 669E7F0327D9906E00086068 /* AECustomTitleView.m */; };
+		66A0546E282CF35400C491A5 /* AEGradientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A0546D282CF35400C491A5 /* AEGradientViewController.m */; };
+		66A8B428283661AA00B76B11 /* AEGifViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A8B427283661AA00B76B11 /* AEGifViewController.m */; };
+		66A8B42A283662D400B76B11 /* help_icon.gif in Resources */ = {isa = PBXBuildFile; fileRef = 66A8B429283662D400B76B11 /* help_icon.gif */; };
 		66D5F3702816311600122904 /* AEProfessionTCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D5F36F2816311600122904 /* AEProfessionTCell.m */; };
 		66D5F3732816314500122904 /* AEProfessionSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D5F3722816314500122904 /* AEProfessionSelectView.m */; };
 		66D5F3762816318F00122904 /* AEProfessionSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D5F3752816318F00122904 /* AEProfessionSelectViewController.m */; };
@@ -251,6 +254,11 @@
 		669E7EFF27D9892900086068 /* AECustomTitleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AECustomTitleViewController.m; sourceTree = "<group>"; };
 		669E7F0227D9906E00086068 /* AECustomTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AECustomTitleView.h; sourceTree = "<group>"; };
 		669E7F0327D9906E00086068 /* AECustomTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AECustomTitleView.m; sourceTree = "<group>"; };
+		66A0546C282CF35400C491A5 /* AEGradientViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEGradientViewController.h; sourceTree = "<group>"; };
+		66A0546D282CF35400C491A5 /* AEGradientViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEGradientViewController.m; sourceTree = "<group>"; };
+		66A8B426283661AA00B76B11 /* AEGifViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEGifViewController.h; sourceTree = "<group>"; };
+		66A8B427283661AA00B76B11 /* AEGifViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEGifViewController.m; sourceTree = "<group>"; };
+		66A8B429283662D400B76B11 /* help_icon.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = help_icon.gif; sourceTree = "<group>"; };
 		66D5F36E2816311600122904 /* AEProfessionTCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEProfessionTCell.h; sourceTree = "<group>"; };
 		66D5F36F2816311600122904 /* AEProfessionTCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEProfessionTCell.m; sourceTree = "<group>"; };
 		66D5F3712816314500122904 /* AEProfessionSelectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEProfessionSelectView.h; sourceTree = "<group>"; };
@@ -446,6 +454,8 @@
 		6003F593195388D20070C39A /* Example for AEObjCWorking */ = {
 			isa = PBXGroup;
 			children = (
+				66A8B4252836619100B76B11 /* Gif */,
+				66A0546B282CF2FA00C491A5 /* Gradient */,
 				669E7EFD27D988FB00086068 /* CustomTitleView */,
 				668F57E627C4CD730045AED4 /* FileOperation */,
 				664AA8B9272303DE00D31930 /* Life */,
@@ -746,6 +756,25 @@
 				66FADA992807AA17008DDABF /* AESpaceLabel.m */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		66A0546B282CF2FA00C491A5 /* Gradient */ = {
+			isa = PBXGroup;
+			children = (
+				66A0546C282CF35400C491A5 /* AEGradientViewController.h */,
+				66A0546D282CF35400C491A5 /* AEGradientViewController.m */,
+			);
+			path = Gradient;
+			sourceTree = "<group>";
+		};
+		66A8B4252836619100B76B11 /* Gif */ = {
+			isa = PBXGroup;
+			children = (
+				66A8B426283661AA00B76B11 /* AEGifViewController.h */,
+				66A8B427283661AA00B76B11 /* AEGifViewController.m */,
+				66A8B429283662D400B76B11 /* help_icon.gif */,
+			);
+			path = Gif;
 			sourceTree = "<group>";
 		};
 		7A44DE49228A46F30078B6A0 /* UI_Component */ = {
@@ -1050,6 +1079,7 @@
 				666D7CE426EE014A00CC131B /* Address1.txt in Resources */,
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				66273FEA2814F1760028840B /* profession.json in Resources */,
+				66A8B42A283662D400B76B11 /* help_icon.gif in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
@@ -1078,12 +1108,14 @@
 				"${PODS_ROOT}/Target Support Files/Pods-AEObjCWorking_Example/Pods-AEObjCWorking_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AEObjCWorking/AEObjCWorking.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AEObjCWorking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1143,6 +1175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				661EF3532627C588009E7037 /* AEBaseModel+AECategory.m in Sources */,
+				66A8B428283661AA00B76B11 /* AEGifViewController.m in Sources */,
 				7A9CD794227833D7004E6D2A /* AECustomOptionModel.m in Sources */,
 				7A6F9B5F24061873006A923D /* AEHTMLParsingController.m in Sources */,
 				7AA0E92A23C4124B0092DE5B /* AEDynamicCardController.m in Sources */,
@@ -1176,6 +1209,7 @@
 				666CF035261180BB00BCDF1E /* AEMObserver.m in Sources */,
 				7AEF45142409131E0065B265 /* AEPopoverShowController.m in Sources */,
 				666CF05E2611ADF100BCDF1E /* NSTimer+AEWeakTimer.m in Sources */,
+				66A0546E282CF35400C491A5 /* AEGradientViewController.m in Sources */,
 				666CF02B2611806700BCDF1E /* AEKVOViewController.m in Sources */,
 				661EF37A26280D7A009E7037 /* AECommonSuperFind.m in Sources */,
 				7A6F9B6D24061A64006A923D /* TFHppleElement.m in Sources */,

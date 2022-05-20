@@ -1,16 +1,21 @@
 PODS:
   - AEObjCWorking (0.1.0)
   - Masonry (1.1.0)
+  - SDWebImage (5.11.1):
+    - SDWebImage/Core (= 5.11.1)
+  - SDWebImage/Core (5.11.1)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
   - AEObjCWorking (from `../`)
   - Masonry (~> 1.1.0)
+  - SDWebImage (~> 5.0)
   - YYModel (~> 1.0.4)
 
 SPEC REPOS:
   trunk:
     - Masonry
+    - SDWebImage
     - YYModel
 
 EXTERNAL SOURCES:
@@ -20,8 +25,9 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AEObjCWorking: b0317ef59102766623be05e97648ee2d0fd28e31
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: bb53f2f58a5a159a877a9709042105a0d65556d2
+PODFILE CHECKSUM: 24b361607bf636ae291c27d08628d7f8a5642d4d
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.11.0
