@@ -7,16 +7,98 @@
 //
 
 #import "AEGifViewController.h"
+#import <SDCycleScrollView/SDCycleScrollView.h>
+#import "AEHeadlineCCell.h"
 
+@interface AEGifViewController () <SDCycleScrollViewDelegate>
 
-@interface AEGifViewController ()
-
+/// message
+@property (nonatomic, strong) NSArray *messageArray;
 @end
 
 @implementation AEGifViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self messages];
+}
+- (void)messages {
+    SDCycleScrollView *cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 100, SCREEN_WIDTH, 39) delegate:self placeholderImage:nil];
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.messageArray = @[
+            @"通知 全国疫情继续稳定下降",
+            @"通知 国家新闻出版署认定62种图书不合格热",
+            @"通知 茅台冰淇淋上线：含2％飞天茅台",
+            @"头条 安踏海报被指擦边：处理相关人员热",
+            @"头条 湖北5名中学生游泳时被急流冲走热",
+            @"头条 3人因蜱虫病病逝 曾接触去世感染者新",
+            @"头条 出版社回应童书中兔子集体跳湖自杀新",
+            @"头条 武汉一知名虾店被曝用黑油死虾新",
+            @"头条 刘畊宏边直播边打白蚁",
+            @"头条 山东一公立医院招聘“才艺护士”",
+        ];
+//        cycleScrollView.mainView.contentOffset = CGPointMake(0, 0);
+        cycleScrollView.imageURLStringsGroup = self.messageArray;
+    });
+    self.messageArray = @[
+        @"通知 全国疫情继续稳定下降",
+        @"头条 安踏海报被指擦边：处理相关人员热",];
+    cycleScrollView.backgroundColor = [UIColor magentaColor];
+    cycleScrollView.showPageControl = NO;
+    cycleScrollView.scrollDirection = UICollectionViewScrollDirectionVertical;
+    [self.view addSubview:cycleScrollView];
+    cycleScrollView.clickItemOperationBlock = ^(NSInteger currentIndex) {
+        NSLog(@"clickItem - %ld", (long)currentIndex);
+    };
+    cycleScrollView.itemDidScrollOperationBlock = ^(NSInteger currentIndex) {
+//        NSLog(@"itemDidScroll - %ld", (long)currentIndex);
+    };
+}
+/** 如果你需要自定义cell样式，请在实现此代理方法返回你的自定义cell的class。 */
+- (Class)customCollectionViewCellClassForCycleScrollView:(SDCycleScrollView *)view {
+    return [AEHeadlineCCell class];
+}
+
+
+/** 如果你自定义了cell样式，请在实现此代理方法为你的cell填充数据以及其它一系列设置 */
+- (void)setupCustomCell:(UICollectionViewCell *)cell forIndex:(NSInteger)index cycleScrollView:(SDCycleScrollView *)view {
+    AEHeadlineCCell *myCell = (AEHeadlineCCell *)cell;
+    myCell.titleString = self.messageArray[index];
+}
+
+- (void)ads {
+    SDCycleScrollView *cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 100, SCREEN_WIDTH, 200) delegate:self placeholderImage:nil];
+    cycleScrollView.imageURLStringsGroup = @[
+        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/dd.png",
+        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/00001105ld.png",
+        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/5qjjba.png",
+        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/zkvcs.jpg",
+        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/5zkv2.jpeg",
+        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/5zkv2.jpeg",
+        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/5qjjba.png",
+        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/5zkv2.jpeg",
+        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/5qjjba.png",
+        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/5zkv2.jpeg",
+        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/5qjjba.png",
+        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/5zkv2.jpeg",
+        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/szkvdl3.jpg",
+        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/5zkv2.jpeg",
+        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/szkvdl3.jpg",
+        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/5zkv2.jpeg",
+        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/szkvdl3.jpg",
+        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/5zkv2.jpeg",
+        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/zkvcs.jpg",
+        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/szkvdl3.jpg"];
+    [self.view addSubview:cycleScrollView];
+    cycleScrollView.clickItemOperationBlock = ^(NSInteger currentIndex) {
+        NSLog(@"clickItem - %ld", (long)currentIndex);
+    };
+    cycleScrollView.itemDidScrollOperationBlock = ^(NSInteger currentIndex) {
+//        NSLog(@"itemDidScroll - %ld", (long)currentIndex);
+    };
+}
+- (void)testGif {
     // Do any additional setup after loading the view.
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [btn setBackgroundColor:[UIColor blueColor]];

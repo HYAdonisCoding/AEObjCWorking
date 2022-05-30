@@ -71,6 +71,7 @@
 		666DC53E27C7796D00FBDF41 /* AEStudyModel+StudyCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 666DC53D27C7796D00FBDF41 /* AEStudyModel+StudyCategory.m */; };
 		666DC54127C77BCC00FBDF41 /* AEStudyModel+AEDouble.m in Sources */ = {isa = PBXBuildFile; fileRef = 666DC54027C77BCB00FBDF41 /* AEStudyModel+AEDouble.m */; };
 		668F57E927C4CDB00045AED4 /* AEFileOperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 668F57E827C4CDB00045AED4 /* AEFileOperationViewController.m */; };
+		66913AA2284472D4006FD17E /* AEHeadlineCCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66913AA1284472D4006FD17E /* AEHeadlineCCell.m */; };
 		669ACDFB27CDBB080013C239 /* AEGetFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 669ACDFA27CDBB080013C239 /* AEGetFile.m */; };
 		669E7F0027D9892900086068 /* AECustomTitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 669E7EFF27D9892900086068 /* AECustomTitleViewController.m */; };
 		669E7F0427D9906E00086068 /* AECustomTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 669E7F0327D9906E00086068 /* AECustomTitleView.m */; };
@@ -248,6 +249,8 @@
 		666DC54027C77BCB00FBDF41 /* AEStudyModel+AEDouble.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AEStudyModel+AEDouble.m"; sourceTree = "<group>"; };
 		668F57E727C4CDB00045AED4 /* AEFileOperationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEFileOperationViewController.h; sourceTree = "<group>"; };
 		668F57E827C4CDB00045AED4 /* AEFileOperationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEFileOperationViewController.m; sourceTree = "<group>"; };
+		66913AA0284472D4006FD17E /* AEHeadlineCCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEHeadlineCCell.h; sourceTree = "<group>"; };
+		66913AA1284472D4006FD17E /* AEHeadlineCCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEHeadlineCCell.m; sourceTree = "<group>"; };
 		669ACDF927CDBB080013C239 /* AEGetFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEGetFile.h; sourceTree = "<group>"; };
 		669ACDFA27CDBB080013C239 /* AEGetFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEGetFile.m; sourceTree = "<group>"; };
 		669E7EFE27D9892900086068 /* AECustomTitleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AECustomTitleViewController.h; sourceTree = "<group>"; };
@@ -772,6 +775,8 @@
 			children = (
 				66A8B426283661AA00B76B11 /* AEGifViewController.h */,
 				66A8B427283661AA00B76B11 /* AEGifViewController.m */,
+				66913AA0284472D4006FD17E /* AEHeadlineCCell.h */,
+				66913AA1284472D4006FD17E /* AEHeadlineCCell.m */,
 				66A8B429283662D400B76B11 /* help_icon.gif */,
 			);
 			path = Gif;
@@ -1108,6 +1113,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-AEObjCWorking_Example/Pods-AEObjCWorking_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AEObjCWorking/AEObjCWorking.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/SDCycleScrollView/SDCycleScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 			);
@@ -1115,6 +1121,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AEObjCWorking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDCycleScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 			);
@@ -1181,6 +1188,7 @@
 				7AA0E92A23C4124B0092DE5B /* AEDynamicCardController.m in Sources */,
 				661EF3732627F665009E7037 /* AEReverseList.m in Sources */,
 				7A44DE4F228A481A0078B6A0 /* UIFont+AEFonts.m in Sources */,
+				66913AA2284472D4006FD17E /* AEHeadlineCCell.m in Sources */,
 				666CF0302611808900BCDF1E /* AEMObject.m in Sources */,
 				661EF3672627E1FD009E7037 /* AEArithmeticViewController.m in Sources */,
 				66D5F3702816311600122904 /* AEProfessionTCell.m in Sources */,

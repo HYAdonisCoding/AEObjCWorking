@@ -7,6 +7,7 @@ target 'AEObjCWorking_Example' do
   pod 'Masonry', '~> 1.1.0'
   pod 'YYModel',      '~> 1.0.4'        #数据解析
   pod 'SDWebImage', '~> 5.0'
+  pod 'SDCycleScrollView','>= 1.82'
   target 'AEObjCWorking_Tests' do
     inherit! :search_paths
 

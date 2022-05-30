@@ -1,6 +1,8 @@
 PODS:
   - AEObjCWorking (0.1.0)
   - Masonry (1.1.0)
+  - SDCycleScrollView (1.82):
+    - SDWebImage (>= 5.0.0)
   - SDWebImage (5.11.1):
     - SDWebImage/Core (= 5.11.1)
   - SDWebImage/Core (5.11.1)
@@ -9,12 +11,14 @@ PODS:
 DEPENDENCIES:
   - AEObjCWorking (from `../`)
   - Masonry (~> 1.1.0)
+  - SDCycleScrollView (>= 1.82)
   - SDWebImage (~> 5.0)
   - YYModel (~> 1.0.4)
 
 SPEC REPOS:
   trunk:
     - Masonry
+    - SDCycleScrollView
     - SDWebImage
     - YYModel
 
@@ -25,9 +29,10 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AEObjCWorking: b0317ef59102766623be05e97648ee2d0fd28e31
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  SDCycleScrollView: a0d74c3384caa72bdfc81470bdbc8c14b3e1fbcf
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 24b361607bf636ae291c27d08628d7f8a5642d4d
+PODFILE CHECKSUM: 7ed0a4239652f40a12b7bf1e990e2f9b1fac9c05
 
 COCOAPODS: 1.11.0
