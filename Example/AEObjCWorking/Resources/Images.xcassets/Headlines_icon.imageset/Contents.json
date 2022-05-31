@@ -1,16 +1,15 @@
 {
   "images" : [
     {
+      "filename" : "通知.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Headlines_icon@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Headlines_icon@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
