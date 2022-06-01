@@ -9,6 +9,7 @@
 #import "AEGifViewController.h"
 #import <SDCycleScrollView/SDCycleScrollView.h>
 #import "AEHeadlineCCell.h"
+#import "AEConvenientTool.h"
 
 @interface AEGifViewController () <SDCycleScrollViewDelegate>
 
@@ -20,17 +21,38 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self messages];
+//    [self messages];
+    [self testNotification];
+}
+- (void)testNotification {
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+//    [center removeObserver:[AEConvenientTool class]];
+    [center removeObserver:self];
+    NSString *name = @"NotificationComing";
+    /**注意：
+     1、如果发送的通知指定了object对象，那么观察者接收的通知设置的object对象与其一样，才会接收到通知，但是接收通知如果将这个参数设置为了nil，则会接收一切通知。
+     2、观察者的SEL函数指针可以有一个参数，参数就是发送的死奥西对象本身，可以通过这个参数取到消息对象的userInfo，实现传值。
+     */
+    [center addObserver:self selector:@selector(messages) name:name object:nil];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSLog(@"postNotification -- ");
+        [center postNotificationName:name object:@"going" userInfo:@{@"1":@"123"}];
+    });
+//    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//        NSLog(@"postNotification -- ");// 发送和接受同一个线程
+//        [center postNotificationName:name object:@"going" userInfo:@{@"1":@"123"}];
+//    });
+}
+- (void)messages:(NSNotification *)notice {
+    NSLog(@"notice--%@", notice);
 }
 - (void)messages {
     SDCycleScrollView *cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 100, SCREEN_WIDTH, 39) delegate:self placeholderImage:nil];
 
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         self.messageArray = @[
-            @"通知 全国疫情继续稳定下降",
             @"通知 国家新闻出版署认定62种图书不合格热",
             @"通知 茅台冰淇淋上线：含2％飞天茅台",
-            @"头条 安踏海报被指擦边：处理相关人员热",
             @"头条 湖北5名中学生游泳时被急流冲走热",
             @"头条 3人因蜱虫病病逝 曾接触去世感染者新",
             @"头条 出版社回应童书中兔子集体跳湖自杀新",
@@ -44,6 +66,7 @@
     self.messageArray = @[
         @"通知 全国疫情继续稳定下降",
         @"头条 安踏海报被指擦边：处理相关人员热",];
+    cycleScrollView.imageURLStringsGroup = self.messageArray;
     cycleScrollView.backgroundColor = [UIColor magentaColor];
     cycleScrollView.showPageControl = NO;
     cycleScrollView.scrollDirection = UICollectionViewScrollDirectionVertical;

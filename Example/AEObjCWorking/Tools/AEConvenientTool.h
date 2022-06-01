@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AEConvenientTool : AEBaseModel
++ (void)ae_customLog:(id)data;
 
 ///随机颜色
 + (UIColor *)randomColor;

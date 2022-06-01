@@ -9,6 +9,9 @@
 #import "AEConvenientTool.h"
 
 @implementation AEConvenientTool
++ (void)ae_customLog:(id)data {
+    NSLog(@"data - %@", data);
+}
 
 ///随机颜色
 + (UIColor *)randomColor {
