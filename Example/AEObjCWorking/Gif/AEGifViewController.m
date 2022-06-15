@@ -22,7 +22,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    [self messages];
-    [self testNotification];
+//    [self testNotification];
+    [self testNotificationClass];
+}
+- (void)testNotificationClass {
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    NSString *name = @"ClassNotificationComing";
+    [center removeObserver:[AEConvenientTool class]];
+    [center addObserver:[AEConvenientTool class] selector:@selector(ae_customLog:) name:name object:nil];
+    [center postNotificationName:name object:@"going" userInfo:@{@"1":@"123"}];
 }
 - (void)testNotification {
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
