@@ -1,0 +1,22 @@
+{
+  "name": "AEObjCWorking",
+  "version": "0.1.0",
+  "summary": "一个高效的Objective-C工具。",
+  "description": "一个高效的Objective-C工具。简单、易用、灵活",
+  "homepage": "https://github.com/HYAdonisCoding/AEObjCWorking",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "HYAdonisCoding": "296786475@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/HYAdonisCoding/AEObjCWorking.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "AEObjCWorking/Classes/**/*"
+}

@@ -1,0 +1,37 @@
+[{
+    "code1": "100",
+    "profession1": "自由职业",
+    "subProfession": [{
+        "code2": "100",
+        "profession2": "自由职业",
+        "professionList": [{
+            "code": "100",
+            "name": "自由职业"
+        }]
+    }]
+}, {
+    "code1": "200",
+    "profession1": "无职业",
+    "subProfession": [{
+        "code2": "201",
+        "profession2": "学生",
+        "professionList": [{
+            "code": "201",
+            "name": "学生"
+        }]
+    }, {
+        "code2": "204",
+        "profession2": "无业人员",
+        "professionList": [{
+            "code": "204",
+            "name": "无业人员"
+        }]
+    }, {
+        "code2": "202",
+        "profession2": "退休人员",
+        "professionList": [{
+            "code": "202",
+            "name": "退休人员"
+        }]
+    }]
+}]

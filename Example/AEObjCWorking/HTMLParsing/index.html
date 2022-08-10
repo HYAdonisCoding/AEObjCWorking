@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <title>医生执业注册信息查询</title>
+    <!--强制使用360急速模式-->
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="/Content/v10/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style type="text/css">
+        body {
+            font-size: 14px;
+            background: #f6f6f6;
+            font-family: 'Microsoft YaHei';
+        }
+
+        .header-bg {
+            height: 155px;
+            background: url(/./Images/logo.jpg) no-repeat left;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 15px;
+        }
+
+        /*valid css start*/
+
+        .validation-summary-errors {
+            color: #f00;
+            font-size: 12px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            padding: 3px;
+            background-color: #fbe3e4;
+            border: 1px dashed #9a4343;
+            border-radius: 3px;
+        }
+
+            .validation-summary-errors li {
+                padding-left: 2px;
+                margin-top: 2px;
+                margin-bottom: 2px;
+                list-style: none;
+            }
+
+        .field-validation-error {
+            color: #f00 !important;
+            font-size: 12px;
+            background-color: #fbe3e4;
+            padding: 3px;
+        }
+
+        input.input-validation-error {
+            border: 1px solid #e80c4d;
+            background-color: #ffeeee;
+        }
+
+        select.input-validation-error {
+            border: 1px solid #e80c4d;
+            background-color: #ffeeee;
+        }
+
+        textarea.input-validation-error {
+            border: 1px solid #e80c4d;
+            background-color: #ffeeee;
+        }
+
+        input[type="checkbox"].input-validation-error {
+            border: 0 none;
+        }
+
+        .field-validation-valid {
+            display: none;
+        }
+
+        .validation-summary-valid {
+            display: none;
+        }
+
+        /*valid css end*/
+       
+
+        .top10 {
+            margin-top: 10px;
+        }
+
+        .bot10 {
+            margin-bottom: 10px;
+        }     
+
+        .overhide {
+            overflow: hidden;
+        }
+
+       
+        .mb20 {
+            margin-bottom: 20px;
+        }
+
+        .fl {
+            float: left;
+        }
+
+        .fr {
+            float: right;
+        }
+
+        .ml10 {
+            margin-left: 10px;
+        }
+
+        .mr10 {
+            margin-right: 10px;
+        }
+
+        .mt5 {
+            margin-top: 5px;
+        }
+
+        .mb5 {
+            margin-bottom: 5px;
+        }
+
+        .pb20 {
+            padding-bottom: 20px;
+        }
+
+        /*footer start*/
+
+        .footer_sel {
+            width: 143px;
+            height: 30px;
+            border: 1px solid #e3e0e0;
+            font-size: 12px;
+            color: #666;
+            font-family: "微软雅黑";
+        }
+
+        .foot_line {
+            border-bottom: 1px solid #dadada;
+        }
+
+        .footer_nav p {
+            font-size: 12px;
+            color: #959595;
+        }
+
+        .footer_gh img {
+            width: 60px;
+            height: 60px;
+        }
+
+        /*footer end*/
+    </style>
+</head>
+<body>
+    <div style="width:100%; margin-left: auto; margin-right: auto;">
+        <div class="container header-bg">
+        </div>
+        <div class="container">
+            
+
+<style>
+    /*最外面的容器*/
+    .details_co {
+        margin: 10px 0;
+    }
+    /*字段标题*/
+    .field_title {
+        background-color: #F0FFF8;
+        padding: 10px;
+        color: #524f66;
+        font-weight: bold;
+        border-bottom: 1px solid #006633;
+    }
+    /*字段内容*/
+    .field_cxt {
+        background-color: #fff;
+        padding: 10px;
+        border-bottom: 1px solid #006633;
+    }
+</style>
+<div class="alert alert-danger" style="padding:10px;background-color:green;color:#fff;">
+    <ul style="list-style:none;">
+        <li>1、查询数据截止到2020年2月20日0时。</li>
+        <li>
+            2、信息数据结果以各省、自治区、直辖市卫生计生委数据为准。
+        </li>
+        <li>
+            
+            3、凌晨1点至凌晨5点系统进行维护，不能提供查询。
+        </li>
+    </ul>
+</div>
+<div class="details_co">
+    <div class="row">
+        <div class="col-sm-3 col-md-3 field_title">姓名：</div>
+        <div class="col-sm-3 col-md-3 field_cxt"><strong style="color:#000000;">王毅</strong></div>
+        <div class="col-sm-3 col-md-3 field_title">性别：</div>
+        <div class="col-sm-3 col-md-3 field_cxt">男</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3 col-md-3 field_title">医师级别：</div>
+        <div class="col-sm-3 col-md-3 field_cxt">执业医师</div>
+        <div class="col-sm-3 col-md-3 field_title">执业类别：</div>
+        <div class="col-sm-3 col-md-3 field_cxt">临床</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3 col-md-3 field_title">执业地点：</div>
+        <div class="col-sm-3 col-md-3 field_cxt">天津市</div>
+        <div class="col-sm-3 col-md-3 field_title">执业证书编码：</div>
+        <div class="col-sm-3 col-md-3 field_cxt">110120000007414</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3 col-md-3 field_title">主要执业机构：</div>
+        <div class="col-sm-9 col-md-9 field_cxt">天津市第一中心医院</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3 col-md-3 field_title">执业范围：</div>
+        <div class="col-sm-9 col-md-9 field_cxt">外科专业</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3 col-md-3 field_title">发证(批准)机关：</div>
+        <div class="col-sm-9 col-md-9 field_cxt">天津市卫生局</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="page-header text-center" style="margin-top:10px;"><b>多机构备案信息：</b></div>
+        </div>
+    </div>
+    <div class="text-center" style="margin-top:20px;">
+        〖<a style="color: Black;" href="javascript:window.close()">关闭窗口</a>〗
+    </div>
+</div>
+        </div>
+        <div class="container">
+            <div class="foot_line mb20"></div>
+            <div class="footer_con_t">
+                <div class="footer_gh fl">
+                    <img src="/Images/logo_foot.png" width="60" height="60" />
+                </div>
+                <div class="fl footer_nav ml10">
+                    <p><a href="http://www.nhfpc.gov.cn/zhuz/fwdh/lmtt.shtml" target="_blank">联系我们</a>&nbsp; | &nbsp;<a href="http://www.nhfpc.gov.cn/zhuz/wzdt/wzdt.shtml" target="_blank">网站地图</a></p>
+                    <p class="mb5 mt5">地址：北京市西城区西直门外南路1号&nbsp;&nbsp;&nbsp;&nbsp;邮编：100044&nbsp;&nbsp;&nbsp;&nbsp;电话：010-68791445&nbsp;&nbsp;&nbsp;&nbsp;ICP备案编号：京ICP备11020874</p>
+                    <p>中华人民共和国国家卫生健康委员会版权所有&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;技术支持：国家卫生健康委员会统计信息中心</p>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <script src="/Content/v10/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/jquery.min.js"></script>
+        <script src="/Content/v10/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+        
+    </div>
+</body>
+</html>
