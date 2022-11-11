@@ -7,7 +7,6 @@
 //
 
 #import "AEIntelligentSortingController.h"
-#import "AEConvenientTool.h"
 #import "Goods.h"
 
 @interface AEIntelligentSortingController ()<UITableViewDelegate, UITableViewDataSource>

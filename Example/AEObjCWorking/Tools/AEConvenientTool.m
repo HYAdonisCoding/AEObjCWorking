@@ -9,6 +9,9 @@
 #import "AEConvenientTool.h"
 
 @implementation AEConvenientTool
++ (NSString *)uuid {
+    return [[UIDevice currentDevice].identifierForVendor UUIDString];
+}
 + (void)ae_customLog:(id)data {
     NSLog(@"data - %@", data);
 }

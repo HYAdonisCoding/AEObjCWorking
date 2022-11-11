@@ -27,7 +27,9 @@
 
 - (NSArray *)dataArray {
     if (!_dataArray) {
-        _dataArray = @[@"AEGifViewController",
+        _dataArray = @[@"AETabBarViewController",
+                       @"AEKnowledgeViewController",
+                       @"AEGifViewController",
                        @"AEGradientViewController",
                        @"AECustomTitleViewController",
                        @"AEFileOperationViewController",

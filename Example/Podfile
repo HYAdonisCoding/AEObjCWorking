@@ -8,6 +8,7 @@ target 'AEObjCWorking_Example' do
   pod 'YYModel',      '~> 1.0.4'        #数据解析
   pod 'SDWebImage', '~> 5.0'
   pod 'SDCycleScrollView','>= 1.82'
+  pod 'CocoaAsyncSocket', '~> 7.6.5'
   target 'AEObjCWorking_Tests' do
     inherit! :search_paths
 

@@ -9,7 +9,6 @@
 #import "AEGifViewController.h"
 #import <SDCycleScrollView/SDCycleScrollView.h>
 #import "AEHeadlineCCell.h"
-#import "AEConvenientTool.h"
 
 @interface AEGifViewController () <SDCycleScrollViewDelegate>
 
@@ -100,27 +99,7 @@
 
 - (void)ads {
     SDCycleScrollView *cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 100, SCREEN_WIDTH, 200) delegate:self placeholderImage:nil];
-    cycleScrollView.imageURLStringsGroup = @[
-        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/dd.png",
-        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/00001105ld.png",
-        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/5qjjba.png",
-        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/zkvcs.jpg",
-        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/5zkv2.jpeg",
-        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/5zkv2.jpeg",
-        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/5qjjba.png",
-        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/5zkv2.jpeg",
-        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/5qjjba.png",
-        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/5zkv2.jpeg",
-        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/5qjjba.png",
-        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/5zkv2.jpeg",
-        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/szkvdl3.jpg",
-        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/5zkv2.jpeg",
-        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/szkvdl3.jpg",
-        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/5zkv2.jpeg",
-        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/szkvdl3.jpg",
-        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/5zkv2.jpeg",
-        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/zkvcs.jpg",
-        @"http://static.cebbank.com/fileDir/subject/resource/sjyhzqtp/MOBILEBANKAD/OPENAD/szkvdl3.jpg"];
+    cycleScrollView.imageURLStringsGroup = @[@""];
     [self.view addSubview:cycleScrollView];
     cycleScrollView.clickItemOperationBlock = ^(NSInteger currentIndex) {
         NSLog(@"clickItem - %ld", (long)currentIndex);

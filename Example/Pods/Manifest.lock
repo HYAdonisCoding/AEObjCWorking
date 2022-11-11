@@ -1,5 +1,6 @@
 PODS:
   - AEObjCWorking (0.1.0)
+  - CocoaAsyncSocket (7.6.5)
   - Masonry (1.1.0)
   - SDCycleScrollView (1.82):
     - SDWebImage (>= 5.0.0)
@@ -10,6 +11,7 @@ PODS:
 
 DEPENDENCIES:
   - AEObjCWorking (from `../`)
+  - CocoaAsyncSocket
   - Masonry (~> 1.1.0)
   - SDCycleScrollView (>= 1.82)
   - SDWebImage (~> 5.0)
@@ -17,6 +19,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - CocoaAsyncSocket
     - Masonry
     - SDCycleScrollView
     - SDWebImage
@@ -28,11 +31,12 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AEObjCWorking: b0317ef59102766623be05e97648ee2d0fd28e31
+  CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SDCycleScrollView: a0d74c3384caa72bdfc81470bdbc8c14b3e1fbcf
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 7ed0a4239652f40a12b7bf1e990e2f9b1fac9c05
+PODFILE CHECKSUM: 614d2fed0c7185469a7d085527bd5b04accd6ebd
 
 COCOAPODS: 1.11.0
