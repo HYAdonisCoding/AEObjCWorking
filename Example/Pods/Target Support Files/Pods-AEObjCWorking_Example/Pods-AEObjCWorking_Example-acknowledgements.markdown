@@ -27,6 +27,11 @@ THE SOFTWARE.
 
 
 
+## CTMediator
+
+MIT
+
+
 ## CocoaAsyncSocket
 
 Public Domain License
