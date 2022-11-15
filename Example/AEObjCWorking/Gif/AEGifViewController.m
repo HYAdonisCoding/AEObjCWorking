@@ -9,6 +9,7 @@
 #import "AEGifViewController.h"
 #import <SDCycleScrollView/SDCycleScrollView.h>
 #import "AEHeadlineCCell.h"
+#import "AEConvenientTool.h"
 
 @interface AEGifViewController () <SDCycleScrollViewDelegate>
 
