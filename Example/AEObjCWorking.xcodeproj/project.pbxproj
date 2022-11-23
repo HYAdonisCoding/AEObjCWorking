@@ -46,6 +46,13 @@
 		663F593D26B8DDF000B92C3A /* AEDataPropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 663F593C26B8DDF000B92C3A /* AEDataPropertyList.plist */; };
 		663F594026B8DF3100B92C3A /* AEDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 663F593F26B8DF3100B92C3A /* AEDataHelper.m */; };
 		663F594326B8E5F200B92C3A /* AEPlistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 663F594226B8E5F200B92C3A /* AEPlistViewController.m */; };
+		664A03F9292CD2F900E77CC7 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 664A03C2292CD18000E77CC7 /* WidgetKit.framework */; };
+		664A03FA292CD2F900E77CC7 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 664A03C4292CD18000E77CC7 /* SwiftUI.framework */; };
+		664A03FD292CD2F900E77CC7 /* AEWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664A03FC292CD2F900E77CC7 /* AEWidgetBundle.swift */; };
+		664A03FF292CD2F900E77CC7 /* AEWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664A03FE292CD2F900E77CC7 /* AEWidgetLiveActivity.swift */; };
+		664A0401292CD2F900E77CC7 /* AEWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664A0400292CD2F900E77CC7 /* AEWidget.swift */; };
+		664A0403292CD2FA00E77CC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 664A0402292CD2FA00E77CC7 /* Assets.xcassets */; };
+		664A0407292CD2FA00E77CC7 /* AEWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 664A03F8292CD2F900E77CC7 /* AEWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		664AA8BC2723042500D31930 /* AELifeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 664AA8BB2723042500D31930 /* AELifeViewController.m */; };
 		6667E25E27E1E64100D9BA78 /* UIButton+AEImagePlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 6667E25D27E1E64000D9BA78 /* UIButton+AEImagePlace.m */; };
 		666CEFFC26115D5E00BCDF1E /* AEOCKnowledgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 666CEFFB26115D5E00BCDF1E /* AEOCKnowledgeViewController.m */; };
@@ -72,6 +79,8 @@
 		666DC54127C77BCC00FBDF41 /* AEStudyModel+AEDouble.m in Sources */ = {isa = PBXBuildFile; fileRef = 666DC54027C77BCB00FBDF41 /* AEStudyModel+AEDouble.m */; };
 		668F57E927C4CDB00045AED4 /* AEFileOperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 668F57E827C4CDB00045AED4 /* AEFileOperationViewController.m */; };
 		66913AA2284472D4006FD17E /* AEHeadlineCCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66913AA1284472D4006FD17E /* AEHeadlineCCell.m */; };
+		669A10DB292DAEA3008F307E /* Yahei.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 669A10DA292DAEA3008F307E /* Yahei.ttf */; };
+		669A10E0292DB3B5008F307E /* AEFontsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 669A10DF292DB3B5008F307E /* AEFontsViewController.m */; };
 		669ACDFB27CDBB080013C239 /* AEGetFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 669ACDFA27CDBB080013C239 /* AEGetFile.m */; };
 		669E7F0027D9892900086068 /* AECustomTitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 669E7EFF27D9892900086068 /* AECustomTitleViewController.m */; };
 		669E7F0427D9906E00086068 /* AECustomTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 669E7F0327D9906E00086068 /* AECustomTitleView.m */; };
@@ -133,7 +142,28 @@
 			remoteGlobalIDString = 6003F589195388D20070C39A;
 			remoteInfo = AEObjCWorking;
 		};
+		664A0405292CD2FA00E77CC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6003F582195388D10070C39A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 664A03F7292CD2F900E77CC7;
+			remoteInfo = AEWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		664A03D6292CD18600E77CC7 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				664A0407292CD2FA00E77CC7 /* AEWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0C2C0AA7262A7F8D0038859D /* AEMCObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEMCObject.h; sourceTree = "<group>"; };
@@ -204,6 +234,14 @@
 		663F593F26B8DF3100B92C3A /* AEDataHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEDataHelper.m; sourceTree = "<group>"; };
 		663F594126B8E5F200B92C3A /* AEPlistViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEPlistViewController.h; sourceTree = "<group>"; };
 		663F594226B8E5F200B92C3A /* AEPlistViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEPlistViewController.m; sourceTree = "<group>"; };
+		664A03C2292CD18000E77CC7 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		664A03C4292CD18000E77CC7 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		664A03F8292CD2F900E77CC7 /* AEWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AEWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		664A03FC292CD2F900E77CC7 /* AEWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AEWidgetBundle.swift; sourceTree = "<group>"; };
+		664A03FE292CD2F900E77CC7 /* AEWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AEWidgetLiveActivity.swift; sourceTree = "<group>"; };
+		664A0400292CD2F900E77CC7 /* AEWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AEWidget.swift; sourceTree = "<group>"; };
+		664A0402292CD2FA00E77CC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		664A0404292CD2FA00E77CC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		664AA8BA2723042500D31930 /* AELifeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AELifeViewController.h; sourceTree = "<group>"; };
 		664AA8BB2723042500D31930 /* AELifeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AELifeViewController.m; sourceTree = "<group>"; };
 		6667E25C27E1E64000D9BA78 /* UIButton+AEImagePlace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+AEImagePlace.h"; sourceTree = "<group>"; };
@@ -254,6 +292,9 @@
 		668F57E827C4CDB00045AED4 /* AEFileOperationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEFileOperationViewController.m; sourceTree = "<group>"; };
 		66913AA0284472D4006FD17E /* AEHeadlineCCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEHeadlineCCell.h; sourceTree = "<group>"; };
 		66913AA1284472D4006FD17E /* AEHeadlineCCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEHeadlineCCell.m; sourceTree = "<group>"; };
+		669A10DA292DAEA3008F307E /* Yahei.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Yahei.ttf; sourceTree = "<group>"; };
+		669A10DE292DB3B5008F307E /* AEFontsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEFontsViewController.h; sourceTree = "<group>"; };
+		669A10DF292DB3B5008F307E /* AEFontsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEFontsViewController.m; sourceTree = "<group>"; };
 		669ACDF927CDBB080013C239 /* AEGetFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEGetFile.h; sourceTree = "<group>"; };
 		669ACDFA27CDBB080013C239 /* AEGetFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEGetFile.m; sourceTree = "<group>"; };
 		669E7EFE27D9892900086068 /* AECustomTitleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AECustomTitleViewController.h; sourceTree = "<group>"; };
@@ -385,6 +426,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		664A03F5292CD2F900E77CC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				664A03FA292CD2F900E77CC7 /* SwiftUI.framework in Frameworks */,
+				664A03F9292CD2F900E77CC7 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -434,6 +484,7 @@
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for AEObjCWorking */,
 				6003F5B5195388D20070C39A /* Tests */,
+				664A03FB292CD2F900E77CC7 /* AEWidget */,
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
 				81F40E56F2EAB5C2E9363911 /* Pods */,
@@ -445,6 +496,7 @@
 			children = (
 				6003F58A195388D20070C39A /* AEObjCWorking_Example.app */,
 				6003F5AE195388D20070C39A /* AEObjCWorking_Tests.xctest */,
+				664A03F8292CD2F900E77CC7 /* AEWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -459,6 +511,8 @@
 				6003F5AF195388D20070C39A /* XCTest.framework */,
 				B3248278C97182942419AF43 /* Pods_AEObjCWorking_Example.framework */,
 				6407D1651B08F82B58F210B4 /* Pods_AEObjCWorking_Tests.framework */,
+				664A03C2292CD18000E77CC7 /* WidgetKit.framework */,
+				664A03C4292CD18000E77CC7 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -466,6 +520,7 @@
 		6003F593195388D20070C39A /* Example for AEObjCWorking */ = {
 			isa = PBXGroup;
 			children = (
+				669A10DD292DB388008F307E /* FontsShow */,
 				66A2E67128FD015E00330702 /* TestBaseKnowledge */,
 				66A8B4252836619100B76B11 /* Gif */,
 				66A0546B282CF2FA00C491A5 /* Gradient */,
@@ -621,6 +676,18 @@
 			path = Plist;
 			sourceTree = "<group>";
 		};
+		664A03FB292CD2F900E77CC7 /* AEWidget */ = {
+			isa = PBXGroup;
+			children = (
+				664A03FC292CD2F900E77CC7 /* AEWidgetBundle.swift */,
+				664A03FE292CD2F900E77CC7 /* AEWidgetLiveActivity.swift */,
+				664A0400292CD2F900E77CC7 /* AEWidget.swift */,
+				664A0402292CD2FA00E77CC7 /* Assets.xcassets */,
+				664A0404292CD2FA00E77CC7 /* Info.plist */,
+			);
+			path = AEWidget;
+			sourceTree = "<group>";
+		};
 		664AA8B9272303DE00D31930 /* Life */ = {
 			isa = PBXGroup;
 			children = (
@@ -750,6 +817,23 @@
 			path = FileOperation;
 			sourceTree = "<group>";
 		};
+		669A10DC292DB0C2008F307E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				669A10DA292DAEA3008F307E /* Yahei.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		669A10DD292DB388008F307E /* FontsShow */ = {
+			isa = PBXGroup;
+			children = (
+				669A10DE292DB3B5008F307E /* AEFontsViewController.h */,
+				669A10DF292DB3B5008F307E /* AEFontsViewController.m */,
+			);
+			path = FontsShow;
+			sourceTree = "<group>";
+		};
 		669E7EFD27D988FB00086068 /* CustomTitleView */ = {
 			isa = PBXGroup;
 			children = (
@@ -823,6 +907,7 @@
 		7A52EB8922782676009BC207 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				669A10DC292DB0C2008F307E /* Fonts */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				7A52EB88227823FC009BC207 /* AEPrefixHeader.pch */,
@@ -1030,10 +1115,12 @@
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
 				0B12AE9E13D743269FA7850A /* [CP] Embed Pods Frameworks */,
+				664A03D6292CD18600E77CC7 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				664A0406292CD2FA00E77CC7 /* PBXTargetDependency */,
 			);
 			name = AEObjCWorking_Example;
 			productName = AEObjCWorking;
@@ -1059,6 +1146,23 @@
 			productReference = 6003F5AE195388D20070C39A /* AEObjCWorking_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		664A03F7292CD2F900E77CC7 /* AEWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 664A0408292CD2FB00E77CC7 /* Build configuration list for PBXNativeTarget "AEWidgetExtension" */;
+			buildPhases = (
+				664A03F4292CD2F900E77CC7 /* Sources */,
+				664A03F5292CD2F900E77CC7 /* Frameworks */,
+				664A03F6292CD2F900E77CC7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AEWidgetExtension;
+			productName = AEWidgetExtension;
+			productReference = 664A03F8292CD2F900E77CC7 /* AEWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1066,6 +1170,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = AE;
+				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = HYAdonisCoding;
 				TargetAttributes = {
@@ -1075,6 +1180,11 @@
 					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
+					};
+					664A03F7292CD2F900E77CC7 = {
+						CreatedOnToolsVersion = 14.1;
+						DevelopmentTeam = N2KQ965WEJ;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -1094,6 +1204,7 @@
 			targets = (
 				6003F589195388D20070C39A /* AEObjCWorking_Example */,
 				6003F5AD195388D20070C39A /* AEObjCWorking_Tests */,
+				664A03F7292CD2F900E77CC7 /* AEWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -1113,6 +1224,7 @@
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 				663F593D26B8DDF000B92C3A /* AEDataPropertyList.plist in Resources */,
 				666D7CE226EDE34F00CC131B /* Address.txt in Resources */,
+				669A10DB292DAEA3008F307E /* Yahei.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1121,6 +1233,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		664A03F6292CD2F900E77CC7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				664A0403292CD2FA00E77CC7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1273,6 +1393,7 @@
 				7A9CD79722783544004E6D2A /* AECustomOptioinViewController.m in Sources */,
 				7A9CD791227830BE004E6D2A /* AEAECustomOptionCell.m in Sources */,
 				6003F5A7195388D20070C39A /* AECustomOptioinController.m in Sources */,
+				669A10E0292DB3B5008F307E /* AEFontsViewController.m in Sources */,
 				661EF3582627C598009E7037 /* AEBaseModel+AECategoryTest.m in Sources */,
 				7A52EB8D2278274F009BC207 /* AEBaseModel.m in Sources */,
 				7AA0E92D23C4125C0092DE5B /* AECardView.m in Sources */,
@@ -1314,6 +1435,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		664A03F4292CD2F900E77CC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				664A0401292CD2F900E77CC7 /* AEWidget.swift in Sources */,
+				664A03FF292CD2F900E77CC7 /* AEWidgetLiveActivity.swift in Sources */,
+				664A03FD292CD2F900E77CC7 /* AEWidgetBundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1321,6 +1452,11 @@
 			isa = PBXTargetDependency;
 			target = 6003F589195388D20070C39A /* AEObjCWorking_Example */;
 			targetProxy = 6003F5B3195388D20070C39A /* PBXContainerItemProxy */;
+		};
+		664A0406292CD2FA00E77CC7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 664A03F7292CD2F900E77CC7 /* AEWidgetExtension */;
+			targetProxy = 664A0405292CD2FA00E77CC7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1429,6 +1565,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 799148480B939A5DDB5260BD /* Pods-AEObjCWorking_Example.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -1446,7 +1583,7 @@
 				INFOPLIST_FILE = "AEObjCWorking/Supporting Files/AEObjCWorking-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = com.cebbank.test.AEObjCWorking;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adam.hongyang.test.AEObjCWorking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
@@ -1457,9 +1594,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3B8F5098F45FE6165059236E /* Pods-AEObjCWorking_Example.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 53VUVA3CT9;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N2KQ965WEJ;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AEObjCWorking/Resources/AEPrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
@@ -1472,9 +1611,9 @@
 				INFOPLIST_FILE = "AEObjCWorking/Supporting Files/AEObjCWorking-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = m.cebbank.test.AEObjCWorking;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adam.hongyang.test.AEObjCWorking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Test*_dev_20200730";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1523,6 +1662,107 @@
 			};
 			name = Release;
 		};
+		664A0409292CD2FB00E77CC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = N2KQ965WEJ;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AEWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = AEWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 HYAdonisCoding. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adam.hongyang.test.AEObjCWorking.AEWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		664A040A292CD2FB00E77CC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 53VUVA3CT9;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AEWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = AEWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 HYAdonisCoding. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = m.cebbank.test.AEObjCWorking.AEWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1549,6 +1789,15 @@
 			buildConfigurations = (
 				6003F5C3195388D20070C39A /* Debug */,
 				6003F5C4195388D20070C39A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		664A0408292CD2FB00E77CC7 /* Build configuration list for PBXNativeTarget "AEWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				664A0409292CD2FB00E77CC7 /* Debug */,
+				664A040A292CD2FB00E77CC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
