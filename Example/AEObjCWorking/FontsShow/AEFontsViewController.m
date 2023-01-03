@@ -7,6 +7,7 @@
 //
 
 #import "AEFontsViewController.h"
+#import "AENotification.h"
 
 @implementation AEFontsViewController
 
@@ -22,6 +23,10 @@
     }
 
     [self configUI];
+    
+    [[AENotification notificationManager] checkNotificationAuthorization:^(BOOL granted) {
+            
+    }];
 }
 
 - (void)configUI {

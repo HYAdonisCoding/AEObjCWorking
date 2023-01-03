@@ -12,6 +12,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AEBaseViewController : UIViewController
 - (NSString *)testString;
+
+/// 配置页面
+- (void)configUI;
+
+
+/// 配置事件
+- (void)configEvent;
+
+/// 创建一个ImageView
+- (UIImageView *)createImageView;
 @end
 
 NS_ASSUME_NONNULL_END

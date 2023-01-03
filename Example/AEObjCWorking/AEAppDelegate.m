@@ -7,12 +7,16 @@
 //
 
 #import "AEAppDelegate.h"
+#import "UIImage+AEBlackAndWhite.h"
+#import "UIButton+EnlargeArea.h"
 
 @implementation AEAppDelegate
-
+// MARK: - Life Cycle
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [UIImage ae_imageSwizzldMethedWith:YES];
+    [UIButton ae_buttonSwizzldMethedWith:YES];
     return YES;
 }
 
@@ -42,5 +46,17 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+// MARK: - Push Notitfication
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+    //尽量收敛到GTNotification中实现
+    //注册成功
+    NSLog(@"deviceToken:%@ ", deviceToken);
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    //注册失败
+}
+
 
 @end

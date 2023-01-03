@@ -25,7 +25,7 @@ struct AEWidgetLiveActivity: Widget {
         ActivityConfiguration(for: AEWidgetAttributes.self) { context in
             // Lock screen/banner UI goes here
             VStack {
-                Text("Hello")
+                Text("Hello Widget")
             }
             .activityBackgroundTint(Color.cyan)
             .activitySystemActionForegroundColor(Color.black)

@@ -40,10 +40,30 @@ struct SimpleEntry: TimelineEntry {
 }
 
 struct AEWidgetEntryView : View {
+    @Environment(\.openURL) private var openURL // 引入环境值
     var entry: Provider.Entry
 
     var body: some View {
-        Text(entry.date, style: .time)
+        ZStack {
+             AccessoryWidgetBackground()
+             VStack {
+                 Text(entry.date, style: .date)
+                 Text(entry.date, style: .time)
+                 Text(entry.date, style: .timer)
+                 .font(.title)
+                 
+                 Button("NEW Widget") {
+                     if let url = URL(string: "adam.hongyang://") {
+                         openURL(url) { accepted in  // 通过设置 completion 闭包，可以检查是否已完成 URL 的开启。状态由 OpenURLAction 提供
+                             print(accepted ? "Success" : "Failure")
+                         }
+                     }
+                 }
+
+            }
+        }
+        .padding(5)
+        .foregroundColor(.purple)
     }
 }
 

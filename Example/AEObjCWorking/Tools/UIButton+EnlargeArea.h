@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIButton (EnlargeArea)
 - (void)setEnlargeEdgeWithTop:(CGFloat) top right:(CGFloat) right bottom:(CGFloat) bottom left:(CGFloat) left;
 
+// MARK: - gray image
++ (void)ae_buttonSwizzldMethedWith:(BOOL)changeGray;
 @end
 
 NS_ASSUME_NONNULL_END

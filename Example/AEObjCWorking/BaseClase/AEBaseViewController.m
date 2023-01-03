@@ -19,10 +19,29 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     NSLog(@"%@", self.class);
+    [self configUI];
+    [self configEvent];
+}
+
+- (void)configUI {
+    
+}
+
+- (void)configEvent {
+    
 }
 
 - (void)dealloc {
     NSLog(@"%@", self.class);
+}
+
+
+- (UIImageView *)createImageView {
+    UIImageView *imageView = [[UIImageView alloc] init];
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
+    imageView.backgroundColor = [UIColor grayColor];
+    [self.view addSubview:imageView];
+    return imageView;
 }
 
 - (NSString *)testString {
