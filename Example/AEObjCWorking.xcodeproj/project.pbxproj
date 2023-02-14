@@ -78,6 +78,10 @@
 		666DC53B27C7788B00FBDF41 /* AEStudyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 666DC53A27C7788B00FBDF41 /* AEStudyModel.m */; };
 		666DC53E27C7796D00FBDF41 /* AEStudyModel+StudyCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 666DC53D27C7796D00FBDF41 /* AEStudyModel+StudyCategory.m */; };
 		666DC54127C77BCC00FBDF41 /* AEStudyModel+AEDouble.m in Sources */ = {isa = PBXBuildFile; fileRef = 666DC54027C77BCB00FBDF41 /* AEStudyModel+AEDouble.m */; };
+		668ECD9B299B165D00425C53 /* AEConvertRectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 668ECD9A299B165D00425C53 /* AEConvertRectViewController.m */; };
+		668ECD9E299B16AB00425C53 /* AESubTableTCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 668ECD9D299B16AB00425C53 /* AESubTableTCell.m */; };
+		668ECDA1299B16C600425C53 /* AEMutileLineTCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 668ECDA0299B16C600425C53 /* AEMutileLineTCell.m */; };
+		668ECDA4299B28C900425C53 /* AESignalTCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 668ECDA3299B28C900425C53 /* AESignalTCell.m */; };
 		668F57E927C4CDB00045AED4 /* AEFileOperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 668F57E827C4CDB00045AED4 /* AEFileOperationViewController.m */; };
 		66913AA2284472D4006FD17E /* AEHeadlineCCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66913AA1284472D4006FD17E /* AEHeadlineCCell.m */; };
 		669A10DB292DAEA3008F307E /* Yahei.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 669A10DA292DAEA3008F307E /* Yahei.ttf */; };
@@ -293,6 +297,14 @@
 		666DC53D27C7796D00FBDF41 /* AEStudyModel+StudyCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AEStudyModel+StudyCategory.m"; sourceTree = "<group>"; };
 		666DC53F27C77BCB00FBDF41 /* AEStudyModel+AEDouble.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AEStudyModel+AEDouble.h"; sourceTree = "<group>"; };
 		666DC54027C77BCB00FBDF41 /* AEStudyModel+AEDouble.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AEStudyModel+AEDouble.m"; sourceTree = "<group>"; };
+		668ECD99299B165D00425C53 /* AEConvertRectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEConvertRectViewController.h; sourceTree = "<group>"; };
+		668ECD9A299B165D00425C53 /* AEConvertRectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEConvertRectViewController.m; sourceTree = "<group>"; };
+		668ECD9C299B16AB00425C53 /* AESubTableTCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AESubTableTCell.h; sourceTree = "<group>"; };
+		668ECD9D299B16AB00425C53 /* AESubTableTCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AESubTableTCell.m; sourceTree = "<group>"; };
+		668ECD9F299B16C600425C53 /* AEMutileLineTCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEMutileLineTCell.h; sourceTree = "<group>"; };
+		668ECDA0299B16C600425C53 /* AEMutileLineTCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEMutileLineTCell.m; sourceTree = "<group>"; };
+		668ECDA2299B28C900425C53 /* AESignalTCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AESignalTCell.h; sourceTree = "<group>"; };
+		668ECDA3299B28C900425C53 /* AESignalTCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AESignalTCell.m; sourceTree = "<group>"; };
 		668F57E727C4CDB00045AED4 /* AEFileOperationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEFileOperationViewController.h; sourceTree = "<group>"; };
 		668F57E827C4CDB00045AED4 /* AEFileOperationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEFileOperationViewController.m; sourceTree = "<group>"; };
 		66913AA0284472D4006FD17E /* AEHeadlineCCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEHeadlineCCell.h; sourceTree = "<group>"; };
@@ -529,6 +541,7 @@
 		6003F593195388D20070C39A /* Example for AEObjCWorking */ = {
 			isa = PBXGroup;
 			children = (
+				668ECD98299B15D600425C53 /* TestConvertRect */,
 				66A1B3EC2963D55F00975164 /* ImagetoWhite */,
 				6610A17E292E1CD600138FE5 /* Utils */,
 				669A10DD292DB388008F307E /* FontsShow */,
@@ -825,6 +838,21 @@
 				666DC54027C77BCB00FBDF41 /* AEStudyModel+AEDouble.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		668ECD98299B15D600425C53 /* TestConvertRect */ = {
+			isa = PBXGroup;
+			children = (
+				668ECD99299B165D00425C53 /* AEConvertRectViewController.h */,
+				668ECD9A299B165D00425C53 /* AEConvertRectViewController.m */,
+				668ECD9F299B16C600425C53 /* AEMutileLineTCell.h */,
+				668ECDA0299B16C600425C53 /* AEMutileLineTCell.m */,
+				668ECD9C299B16AB00425C53 /* AESubTableTCell.h */,
+				668ECD9D299B16AB00425C53 /* AESubTableTCell.m */,
+				668ECDA2299B28C900425C53 /* AESignalTCell.h */,
+				668ECDA3299B28C900425C53 /* AESignalTCell.m */,
+			);
+			path = TestConvertRect;
 			sourceTree = "<group>";
 		};
 		668F57E627C4CD730045AED4 /* FileOperation */ = {
@@ -1391,6 +1419,7 @@
 				666CF0512611AB7800BCDF1E /* AEAccount.m in Sources */,
 				0C2C0ABC262B173A0038859D /* AEUserCenter.m in Sources */,
 				663F594026B8DF3100B92C3A /* AEDataHelper.m in Sources */,
+				668ECD9E299B16AB00425C53 /* AESubTableTCell.m in Sources */,
 				7A76520A23F3CBD300A303DE /* AEIntelligentSortingController.m in Sources */,
 				663DB3FA26E9F6690046C277 /* UIColor+AECategory.m in Sources */,
 				666CEFFC26115D5E00BCDF1E /* AEOCKnowledgeViewController.m in Sources */,
@@ -1417,6 +1446,7 @@
 				66D5F3732816314500122904 /* AEProfessionSelectView.m in Sources */,
 				0CD1285E2635A7860066F449 /* AEScrollViewController.m in Sources */,
 				666CF0072611669D00BCDF1E /* AEReusePoolViewController.m in Sources */,
+				668ECDA4299B28C900425C53 /* AESignalTCell.m in Sources */,
 				666DC53827C7784500FBDF41 /* AECategoryViewController.m in Sources */,
 				66A1B3F22963F8A200975164 /* UIImage+AEBlackAndWhite.m in Sources */,
 				6604B74D26E9DEF100D9BA56 /* AEAddressModel.m in Sources */,
@@ -1435,6 +1465,7 @@
 				7A9CD79722783544004E6D2A /* AECustomOptioinViewController.m in Sources */,
 				7A9CD791227830BE004E6D2A /* AEAECustomOptionCell.m in Sources */,
 				6003F5A7195388D20070C39A /* AECustomOptioinController.m in Sources */,
+				668ECD9B299B165D00425C53 /* AEConvertRectViewController.m in Sources */,
 				669A10E0292DB3B5008F307E /* AEFontsViewController.m in Sources */,
 				661EF3582627C598009E7037 /* AEBaseModel+AECategoryTest.m in Sources */,
 				7A52EB8D2278274F009BC207 /* AEBaseModel.m in Sources */,
@@ -1449,6 +1480,7 @@
 				0C2C0AB5262B17290038859D /* AEGroupObject.m in Sources */,
 				6604B74226E9DC8E00D9BA56 /* AEAddressSelectViewController.m in Sources */,
 				7A6E01F923C7124900D34AB6 /* AETabBarItem.m in Sources */,
+				668ECDA1299B16C600425C53 /* AEMutileLineTCell.m in Sources */,
 				7AEF4517240914540065B265 /* AEPopSheetController.m in Sources */,
 				6667E25E27E1E64100D9BA78 /* UIButton+AEImagePlace.m in Sources */,
 				7A77FC5323CDB2F9008E6F1A /* AETabBarButton.m in Sources */,
