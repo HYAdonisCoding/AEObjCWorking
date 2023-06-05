@@ -79,6 +79,8 @@
     if (![self.navigationController.viewControllers containsObject:self]) {
         // 用户正在返回上一个页面
         NSLog(@"用户返回上一个页面");
+        dispatch_source_cancel(self.timer);
+        self.timer = nil;
         if (self.dataUpdateBlock) {
             self.dataUpdateBlock(self.pages);
         }
@@ -141,7 +143,6 @@
             tabBarHeight = window.safeAreaInsets.bottom;
         }
     }
-    NSLog(@"TabBar height: %f", tabBarHeight);
     return tabBarHeight + 49;
 }
 
@@ -289,6 +290,8 @@
         
         NSLog(@"已经最后一页");
         NSLog(@"用户返回上一个页面");
+        dispatch_source_cancel(self.timer);
+        self.timer = nil;
         [self.navigationController popViewControllerAnimated:YES];
         if (self.dataUpdateBlock) {
             self.dataUpdateBlock(self.pages);
