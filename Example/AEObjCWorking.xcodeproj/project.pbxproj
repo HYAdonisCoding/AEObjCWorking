@@ -55,6 +55,7 @@
 		664A0403292CD2FA00E77CC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 664A0402292CD2FA00E77CC7 /* Assets.xcassets */; };
 		664A0407292CD2FA00E77CC7 /* AEWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 664A03F8292CD2F900E77CC7 /* AEWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		664AA8BC2723042500D31930 /* AELifeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 664AA8BB2723042500D31930 /* AELifeViewController.m */; };
+		6662E25829CC35C200AC7CD3 /* AEGPTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6662E25729CC35C200AC7CD3 /* AEGPTViewController.m */; };
 		6667E25E27E1E64100D9BA78 /* UIButton+AEImagePlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 6667E25D27E1E64000D9BA78 /* UIButton+AEImagePlace.m */; };
 		666CEFFC26115D5E00BCDF1E /* AEOCKnowledgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 666CEFFB26115D5E00BCDF1E /* AEOCKnowledgeViewController.m */; };
 		666CF0072611669D00BCDF1E /* AEReusePoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 666CF0062611669D00BCDF1E /* AEReusePoolViewController.m */; };
@@ -92,11 +93,18 @@
 		66A0546E282CF35400C491A5 /* AEGradientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A0546D282CF35400C491A5 /* AEGradientViewController.m */; };
 		66A1B3EF2963D58800975164 /* AEImageSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A1B3EE2963D58800975164 /* AEImageSetViewController.m */; };
 		66A1B3F22963F8A200975164 /* UIImage+AEBlackAndWhite.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A1B3F12963F8A200975164 /* UIImage+AEBlackAndWhite.m */; };
+		66A1BFEB2A29D47B001BE4C6 /* AEPDFReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A1BFEA2A29D47B001BE4C6 /* AEPDFReaderViewController.m */; };
+		66A1BFED2A29D994001BE4C6 /* 错题.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 66A1BFEC2A29D994001BE4C6 /* 错题.pdf */; };
+		66A1BFF02A29E0E9001BE4C6 /* AEPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A1BFEF2A29E0E9001BE4C6 /* AEPreviewViewController.m */; };
+		66A1BFF32A29E1F7001BE4C6 /* AEPDFModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A1BFF22A29E1F7001BE4C6 /* AEPDFModel.m */; };
+		66A1BFF62A29ECF1001BE4C6 /* AEPreviewControllerWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A1BFF52A29ECF1001BE4C6 /* AEPreviewControllerWrapper.m */; };
 		66A26B972907BD53005BDA0C /* UIButton+EnlargeArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A26B962907BD53005BDA0C /* UIButton+EnlargeArea.m */; };
 		66A2E67428FD025C00330702 /* AEKnowledgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A2E67328FD025C00330702 /* AEKnowledgeViewController.m */; };
 		66A2E67728FD369100330702 /* AETabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A2E67628FD369100330702 /* AETabBarViewController.m */; };
 		66A8B428283661AA00B76B11 /* AEGifViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A8B427283661AA00B76B11 /* AEGifViewController.m */; };
 		66A8B42A283662D400B76B11 /* help_icon.gif in Resources */ = {isa = PBXBuildFile; fileRef = 66A8B429283662D400B76B11 /* help_icon.gif */; };
+		66B78A002A2D813A00F5D688 /* 发票.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 66B789FE2A2D813A00F5D688 /* 发票.pdf */; };
+		66B78A012A2D813A00F5D688 /* 截屏.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 66B789FF2A2D813A00F5D688 /* 截屏.pdf */; };
 		66D5F3702816311600122904 /* AEProfessionTCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D5F36F2816311600122904 /* AEProfessionTCell.m */; };
 		66D5F3732816314500122904 /* AEProfessionSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D5F3722816314500122904 /* AEProfessionSelectView.m */; };
 		66D5F3762816318F00122904 /* AEProfessionSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D5F3752816318F00122904 /* AEProfessionSelectViewController.m */; };
@@ -253,6 +261,8 @@
 		664A0404292CD2FA00E77CC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		664AA8BA2723042500D31930 /* AELifeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AELifeViewController.h; sourceTree = "<group>"; };
 		664AA8BB2723042500D31930 /* AELifeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AELifeViewController.m; sourceTree = "<group>"; };
+		6662E25629CC35C200AC7CD3 /* AEGPTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEGPTViewController.h; sourceTree = "<group>"; };
+		6662E25729CC35C200AC7CD3 /* AEGPTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEGPTViewController.m; sourceTree = "<group>"; };
 		6667E25C27E1E64000D9BA78 /* UIButton+AEImagePlace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+AEImagePlace.h"; sourceTree = "<group>"; };
 		6667E25D27E1E64000D9BA78 /* UIButton+AEImagePlace.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+AEImagePlace.m"; sourceTree = "<group>"; };
 		666CEFFA26115D5E00BCDF1E /* AEOCKnowledgeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEOCKnowledgeViewController.h; sourceTree = "<group>"; };
@@ -324,6 +334,15 @@
 		66A1B3EE2963D58800975164 /* AEImageSetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEImageSetViewController.m; sourceTree = "<group>"; };
 		66A1B3F02963F8A200975164 /* UIImage+AEBlackAndWhite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+AEBlackAndWhite.h"; sourceTree = "<group>"; };
 		66A1B3F12963F8A200975164 /* UIImage+AEBlackAndWhite.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AEBlackAndWhite.m"; sourceTree = "<group>"; };
+		66A1BFE92A29D47B001BE4C6 /* AEPDFReaderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEPDFReaderViewController.h; sourceTree = "<group>"; };
+		66A1BFEA2A29D47B001BE4C6 /* AEPDFReaderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEPDFReaderViewController.m; sourceTree = "<group>"; };
+		66A1BFEC2A29D994001BE4C6 /* 错题.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "错题.pdf"; sourceTree = "<group>"; };
+		66A1BFEE2A29E0E9001BE4C6 /* AEPreviewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEPreviewViewController.h; sourceTree = "<group>"; };
+		66A1BFEF2A29E0E9001BE4C6 /* AEPreviewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEPreviewViewController.m; sourceTree = "<group>"; };
+		66A1BFF12A29E1F7001BE4C6 /* AEPDFModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEPDFModel.h; sourceTree = "<group>"; };
+		66A1BFF22A29E1F7001BE4C6 /* AEPDFModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEPDFModel.m; sourceTree = "<group>"; };
+		66A1BFF42A29ECF1001BE4C6 /* AEPreviewControllerWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEPreviewControllerWrapper.h; sourceTree = "<group>"; };
+		66A1BFF52A29ECF1001BE4C6 /* AEPreviewControllerWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEPreviewControllerWrapper.m; sourceTree = "<group>"; };
 		66A26B952907BD53005BDA0C /* UIButton+EnlargeArea.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+EnlargeArea.h"; sourceTree = "<group>"; };
 		66A26B962907BD53005BDA0C /* UIButton+EnlargeArea.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+EnlargeArea.m"; sourceTree = "<group>"; };
 		66A2E67228FD025C00330702 /* AEKnowledgeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEKnowledgeViewController.h; sourceTree = "<group>"; };
@@ -333,6 +352,8 @@
 		66A8B426283661AA00B76B11 /* AEGifViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEGifViewController.h; sourceTree = "<group>"; };
 		66A8B427283661AA00B76B11 /* AEGifViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEGifViewController.m; sourceTree = "<group>"; };
 		66A8B429283662D400B76B11 /* help_icon.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = help_icon.gif; sourceTree = "<group>"; };
+		66B789FE2A2D813A00F5D688 /* 发票.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "发票.pdf"; sourceTree = "<group>"; };
+		66B789FF2A2D813A00F5D688 /* 截屏.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "截屏.pdf"; sourceTree = "<group>"; };
 		66D5F36E2816311600122904 /* AEProfessionTCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEProfessionTCell.h; sourceTree = "<group>"; };
 		66D5F36F2816311600122904 /* AEProfessionTCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEProfessionTCell.m; sourceTree = "<group>"; };
 		66D5F3712816314500122904 /* AEProfessionSelectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEProfessionSelectView.h; sourceTree = "<group>"; };
@@ -541,7 +562,9 @@
 		6003F593195388D20070C39A /* Example for AEObjCWorking */ = {
 			isa = PBXGroup;
 			children = (
-				668ECD98299B15D600425C53 /* TestConvertRect */,
+				66A1BFE82A29D452001BE4C6 /* PDF */,
+				6662E25529CC35A100AC7CD3 /* GPT */,
+				668ECD98299B15D600425C53 /* ConvertRect */,
 				66A1B3EC2963D55F00975164 /* ImagetoWhite */,
 				6610A17E292E1CD600138FE5 /* Utils */,
 				669A10DD292DB388008F307E /* FontsShow */,
@@ -731,6 +754,15 @@
 			path = Life;
 			sourceTree = "<group>";
 		};
+		6662E25529CC35A100AC7CD3 /* GPT */ = {
+			isa = PBXGroup;
+			children = (
+				6662E25629CC35C200AC7CD3 /* AEGPTViewController.h */,
+				6662E25729CC35C200AC7CD3 /* AEGPTViewController.m */,
+			);
+			path = GPT;
+			sourceTree = "<group>";
+		};
 		666CEFFF26115D6600BCDF1E /* Knowledge */ = {
 			isa = PBXGroup;
 			children = (
@@ -840,7 +872,7 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
-		668ECD98299B15D600425C53 /* TestConvertRect */ = {
+		668ECD98299B15D600425C53 /* ConvertRect */ = {
 			isa = PBXGroup;
 			children = (
 				668ECD99299B165D00425C53 /* AEConvertRectViewController.h */,
@@ -852,7 +884,7 @@
 				668ECDA2299B28C900425C53 /* AESignalTCell.h */,
 				668ECDA3299B28C900425C53 /* AESignalTCell.m */,
 			);
-			path = TestConvertRect;
+			path = ConvertRect;
 			sourceTree = "<group>";
 		};
 		668F57E627C4CD730045AED4 /* FileOperation */ = {
@@ -929,6 +961,24 @@
 				66A1B3F12963F8A200975164 /* UIImage+AEBlackAndWhite.m */,
 			);
 			path = GrayImage;
+			sourceTree = "<group>";
+		};
+		66A1BFE82A29D452001BE4C6 /* PDF */ = {
+			isa = PBXGroup;
+			children = (
+				66A1BFE92A29D47B001BE4C6 /* AEPDFReaderViewController.h */,
+				66A1BFEA2A29D47B001BE4C6 /* AEPDFReaderViewController.m */,
+				66A1BFEE2A29E0E9001BE4C6 /* AEPreviewViewController.h */,
+				66A1BFEF2A29E0E9001BE4C6 /* AEPreviewViewController.m */,
+				66A1BFEC2A29D994001BE4C6 /* 错题.pdf */,
+				66B789FE2A2D813A00F5D688 /* 发票.pdf */,
+				66B789FF2A2D813A00F5D688 /* 截屏.pdf */,
+				66A1BFF12A29E1F7001BE4C6 /* AEPDFModel.h */,
+				66A1BFF22A29E1F7001BE4C6 /* AEPDFModel.m */,
+				66A1BFF42A29ECF1001BE4C6 /* AEPreviewControllerWrapper.h */,
+				66A1BFF52A29ECF1001BE4C6 /* AEPreviewControllerWrapper.m */,
+			);
+			path = PDF;
 			sourceTree = "<group>";
 		};
 		66A2E67128FD015E00330702 /* TestBaseKnowledge */ = {
@@ -1288,9 +1338,12 @@
 				66A8B42A283662D400B76B11 /* help_icon.gif in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
+				66B78A002A2D813A00F5D688 /* 发票.pdf in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				66A1BFED2A29D994001BE4C6 /* 错题.pdf in Resources */,
 				663F593D26B8DDF000B92C3A /* AEDataPropertyList.plist in Resources */,
 				666D7CE226EDE34F00CC131B /* Address.txt in Resources */,
+				66B78A012A2D813A00F5D688 /* 截屏.pdf in Resources */,
 				669A10DB292DAEA3008F307E /* Yahei.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1397,6 +1450,7 @@
 			files = (
 				661EF3532627C588009E7037 /* AEBaseModel+AECategory.m in Sources */,
 				66A8B428283661AA00B76B11 /* AEGifViewController.m in Sources */,
+				66A1BFF32A29E1F7001BE4C6 /* AEPDFModel.m in Sources */,
 				7A9CD794227833D7004E6D2A /* AECustomOptionModel.m in Sources */,
 				7A6F9B5F24061873006A923D /* AEHTMLParsingController.m in Sources */,
 				7AA0E92A23C4124B0092DE5B /* AEDynamicCardController.m in Sources */,
@@ -1435,15 +1489,18 @@
 				666CF035261180BB00BCDF1E /* AEMObserver.m in Sources */,
 				7AEF45142409131E0065B265 /* AEPopoverShowController.m in Sources */,
 				666CF05E2611ADF100BCDF1E /* NSTimer+AEWeakTimer.m in Sources */,
+				6662E25829CC35C200AC7CD3 /* AEGPTViewController.m in Sources */,
 				66A0546E282CF35400C491A5 /* AEGradientViewController.m in Sources */,
 				666CF02B2611806700BCDF1E /* AEKVOViewController.m in Sources */,
 				661EF37A26280D7A009E7037 /* AECommonSuperFind.m in Sources */,
 				7A6F9B6D24061A64006A923D /* TFHppleElement.m in Sources */,
+				66A1BFEB2A29D47B001BE4C6 /* AEPDFReaderViewController.m in Sources */,
 				669ACDFB27CDBB080013C239 /* AEGetFile.m in Sources */,
 				66A2E67728FD369100330702 /* AETabBarViewController.m in Sources */,
 				7A76520E23F3CCB400A303DE /* Goods.m in Sources */,
 				666CF0592611ADC100BCDF1E /* AEMemoryViewController.m in Sources */,
 				66D5F3732816314500122904 /* AEProfessionSelectView.m in Sources */,
+				66A1BFF02A29E0E9001BE4C6 /* AEPreviewViewController.m in Sources */,
 				0CD1285E2635A7860066F449 /* AEScrollViewController.m in Sources */,
 				666CF0072611669D00BCDF1E /* AEReusePoolViewController.m in Sources */,
 				668ECDA4299B28C900425C53 /* AESignalTCell.m in Sources */,
@@ -1459,6 +1516,7 @@
 				66273FED2815642C0028840B /* AEProfessionModel.m in Sources */,
 				66D5F37A281696B900122904 /* AEProfessionSearchTCell.m in Sources */,
 				66048B5D281A8BEC00381B06 /* UITableView+AEEmpty.m in Sources */,
+				66A1BFF62A29ECF1001BE4C6 /* AEPreviewControllerWrapper.m in Sources */,
 				66A1B3EF2963D58800975164 /* AEImageSetViewController.m in Sources */,
 				7AA0E93D23C462A90092DE5B /* AECardModel.m in Sources */,
 				7A6F9B6C24061A64006A923D /* TFHpple.m in Sources */,

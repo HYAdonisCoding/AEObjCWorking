@@ -27,7 +27,9 @@
 
 - (NSArray *)dataArray {
     if (!_dataArray) {
-        _dataArray = @[@"AEConvertRectViewController",
+        _dataArray = @[@"AEPDFReaderViewController",
+                       @"AEGPTViewController",
+                       @"AEConvertRectViewController",
                        @"AEImageSetViewController",
                        @"AEFontsViewController",
                        @"AETabBarViewController",
