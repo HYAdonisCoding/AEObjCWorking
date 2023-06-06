@@ -77,6 +77,8 @@ __strong __typeof(self)strongSelf = weakSelf;
 #define NSLog(...) printf("[%s] %s [第%d行]: %s\n", __TIME__ ,__PRETTY_FUNCTION__ ,__LINE__, [[NSString stringWithFormat:__VA_ARGS__] UTF8String])
 
 
+typedef void (^DataUpdateBlock)(NSArray *_Nonnull);
+
 #else
 #define NSLog(...)
 

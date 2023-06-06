@@ -105,6 +105,7 @@
 		66A8B42A283662D400B76B11 /* help_icon.gif in Resources */ = {isa = PBXBuildFile; fileRef = 66A8B429283662D400B76B11 /* help_icon.gif */; };
 		66B78A002A2D813A00F5D688 /* 发票.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 66B789FE2A2D813A00F5D688 /* 发票.pdf */; };
 		66B78A012A2D813A00F5D688 /* 截屏.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 66B789FF2A2D813A00F5D688 /* 截屏.pdf */; };
+		66B78A042A2DCF4A00F5D688 /* AEWKPDFPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B78A032A2DCF4A00F5D688 /* AEWKPDFPreviewController.m */; };
 		66D5F3702816311600122904 /* AEProfessionTCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D5F36F2816311600122904 /* AEProfessionTCell.m */; };
 		66D5F3732816314500122904 /* AEProfessionSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D5F3722816314500122904 /* AEProfessionSelectView.m */; };
 		66D5F3762816318F00122904 /* AEProfessionSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D5F3752816318F00122904 /* AEProfessionSelectViewController.m */; };
@@ -354,6 +355,8 @@
 		66A8B429283662D400B76B11 /* help_icon.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = help_icon.gif; sourceTree = "<group>"; };
 		66B789FE2A2D813A00F5D688 /* 发票.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "发票.pdf"; sourceTree = "<group>"; };
 		66B789FF2A2D813A00F5D688 /* 截屏.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "截屏.pdf"; sourceTree = "<group>"; };
+		66B78A022A2DCF4A00F5D688 /* AEWKPDFPreviewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEWKPDFPreviewController.h; sourceTree = "<group>"; };
+		66B78A032A2DCF4A00F5D688 /* AEWKPDFPreviewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEWKPDFPreviewController.m; sourceTree = "<group>"; };
 		66D5F36E2816311600122904 /* AEProfessionTCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEProfessionTCell.h; sourceTree = "<group>"; };
 		66D5F36F2816311600122904 /* AEProfessionTCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEProfessionTCell.m; sourceTree = "<group>"; };
 		66D5F3712816314500122904 /* AEProfessionSelectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEProfessionSelectView.h; sourceTree = "<group>"; };
@@ -970,6 +973,8 @@
 				66A1BFEA2A29D47B001BE4C6 /* AEPDFReaderViewController.m */,
 				66A1BFEE2A29E0E9001BE4C6 /* AEPreviewViewController.h */,
 				66A1BFEF2A29E0E9001BE4C6 /* AEPreviewViewController.m */,
+				66B78A022A2DCF4A00F5D688 /* AEWKPDFPreviewController.h */,
+				66B78A032A2DCF4A00F5D688 /* AEWKPDFPreviewController.m */,
 				66A1BFEC2A29D994001BE4C6 /* 错题.pdf */,
 				66B789FE2A2D813A00F5D688 /* 发票.pdf */,
 				66B789FF2A2D813A00F5D688 /* 截屏.pdf */,
@@ -1495,6 +1500,7 @@
 				661EF37A26280D7A009E7037 /* AECommonSuperFind.m in Sources */,
 				7A6F9B6D24061A64006A923D /* TFHppleElement.m in Sources */,
 				66A1BFEB2A29D47B001BE4C6 /* AEPDFReaderViewController.m in Sources */,
+				66B78A042A2DCF4A00F5D688 /* AEWKPDFPreviewController.m in Sources */,
 				669ACDFB27CDBB080013C239 /* AEGetFile.m in Sources */,
 				66A2E67728FD369100330702 /* AETabBarViewController.m in Sources */,
 				7A76520E23F3CCB400A303DE /* Goods.m in Sources */,

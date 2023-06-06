@@ -9,7 +9,7 @@
 #import "AEBaseViewController.h"
 @class AEPDFModel;
 
-typedef void (^DataUpdateBlock)(NSArray *_Nonnull);
+
 
 
 NS_ASSUME_NONNULL_BEGIN

@@ -10,7 +10,7 @@
 #import "AEPreviewViewController.h"
 #import "AEPDFModel.h"
 #import "AEPreviewControllerWrapper.h"
-
+#import "AEWKPDFPreviewController.h"
 
 @interface AEPDFReaderViewController () 
 
@@ -55,7 +55,12 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     WK(weakSelf);
-    AEPreviewViewController *vc = [[AEPreviewViewController alloc] initAllPages:self.dataArray currentPage:indexPath.row completeHandler:^(NSArray * _Nonnull datas) {
+//    AEPreviewViewController *vc = [[AEPreviewViewController alloc] initAllPages:self.dataArray currentPage:indexPath.row completeHandler:^(NSArray * _Nonnull datas) {
+//        weakSelf.dataArray = datas.mutableCopy;
+//        [weakSelf.tableView reloadData];
+//    }];
+    
+    AEWKPDFPreviewController *vc = [[AEWKPDFPreviewController alloc] initAllPages:self.dataArray currentPage:indexPath.row completeHandler:^(NSArray * _Nonnull datas) {
         weakSelf.dataArray = datas.mutableCopy;
         [weakSelf.tableView reloadData];
     }];
