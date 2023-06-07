@@ -127,12 +127,12 @@
     NSURL *url = [NSURL fileURLWithPath:self.pages[self.currentPage].path];
     PDFDocument *document = [[PDFDocument alloc] initWithURL:url];
     self.pdfView.document = document;
-    
+    self.pdfView.autoScales = YES;
     // 获取总页数
     self.totalPages = document.pageCount;
     if (self.totalPages <= 1) {
         self.pages[self.currentPage].scrollBottom = YES;
-        NSLog(@"只有一页哦");
+        NSLog(@"%@ - -只有一页哦", self.pages[self.currentPage].name);
     }
 }
 
@@ -201,11 +201,11 @@
     } else {
         // 倒计时结束，停止定时器
         if (self.currentPage == self.pages.count - 1) {
-            [self.nextBtn setTitle:@"我以阅读并同意此协议" forState:(UIControlStateNormal)];
+            [self.nextBtn setTitle:@"我已阅读并同意此协议" forState:(UIControlStateNormal)];
         } else
         if (self.pages[self.currentPage].scrollBottom) {
             self.pages[self.currentPage].readed = YES;
-            [self.nextBtn setTitle:@"我以阅读并同意此协议，下一份" forState:(UIControlStateNormal)];
+            [self.nextBtn setTitle:@"我已阅读并同意此协议，下一份" forState:(UIControlStateNormal)];
         } else {
             [self.nextBtn setTitle:@"请滑至最后一页，完整阅读协议内容" forState:(UIControlStateNormal)];
         }
@@ -227,7 +227,7 @@
             self.preBtn.frame = CGRectZero;
             
             self.nextBtn.frame = self.toolbar.bounds;
-            [self.nextBtn setTitle:@"我以阅读并同意此协议，下一份" forState:(UIControlStateNormal)];
+            [self.nextBtn setTitle:@"我已阅读并同意此协议，下一份" forState:(UIControlStateNormal)];
         }];
     } else {
         [UIView animateWithDuration:0.25 animations:^{
@@ -243,8 +243,8 @@
     PDFView *pdfView = notification.object;
     NSInteger currentPage = [pdfView.document indexForPage:pdfView.currentPage];
     // 判断是否到达最后一页
-    if (currentPage == self.totalPages - 1) {
-        NSLog(@"已经浏览到最后一页");
+    if (currentPage > 0 && currentPage == self.totalPages - 1) {
+        NSLog(@"%@  -  已经浏览到最后一页", self.pages[self.currentPage].name);
         [self configToolbar: YES];
     }
 }
@@ -256,66 +256,81 @@
 
 /// 后一页
 - (void)nextPage:(id)sender {
-    if (self.currentTimes > 0 || !self.pages[self.currentPage].scrollBottom) {
+    if (!self.pages[self.currentPage].readed ||
+        self.currentTimes > 0 ||
+        !self.pages[self.currentPage].scrollBottom) {
+        [self.view showError:@"请滑至最后一页，完整阅读协议内容" success:^{
+            
+        }];
         return;
     }
-    // 倒计时到了，并且也滚动到底部了
-    self.pages[self.currentPage].readed = YES;
-    
-    if (self.currentPage < self.pages.count - 1) {
-        self.currentTimes = 3;
-        self.currentPage += 1;
         
-        // 加载 PDF 文件
-        [self showPDF];
+    [self.view showProgress:@"正在下载，请稍候..." success:^ {
+        // 倒计时到了，并且也滚动到底部了
+        self.pages[self.currentPage].readed = YES;
         
-
-        if (self.totalPages <= 1) {
-            self.pages[self.currentPage].scrollBottom = YES;
+        if (self.currentPage < self.pages.count - 1) {
+            self.currentTimes = 3;
+            self.currentPage += 1;
+            
+            // 加载 PDF 文件
+            [self showPDF];
+            
+            
+            if (self.totalPages <= 1) {
+                self.pages[self.currentPage].scrollBottom = YES;
+            }
+            // 滚动到首页
+            [self goToFirstPage];
+            
+            [self refreshrightBarButtonItem];
+            
+            if (!self.pages[self.currentPage].readed) {
+                [self startTiming];
+            }
+            
+            [self configToolbar: NO];
+        } else {
+            // 已经最后一页
+            
+            NSLog(@"已经最后一页");
+            NSLog(@"用户返回上一个页面");
+            if (self.timer) {
+                dispatch_source_cancel(self.timer);
+                self.timer = nil;
+            }
+            [self.navigationController popViewControllerAnimated:YES];
+            if (self.dataUpdateBlock) {
+                self.dataUpdateBlock(self.pages);
+            }
         }
-        // 滚动到首页
-        [self goToFirstPage];
-        
-        [self refreshrightBarButtonItem];
-        if (!self.pages[self.currentPage].readed) {
-            [self startTiming];
-        }
-        [self configToolbar: NO];
-    } else {
-        // 已经最后一页
-        
-        NSLog(@"已经最后一页");
-        NSLog(@"用户返回上一个页面");
-        if (self.timer) {
-            dispatch_source_cancel(self.timer);
-            self.timer = nil;
-        }
-        [self.navigationController popViewControllerAnimated:YES];
-        if (self.dataUpdateBlock) {
-            self.dataUpdateBlock(self.pages);
-        }
-    }
+    }];
 }
 
 /// 前一页
 - (void)prePage:(id)sender {
-    if (self.currentPage > 0) {
-        self.currentPage -= 1;
-        // 加载 PDF 文件
-        [self showPDF];
-        
-        // 滚动到首页
-        [self goToFirstPage];
-        [self refreshrightBarButtonItem];
-        if (!self.pages[self.currentPage].readed) {
-            [self startTiming];
+     [self.view showProgress:@"正在下载，请稍候..." success:^ {
+        if (self.currentPage > 0) {
+            self.currentPage -= 1;
+            // 加载 PDF 文件
+            [self showPDF];
+            
+            // 滚动到首页
+            [self goToFirstPage];
+            [self refreshrightBarButtonItem];
+            if (!self.pages[self.currentPage].readed) {
+                [self startTiming];
+            }
+            [self configToolbar: NO];
         }
-        [self configToolbar: NO];
-    }
+    }];
 }
 
 - (void)openIn:(id)sender {
-    NSLog(@"%@", sender);
+    [self.view showProgress:@"Loading" success:^{
+        
+        NSLog(@"%@", sender);
+    }];
 }
 
 #pragma mark -

@@ -23,15 +23,17 @@
     [super viewDidLoad];
     
     
-    NSString *path1 = [[NSBundle mainBundle] pathForResource: @"错题.pdf" ofType:nil];
-    NSString *path2 = [[NSBundle mainBundle] pathForResource: @"发票.pdf" ofType:nil];
-    NSString *path3 = [[NSBundle mainBundle] pathForResource: @"截屏.pdf" ofType:nil];
+    NSString *path1 = [[NSBundle mainBundle] pathForResource: @"代销理财产品协议书.pdf" ofType:nil];
+    NSString *path2 = [[NSBundle mainBundle] pathForResource: @"理财产品合同.pdf" ofType:nil];
+    NSString *path3 = [[NSBundle mainBundle] pathForResource: @"代销理财产品协议书1.pdf" ofType:nil];
+    NSString *path4 = [[NSBundle mainBundle] pathForResource: @"理财产品合同1.pdf" ofType:nil];
     
-    AEPDFModel *model1 = [[AEPDFModel alloc] initWithName:@"保险条款" path:path1 readed:NO];
-    AEPDFModel *model2 = [[AEPDFModel alloc] initWithName:@"免责条款" path:path2 readed:NO];
-    AEPDFModel *model3 = [[AEPDFModel alloc] initWithName:@"注意事项" path:path3 readed:NO];
+    AEPDFModel *model1 = [[AEPDFModel alloc] initWithName:@"代销理财产品协议书" path:path1 readed:NO];
+    AEPDFModel *model2 = [[AEPDFModel alloc] initWithName:@"理财产品合同" path:path2 readed:NO];
+    AEPDFModel *model3 = [[AEPDFModel alloc] initWithName:@"代销理财产品协议书1" path:path3 readed:NO];
+    AEPDFModel *model4 = [[AEPDFModel alloc] initWithName:@"理财产品合同1" path:path4 readed:NO];
     
-    self.dataArray = @[model1, model2, model3].mutableCopy;
+    self.dataArray = @[model1, model2, model3, model4].mutableCopy;
     
 }
 
