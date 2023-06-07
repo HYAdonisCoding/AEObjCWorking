@@ -11,6 +11,7 @@
 #import "AEPDFModel.h"
 #import "AEPreviewControllerWrapper.h"
 #import "AEWKPDFPreviewController.h"
+#import "AEReaderViewController.h"
 
 @interface AEPDFReaderViewController () 
 
@@ -60,10 +61,15 @@
 //        [weakSelf.tableView reloadData];
 //    }];
     
-    AEWKPDFPreviewController *vc = [[AEWKPDFPreviewController alloc] initAllPages:self.dataArray currentPage:indexPath.row completeHandler:^(NSArray * _Nonnull datas) {
+//    AEWKPDFPreviewController *vc = [[AEWKPDFPreviewController alloc] initAllPages:self.dataArray currentPage:indexPath.row completeHandler:^(NSArray * _Nonnull datas) {
+//        weakSelf.dataArray = datas.mutableCopy;
+//        [weakSelf.tableView reloadData];
+//    }];
+    AEReaderViewController *vc = [[AEReaderViewController alloc] initAllPages:self.dataArray currentPage:indexPath.row completeHandler:^(NSArray * _Nonnull datas) {
         weakSelf.dataArray = datas.mutableCopy;
         [weakSelf.tableView reloadData];
     }];
+    
     [self.navigationController pushViewController:vc animated:YES];
 }
 

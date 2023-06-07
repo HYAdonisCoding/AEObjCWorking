@@ -1,16 +1,16 @@
 //
-//  AEPreviewViewController.m
+//  AEReaderViewController.m
 //  AEObjCWorking_Example
 //
-//  Created by Adam on 2023/6/2.
+//  Created by Adam on 2023/6/6.
 //  Copyright © 2023 HYAdonisCoding. All rights reserved.
 //
 
-#import "AEPreviewViewController.h"
+#import "AEReaderViewController.h"
 #import "AEPDFModel.h"
 #import <PDFKit/PDFKit.h>
 
-@interface AEPreviewViewController ()<PDFViewDelegate>
+@interface AEReaderViewController ()<PDFViewDelegate>
 
 @property (nonatomic, strong) PDFView *pdfView;
 
@@ -36,7 +36,7 @@
 
 @end
 
-@implementation AEPreviewViewController
+@implementation AEReaderViewController
 
 #pragma mark -
 #pragma mark - Life Cycle Mothod
@@ -99,9 +99,8 @@
     self.pdfView.delegate = self;
     
     // 加载 PDF 文件
-    NSURL *url = [NSURL fileURLWithPath:self.pages[self.currentPage].path];
-    PDFDocument *document = [[PDFDocument alloc] initWithURL:url];
-    self.pdfView.document = document;
+    [self showPDF];
+    
     
     // 添加 PDFView 到视图
     [self.view addSubview:self.pdfView];
@@ -110,9 +109,6 @@
         make.left.right.mas_equalTo(0);
         make.bottom.mas_equalTo(-[self getHeight]);
     }];
-    
-    // 获取总页数
-    self.totalPages = document.pageCount;
     
     if (self.totalPages <= 1) {
         self.pages[self.currentPage].scrollBottom = YES;
@@ -123,6 +119,20 @@
     [self defaultToolbar];
     if (!self.pages[self.currentPage].readed) {
         [self startTiming];
+    }
+}
+
+- (void)showPDF {
+    
+    NSURL *url = [NSURL fileURLWithPath:self.pages[self.currentPage].path];
+    PDFDocument *document = [[PDFDocument alloc] initWithURL:url];
+    self.pdfView.document = document;
+    
+    // 获取总页数
+    self.totalPages = document.pageCount;
+    if (self.totalPages <= 1) {
+        self.pages[self.currentPage].scrollBottom = YES;
+        NSLog(@"只有一页哦");
     }
 }
 
@@ -182,8 +192,7 @@
 }
 
 - (void)updateCountdown {
-    // 更新倒计时时间
-    self.currentTimes--;
+    
     
     if (self.currentTimes >= 0) {
         // 更新倒计时标签文本
@@ -201,6 +210,8 @@
             [self.nextBtn setTitle:@"请滑至最后一页，完整阅读协议内容" forState:(UIControlStateNormal)];
         }
     }
+    // 更新倒计时时间
+    self.currentTimes--;
 }
 
 - (void)configToolbar:(BOOL)scrollBottom {
@@ -240,14 +251,7 @@
 
 /// 去首页
 - (void)goToFirstPage {
-    PDFView *pdfView = self.pdfView;
-    PDFDocument *pdfDocument = self.pdfView.document;
-    if (pdfDocument != nil && pdfDocument.pageCount > 0) {
-        PDFPage *firstPage = [pdfDocument pageAtIndex:0];
-        CGRect firstPageBounds = [firstPage boundsForBox:kPDFDisplayBoxCropBox];
-        [pdfView goToPage:firstPage];
-        [pdfView goToRect:firstPageBounds onPage:firstPage];
-    }
+
 }
 
 /// 后一页
@@ -261,12 +265,11 @@
     if (self.currentPage < self.pages.count - 1) {
         self.currentTimes = 3;
         self.currentPage += 1;
+        
         // 加载 PDF 文件
-        NSURL *url = [NSURL fileURLWithPath:self.pages[self.currentPage].path];
-        PDFDocument *document = [[PDFDocument alloc] initWithURL:url];
-        self.pdfView.document = document;
-        // 获取总页数
-        self.totalPages = document.pageCount;
+        [self showPDF];
+        
+
         if (self.totalPages <= 1) {
             self.pages[self.currentPage].scrollBottom = YES;
         }
@@ -299,9 +302,8 @@
     if (self.currentPage > 0) {
         self.currentPage -= 1;
         // 加载 PDF 文件
-        NSURL *url = [NSURL fileURLWithPath:self.pages[self.currentPage].path];
-        PDFDocument *document = [[PDFDocument alloc] initWithURL:url];
-        self.pdfView.document = document;
+        [self showPDF];
+        
         // 滚动到首页
         [self goToFirstPage];
         [self refreshrightBarButtonItem];

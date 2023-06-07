@@ -88,6 +88,7 @@
 		669A10DB292DAEA3008F307E /* Yahei.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 669A10DA292DAEA3008F307E /* Yahei.ttf */; };
 		669A10E0292DB3B5008F307E /* AEFontsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 669A10DF292DB3B5008F307E /* AEFontsViewController.m */; };
 		669ACDFB27CDBB080013C239 /* AEGetFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 669ACDFA27CDBB080013C239 /* AEGetFile.m */; };
+		669C21D72A2EDBD600AAC2BE /* AEReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 669C21D62A2EDBD600AAC2BE /* AEReaderViewController.m */; };
 		669E7F0027D9892900086068 /* AECustomTitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 669E7EFF27D9892900086068 /* AECustomTitleViewController.m */; };
 		669E7F0427D9906E00086068 /* AECustomTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 669E7F0327D9906E00086068 /* AECustomTitleView.m */; };
 		66A0546E282CF35400C491A5 /* AEGradientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A0546D282CF35400C491A5 /* AEGradientViewController.m */; };
@@ -325,6 +326,8 @@
 		669A10DF292DB3B5008F307E /* AEFontsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEFontsViewController.m; sourceTree = "<group>"; };
 		669ACDF927CDBB080013C239 /* AEGetFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEGetFile.h; sourceTree = "<group>"; };
 		669ACDFA27CDBB080013C239 /* AEGetFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEGetFile.m; sourceTree = "<group>"; };
+		669C21D52A2EDBD600AAC2BE /* AEReaderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEReaderViewController.h; sourceTree = "<group>"; };
+		669C21D62A2EDBD600AAC2BE /* AEReaderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEReaderViewController.m; sourceTree = "<group>"; };
 		669E7EFE27D9892900086068 /* AECustomTitleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AECustomTitleViewController.h; sourceTree = "<group>"; };
 		669E7EFF27D9892900086068 /* AECustomTitleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AECustomTitleViewController.m; sourceTree = "<group>"; };
 		669E7F0227D9906E00086068 /* AECustomTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AECustomTitleView.h; sourceTree = "<group>"; };
@@ -975,6 +978,8 @@
 				66A1BFEF2A29E0E9001BE4C6 /* AEPreviewViewController.m */,
 				66B78A022A2DCF4A00F5D688 /* AEWKPDFPreviewController.h */,
 				66B78A032A2DCF4A00F5D688 /* AEWKPDFPreviewController.m */,
+				669C21D52A2EDBD600AAC2BE /* AEReaderViewController.h */,
+				669C21D62A2EDBD600AAC2BE /* AEReaderViewController.m */,
 				66A1BFEC2A29D994001BE4C6 /* 错题.pdf */,
 				66B789FE2A2D813A00F5D688 /* 发票.pdf */,
 				66B789FF2A2D813A00F5D688 /* 截屏.pdf */,
@@ -1297,7 +1302,6 @@
 				ORGANIZATIONNAME = HYAdonisCoding;
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
-						DevelopmentTeam = N2KQ965WEJ;
 						ProvisioningStyle = Automatic;
 					};
 					6003F5AD195388D20070C39A = {
@@ -1535,6 +1539,7 @@
 				7A52EB8D2278274F009BC207 /* AEBaseModel.m in Sources */,
 				7AA0E92D23C4125C0092DE5B /* AECardView.m in Sources */,
 				0CD128572635A75B0066F449 /* AEUnconventionalViewController.m in Sources */,
+				669C21D72A2EDBD600AAC2BE /* AEReaderViewController.m in Sources */,
 				666CF0482611A03400BCDF1E /* AERuntimeViewController.m in Sources */,
 				666CF00E261166DB00BCDF1E /* AEReusePool.m in Sources */,
 				7A9CD79B22783AC9004E6D2A /* AEConvenientTool.m in Sources */,
@@ -1659,7 +1664,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1692,7 +1697,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1707,7 +1712,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N2KQ965WEJ;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AEObjCWorking/Resources/AEPrefixHeader.pch";
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
