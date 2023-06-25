@@ -102,15 +102,14 @@
 		66A26B972907BD53005BDA0C /* UIButton+EnlargeArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A26B962907BD53005BDA0C /* UIButton+EnlargeArea.m */; };
 		66A2E67428FD025C00330702 /* AEKnowledgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A2E67328FD025C00330702 /* AEKnowledgeViewController.m */; };
 		66A2E67728FD369100330702 /* AETabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A2E67628FD369100330702 /* AETabBarViewController.m */; };
+		66A78BBB2A47E43300D35077 /* AEPreviewPDFController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A78BBA2A47E43300D35077 /* AEPreviewPDFController.m */; };
+		66A78BBE2A480C7E00D35077 /* AEPreviewPDFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A78BBD2A480C7E00D35077 /* AEPreviewPDFViewController.m */; };
+		66A78BC12A480F3600D35077 /* AEPreviewPDFView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A78BC02A480F3600D35077 /* AEPreviewPDFView.m */; };
 		66A8B428283661AA00B76B11 /* AEGifViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A8B427283661AA00B76B11 /* AEGifViewController.m */; };
 		66A8B42A283662D400B76B11 /* help_icon.gif in Resources */ = {isa = PBXBuildFile; fileRef = 66A8B429283662D400B76B11 /* help_icon.gif */; };
 		66B78A002A2D813A00F5D688 /* 发票.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 66B789FE2A2D813A00F5D688 /* 发票.pdf */; };
-		66B78A012A2D813A00F5D688 /* 截屏.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 66B789FF2A2D813A00F5D688 /* 截屏.pdf */; };
+		66B78A012A2D813A00F5D688 /* 协议书.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 66B789FF2A2D813A00F5D688 /* 协议书.pdf */; };
 		66B78A042A2DCF4A00F5D688 /* AEWKPDFPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B78A032A2DCF4A00F5D688 /* AEWKPDFPreviewController.m */; };
-		66BF36AF2A301C4600D95730 /* 代销理财产品协议书1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 66BF36AD2A301C4500D95730 /* 代销理财产品协议书1.pdf */; };
-		66BF36B02A301C4600D95730 /* 理财产品合同1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 66BF36AE2A301C4600D95730 /* 理财产品合同1.pdf */; };
-		66BF36B32A301D0500D95730 /* 代销理财产品协议书.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 66BF36B12A301D0400D95730 /* 代销理财产品协议书.pdf */; };
-		66BF36B42A301D0500D95730 /* 理财产品合同.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 66BF36B22A301D0500D95730 /* 理财产品合同.pdf */; };
 		66BF36B72A30256300D95730 /* UIView+AEHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BF36B62A30256300D95730 /* UIView+AEHUD.m */; };
 		66D5F3702816311600122904 /* AEProfessionTCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D5F36F2816311600122904 /* AEProfessionTCell.m */; };
 		66D5F3732816314500122904 /* AEProfessionSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D5F3722816314500122904 /* AEProfessionSelectView.m */; };
@@ -358,17 +357,19 @@
 		66A2E67328FD025C00330702 /* AEKnowledgeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEKnowledgeViewController.m; sourceTree = "<group>"; };
 		66A2E67528FD369100330702 /* AETabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AETabBarViewController.h; sourceTree = "<group>"; };
 		66A2E67628FD369100330702 /* AETabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AETabBarViewController.m; sourceTree = "<group>"; };
+		66A78BB92A47E43300D35077 /* AEPreviewPDFController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEPreviewPDFController.h; sourceTree = "<group>"; };
+		66A78BBA2A47E43300D35077 /* AEPreviewPDFController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEPreviewPDFController.m; sourceTree = "<group>"; };
+		66A78BBC2A480C7E00D35077 /* AEPreviewPDFViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEPreviewPDFViewController.h; sourceTree = "<group>"; };
+		66A78BBD2A480C7E00D35077 /* AEPreviewPDFViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEPreviewPDFViewController.m; sourceTree = "<group>"; };
+		66A78BBF2A480F3600D35077 /* AEPreviewPDFView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEPreviewPDFView.h; sourceTree = "<group>"; };
+		66A78BC02A480F3600D35077 /* AEPreviewPDFView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEPreviewPDFView.m; sourceTree = "<group>"; };
 		66A8B426283661AA00B76B11 /* AEGifViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEGifViewController.h; sourceTree = "<group>"; };
 		66A8B427283661AA00B76B11 /* AEGifViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEGifViewController.m; sourceTree = "<group>"; };
 		66A8B429283662D400B76B11 /* help_icon.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = help_icon.gif; sourceTree = "<group>"; };
 		66B789FE2A2D813A00F5D688 /* 发票.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "发票.pdf"; sourceTree = "<group>"; };
-		66B789FF2A2D813A00F5D688 /* 截屏.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "截屏.pdf"; sourceTree = "<group>"; };
+		66B789FF2A2D813A00F5D688 /* 协议书.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "协议书.pdf"; sourceTree = "<group>"; };
 		66B78A022A2DCF4A00F5D688 /* AEWKPDFPreviewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEWKPDFPreviewController.h; sourceTree = "<group>"; };
 		66B78A032A2DCF4A00F5D688 /* AEWKPDFPreviewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEWKPDFPreviewController.m; sourceTree = "<group>"; };
-		66BF36AD2A301C4500D95730 /* 代销理财产品协议书1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "代销理财产品协议书1.pdf"; sourceTree = "<group>"; };
-		66BF36AE2A301C4600D95730 /* 理财产品合同1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "理财产品合同1.pdf"; sourceTree = "<group>"; };
-		66BF36B12A301D0400D95730 /* 代销理财产品协议书.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "代销理财产品协议书.pdf"; sourceTree = "<group>"; };
-		66BF36B22A301D0500D95730 /* 理财产品合同.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "理财产品合同.pdf"; sourceTree = "<group>"; };
 		66BF36B52A30256300D95730 /* UIView+AEHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+AEHUD.h"; sourceTree = "<group>"; };
 		66BF36B62A30256300D95730 /* UIView+AEHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+AEHUD.m"; sourceTree = "<group>"; };
 		66D5F36E2816311600122904 /* AEProfessionTCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEProfessionTCell.h; sourceTree = "<group>"; };
@@ -991,13 +992,15 @@
 				66B78A032A2DCF4A00F5D688 /* AEWKPDFPreviewController.m */,
 				669C21D52A2EDBD600AAC2BE /* AEReaderViewController.h */,
 				669C21D62A2EDBD600AAC2BE /* AEReaderViewController.m */,
-				66BF36B12A301D0400D95730 /* 代销理财产品协议书.pdf */,
-				66BF36B22A301D0500D95730 /* 理财产品合同.pdf */,
-				66BF36AD2A301C4500D95730 /* 代销理财产品协议书1.pdf */,
-				66BF36AE2A301C4600D95730 /* 理财产品合同1.pdf */,
+				66A78BB92A47E43300D35077 /* AEPreviewPDFController.h */,
+				66A78BBA2A47E43300D35077 /* AEPreviewPDFController.m */,
+				66A78BBC2A480C7E00D35077 /* AEPreviewPDFViewController.h */,
+				66A78BBD2A480C7E00D35077 /* AEPreviewPDFViewController.m */,
+				66A78BBF2A480F3600D35077 /* AEPreviewPDFView.h */,
+				66A78BC02A480F3600D35077 /* AEPreviewPDFView.m */,
 				66A1BFEC2A29D994001BE4C6 /* 错题.pdf */,
 				66B789FE2A2D813A00F5D688 /* 发票.pdf */,
-				66B789FF2A2D813A00F5D688 /* 截屏.pdf */,
+				66B789FF2A2D813A00F5D688 /* 协议书.pdf */,
 				66A1BFF12A29E1F7001BE4C6 /* AEPDFModel.h */,
 				66A1BFF22A29E1F7001BE4C6 /* AEPDFModel.m */,
 				66A1BFF42A29ECF1001BE4C6 /* AEPreviewControllerWrapper.h */,
@@ -1361,19 +1364,15 @@
 				666D7CE426EE014A00CC131B /* Address1.txt in Resources */,
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				66273FEA2814F1760028840B /* profession.json in Resources */,
-				66BF36B32A301D0500D95730 /* 代销理财产品协议书.pdf in Resources */,
-				66BF36AF2A301C4600D95730 /* 代销理财产品协议书1.pdf in Resources */,
 				66A8B42A283662D400B76B11 /* help_icon.gif in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
-				66BF36B02A301C4600D95730 /* 理财产品合同1.pdf in Resources */,
 				66B78A002A2D813A00F5D688 /* 发票.pdf in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 				66A1BFED2A29D994001BE4C6 /* 错题.pdf in Resources */,
 				663F593D26B8DDF000B92C3A /* AEDataPropertyList.plist in Resources */,
 				666D7CE226EDE34F00CC131B /* Address.txt in Resources */,
-				66B78A012A2D813A00F5D688 /* 截屏.pdf in Resources */,
-				66BF36B42A301D0500D95730 /* 理财产品合同.pdf in Resources */,
+				66B78A012A2D813A00F5D688 /* 协议书.pdf in Resources */,
 				669A10DB292DAEA3008F307E /* Yahei.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1505,8 +1504,10 @@
 				666CF0512611AB7800BCDF1E /* AEAccount.m in Sources */,
 				0C2C0ABC262B173A0038859D /* AEUserCenter.m in Sources */,
 				663F594026B8DF3100B92C3A /* AEDataHelper.m in Sources */,
+				66A78BBB2A47E43300D35077 /* AEPreviewPDFController.m in Sources */,
 				668ECD9E299B16AB00425C53 /* AESubTableTCell.m in Sources */,
 				7A76520A23F3CBD300A303DE /* AEIntelligentSortingController.m in Sources */,
+				66A78BBE2A480C7E00D35077 /* AEPreviewPDFViewController.m in Sources */,
 				663DB3FA26E9F6690046C277 /* UIColor+AECategory.m in Sources */,
 				666CEFFC26115D5E00BCDF1E /* AEOCKnowledgeViewController.m in Sources */,
 				6610A181292E1D1B00138FE5 /* AENotification.m in Sources */,
@@ -1520,6 +1521,7 @@
 				7A44DE4C228A471F0078B6A0 /* NSString+AELabelWidthAndHeight.m in Sources */,
 				666CF035261180BB00BCDF1E /* AEMObserver.m in Sources */,
 				7AEF45142409131E0065B265 /* AEPopoverShowController.m in Sources */,
+				66A78BC12A480F3600D35077 /* AEPreviewPDFView.m in Sources */,
 				66BF36B72A30256300D95730 /* UIView+AEHUD.m in Sources */,
 				666CF05E2611ADF100BCDF1E /* NSTimer+AEWeakTimer.m in Sources */,
 				6662E25829CC35C200AC7CD3 /* AEGPTViewController.m in Sources */,
