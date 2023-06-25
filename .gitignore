@@ -1,10 +1,9 @@
-<<<<<<< HEAD
+
 # OS X
 .DS_Store
-
+.pdf
 # Xcode
 build/
-=======
 # Xcode
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
@@ -14,7 +13,6 @@ build/
 DerivedData/
 
 ## Various settings
->>>>>>> cf90601656c11f9be1b10695017c51d96841205d
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -24,7 +22,6 @@ DerivedData/
 *.perspectivev3
 !default.perspectivev3
 xcuserdata/
-<<<<<<< HEAD
 *.xccheckout
 profile
 *.moved-aside
@@ -35,7 +32,6 @@ DerivedData
 # Bundler
 .bundle
 
-=======
 
 ## Other
 *.moved-aside
@@ -58,13 +54,11 @@ DerivedData
 
 # Carthage
 #
->>>>>>> cf90601656c11f9be1b10695017c51d96841205d
 # Add this line if you want to avoid checking in source code from Carthage dependencies.
 # Carthage/Checkouts
 
 Carthage/Build
 
-<<<<<<< HEAD
 # We recommend against adding the Pods directory to your .gitignore. However
 # you should judge for yourself, the pros and cons are mentioned at:
 # https://guides.cocoapods.org/using/using-cocoapods.html#should-i-ignore-the-pods-directory-in-source-control
@@ -73,7 +67,6 @@ Carthage/Build
 # `pod install` in .travis.yml
 #
 # Pods/
-=======
 # fastlane
 #
 # It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
@@ -92,4 +85,3 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
->>>>>>> cf90601656c11f9be1b10695017c51d96841205d
