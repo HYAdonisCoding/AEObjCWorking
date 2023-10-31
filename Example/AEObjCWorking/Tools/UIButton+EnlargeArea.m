@@ -88,4 +88,35 @@ static char leftNameKey;
         [self setImage:image.grayImage forState:(state)];
     }];
 }
+
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {
+    [super pointInside:point withEvent:event];
+    
+    // 获取bounds 实际大小
+    CGRect bounds = self.bounds;
+    if (self.clickArea) {
+        CGFloat area = [self.clickArea floatValue];
+//        CGFloat widthDelta = MAX(area * bounds.size.width - bounds.size.width, .0);
+//        CGFloat heightDelta = MAX(area * bounds.size.height - bounds.size.height, .0);
+//        //扩大bounds
+//        bounds = CGRectInset(bounds, -0.5 * widthDelta, -0.5 * heightDelta);
+        
+        // 使用 CGRectInset 扩展热区
+        CGRect expandedBounds = CGRectInset(self.bounds, -area, -area);
+            
+        // 检查触摸点是否在扩展的热区内
+        return CGRectContainsPoint(expandedBounds, point);
+
+    }
+    // 点击的点在新的bounds 中 就会返回YES
+    return CGRectContainsPoint(bounds, point);
+}
+
+- (void)setClickArea:(NSString *)clickArea {
+    objc_setAssociatedObject(self, @selector(clickArea), clickArea, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+- (NSString *)clickArea {
+    return objc_getAssociatedObject(self, @selector(clickArea));
+}
+
 @end

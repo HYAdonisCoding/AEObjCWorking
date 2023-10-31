@@ -46,7 +46,8 @@
 	<string>将要添加相册图片</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>HYQiHei-25JF.otf</string>
+		<string>eb_bold.ttf</string>
+		<string>MicrosoftYaHei.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

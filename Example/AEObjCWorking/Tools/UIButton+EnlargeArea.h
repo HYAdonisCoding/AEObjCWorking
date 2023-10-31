@@ -15,6 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 // MARK: - gray image
 + (void)ae_buttonSwizzldMethedWith:(BOOL)changeGray;
+
+
+// MARK: - 扩大按钮热区的比例系数(曲线救国)
+@property (nonatomic, copy) NSString *clickArea;
 @end
 
 NS_ASSUME_NONNULL_END

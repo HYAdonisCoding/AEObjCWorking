@@ -27,30 +27,54 @@
 
 - (NSArray *)dataArray {
     if (!_dataArray) {
-        _dataArray = @[@"AEPreviewPDFController",
-                       @"AEPDFReaderViewController",
-                       @"AEGPTViewController",
-                       @"AEConvertRectViewController",
-                       @"AEImageSetViewController",
-                       @"AEFontsViewController",
-                       @"AETabBarViewController",
-                       @"AEKnowledgeViewController",
-                       @"AEGifViewController",
-                       @"AEGradientViewController",
-                       @"AECustomTitleViewController",
-                       @"AEFileOperationViewController",
-                       @"AELifeViewController",
-                       @"AEAddressViewController",
-                       @"AEPlistViewController",
-                       @"AEUnconventionalViewController",
-                       @"AEOCKnowledgeViewController",
-                       @"AEPopoverShowController",
-                       @"AEHTMLParsingController",
-                       @"AEIntelligentSortingController",
-                       @"AEDynamicCardController",
-                       @"AECustomOptioinController",
-                       @"AECustomOptioinViewController",
-                       @"AEMainTabBarController"];
+        // 首先查找本地json文件home_data
+        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"home_data" ofType:@"json"];
+        NSArray *home_data;
+        if (filePath != nil) {
+            NSData *jsonData = [NSData dataWithContentsOfFile:filePath];
+            NSError *error = nil;
+            id jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
+            
+            if (error != nil) {
+                NSLog(@"JSON解析出错: %@", error.localizedDescription);
+            } else {
+                if ([jsonObject isKindOfClass:[NSDictionary class]]) {
+                    NSDictionary *jsonDictionary = (NSDictionary *)jsonObject;
+                    // 在这里处理解析后的JSON数据
+                    home_data = [jsonDictionary objectForKey: @"home_data"];
+                } else {
+                    NSLog(@"JSON数据不是一个字典");
+                }
+            }
+        }
+        if (home_data.count > 0) {
+            _dataArray = home_data;
+        } else {
+            _dataArray = @[@"AEPreviewPDFController",
+                           @"AEPDFReaderViewController",
+                           @"AEGPTViewController",
+                           @"AEConvertRectViewController",
+                           @"AEImageSetViewController",
+                           @"AEFontsViewController",
+                           @"AETabBarViewController",
+                           @"AEKnowledgeViewController",
+                           @"AEGifViewController",
+                           @"AEGradientViewController",
+                           @"AECustomTitleViewController",
+                           @"AEFileOperationViewController",
+                           @"AELifeViewController",
+                           @"AEAddressViewController",
+                           @"AEPlistViewController",
+                           @"AEUnconventionalViewController",
+                           @"AEOCKnowledgeViewController",
+                           @"AEPopoverShowController",
+                           @"AEHTMLParsingController",
+                           @"AEIntelligentSortingController",
+                           @"AEDynamicCardController",
+                           @"AECustomOptioinController",
+                           @"AECustomOptioinViewController",
+                           @"AEMainTabBarController"];
+        }
     }
     return _dataArray;
 }

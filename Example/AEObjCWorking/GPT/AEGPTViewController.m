@@ -7,6 +7,7 @@
 //
 
 #import "AEGPTViewController.h"
+#import "UIButton+EnlargeArea.h"
 
 @interface AEGPTViewController ()
 /// <#Description#>
@@ -19,15 +20,85 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self testButton2];
+}
+- (void)testGPT {
     // Do any additional setup after loading the view.
     self.textView = [[UITextView alloc] initWithFrame:CGRectZero];
     [self.view addSubview:self.textView];
     [self.textView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(self.mas_topLayoutGuideBottom);
-            make.bottom.left.right.mas_equalTo(0);
+        make.top.mas_equalTo(self.mas_topLayoutGuideBottom);
+        make.bottom.left.right.mas_equalTo(0);
     }];
     
     [self getData];
+}
+- (void)testButton2 {
+    
+    UIView *view = [[UIView alloc] init];
+    view.backgroundColor = [UIColor greenColor];
+    
+    [self.view addSubview:view];
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(100);
+        make.height.mas_equalTo(100);
+        make.center.mas_equalTo(0);
+    }];
+    
+    UIView *view2 = [[UIView alloc] init];
+    view2.backgroundColor = [UIColor blueColor];
+    
+    [self.view addSubview:view2];
+    [view2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(50);
+        make.height.mas_equalTo(50);
+        make.center.mas_equalTo(0);
+    }];
+    
+    UIButton *button = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    [view2 addSubview:button];
+    [button addTarget:self action:@selector(btnClicked:) forControlEvents:(UIControlEventTouchUpInside)];
+    [button mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(10);
+        make.height.mas_equalTo(10);
+        make.center.mas_equalTo(0);
+    }];
+    [button setBackgroundColor:[UIColor cyanColor]];
+    button.clickArea = @"10";
+    
+    
+}
+
+- (void)testButton {
+    
+    UIView *view = [[UIView alloc] init];
+    view.backgroundColor = [UIColor greenColor];
+    
+    [self.view addSubview:view];
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(48);
+        make.height.mas_equalTo(48);
+        make.center.mas_equalTo(0);
+    }];
+    
+    
+    UIButton *button = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    [self.view addSubview:button];
+    [button addTarget:self action:@selector(btnClicked:) forControlEvents:(UIControlEventTouchUpInside)];
+    [button mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(16);
+        make.height.mas_equalTo(16);
+        make.center.mas_equalTo(0);
+    }];
+    [button setBackgroundColor:[UIColor cyanColor]];
+    button.clickArea = @"3";
+    
+    
+}
+
+- (void)btnClicked:(UIButton *)sender {
+    NSLog(@"点击了");
 }
 
 - (void)getData {

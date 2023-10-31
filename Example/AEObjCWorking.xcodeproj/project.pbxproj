@@ -88,6 +88,9 @@
 		669A10DB292DAEA3008F307E /* Yahei.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 669A10DA292DAEA3008F307E /* Yahei.ttf */; };
 		669A10E0292DB3B5008F307E /* AEFontsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 669A10DF292DB3B5008F307E /* AEFontsViewController.m */; };
 		669ACDFB27CDBB080013C239 /* AEGetFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 669ACDFA27CDBB080013C239 /* AEGetFile.m */; };
+		669B46562AA7FE2000699C3E /* AEHitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 669B46552AA7FE2000699C3E /* AEHitViewController.m */; };
+		669B46592AA7FE4000699C3E /* AEHitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 669B46582AA7FE4000699C3E /* AEHitView.m */; };
+		669B465C2AA8040B00699C3E /* home_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 669B465A2AA7FEF200699C3E /* home_data.json */; };
 		669C21D72A2EDBD600AAC2BE /* AEReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 669C21D62A2EDBD600AAC2BE /* AEReaderViewController.m */; };
 		669E7F0027D9892900086068 /* AECustomTitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 669E7EFF27D9892900086068 /* AECustomTitleViewController.m */; };
 		669E7F0427D9906E00086068 /* AECustomTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 669E7F0327D9906E00086068 /* AECustomTitleView.m */; };
@@ -110,6 +113,8 @@
 		66B78A002A2D813A00F5D688 /* 发票.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 66B789FE2A2D813A00F5D688 /* 发票.pdf */; };
 		66B78A012A2D813A00F5D688 /* 协议书.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 66B789FF2A2D813A00F5D688 /* 协议书.pdf */; };
 		66B78A042A2DCF4A00F5D688 /* AEWKPDFPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B78A032A2DCF4A00F5D688 /* AEWKPDFPreviewController.m */; };
+		66B7C5C92ADFC70C006144DD /* eb_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66B7C5C82ADFC70B006144DD /* eb_bold.ttf */; };
+		66B7C5CA2ADFC85A006144DD /* AEObjCWorking-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6003F595195388D20070C39A /* AEObjCWorking-Info.plist */; };
 		66BF36B72A30256300D95730 /* UIView+AEHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BF36B62A30256300D95730 /* UIView+AEHUD.m */; };
 		66D5F3702816311600122904 /* AEProfessionTCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D5F36F2816311600122904 /* AEProfessionTCell.m */; };
 		66D5F3732816314500122904 /* AEProfessionSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D5F3722816314500122904 /* AEProfessionSelectView.m */; };
@@ -330,6 +335,11 @@
 		669A10DF292DB3B5008F307E /* AEFontsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEFontsViewController.m; sourceTree = "<group>"; };
 		669ACDF927CDBB080013C239 /* AEGetFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEGetFile.h; sourceTree = "<group>"; };
 		669ACDFA27CDBB080013C239 /* AEGetFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEGetFile.m; sourceTree = "<group>"; };
+		669B46542AA7FE2000699C3E /* AEHitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEHitViewController.h; sourceTree = "<group>"; };
+		669B46552AA7FE2000699C3E /* AEHitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEHitViewController.m; sourceTree = "<group>"; };
+		669B46572AA7FE4000699C3E /* AEHitView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEHitView.h; sourceTree = "<group>"; };
+		669B46582AA7FE4000699C3E /* AEHitView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEHitView.m; sourceTree = "<group>"; };
+		669B465A2AA7FEF200699C3E /* home_data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = home_data.json; sourceTree = "<group>"; };
 		669C21D52A2EDBD600AAC2BE /* AEReaderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEReaderViewController.h; sourceTree = "<group>"; };
 		669C21D62A2EDBD600AAC2BE /* AEReaderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEReaderViewController.m; sourceTree = "<group>"; };
 		669E7EFE27D9892900086068 /* AECustomTitleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AECustomTitleViewController.h; sourceTree = "<group>"; };
@@ -370,6 +380,7 @@
 		66B789FF2A2D813A00F5D688 /* 协议书.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "协议书.pdf"; sourceTree = "<group>"; };
 		66B78A022A2DCF4A00F5D688 /* AEWKPDFPreviewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEWKPDFPreviewController.h; sourceTree = "<group>"; };
 		66B78A032A2DCF4A00F5D688 /* AEWKPDFPreviewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEWKPDFPreviewController.m; sourceTree = "<group>"; };
+		66B7C5C82ADFC70B006144DD /* eb_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = eb_bold.ttf; sourceTree = "<group>"; };
 		66BF36B52A30256300D95730 /* UIView+AEHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+AEHUD.h"; sourceTree = "<group>"; };
 		66BF36B62A30256300D95730 /* UIView+AEHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+AEHUD.m"; sourceTree = "<group>"; };
 		66D5F36E2816311600122904 /* AEProfessionTCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEProfessionTCell.h; sourceTree = "<group>"; };
@@ -580,6 +591,8 @@
 		6003F593195388D20070C39A /* Example for AEObjCWorking */ = {
 			isa = PBXGroup;
 			children = (
+				669B465A2AA7FEF200699C3E /* home_data.json */,
+				669B46532AA7FDFA00699C3E /* Hit */,
 				66A1BFE82A29D452001BE4C6 /* PDF */,
 				6662E25529CC35A100AC7CD3 /* GPT */,
 				668ECD98299B15D600425C53 /* ConvertRect */,
@@ -919,6 +932,7 @@
 		669A10DC292DB0C2008F307E /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				66B7C5C82ADFC70B006144DD /* eb_bold.ttf */,
 				669A10DA292DAEA3008F307E /* Yahei.ttf */,
 			);
 			path = Fonts;
@@ -931,6 +945,17 @@
 				669A10DF292DB3B5008F307E /* AEFontsViewController.m */,
 			);
 			path = FontsShow;
+			sourceTree = "<group>";
+		};
+		669B46532AA7FDFA00699C3E /* Hit */ = {
+			isa = PBXGroup;
+			children = (
+				669B46542AA7FE2000699C3E /* AEHitViewController.h */,
+				669B46552AA7FE2000699C3E /* AEHitViewController.m */,
+				669B46572AA7FE4000699C3E /* AEHitView.h */,
+				669B46582AA7FE4000699C3E /* AEHitView.m */,
+			);
+			path = Hit;
 			sourceTree = "<group>";
 		};
 		669E7EFD27D988FB00086068 /* CustomTitleView */ = {
@@ -1360,10 +1385,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				669B465C2AA8040B00699C3E /* home_data.json in Resources */,
 				7A6F9B7024061B1C006A923D /* index.html in Resources */,
 				666D7CE426EE014A00CC131B /* Address1.txt in Resources */,
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				66273FEA2814F1760028840B /* profession.json in Resources */,
+				66B7C5CA2ADFC85A006144DD /* AEObjCWorking-Info.plist in Resources */,
 				66A8B42A283662D400B76B11 /* help_icon.gif in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
@@ -1373,6 +1400,7 @@
 				663F593D26B8DDF000B92C3A /* AEDataPropertyList.plist in Resources */,
 				666D7CE226EDE34F00CC131B /* Address.txt in Resources */,
 				66B78A012A2D813A00F5D688 /* 协议书.pdf in Resources */,
+				66B7C5C92ADFC70C006144DD /* eb_bold.ttf in Resources */,
 				669A10DB292DAEA3008F307E /* Yahei.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1536,6 +1564,7 @@
 				7A76520E23F3CCB400A303DE /* Goods.m in Sources */,
 				666CF0592611ADC100BCDF1E /* AEMemoryViewController.m in Sources */,
 				66D5F3732816314500122904 /* AEProfessionSelectView.m in Sources */,
+				669B46562AA7FE2000699C3E /* AEHitViewController.m in Sources */,
 				66A1BFF02A29E0E9001BE4C6 /* AEPreviewViewController.m in Sources */,
 				0CD1285E2635A7860066F449 /* AEScrollViewController.m in Sources */,
 				666CF0072611669D00BCDF1E /* AEReusePoolViewController.m in Sources */,
@@ -1574,6 +1603,7 @@
 				0C2C0AC1262B1A7F0038859D /* AEGCDViewController.m in Sources */,
 				0C2C0AB5262B17290038859D /* AEGroupObject.m in Sources */,
 				6604B74226E9DC8E00D9BA56 /* AEAddressSelectViewController.m in Sources */,
+				669B46592AA7FE4000699C3E /* AEHitView.m in Sources */,
 				7A6E01F923C7124900D34AB6 /* AETabBarItem.m in Sources */,
 				668ECDA1299B16C600425C53 /* AEMutileLineTCell.m in Sources */,
 				7AEF4517240914540065B265 /* AEPopSheetController.m in Sources */,
