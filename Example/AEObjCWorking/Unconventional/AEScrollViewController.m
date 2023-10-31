@@ -8,15 +8,9 @@
 
 #import "AEScrollViewController.h"
 
-@interface AEScrollViewController () {
-    UIView *topView;
-    UIView *topView1;
-    UIView *topView2;
-    UIView *topView3;
-    UIView *topView4;
-}
-/// scrollView
-@property (nonatomic, strong) UIScrollView *scrollView;
+@interface AEScrollViewController ()
+
+
 @end
 
 @implementation AEScrollViewController
@@ -24,83 +18,45 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    
-    
-    [self configLayoutSubviews];
+   
 }
 
-- (void)configLayoutSubviews {
+- (void)configUI {
+    [super configUI];
     
-    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectZero];
-    self.scrollView.scrollEnabled = YES;
-    self.scrollView.backgroundColor = [UIColor purpleColor];
-    [self.view addSubview:self.scrollView];
-    
-    topView = [UIView new];
-    topView1 = [UIView new];
-    topView2 = [UIView new];
-    topView3 = [UIView new];
-
-    topView4 = [UIView new];
-
-    [self.scrollView addSubview:topView];
-    [topView addSubview:topView1];
-    [topView addSubview:topView2];
-    [topView addSubview:topView3];
-
-    [topView addSubview:topView4];
-
-    
-    topView.backgroundColor = [UIColor greenColor];
-    topView1.backgroundColor = [UIColor redColor];
-    topView2.backgroundColor = [UIColor magentaColor];
-    topView3.backgroundColor = [UIColor orangeColor];
-    topView4.backgroundColor = [UIColor cyanColor];
-
-    CGFloat h = 200;
-    CGFloat w = SCREEN_WIDTH/1.5;
-
-    
-    [topView1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(topView);
-        make.top.equalTo(topView.mas_top);
-        make.height.equalTo(@(h));
-        make.width.equalTo(@(w));
+    UIScrollView *scrollView = [[UIScrollView alloc] init];
+    scrollView.backgroundColor = [UIColor magentaColor];
+    [self.view addSubview:scrollView];
+    [scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.mas_topLayoutGuideBottom);
+        make.left.right.bottom.mas_equalTo(0);
     }];
+    CGFloat space = 10, height = 100, width = SCREEN_WIDTH - space*2;
+    CGFloat top = 10;
     
-    [topView2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(topView);
-        make.top.equalTo(topView1.mas_bottom).with.offset(50);
-        make.height.equalTo(@(h));
-        make.width.equalTo(@(w));
-    }];
-    
-    [topView3 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(topView);
-        make.top.equalTo(topView2.mas_bottom).with.offset(50);
-        make.height.equalTo(@(h));
-        make.width.equalTo(@(w));
-    }];
-    
-    [topView4 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(topView3.mas_right).offset(10);
-        make.top.equalTo(topView3.mas_bottom).with.offset(50);
-        make.height.equalTo(@(h));
-        make.width.equalTo(@(w));
-    }];
-    
-    [topView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.scrollView);
-//        make.width.equalTo(self.scrollView.mas_width); // 需要设置宽度和scrollview宽度一样 仅仅上下滑动
-        make.bottom.equalTo(topView4.mas_bottom).offset(20);// 这里放最后一个view的底部
-        make.right.equalTo(topView4.mas_right);
-    }];
-    
-    [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
-    }];
-
+    for (int i = 0; i < 10; i++) {
+        UILabel *subView = [[UILabel alloc] init];
+        subView.backgroundColor = ((i%2) != 0) ? UIColor.cyanColor : UIColor.yellowColor;
+        [scrollView addSubview:subView];
+        if ((i%2) != 0) {
+            [subView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.mas_equalTo(SCREEN_WIDTH+space);
+                make.top.mas_equalTo(scrollView.mas_top).offset(top);
+                make.size.mas_equalTo(CGSizeMake(width, height));
+                make.right.mas_equalTo(scrollView.mas_right).offset(-space);
+                if (i == 9) {
+                    make.bottom.mas_equalTo(scrollView.mas_bottom).offset(space);
+                }
+            }];
+        } else {
+            [subView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.mas_equalTo(space);
+                make.top.mas_equalTo(scrollView.mas_top).offset(top);
+                make.size.mas_equalTo(CGSizeMake(width, height));
+            }];
+        }
+        top = (i+1)*height + space*(i+2);
+    }
 }
 
 @end

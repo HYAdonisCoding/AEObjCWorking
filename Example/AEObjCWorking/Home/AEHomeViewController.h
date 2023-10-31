@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 /** 列表 */
 @property (nonatomic, strong) UITableView *tableView;
 
+/// 获取本地json数据
+- (NSArray *)getLocalJsonData:(NSString *)fileName;
 @end
 
 NS_ASSUME_NONNULL_END

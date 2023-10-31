@@ -18,17 +18,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.dataArray = @[@"AEScrollViewController"];
+    
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)configEvent {
+    [super configEvent];
+    
+    self.dataArray = [self getLocalJsonData:@"interact_data"];
+    if (self.dataArray.count <= 0) {
+        
+        self.dataArray = @[@"AEScrollViewController",
+                           @"AEScrollTrialViewController"];
+    }
 }
-*/
 
 @end

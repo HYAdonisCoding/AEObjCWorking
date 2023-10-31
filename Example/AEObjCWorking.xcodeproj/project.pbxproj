@@ -116,6 +116,10 @@
 		66B7C5C92ADFC70C006144DD /* eb_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66B7C5C82ADFC70B006144DD /* eb_bold.ttf */; };
 		66B7C5CA2ADFC85A006144DD /* AEObjCWorking-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6003F595195388D20070C39A /* AEObjCWorking-Info.plist */; };
 		66BF36B72A30256300D95730 /* UIView+AEHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BF36B62A30256300D95730 /* UIView+AEHUD.m */; };
+		66C393272AF0F0A9008E750F /* AEScrollTrialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C393262AF0F0A9008E750F /* AEScrollTrialViewController.m */; };
+		66C3932B2AF0F1D0008E750F /* mine_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 66C393292AF0F1D0008E750F /* mine_data.json */; };
+		66C3932C2AF0F1D0008E750F /* interact_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 66C3932A2AF0F1D0008E750F /* interact_data.json */; };
+		66C3932F2AF0F707008E750F /* AEScrollHorizontalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C3932E2AF0F707008E750F /* AEScrollHorizontalViewController.m */; };
 		66D5F3702816311600122904 /* AEProfessionTCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D5F36F2816311600122904 /* AEProfessionTCell.m */; };
 		66D5F3732816314500122904 /* AEProfessionSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D5F3722816314500122904 /* AEProfessionSelectView.m */; };
 		66D5F3762816318F00122904 /* AEProfessionSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D5F3752816318F00122904 /* AEProfessionSelectViewController.m */; };
@@ -383,6 +387,12 @@
 		66B7C5C82ADFC70B006144DD /* eb_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = eb_bold.ttf; sourceTree = "<group>"; };
 		66BF36B52A30256300D95730 /* UIView+AEHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+AEHUD.h"; sourceTree = "<group>"; };
 		66BF36B62A30256300D95730 /* UIView+AEHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+AEHUD.m"; sourceTree = "<group>"; };
+		66C393252AF0F0A9008E750F /* AEScrollTrialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEScrollTrialViewController.h; sourceTree = "<group>"; };
+		66C393262AF0F0A9008E750F /* AEScrollTrialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEScrollTrialViewController.m; sourceTree = "<group>"; };
+		66C393292AF0F1D0008E750F /* mine_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mine_data.json; sourceTree = "<group>"; };
+		66C3932A2AF0F1D0008E750F /* interact_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = interact_data.json; sourceTree = "<group>"; };
+		66C3932D2AF0F707008E750F /* AEScrollHorizontalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEScrollHorizontalViewController.h; sourceTree = "<group>"; };
+		66C3932E2AF0F707008E750F /* AEScrollHorizontalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEScrollHorizontalViewController.m; sourceTree = "<group>"; };
 		66D5F36E2816311600122904 /* AEProfessionTCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEProfessionTCell.h; sourceTree = "<group>"; };
 		66D5F36F2816311600122904 /* AEProfessionTCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEProfessionTCell.m; sourceTree = "<group>"; };
 		66D5F3712816314500122904 /* AEProfessionSelectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEProfessionSelectView.h; sourceTree = "<group>"; };
@@ -545,6 +555,10 @@
 				0CD128562635A75B0066F449 /* AEUnconventionalViewController.m */,
 				0CD1285C2635A7860066F449 /* AEScrollViewController.h */,
 				0CD1285D2635A7860066F449 /* AEScrollViewController.m */,
+				66C393252AF0F0A9008E750F /* AEScrollTrialViewController.h */,
+				66C393262AF0F0A9008E750F /* AEScrollTrialViewController.m */,
+				66C3932D2AF0F707008E750F /* AEScrollHorizontalViewController.h */,
+				66C3932E2AF0F707008E750F /* AEScrollHorizontalViewController.m */,
 			);
 			path = Unconventional;
 			sourceTree = "<group>";
@@ -591,7 +605,6 @@
 		6003F593195388D20070C39A /* Example for AEObjCWorking */ = {
 			isa = PBXGroup;
 			children = (
-				669B465A2AA7FEF200699C3E /* home_data.json */,
 				669B46532AA7FDFA00699C3E /* Hit */,
 				66A1BFE82A29D452001BE4C6 /* PDF */,
 				6662E25529CC35A100AC7CD3 /* GPT */,
@@ -1057,6 +1070,16 @@
 			path = Gif;
 			sourceTree = "<group>";
 		};
+		66C393282AF0F0FE008E750F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				66C3932A2AF0F1D0008E750F /* interact_data.json */,
+				66C393292AF0F1D0008E750F /* mine_data.json */,
+				669B465A2AA7FEF200699C3E /* home_data.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		7A44DE49228A46F30078B6A0 /* UI_Component */ = {
 			isa = PBXGroup;
 			children = (
@@ -1077,6 +1100,7 @@
 		7A52EB8922782676009BC207 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				66C393282AF0F0FE008E750F /* Data */,
 				669A10DC292DB0C2008F307E /* Fonts */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
@@ -1392,7 +1416,9 @@
 				66273FEA2814F1760028840B /* profession.json in Resources */,
 				66B7C5CA2ADFC85A006144DD /* AEObjCWorking-Info.plist in Resources */,
 				66A8B42A283662D400B76B11 /* help_icon.gif in Resources */,
+				66C3932C2AF0F1D0008E750F /* interact_data.json in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
+				66C3932B2AF0F1D0008E750F /* mine_data.json in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				66B78A002A2D813A00F5D688 /* 发票.pdf in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
@@ -1549,6 +1575,7 @@
 				7A44DE4C228A471F0078B6A0 /* NSString+AELabelWidthAndHeight.m in Sources */,
 				666CF035261180BB00BCDF1E /* AEMObserver.m in Sources */,
 				7AEF45142409131E0065B265 /* AEPopoverShowController.m in Sources */,
+				66C393272AF0F0A9008E750F /* AEScrollTrialViewController.m in Sources */,
 				66A78BC12A480F3600D35077 /* AEPreviewPDFView.m in Sources */,
 				66BF36B72A30256300D95730 /* UIView+AEHUD.m in Sources */,
 				666CF05E2611ADF100BCDF1E /* NSTimer+AEWeakTimer.m in Sources */,
@@ -1603,6 +1630,7 @@
 				0C2C0AC1262B1A7F0038859D /* AEGCDViewController.m in Sources */,
 				0C2C0AB5262B17290038859D /* AEGroupObject.m in Sources */,
 				6604B74226E9DC8E00D9BA56 /* AEAddressSelectViewController.m in Sources */,
+				66C3932F2AF0F707008E750F /* AEScrollHorizontalViewController.m in Sources */,
 				669B46592AA7FE4000699C3E /* AEHitView.m in Sources */,
 				7A6E01F923C7124900D34AB6 /* AETabBarItem.m in Sources */,
 				668ECDA1299B16C600425C53 /* AEMutileLineTCell.m in Sources */,
