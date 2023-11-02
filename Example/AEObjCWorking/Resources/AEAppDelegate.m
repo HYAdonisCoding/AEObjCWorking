@@ -9,6 +9,10 @@
 #import "AEAppDelegate.h"
 #import "UIImage+AEBlackAndWhite.h"
 #import "UIButton+EnlargeArea.h"
+#import "AEHomeViewController.h"
+#import "AEUnconventionalViewController.h"
+#import "AEMineViewController.h"
+#import "AEMainTabBarController.h"
 
 @implementation AEAppDelegate
 // MARK: - Life Cycle
@@ -17,6 +21,35 @@
     // Override point for customization after application launch.
     [UIImage ae_imageSwizzldMethedWith:YES];
     [UIButton ae_buttonSwizzldMethedWith:YES];
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    AEMainTabBarController *tabBarController = [[AEMainTabBarController alloc] init];
+//    AEHomeViewController *firstViewController = [[AEHomeViewController alloc] init];
+//    UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:firstViewController];
+//    firstViewController.title = @"Home";
+//
+//    AEUnconventionalViewController *secondViewController = [[AEUnconventionalViewController alloc] init];
+//    secondViewController.title = @"Trial";
+//    UINavigationController *nav2 = [[UINavigationController alloc] initWithRootViewController:secondViewController];
+//    
+//    AEMineViewController *thridViewController = [[AEMineViewController alloc] init];
+//    thridViewController.title = @"Mine";
+    
+//    UINavigationController *nav3 = [[UINavigationController alloc] initWithRootViewController:thridViewController];
+//    
+//    tabBarController.viewControllers = @[nav1, nav2, nav3];
+    
+//    [tabBarController addOneChildVc:nav1 title:@"主页" image:[UIImage systemImageNamed:@"house"] selectedImage:[UIImage systemImageNamed:@"house.fill"]];
+//    
+//    [tabBarController addOneChildVc:nav2 title:@"热门" image:[UIImage systemImageNamed:@"flame"] selectedImage:[UIImage systemImageNamed:@"flame.fill"]];
+//    
+//    [tabBarController addOneChildVc:nav3 title:@"我的" image:[UIImage systemImageNamed:@"person"] selectedImage:[UIImage systemImageNamed:@"person.fill"]];
+
+    self.window.rootViewController = tabBarController;
+    // 设置这个窗口有主窗口并显示
+    [self.window makeKeyAndVisible];
+
+    
     return YES;
 }
 

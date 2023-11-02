@@ -1,5 +1,5 @@
 //
-//  AETabBarItem.h
+//  AETabBar.h
 //  AEObjCWorking_Example
 //
 //  Created by Adonis_HongYang on 2020/1/9.
@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AETabBarItem : UITabBarItem
+@class AEBarView;
+
+@interface AETabBar : UITabBar
+
+@property (nonatomic,strong) AEBarView *tabBarView;
 
 @end
 

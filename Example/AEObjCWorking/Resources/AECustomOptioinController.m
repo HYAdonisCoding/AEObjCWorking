@@ -9,10 +9,10 @@
 #import "AECustomOptioinController.h"
 #import <AEAuthenticeTool.h>
 #import "AECustomOptioinViewController.h"
-#import "AEDynamicLabel/AEDynamicLabel.h"
-#import "UI_Component/UIFont+AEFonts.h"
-#import "UI_Component/NSString+AELabelWidthAndHeight.h"
-#import "UI_Component/UIView+AEGlowView.h"
+#import "AEDynamicLabel.h"
+#import "UIFont+AEFonts.h"
+#import "NSString+AELabelWidthAndHeight.h"
+#import "UIView+AEGlowView.h"
 
 @interface AECustomOptioinController () <AEDynamicLabelDelegate>
 
