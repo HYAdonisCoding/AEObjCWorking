@@ -1,6 +1,7 @@
 {
     "type": "MultiPolygon",
     "home_data": [
+        "AETestUIViewController",
         "AEScrollViewController",
         "AEScrollTrialViewController",
         "AEScrollHorizontalViewController"

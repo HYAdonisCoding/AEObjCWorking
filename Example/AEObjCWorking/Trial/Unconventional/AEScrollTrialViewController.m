@@ -41,7 +41,7 @@
             make.top.mas_equalTo(scrollView.mas_top).offset(top);
             make.size.mas_equalTo(CGSizeMake(width, height));
             if (i == 9) {
-                make.bottom.mas_equalTo(scrollView.mas_bottom).offset(space);
+                make.bottom.mas_equalTo(scrollView.mas_bottom).offset(-space);
             }
         }];
         top = (i+1)*height + space*(i+2);

@@ -44,6 +44,7 @@
 		66273FEA2814F1760028840B /* profession.json in Resources */ = {isa = PBXBuildFile; fileRef = 66273FE92814F1760028840B /* profession.json */; };
 		66273FED2815642C0028840B /* AEProfessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 66273FEC2815642C0028840B /* AEProfessionModel.m */; };
 		663DB3FA26E9F6690046C277 /* UIColor+AECategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 663DB3F926E9F6690046C277 /* UIColor+AECategory.m */; };
+		663EB1FA2B1DBE9E0057EBE6 /* AESemaphoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 663EB1F92B1DBE9D0057EBE6 /* AESemaphoreViewController.m */; };
 		663F593D26B8DDF000B92C3A /* AEDataPropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 663F593C26B8DDF000B92C3A /* AEDataPropertyList.plist */; };
 		663F594026B8DF3100B92C3A /* AEDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 663F593F26B8DF3100B92C3A /* AEDataHelper.m */; };
 		663F594326B8E5F200B92C3A /* AEPlistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 663F594226B8E5F200B92C3A /* AEPlistViewController.m */; };
@@ -55,7 +56,11 @@
 		664A0403292CD2FA00E77CC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 664A0402292CD2FA00E77CC7 /* Assets.xcassets */; };
 		664A0407292CD2FA00E77CC7 /* AEWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 664A03F8292CD2F900E77CC7 /* AEWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		664AA8BC2723042500D31930 /* AELifeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 664AA8BB2723042500D31930 /* AELifeViewController.m */; };
+		664EF1D32AF4CE2E00B7B6AB /* AENavigationBarHeightManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 664EF1D22AF4CE2E00B7B6AB /* AENavigationBarHeightManager.m */; };
 		6662E25829CC35C200AC7CD3 /* AEGPTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6662E25729CC35C200AC7CD3 /* AEGPTViewController.m */; };
+		66630A222B3BFB4000478E0D /* AERandomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66630A212B3BFB4000478E0D /* AERandomViewController.m */; };
+		66630A252B3BFB8000478E0D /* AERandomModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 66630A242B3BFB8000478E0D /* AERandomModel.m */; };
+		66630A282B3C0DA100478E0D /* AETools.m in Sources */ = {isa = PBXBuildFile; fileRef = 66630A272B3C0DA100478E0D /* AETools.m */; };
 		6667E25E27E1E64100D9BA78 /* UIButton+AEImagePlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 6667E25D27E1E64000D9BA78 /* UIButton+AEImagePlace.m */; };
 		666CEFFC26115D5E00BCDF1E /* AEOCKnowledgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 666CEFFB26115D5E00BCDF1E /* AEOCKnowledgeViewController.m */; };
 		666CF0072611669D00BCDF1E /* AEReusePoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 666CF0062611669D00BCDF1E /* AEReusePoolViewController.m */; };
@@ -80,6 +85,7 @@
 		666DC53E27C7796D00FBDF41 /* AEStudyModel+StudyCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 666DC53D27C7796D00FBDF41 /* AEStudyModel+StudyCategory.m */; };
 		666DC54127C77BCC00FBDF41 /* AEStudyModel+AEDouble.m in Sources */ = {isa = PBXBuildFile; fileRef = 666DC54027C77BCB00FBDF41 /* AEStudyModel+AEDouble.m */; };
 		668A46872AF37A4A003DDB6F /* AENavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 668A46862AF37A4A003DDB6F /* AENavigationViewController.m */; };
+		668A468A2AF37DAC003DDB6F /* AETestUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 668A46892AF37DAC003DDB6F /* AETestUIViewController.m */; };
 		668ECD9B299B165D00425C53 /* AEConvertRectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 668ECD9A299B165D00425C53 /* AEConvertRectViewController.m */; };
 		668ECD9E299B16AB00425C53 /* AESubTableTCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 668ECD9D299B16AB00425C53 /* AESubTableTCell.m */; };
 		668ECDA1299B16C600425C53 /* AEMutileLineTCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 668ECDA0299B16C600425C53 /* AEMutileLineTCell.m */; };
@@ -265,6 +271,8 @@
 		66273FEC2815642C0028840B /* AEProfessionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEProfessionModel.m; sourceTree = "<group>"; };
 		663DB3F826E9F6690046C277 /* UIColor+AECategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+AECategory.h"; sourceTree = "<group>"; };
 		663DB3F926E9F6690046C277 /* UIColor+AECategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AECategory.m"; sourceTree = "<group>"; };
+		663EB1F82B1DBE9D0057EBE6 /* AESemaphoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AESemaphoreViewController.h; sourceTree = "<group>"; };
+		663EB1F92B1DBE9D0057EBE6 /* AESemaphoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AESemaphoreViewController.m; sourceTree = "<group>"; };
 		663F593C26B8DDF000B92C3A /* AEDataPropertyList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AEDataPropertyList.plist; sourceTree = "<group>"; };
 		663F593E26B8DF3100B92C3A /* AEDataHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEDataHelper.h; sourceTree = "<group>"; };
 		663F593F26B8DF3100B92C3A /* AEDataHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEDataHelper.m; sourceTree = "<group>"; };
@@ -280,8 +288,16 @@
 		664A0404292CD2FA00E77CC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		664AA8BA2723042500D31930 /* AELifeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AELifeViewController.h; sourceTree = "<group>"; };
 		664AA8BB2723042500D31930 /* AELifeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AELifeViewController.m; sourceTree = "<group>"; };
+		664EF1D12AF4CE2E00B7B6AB /* AENavigationBarHeightManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AENavigationBarHeightManager.h; sourceTree = "<group>"; };
+		664EF1D22AF4CE2E00B7B6AB /* AENavigationBarHeightManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AENavigationBarHeightManager.m; sourceTree = "<group>"; };
 		6662E25629CC35C200AC7CD3 /* AEGPTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEGPTViewController.h; sourceTree = "<group>"; };
 		6662E25729CC35C200AC7CD3 /* AEGPTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEGPTViewController.m; sourceTree = "<group>"; };
+		66630A202B3BFB4000478E0D /* AERandomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AERandomViewController.h; sourceTree = "<group>"; };
+		66630A212B3BFB4000478E0D /* AERandomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AERandomViewController.m; sourceTree = "<group>"; };
+		66630A232B3BFB8000478E0D /* AERandomModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AERandomModel.h; sourceTree = "<group>"; };
+		66630A242B3BFB8000478E0D /* AERandomModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AERandomModel.m; sourceTree = "<group>"; };
+		66630A262B3C0DA100478E0D /* AETools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AETools.h; sourceTree = "<group>"; };
+		66630A272B3C0DA100478E0D /* AETools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AETools.m; sourceTree = "<group>"; };
 		6667E25C27E1E64000D9BA78 /* UIButton+AEImagePlace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+AEImagePlace.h"; sourceTree = "<group>"; };
 		6667E25D27E1E64000D9BA78 /* UIButton+AEImagePlace.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+AEImagePlace.m"; sourceTree = "<group>"; };
 		666CEFFA26115D5E00BCDF1E /* AEOCKnowledgeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEOCKnowledgeViewController.h; sourceTree = "<group>"; };
@@ -328,6 +344,8 @@
 		666DC54027C77BCB00FBDF41 /* AEStudyModel+AEDouble.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AEStudyModel+AEDouble.m"; sourceTree = "<group>"; };
 		668A46852AF37A4A003DDB6F /* AENavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AENavigationViewController.h; sourceTree = "<group>"; };
 		668A46862AF37A4A003DDB6F /* AENavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AENavigationViewController.m; sourceTree = "<group>"; };
+		668A46882AF37DAC003DDB6F /* AETestUIViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AETestUIViewController.h; sourceTree = "<group>"; };
+		668A46892AF37DAC003DDB6F /* AETestUIViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AETestUIViewController.m; sourceTree = "<group>"; };
 		668ECD99299B165D00425C53 /* AEConvertRectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEConvertRectViewController.h; sourceTree = "<group>"; };
 		668ECD9A299B165D00425C53 /* AEConvertRectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEConvertRectViewController.m; sourceTree = "<group>"; };
 		668ECD9C299B16AB00425C53 /* AESubTableTCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AESubTableTCell.h; sourceTree = "<group>"; };
@@ -750,6 +768,15 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		663EB1F72B1DBE700057EBE6 /* Semaphore */ = {
+			isa = PBXGroup;
+			children = (
+				663EB1F82B1DBE9D0057EBE6 /* AESemaphoreViewController.h */,
+				663EB1F92B1DBE9D0057EBE6 /* AESemaphoreViewController.m */,
+			);
+			path = Semaphore;
+			sourceTree = "<group>";
+		};
 		663F593B26B8DD9E00B92C3A /* Plist */ = {
 			isa = PBXGroup;
 			children = (
@@ -783,6 +810,15 @@
 			path = Life;
 			sourceTree = "<group>";
 		};
+		664EF1D02AF4CE1600B7B6AB /* NavigationBarHeightManager */ = {
+			isa = PBXGroup;
+			children = (
+				664EF1D12AF4CE2E00B7B6AB /* AENavigationBarHeightManager.h */,
+				664EF1D22AF4CE2E00B7B6AB /* AENavigationBarHeightManager.m */,
+			);
+			path = NavigationBarHeightManager;
+			sourceTree = "<group>";
+		};
 		6662E25529CC35A100AC7CD3 /* GPT */ = {
 			isa = PBXGroup;
 			children = (
@@ -790,6 +826,17 @@
 				6662E25729CC35C200AC7CD3 /* AEGPTViewController.m */,
 			);
 			path = GPT;
+			sourceTree = "<group>";
+		};
+		66630A1F2B3BFB2900478E0D /* Random */ = {
+			isa = PBXGroup;
+			children = (
+				66630A202B3BFB4000478E0D /* AERandomViewController.h */,
+				66630A212B3BFB4000478E0D /* AERandomViewController.m */,
+				66630A232B3BFB8000478E0D /* AERandomModel.h */,
+				66630A242B3BFB8000478E0D /* AERandomModel.m */,
+			);
+			path = Random;
 			sourceTree = "<group>";
 		};
 		666CEFFF26115D6600BCDF1E /* Knowledge */ = {
@@ -904,6 +951,8 @@
 		668A46842AF372E9003DDB6F /* TestUI */ = {
 			isa = PBXGroup;
 			children = (
+				668A46882AF37DAC003DDB6F /* AETestUIViewController.h */,
+				668A46892AF37DAC003DDB6F /* AETestUIViewController.m */,
 			);
 			path = TestUI;
 			sourceTree = "<group>";
@@ -1223,6 +1272,7 @@
 		7A9CD79822783A93004E6D2A /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				664EF1D02AF4CE1600B7B6AB /* NavigationBarHeightManager */,
 				7A9CD78B22782EC4004E6D2A /* CustomLayout */,
 				7A6E01F023C702B200D34AB6 /* AETabBar */,
 				7AA0E92423C40BBF0092DE5B /* AECardView */,
@@ -1238,6 +1288,8 @@
 				66BF36B62A30256300D95730 /* UIView+AEHUD.m */,
 				66A566C82AF1E4C7005CA1B0 /* UIView+Size.h */,
 				66A566C92AF1E4C7005CA1B0 /* UIView+Size.m */,
+				66630A262B3C0DA100478E0D /* AETools.h */,
+				66630A272B3C0DA100478E0D /* AETools.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -1256,6 +1308,8 @@
 		7AA0E93723C458120092DE5B /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				66630A1F2B3BFB2900478E0D /* Random */,
+				663EB1F72B1DBE700057EBE6 /* Semaphore */,
 				669B46532AA7FDFA00699C3E /* Hit */,
 				66A1BFE82A29D452001BE4C6 /* PDF */,
 				6662E25529CC35A100AC7CD3 /* GPT */,
@@ -1620,6 +1674,7 @@
 				661EF3602627DE43009E7037 /* AENormalArithmetic.m in Sources */,
 				7A44DE4C228A471F0078B6A0 /* NSString+AELabelWidthAndHeight.m in Sources */,
 				666CF035261180BB00BCDF1E /* AEMObserver.m in Sources */,
+				66630A222B3BFB4000478E0D /* AERandomViewController.m in Sources */,
 				7AEF45142409131E0065B265 /* AEPopoverShowController.m in Sources */,
 				66C393272AF0F0A9008E750F /* AEScrollTrialViewController.m in Sources */,
 				66A78BC12A480F3600D35077 /* AEPreviewPDFView.m in Sources */,
@@ -1635,6 +1690,7 @@
 				669ACDFB27CDBB080013C239 /* AEGetFile.m in Sources */,
 				66A2E67728FD369100330702 /* AETabBarViewController.m in Sources */,
 				7A76520E23F3CCB400A303DE /* Goods.m in Sources */,
+				66630A282B3C0DA100478E0D /* AETools.m in Sources */,
 				666CF0592611ADC100BCDF1E /* AEMemoryViewController.m in Sources */,
 				66D5F3732816314500122904 /* AEProfessionSelectView.m in Sources */,
 				669B46562AA7FE2000699C3E /* AEHitViewController.m in Sources */,
@@ -1648,6 +1704,7 @@
 				668A46872AF37A4A003DDB6F /* AENavigationViewController.m in Sources */,
 				666DC53E27C7796D00FBDF41 /* AEStudyModel+StudyCategory.m in Sources */,
 				66FADA9A2807AA17008DDABF /* AESpaceLabel.m in Sources */,
+				668A468A2AF37DAC003DDB6F /* AETestUIViewController.m in Sources */,
 				666DC54127C77BCC00FBDF41 /* AEStudyModel+AEDouble.m in Sources */,
 				6003F59E195388D20070C39A /* AEAppDelegate.m in Sources */,
 				666CF0662611B11C00BCDF1E /* AEBlockViewController.m in Sources */,
@@ -1660,6 +1717,7 @@
 				7AA0E93D23C462A90092DE5B /* AECardModel.m in Sources */,
 				7A6F9B6C24061A64006A923D /* TFHpple.m in Sources */,
 				7A9CD79722783544004E6D2A /* AECustomOptioinViewController.m in Sources */,
+				664EF1D32AF4CE2E00B7B6AB /* AENavigationBarHeightManager.m in Sources */,
 				7A9CD791227830BE004E6D2A /* AEAECustomOptionCell.m in Sources */,
 				6003F5A7195388D20070C39A /* AECustomOptioinController.m in Sources */,
 				668ECD9B299B165D00425C53 /* AEConvertRectViewController.m in Sources */,
@@ -1686,8 +1744,10 @@
 				6667E25E27E1E64100D9BA78 /* UIButton+AEImagePlace.m in Sources */,
 				7A77FC5323CDB2F9008E6F1A /* AETabBarButton.m in Sources */,
 				7AA0E93623C456BD0092DE5B /* AEHomeViewController.m in Sources */,
+				66630A252B3BFB8000478E0D /* AERandomModel.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				666DC53B27C7788B00FBDF41 /* AEStudyModel.m in Sources */,
+				663EB1FA2B1DBE9E0057EBE6 /* AESemaphoreViewController.m in Sources */,
 				7AA0E93023C412DD0092DE5B /* AECardTransformLayout.m in Sources */,
 				7A9CD78E22783033004E6D2A /* AECustomOptionView.m in Sources */,
 				668F57E927C4CDB00045AED4 /* AEFileOperationViewController.m in Sources */,
