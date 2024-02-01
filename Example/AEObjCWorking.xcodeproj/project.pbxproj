@@ -132,6 +132,10 @@
 		66C3932C2AF0F1D0008E750F /* interact_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 66C3932A2AF0F1D0008E750F /* interact_data.json */; };
 		66C3932F2AF0F707008E750F /* AEScrollHorizontalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C3932E2AF0F707008E750F /* AEScrollHorizontalViewController.m */; };
 		66C393342AF10761008E750F /* AEMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C393332AF10760008E750F /* AEMineViewController.m */; };
+		66C43DA92B6B3F90008CC288 /* AESplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C43DA82B6B3F90008CC288 /* AESplashViewController.m */; };
+		66C43DFE2B6B8131008CC288 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 66C43DFD2B6B8131008CC288 /* video.mp4 */; };
+		66C43E002B6B8548008CC288 /* bgimage.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 66C43DFF2B6B8548008CC288 /* bgimage.jpeg */; };
+		66C43E022B6B8624008CC288 /* RR.gif in Resources */ = {isa = PBXBuildFile; fileRef = 66C43E012B6B8623008CC288 /* RR.gif */; };
 		66D5F3702816311600122904 /* AEProfessionTCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D5F36F2816311600122904 /* AEProfessionTCell.m */; };
 		66D5F3732816314500122904 /* AEProfessionSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D5F3722816314500122904 /* AEProfessionSelectView.m */; };
 		66D5F3762816318F00122904 /* AEProfessionSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D5F3752816318F00122904 /* AEProfessionSelectViewController.m */; };
@@ -429,6 +433,11 @@
 		66C3932E2AF0F707008E750F /* AEScrollHorizontalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEScrollHorizontalViewController.m; sourceTree = "<group>"; };
 		66C393322AF10760008E750F /* AEMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEMineViewController.h; sourceTree = "<group>"; };
 		66C393332AF10760008E750F /* AEMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEMineViewController.m; sourceTree = "<group>"; };
+		66C43DA72B6B3F90008CC288 /* AESplashViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AESplashViewController.h; sourceTree = "<group>"; };
+		66C43DA82B6B3F90008CC288 /* AESplashViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AESplashViewController.m; sourceTree = "<group>"; };
+		66C43DFD2B6B8131008CC288 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
+		66C43DFF2B6B8548008CC288 /* bgimage.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bgimage.jpeg; sourceTree = "<group>"; };
+		66C43E012B6B8623008CC288 /* RR.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = RR.gif; sourceTree = "<group>"; };
 		66D5F36E2816311600122904 /* AEProfessionTCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEProfessionTCell.h; sourceTree = "<group>"; };
 		66D5F36F2816311600122904 /* AEProfessionTCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEProfessionTCell.m; sourceTree = "<group>"; };
 		66D5F3712816314500122904 /* AEProfessionSelectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEProfessionSelectView.h; sourceTree = "<group>"; };
@@ -1156,6 +1165,16 @@
 			path = Mine;
 			sourceTree = "<group>";
 		};
+		66C43DFC2B6B8112008CC288 /* ads */ = {
+			isa = PBXGroup;
+			children = (
+				66C43E012B6B8623008CC288 /* RR.gif */,
+				66C43DFF2B6B8548008CC288 /* bgimage.jpeg */,
+				66C43DFD2B6B8131008CC288 /* video.mp4 */,
+			);
+			path = ads;
+			sourceTree = "<group>";
+		};
 		7A44DE49228A46F30078B6A0 /* UI_Component */ = {
 			isa = PBXGroup;
 			children = (
@@ -1176,6 +1195,7 @@
 		7A52EB8922782676009BC207 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				66C43DFC2B6B8112008CC288 /* ads */,
 				6003F59C195388D20070C39A /* AEAppDelegate.h */,
 				6003F59D195388D20070C39A /* AEAppDelegate.m */,
 				6003F5A5195388D20070C39A /* AECustomOptioinController.h */,
@@ -1188,6 +1208,8 @@
 				7A52EB88227823FC009BC207 /* AEPrefixHeader.pch */,
 				66D5F37728166FE400122904 /* AEConfig.h */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
+				66C43DA72B6B3F90008CC288 /* AESplashViewController.h */,
+				66C43DA82B6B3F90008CC288 /* AESplashViewController.m */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1525,6 +1547,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66C43E022B6B8624008CC288 /* RR.gif in Resources */,
+				66C43E002B6B8548008CC288 /* bgimage.jpeg in Resources */,
 				669B465C2AA8040B00699C3E /* home_data.json in Resources */,
 				7A6F9B7024061B1C006A923D /* index.html in Resources */,
 				666D7CE426EE014A00CC131B /* Address1.txt in Resources */,
@@ -1536,6 +1560,7 @@
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				66C3932B2AF0F1D0008E750F /* mine_data.json in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
+				66C43DFE2B6B8131008CC288 /* video.mp4 in Resources */,
 				66B78A002A2D813A00F5D688 /* 发票.pdf in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 				66A1BFED2A29D994001BE4C6 /* 错题.pdf in Resources */,
@@ -1576,22 +1601,34 @@
 				"${BUILT_PRODUCTS_DIR}/AEObjCWorking/AEObjCWorking.framework",
 				"${BUILT_PRODUCTS_DIR}/CTMediator/CTMediator.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${BUILT_PRODUCTS_DIR}/SDCycleScrollView/SDCycleScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/YYCache/YYCache.framework",
+				"${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
+				"${BUILT_PRODUCTS_DIR}/YYWebImage/YYWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AEObjCWorking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CTMediator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDCycleScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1757,6 +1794,7 @@
 				6604B74226E9DC8E00D9BA56 /* AEAddressSelectViewController.m in Sources */,
 				663057312B56288900B8C769 /* AETextFieldViewController.m in Sources */,
 				66C3932F2AF0F707008E750F /* AEScrollHorizontalViewController.m in Sources */,
+				66C43DA92B6B3F90008CC288 /* AESplashViewController.m in Sources */,
 				669B46592AA7FE4000699C3E /* AEHitView.m in Sources */,
 				7A6E01F923C7124900D34AB6 /* AETabBarItem.m in Sources */,
 				668ECDA1299B16C600425C53 /* AEMutileLineTCell.m in Sources */,

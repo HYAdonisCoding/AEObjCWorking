@@ -21,8 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    self.start_date = @"2023/12/2";
-    self.end_date = @"2023/12/19";
+    self.start_date = @"2023/01/18";
+    self.end_date = @"2024/01/22";
     NSLog(@"在范围内？ <%hhd>", [self testNil]);
 }
 
@@ -30,23 +30,7 @@
 
     NSString *format = @"yyyy/MM/dd";
     // 判断时间
-    /// 开始、结束时间都有
-    if (self.start_date.length > 0 &&
-        self.end_date.length > 0) {
-        return [AETools isCurrentTimeBetweenStartTime:self.start_date andEndTime:self.end_date format:format];
-    } else
-        /// 有开始、没有结束时间
-        if (self.start_date.length > 0 &&
-            self.end_date.length <= 0) {
-            return [AETools isCurrentTimeGreaterOrEqualThan:self.start_date format:format];
-            
-        } else
-            /// 没有开始、有结束时间
-            if (self.start_date.length <= 0 &&
-                self.end_date.length > 0) {
-                return [AETools isCurrentTimeLessOrEqualThan:self.end_date format:format];
-            }
-    return YES;
+    return [AETools isCurrentTimeBetweenStartTime:self.start_date andEndTime:self.end_date format:format];
     
 }
 

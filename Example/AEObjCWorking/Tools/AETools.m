@@ -13,9 +13,26 @@
 
 //判断当前时间是否在某个区间
 + (BOOL)isCurrentTimeBetweenStartTime:(NSString *)startStr andEndTime:(NSString *)endStr format:(NSString *)format{
-    return ([self isCurrentTimeGreaterOrEqualThan:startStr format:format] &&
-            [self isCurrentTimeLessOrEqualThan:endStr format:format]);
+    /// 开始、结束时间都有
+    if (startStr.length > 0 &&
+        endStr.length > 0) {
+        return ([self isCurrentTimeGreaterOrEqualThan:startStr format:format] &&
+                       [self isCurrentTimeLessOrEqualThan:endStr format:format]);
+    } else
+        /// 有开始、没有结束时间
+    if (startStr.length > 0 &&
+        endStr.length <= 0) {
+        return [self isCurrentTimeGreaterOrEqualThan:startStr format:format];
+        
+    } else
+        /// 没有开始、有结束时间
+    if (startStr.length <= 0 &&
+        endStr.length > 0) {
+        return [self isCurrentTimeLessOrEqualThan:endStr format:format];
+    }
+    return NO;
 }
+
 
 /// 判断当前时间是否大于等于某个时间
 /// - Parameters:

@@ -17,7 +17,7 @@
 #import <Masonry/Masonry.h>
 #import <YYModel/YYModel.h>
 #import <SDWebImage/SDWebImage.h>
-
+#import <YYWebImage.h>
 
 #import "AEConvenientTool.h"
 #import "UIFont+AEFonts.h"

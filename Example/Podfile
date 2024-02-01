@@ -6,11 +6,14 @@ target 'AEObjCWorking_Example' do
   pod 'AEObjCWorking', :path => '../'
   pod 'Masonry', '~> 1.1.0'
   pod 'YYModel',      '~> 1.0.4'        #数据解析
+  pod 'YYWebImage', '~> 1.0.5'
   pod 'SDWebImage', '~> 5.0'
   pod 'SDCycleScrollView','>= 1.82'
   pod 'CocoaAsyncSocket', '~> 7.6.5'
   pod 'SVProgressHUD', '~> 2.2.5'
   pod "CTMediator"
+  pod 'Google-Mobile-Ads-SDK', '~> 8.13.0'
+
   target 'AEObjCWorking_Tests' do
     inherit! :search_paths
 

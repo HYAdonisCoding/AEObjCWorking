@@ -9,41 +9,32 @@
 #import "AEAppDelegate.h"
 #import "UIImage+AEBlackAndWhite.h"
 #import "UIButton+EnlargeArea.h"
-#import "AEHomeViewController.h"
-#import "AEUnconventionalViewController.h"
-#import "AEMineViewController.h"
 #import "AEMainTabBarController.h"
+#import <GoogleMobileAds/GoogleMobileAds.h>
+#import "AESplashViewController.h"
 
 @implementation AEAppDelegate
 // MARK: - Life Cycle
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startApp) name:@"startApp" object:nil];
+    
     // Override point for customization after application launch.
+    GADMobileAds *ads = [GADMobileAds sharedInstance];
+    [ads initializationStatus];
+    ads.requestConfiguration.testDeviceIdentifiers = @[@"ca-app-pub-3940256099942544/5575463023", @"ca-app-pub-3940256099942544/2934735716"];
+    [ads startWithCompletionHandler:^(GADInitializationStatus * _Nonnull status) {
+        NSLog(@"status.adapterStatusesByClassName: %@", status.adapterStatusesByClassName);
+    }];
+    
+   
     [UIImage ae_imageSwizzldMethedWith:YES];
     [UIButton ae_buttonSwizzldMethedWith:YES];
+    
+    // 开屏页
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    AEMainTabBarController *tabBarController = [[AEMainTabBarController alloc] init];
-//    AEHomeViewController *firstViewController = [[AEHomeViewController alloc] init];
-//    UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:firstViewController];
-//    firstViewController.title = @"Home";
-//
-//    AEUnconventionalViewController *secondViewController = [[AEUnconventionalViewController alloc] init];
-//    secondViewController.title = @"Trial";
-//    UINavigationController *nav2 = [[UINavigationController alloc] initWithRootViewController:secondViewController];
-//    
-//    AEMineViewController *thridViewController = [[AEMineViewController alloc] init];
-//    thridViewController.title = @"Mine";
-    
-//    UINavigationController *nav3 = [[UINavigationController alloc] initWithRootViewController:thridViewController];
-//    
-//    tabBarController.viewControllers = @[nav1, nav2, nav3];
-    
-//    [tabBarController addOneChildVc:nav1 title:@"主页" image:[UIImage systemImageNamed:@"house"] selectedImage:[UIImage systemImageNamed:@"house.fill"]];
-//    
-//    [tabBarController addOneChildVc:nav2 title:@"热门" image:[UIImage systemImageNamed:@"flame"] selectedImage:[UIImage systemImageNamed:@"flame.fill"]];
-//    
-//    [tabBarController addOneChildVc:nav3 title:@"我的" image:[UIImage systemImageNamed:@"person"] selectedImage:[UIImage systemImageNamed:@"person.fill"]];
+    AESplashViewController *tabBarController = [[AESplashViewController alloc] init];
 
     self.window.rootViewController = tabBarController;
     // 设置这个窗口有主窗口并显示
@@ -53,6 +44,17 @@
     return YES;
 }
 
+// 进入首页
+- (void)startApp {
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    AEMainTabBarController *tabBarController = [[AEMainTabBarController alloc] init];
+
+    self.window.rootViewController = tabBarController;
+    // 设置这个窗口有主窗口并显示
+    [self.window makeKeyAndVisible];
+}
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
