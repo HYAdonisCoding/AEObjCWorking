@@ -140,6 +140,7 @@
 		66D5F3732816314500122904 /* AEProfessionSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D5F3722816314500122904 /* AEProfessionSelectView.m */; };
 		66D5F3762816318F00122904 /* AEProfessionSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D5F3752816318F00122904 /* AEProfessionSelectViewController.m */; };
 		66D5F37A281696B900122904 /* AEProfessionSearchTCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D5F379281696B900122904 /* AEProfessionSearchTCell.m */; };
+		66F06F092B6CC35500A9E4EA /* AEGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F06F082B6CC35500A9E4EA /* AEGuideViewController.m */; };
 		66FADA9A2807AA17008DDABF /* AESpaceLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FADA992807AA17008DDABF /* AESpaceLabel.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		7A44DE4C228A471F0078B6A0 /* NSString+AELabelWidthAndHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A44DE4B228A471F0078B6A0 /* NSString+AELabelWidthAndHeight.m */; };
@@ -447,6 +448,8 @@
 		66D5F37728166FE400122904 /* AEConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEConfig.h; sourceTree = "<group>"; };
 		66D5F378281696B900122904 /* AEProfessionSearchTCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEProfessionSearchTCell.h; sourceTree = "<group>"; };
 		66D5F379281696B900122904 /* AEProfessionSearchTCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEProfessionSearchTCell.m; sourceTree = "<group>"; };
+		66F06F072B6CC35500A9E4EA /* AEGuideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEGuideViewController.h; sourceTree = "<group>"; };
+		66F06F082B6CC35500A9E4EA /* AEGuideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEGuideViewController.m; sourceTree = "<group>"; };
 		66FADA982807AA17008DDABF /* AESpaceLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AESpaceLabel.h; sourceTree = "<group>"; };
 		66FADA992807AA17008DDABF /* AESpaceLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AESpaceLabel.m; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -1202,14 +1205,16 @@
 				6003F5A6195388D20070C39A /* AECustomOptioinController.m */,
 				7A52EB8A22782688009BC207 /* BaseClase */,
 				66C393282AF0F0FE008E750F /* Data */,
-				669A10DC292DB0C2008F307E /* Fonts */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
+				669A10DC292DB0C2008F307E /* Fonts */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				7A52EB88227823FC009BC207 /* AEPrefixHeader.pch */,
 				66D5F37728166FE400122904 /* AEConfig.h */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				66C43DA72B6B3F90008CC288 /* AESplashViewController.h */,
 				66C43DA82B6B3F90008CC288 /* AESplashViewController.m */,
+				66F06F072B6CC35500A9E4EA /* AEGuideViewController.h */,
+				66F06F082B6CC35500A9E4EA /* AEGuideViewController.m */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1719,6 +1724,7 @@
 				663DB3FA26E9F6690046C277 /* UIColor+AECategory.m in Sources */,
 				666CEFFC26115D5E00BCDF1E /* AEOCKnowledgeViewController.m in Sources */,
 				6610A181292E1D1B00138FE5 /* AENotification.m in Sources */,
+				66F06F092B6CC35500A9E4EA /* AEGuideViewController.m in Sources */,
 				663F594326B8E5F200B92C3A /* AEPlistViewController.m in Sources */,
 				6604B74826E9DDF600D9BA56 /* AEAddressSelectView.m in Sources */,
 				6604B74526E9DCD500D9BA56 /* AEAddressTCell.m in Sources */,

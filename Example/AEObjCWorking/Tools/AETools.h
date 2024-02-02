@@ -11,6 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AETools : NSObject
+// 清空本地缓存
++ (void)clearLocalCaches;
+
 //判断当前时间是否在某个区间
 + (BOOL)isCurrentTimeBetweenStartTime:(NSString *)startStr andEndTime:(NSString *)endStr format:(NSString *)format;
 

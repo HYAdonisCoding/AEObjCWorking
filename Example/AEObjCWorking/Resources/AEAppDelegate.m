@@ -12,12 +12,14 @@
 #import "AEMainTabBarController.h"
 #import <GoogleMobileAds/GoogleMobileAds.h>
 #import "AESplashViewController.h"
+#import "AEGuideViewController.h"
 
 @implementation AEAppDelegate
 // MARK: - Life Cycle
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startApp) name:@"startApp" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enterApp) name:@"enterApp" object:nil];
     
     // Override point for customization after application launch.
     GADMobileAds *ads = [GADMobileAds sharedInstance];
@@ -30,18 +32,38 @@
    
     [UIImage ae_imageSwizzldMethedWith:YES];
     [UIButton ae_buttonSwizzldMethedWith:YES];
-    
-    // 开屏页
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    AESplashViewController *tabBarController = [[AESplashViewController alloc] init];
-
-    self.window.rootViewController = tabBarController;
+    // 获取 UserDefaults 中的标志位
+    BOOL hasShownGuide = [[NSUserDefaults standardUserDefaults] boolForKey:@"HasShownGuide"];
+    
+    // 根据标志位决定进入引导页还是直接进入开屏页
+    if (!hasShownGuide) {
+        // 进入引导页
+        AEGuideViewController *guideViewController = [[AEGuideViewController alloc] init];
+        self.window.rootViewController = guideViewController;
+    } else {
+        // 进入开屏页或者主界面
+        AESplashViewController *splashScreenViewController = [[AESplashViewController alloc] init];
+        self.window.rootViewController = splashScreenViewController;
+    }
+    
+    
     // 设置这个窗口有主窗口并显示
     [self.window makeKeyAndVisible];
 
     
     return YES;
+}
+
+// 进入App
+- (void)enterApp {
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasShownGuide"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    // 进入开屏页或者主界面
+    AESplashViewController *splashScreenViewController = [[AESplashViewController alloc] init];
+    self.window.rootViewController = splashScreenViewController;
 }
 
 // 进入首页

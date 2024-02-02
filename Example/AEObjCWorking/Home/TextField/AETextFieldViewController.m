@@ -18,6 +18,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+}
+- (void)configUI {
+    [super configUI];
     UIColor *backgroundColor = [UIColor orangeColor];
     UITextField *tf = [[UITextField alloc] init];
     tf.backgroundColor = backgroundColor;

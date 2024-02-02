@@ -9,7 +9,11 @@
 #import "AETools.h"
 
 @implementation AETools
-
+// 清空本地缓存
++ (void)clearLocalCaches {
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"HasShownGuide"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
 
 //判断当前时间是否在某个区间
 + (BOOL)isCurrentTimeBetweenStartTime:(NSString *)startStr andEndTime:(NSString *)endStr format:(NSString *)format{
