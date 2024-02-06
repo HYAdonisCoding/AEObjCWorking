@@ -14,10 +14,10 @@
     if (self) {
         
         //先移除原有通知，再添加，防止重复
-        [[NSNotificationCenter defaultCenter] removeObserver:self name:@"CEBHomeDidScorll" object:nil];
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:@"AEHomeDidScorll" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(monitoringScreenDisplayScroll:)
-                                                    name:@"CEBHomeDidScorll" object:nil];
+                                                    name:@"AEHomeDidScorll" object:nil];
     
     }
     return self;

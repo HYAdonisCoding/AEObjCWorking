@@ -63,7 +63,7 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"CEBHomeDidScorll" object:self userInfo:@{@"tableView": self.tableView}];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"AEHomeDidScorll" object:self userInfo:@{@"tableView": self.tableView}];
 }
 
 @end

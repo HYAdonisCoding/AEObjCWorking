@@ -125,48 +125,21 @@
 
         [fileManger createFileAtPath:testPath contents:doubi attributes:nil];
         
-        
-//        dispatch_sync(dispatch_get_main_queue(), ^{
-
+    
             // 预览图
-            if ([testPath hasSuffix:@".pdf"] || [testPath hasSuffix:@".PDF"]) {
-                NSURL *pdfUrl = [NSURL fileURLWithPath:testPath];
-                CGPDFDocumentRef pdfRef = CGPDFDocumentCreateWithURL((CFURLRef)pdfUrl);
-                // 缩率图
-                UIImage *iconImage = [self imageFromPDFWithDocumentRef:pdfRef];
-                CGPDFDocumentRelease(pdfRef);
-                if (self.block) {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        
-                        self.block(iconImage, data, testPath, testDirectory);
-                    });
-                }
-//                CGFloat imageSizeKb = 70.0f; // 默认 30kb
-//                BOOL isBlackWhite = NO; // 默认彩照
-//                NSData *originData = [NSData ceb_compressImageWithImage:iconImage compressSize:imageSizeKb * 1024 isBlackWhite:isBlackWhite];
-//                NSString *originEncodedIconImageStr = [originData base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
-//                
-//                // pdf
-//                NSString *originEncodedPDFStr = [doubi base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
-//                long long size = testPath.fileSize;
-//                NSDictionary *dic = @{@"icon": originEncodedIconImageStr,// 缩率图Base64
-//                                      @"base64": originEncodedPDFStr,// pdf Base64
-//                                      @"path": testPath, // pdf 路径
-//                                      @"size": @(size), // pdf 大小
-//                                      @"fileName": fileName, // pdf 名称
-//                                      @"type": @"PDF"}; // pdf 类型
-//                if (self.pluginResponseCallback) {
-//                    self.pluginResponseCallback(dic);
-//                }
-
+        if ([testPath hasSuffix:@".pdf"] || [testPath hasSuffix:@".PDF"]) {
+            NSURL *pdfUrl = [NSURL fileURLWithPath:testPath];
+            CGPDFDocumentRef pdfRef = CGPDFDocumentCreateWithURL((CFURLRef)pdfUrl);
+            // 缩率图
+            UIImage *iconImage = [self imageFromPDFWithDocumentRef:pdfRef];
+            CGPDFDocumentRelease(pdfRef);
+            if (self.block) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    self.block(iconImage, data, testPath, testDirectory);
+                });
             }
-//            else {
-//                //
-//                UIImage *image = [UIImage imageWithContentsOfFile:testPath];
-//            }
-            
-            
-//        });
+        }
     });
 
 }
