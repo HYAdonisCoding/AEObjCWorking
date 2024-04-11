@@ -86,6 +86,7 @@
 		666DC53B27C7788B00FBDF41 /* AEStudyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 666DC53A27C7788B00FBDF41 /* AEStudyModel.m */; };
 		666DC53E27C7796D00FBDF41 /* AEStudyModel+StudyCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 666DC53D27C7796D00FBDF41 /* AEStudyModel+StudyCategory.m */; };
 		666DC54127C77BCC00FBDF41 /* AEStudyModel+AEDouble.m in Sources */ = {isa = PBXBuildFile; fileRef = 666DC54027C77BCB00FBDF41 /* AEStudyModel+AEDouble.m */; };
+		667955F22BC7BBB90017B73B /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667955F12BC7BBB90017B73B /* Tools.swift */; };
 		668A46872AF37A4A003DDB6F /* AENavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 668A46862AF37A4A003DDB6F /* AENavigationViewController.m */; };
 		668A468A2AF37DAC003DDB6F /* AETestUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 668A46892AF37DAC003DDB6F /* AETestUIViewController.m */; };
 		668ECD9B299B165D00425C53 /* AEConvertRectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 668ECD9A299B165D00425C53 /* AEConvertRectViewController.m */; };
@@ -353,6 +354,8 @@
 		666DC53D27C7796D00FBDF41 /* AEStudyModel+StudyCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AEStudyModel+StudyCategory.m"; sourceTree = "<group>"; };
 		666DC53F27C77BCB00FBDF41 /* AEStudyModel+AEDouble.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AEStudyModel+AEDouble.h"; sourceTree = "<group>"; };
 		666DC54027C77BCB00FBDF41 /* AEStudyModel+AEDouble.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AEStudyModel+AEDouble.m"; sourceTree = "<group>"; };
+		667955F02BC7BBB90017B73B /* AEObjCWorking_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AEObjCWorking_Example-Bridging-Header.h"; sourceTree = "<group>"; };
+		667955F12BC7BBB90017B73B /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		668A46852AF37A4A003DDB6F /* AENavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AENavigationViewController.h; sourceTree = "<group>"; };
 		668A46862AF37A4A003DDB6F /* AENavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AENavigationViewController.m; sourceTree = "<group>"; };
 		668A46882AF37DAC003DDB6F /* AETestUIViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AETestUIViewController.h; sourceTree = "<group>"; };
@@ -977,6 +980,15 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		667955EF2BC7BB940017B73B /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				667955F12BC7BBB90017B73B /* Tools.swift */,
+				667955F02BC7BBB90017B73B /* AEObjCWorking_Example-Bridging-Header.h */,
+			);
+			path = Swift;
+			sourceTree = "<group>";
+		};
 		668A46842AF372E9003DDB6F /* TestUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -1352,6 +1364,7 @@
 		7AA0E93723C458120092DE5B /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				667955EF2BC7BB940017B73B /* Swift */,
 				6630572E2B56283600B8C769 /* TextField */,
 				66630A1F2B3BFB2900478E0D /* Random */,
 				663EB1F72B1DBE700057EBE6 /* Semaphore */,
@@ -1515,6 +1528,7 @@
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
 						DevelopmentTeam = N2KQ965WEJ;
+						LastSwiftMigration = 1530;
 						ProvisioningStyle = Automatic;
 					};
 					6003F5AD195388D20070C39A = {
@@ -1787,6 +1801,7 @@
 				669A10E0292DB3B5008F307E /* AEFontsViewController.m in Sources */,
 				66A566CA2AF1E4C7005CA1B0 /* UIView+Size.m in Sources */,
 				661EF3582627C598009E7037 /* AEBaseModel+AECategoryTest.m in Sources */,
+				667955F22BC7BBB90017B73B /* Tools.swift in Sources */,
 				7A52EB8D2278274F009BC207 /* AEBaseModel.m in Sources */,
 				7AA0E92D23C4125C0092DE5B /* AECardView.m in Sources */,
 				0CD128572635A75B0066F449 /* AEUnconventionalViewController.m in Sources */,
@@ -1967,8 +1982,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = N2KQ965WEJ;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AEObjCWorking/Resources/AEPrefixHeader.pch";
@@ -1981,11 +1998,14 @@
 					"$(SDKROOT)/usr/include/libxml2",
 				);
 				INFOPLIST_FILE = "AEObjCWorking/Supporting Files/AEObjCWorking-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = com.adam.hongyang.test.AEObjCWorking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "AEObjCWorking/Home/Swift/AEObjCWorking_Example-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1996,8 +2016,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = N2KQ965WEJ;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AEObjCWorking/Resources/AEPrefixHeader.pch";
@@ -2009,11 +2031,13 @@
 					"$(SDKROOT)/usr/include/libxml2",
 				);
 				INFOPLIST_FILE = "AEObjCWorking/Supporting Files/AEObjCWorking-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = com.adam.hongyang.test.AEObjCWorking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "AEObjCWorking/Home/Swift/AEObjCWorking_Example-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -2022,6 +2046,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9B55D63D400D4580DC7E0A24 /* Pods-AEObjCWorking_Tests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -2046,6 +2071,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F2C3863DA3F67CE4ACF8899F /* Pods-AEObjCWorking_Tests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

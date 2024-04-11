@@ -11,6 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AETools : NSObject
++ (instancetype)sharedInstance;
+/// 判断是否需要展示Bar
+///
+- (BOOL)judgeShowOrHideBar;
 // 清空本地缓存
 + (void)clearLocalCaches;
 

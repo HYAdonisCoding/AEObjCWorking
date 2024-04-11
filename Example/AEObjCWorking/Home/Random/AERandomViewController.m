@@ -8,6 +8,7 @@
 
 #import "AERandomViewController.h"
 #import "AERandomModel.h"
+#import "AEObjCWorking_Example-Swift.h"
 
 @interface AERandomViewController ()
 /// 开始时间
@@ -24,6 +25,13 @@
     self.start_date = @"2023/01/18";
     self.end_date = @"2024/01/22";
     NSLog(@"在范围内？ <%hhd>", [self testNil]);
+    NSLog(@"judgeShowOrHideBar: %hhd", [[AETools sharedInstance] judgeShowOrHideBar]);
+    
+    [self testSwiftMethod];
+}
+- (void)testSwiftMethod {
+    Tools *t = [[Tools alloc] init];
+    [t show];
 }
 
 - (BOOL)testNil {

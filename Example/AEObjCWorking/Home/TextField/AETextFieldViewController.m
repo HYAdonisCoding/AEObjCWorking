@@ -11,14 +11,18 @@
 
 
 @interface AETextFieldViewController ()
-
+@property (strong, nonatomic) NSMutableDictionary *customerGroupResourcesDictionary;
 @end
 
 @implementation AETextFieldViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"judgeShowOrHideBar: %hhd", [[AETools sharedInstance] judgeShowOrHideBar]);
     
+    self.customerGroupResourcesDictionary = @{}.mutableCopy;
+    self.customerGroupResourcesDictionary[@"userId"] = @{@"N": @1}.mutableCopy;
+    [self rest3];
 }
 - (void)configUI {
     [super configUI];
@@ -51,6 +55,52 @@
         make.right.mas_equalTo(-20);
         make.height.mas_equalTo(24);
     }];
+}
+
+- (void)rest {
+    self.customerGroupResourcesDictionary = @{}.mutableCopy;
+    self.customerGroupResourcesDictionary[@"userId"] = @{};
+    NSMutableDictionary *customerGroupResourcesDic = self.customerGroupResourcesDictionary[@"userId"];
+    NSLog(@"%@", customerGroupResourcesDic);
+    self.customerGroupResourcesDictionary[@"userId"] = @{@"A": @"123456"};
+//    customerGroupResourcesDic = @{@"A": @"123456"};
+    NSLog(@"%@", customerGroupResourcesDic);
+    
+//    self.customerGroupResourcesDictionary[@"userId"] = customerGroupResourcesDic;
+    
+}
+- (void)rest2 {
+    // 初始化 customerGroupResourcesDic 为一个空字典
+    NSMutableDictionary *customerGroupResourcesDic = [NSMutableDictionary dictionary];
+    
+    // 将 customerGroupResourcesDic 赋值给 self.customerGroupResourcesDictionary[@"userId"]
+    customerGroupResourcesDic = self.customerGroupResourcesDictionary[@"userId"];
+    
+    // 打印初始值
+    NSLog(@"%@", customerGroupResourcesDic);
+    
+    // 修改 self.customerGroupResourcesDictionary[@"userId"] 中的值
+    self.customerGroupResourcesDictionary[@"userId"] = @{@"A": @"123456"};
+    
+    // 打印修改后的值
+    NSLog(@"%@", customerGroupResourcesDic);
+}
+
+- (void)rest3 {
+    
+    // 直接赋值，使用引用而不是复制
+    NSMutableDictionary *customerGroupResourcesDic = self.customerGroupResourcesDictionary[@"userId"];
+    
+    // 打印初始值
+    NSLog(@"%@", customerGroupResourcesDic);
+    
+    // 直接修改 self.customerGroupResourcesDictionary[@"userId"] 中的值
+    [self.customerGroupResourcesDictionary[@"userId"] removeAllObjects];
+    [self.customerGroupResourcesDictionary[@"userId"] addEntriesFromDictionary:@{@"A": @"123456"}];
+    
+    // 打印修改后的值
+    NSLog(@"%@", customerGroupResourcesDic);
+
 }
 
 /*
