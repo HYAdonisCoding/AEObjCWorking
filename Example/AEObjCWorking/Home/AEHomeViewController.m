@@ -137,6 +137,9 @@
         string = [string substringWithRange:NSMakeRange(2, string.length-12)];
         vc.title = string;
         [self.navigationController pushViewController:vc animated:YES];
+//        [self presentViewController:vc animated:YES completion:^{
+//                    //
+//        }];
     }
 }
 @end

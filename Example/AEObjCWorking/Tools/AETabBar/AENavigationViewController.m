@@ -25,6 +25,7 @@
        
        if ([ctrlName isEqualToString:@"AEHomeViewController"] ||
            [ctrlName isEqualToString:@"AEUnconventionalViewController"] ||
+           [ctrlName isEqualToString:@"AEActivityViewController"] ||
            [ctrlName isEqualToString:@"AEMineViewController"]) {
            
            viewController.hidesBottomBarWhenPushed = NO;

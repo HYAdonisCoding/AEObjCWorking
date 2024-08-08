@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIColor (AECategory)
 
 + (UIColor *)colorWithString:(NSString *)name;
-
++ (UIColor *)hexColor:(uint32_t)hex;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -12,7 +12,7 @@ target 'AEObjCWorking_Example' do
   pod 'CocoaAsyncSocket', '~> 7.6.5'
   pod 'SVProgressHUD', '~> 2.2.5'
   pod "CTMediator"
-  pod 'Google-Mobile-Ads-SDK', '~> 8.13.0'
+#  pod 'Google-Mobile-Ads-SDK', '~> 8.13.0'
 
   target 'AEObjCWorking_Tests' do
     inherit! :search_paths

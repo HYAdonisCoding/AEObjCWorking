@@ -8,6 +8,10 @@
 
 #import "AEMineViewController.h"
 
+
+@interface AEMineViewController ()
+
+@end
 @implementation AEMineViewController
 
 - (void)viewDidLoad {

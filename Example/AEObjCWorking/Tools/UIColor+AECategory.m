@@ -36,5 +36,12 @@ int convertToInt(char c)
     CGFloat alpha = [alphaString isEqualToString:@""] ? 1 : alphaString.floatValue/255;
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
++ (UIColor *)hexColor:(uint32_t)hex {
+    CGFloat red = ((hex >> 16) & 0xFF) / 255.0;
+    CGFloat green = ((hex >> 8) & 0xFF) / 255.0;
+    CGFloat blue = (hex & 0xFF) / 255.0;
+    
+    return [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
+}
 
 @end

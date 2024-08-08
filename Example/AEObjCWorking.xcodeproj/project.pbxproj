@@ -45,6 +45,7 @@
 		66273FED2815642C0028840B /* AEProfessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 66273FEC2815642C0028840B /* AEProfessionModel.m */; };
 		663057312B56288900B8C769 /* AETextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 663057302B56288900B8C769 /* AETextFieldViewController.m */; };
 		663057342B562A5A00B8C769 /* AETextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 663057332B562A5A00B8C769 /* AETextField.m */; };
+		66383B522C5257A30040E1B2 /* AEActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66383B512C5257A30040E1B2 /* AEActivityViewController.m */; };
 		663DB3FA26E9F6690046C277 /* UIColor+AECategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 663DB3F926E9F6690046C277 /* UIColor+AECategory.m */; };
 		663EB1FA2B1DBE9E0057EBE6 /* AESemaphoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 663EB1F92B1DBE9D0057EBE6 /* AESemaphoreViewController.m */; };
 		663F593D26B8DDF000B92C3A /* AEDataPropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 663F593C26B8DDF000B92C3A /* AEDataPropertyList.plist */; };
@@ -95,8 +96,12 @@
 		668ECDA4299B28C900425C53 /* AESignalTCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 668ECDA3299B28C900425C53 /* AESignalTCell.m */; };
 		668F57E927C4CDB00045AED4 /* AEFileOperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 668F57E827C4CDB00045AED4 /* AEFileOperationViewController.m */; };
 		66913AA2284472D4006FD17E /* AEHeadlineCCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66913AA1284472D4006FD17E /* AEHeadlineCCell.m */; };
+		6698F06F2C4F97E000A6D8E0 /* AEContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6698F06E2C4F97E000A6D8E0 /* AEContainerViewController.m */; };
 		669A10DB292DAEA3008F307E /* Yahei.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 669A10DA292DAEA3008F307E /* Yahei.ttf */; };
 		669A10E0292DB3B5008F307E /* AEFontsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 669A10DF292DB3B5008F307E /* AEFontsViewController.m */; };
+		669A84F42C4FAAAD004B0955 /* AETrialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 669A84F32C4FAAAD004B0955 /* AETrialViewController.m */; };
+		669A84F82C4FAD8B004B0955 /* AEWaveSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 669A84F72C4FAD8B004B0955 /* AEWaveSegmentedControl.m */; };
+		669A84FB2C4FAE6D004B0955 /* AEWaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 669A84FA2C4FAE6D004B0955 /* AEWaveView.m */; };
 		669ACDFB27CDBB080013C239 /* AEGetFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 669ACDFA27CDBB080013C239 /* AEGetFile.m */; };
 		669B46562AA7FE2000699C3E /* AEHitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 669B46552AA7FE2000699C3E /* AEHitViewController.m */; };
 		669B46592AA7FE4000699C3E /* AEHitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 669B46582AA7FE4000699C3E /* AEHitView.m */; };
@@ -122,11 +127,13 @@
 		66A78BC12A480F3600D35077 /* AEPreviewPDFView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A78BC02A480F3600D35077 /* AEPreviewPDFView.m */; };
 		66A8B428283661AA00B76B11 /* AEGifViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A8B427283661AA00B76B11 /* AEGifViewController.m */; };
 		66A8B42A283662D400B76B11 /* help_icon.gif in Resources */ = {isa = PBXBuildFile; fileRef = 66A8B429283662D400B76B11 /* help_icon.gif */; };
+		66A8D6232C50EC9700D515B7 /* AEPageMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A8D6222C50EC9700D515B7 /* AEPageMenuController.m */; };
 		66B78A002A2D813A00F5D688 /* 发票.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 66B789FE2A2D813A00F5D688 /* 发票.pdf */; };
 		66B78A012A2D813A00F5D688 /* 协议书.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 66B789FF2A2D813A00F5D688 /* 协议书.pdf */; };
 		66B78A042A2DCF4A00F5D688 /* AEWKPDFPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B78A032A2DCF4A00F5D688 /* AEWKPDFPreviewController.m */; };
 		66B7C5C92ADFC70C006144DD /* eb_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66B7C5C82ADFC70B006144DD /* eb_bold.ttf */; };
 		66B7C5CA2ADFC85A006144DD /* AEObjCWorking-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6003F595195388D20070C39A /* AEObjCWorking-Info.plist */; };
+		66BD0B682C2E60F800D7E46F /* AEParagraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BD0B672C2E60F800D7E46F /* AEParagraphViewController.m */; };
 		66BF36B72A30256300D95730 /* UIView+AEHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BF36B62A30256300D95730 /* UIView+AEHUD.m */; };
 		66C393272AF0F0A9008E750F /* AEScrollTrialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C393262AF0F0A9008E750F /* AEScrollTrialViewController.m */; };
 		66C3932B2AF0F1D0008E750F /* mine_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 66C393292AF0F1D0008E750F /* mine_data.json */; };
@@ -281,6 +288,8 @@
 		663057302B56288900B8C769 /* AETextFieldViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AETextFieldViewController.m; sourceTree = "<group>"; };
 		663057322B562A5A00B8C769 /* AETextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AETextField.h; sourceTree = "<group>"; };
 		663057332B562A5A00B8C769 /* AETextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AETextField.m; sourceTree = "<group>"; };
+		66383B502C5257A30040E1B2 /* AEActivityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEActivityViewController.h; sourceTree = "<group>"; };
+		66383B512C5257A30040E1B2 /* AEActivityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEActivityViewController.m; sourceTree = "<group>"; };
 		663DB3F826E9F6690046C277 /* UIColor+AECategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+AECategory.h"; sourceTree = "<group>"; };
 		663DB3F926E9F6690046C277 /* UIColor+AECategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AECategory.m"; sourceTree = "<group>"; };
 		663EB1F82B1DBE9D0057EBE6 /* AESemaphoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AESemaphoreViewController.h; sourceTree = "<group>"; };
@@ -372,9 +381,17 @@
 		668F57E827C4CDB00045AED4 /* AEFileOperationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEFileOperationViewController.m; sourceTree = "<group>"; };
 		66913AA0284472D4006FD17E /* AEHeadlineCCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEHeadlineCCell.h; sourceTree = "<group>"; };
 		66913AA1284472D4006FD17E /* AEHeadlineCCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEHeadlineCCell.m; sourceTree = "<group>"; };
+		6698F06D2C4F97E000A6D8E0 /* AEContainerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEContainerViewController.h; sourceTree = "<group>"; };
+		6698F06E2C4F97E000A6D8E0 /* AEContainerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEContainerViewController.m; sourceTree = "<group>"; };
 		669A10DA292DAEA3008F307E /* Yahei.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Yahei.ttf; sourceTree = "<group>"; };
 		669A10DE292DB3B5008F307E /* AEFontsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEFontsViewController.h; sourceTree = "<group>"; };
 		669A10DF292DB3B5008F307E /* AEFontsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEFontsViewController.m; sourceTree = "<group>"; };
+		669A84F22C4FAAAD004B0955 /* AETrialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AETrialViewController.h; sourceTree = "<group>"; };
+		669A84F32C4FAAAD004B0955 /* AETrialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AETrialViewController.m; sourceTree = "<group>"; };
+		669A84F62C4FAD8B004B0955 /* AEWaveSegmentedControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEWaveSegmentedControl.h; sourceTree = "<group>"; };
+		669A84F72C4FAD8B004B0955 /* AEWaveSegmentedControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEWaveSegmentedControl.m; sourceTree = "<group>"; };
+		669A84F92C4FAE6D004B0955 /* AEWaveView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEWaveView.h; sourceTree = "<group>"; };
+		669A84FA2C4FAE6D004B0955 /* AEWaveView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEWaveView.m; sourceTree = "<group>"; };
 		669ACDF927CDBB080013C239 /* AEGetFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEGetFile.h; sourceTree = "<group>"; };
 		669ACDFA27CDBB080013C239 /* AEGetFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEGetFile.m; sourceTree = "<group>"; };
 		669B46542AA7FE2000699C3E /* AEHitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEHitViewController.h; sourceTree = "<group>"; };
@@ -422,11 +439,15 @@
 		66A8B426283661AA00B76B11 /* AEGifViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEGifViewController.h; sourceTree = "<group>"; };
 		66A8B427283661AA00B76B11 /* AEGifViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEGifViewController.m; sourceTree = "<group>"; };
 		66A8B429283662D400B76B11 /* help_icon.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = help_icon.gif; sourceTree = "<group>"; };
+		66A8D6212C50EC9700D515B7 /* AEPageMenuController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEPageMenuController.h; sourceTree = "<group>"; };
+		66A8D6222C50EC9700D515B7 /* AEPageMenuController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEPageMenuController.m; sourceTree = "<group>"; };
 		66B789FE2A2D813A00F5D688 /* 发票.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "发票.pdf"; sourceTree = "<group>"; };
 		66B789FF2A2D813A00F5D688 /* 协议书.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "协议书.pdf"; sourceTree = "<group>"; };
 		66B78A022A2DCF4A00F5D688 /* AEWKPDFPreviewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEWKPDFPreviewController.h; sourceTree = "<group>"; };
 		66B78A032A2DCF4A00F5D688 /* AEWKPDFPreviewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEWKPDFPreviewController.m; sourceTree = "<group>"; };
 		66B7C5C82ADFC70B006144DD /* eb_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = eb_bold.ttf; sourceTree = "<group>"; };
+		66BD0B662C2E60F800D7E46F /* AEParagraphViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEParagraphViewController.h; sourceTree = "<group>"; };
+		66BD0B672C2E60F800D7E46F /* AEParagraphViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEParagraphViewController.m; sourceTree = "<group>"; };
 		66BF36B52A30256300D95730 /* UIView+AEHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+AEHUD.h"; sourceTree = "<group>"; };
 		66BF36B62A30256300D95730 /* UIView+AEHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+AEHUD.m"; sourceTree = "<group>"; };
 		66C393252AF0F0A9008E750F /* AEScrollTrialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEScrollTrialViewController.h; sourceTree = "<group>"; };
@@ -604,6 +625,8 @@
 			children = (
 				0CD128552635A75B0066F449 /* AEUnconventionalViewController.h */,
 				0CD128562635A75B0066F449 /* AEUnconventionalViewController.m */,
+				669A84F22C4FAAAD004B0955 /* AETrialViewController.h */,
+				669A84F32C4FAAAD004B0955 /* AETrialViewController.m */,
 				0CD1285C2635A7860066F449 /* AEScrollViewController.h */,
 				0CD1285D2635A7860066F449 /* AEScrollViewController.m */,
 				66C393252AF0F0A9008E750F /* AEScrollTrialViewController.h */,
@@ -656,6 +679,7 @@
 		6003F593195388D20070C39A /* Example for AEObjCWorking */ = {
 			isa = PBXGroup;
 			children = (
+				66383B4F2C5257790040E1B2 /* Activity */,
 				7AA0E93723C458120092DE5B /* Home */,
 				66C393312AF10722008E750F /* Mine */,
 				66C393302AF106B2008E750F /* Trial */,
@@ -787,6 +811,15 @@
 				663057332B562A5A00B8C769 /* AETextField.m */,
 			);
 			path = TextField;
+			sourceTree = "<group>";
+		};
+		66383B4F2C5257790040E1B2 /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				66383B502C5257A30040E1B2 /* AEActivityViewController.h */,
+				66383B512C5257A30040E1B2 /* AEActivityViewController.m */,
+			);
+			path = Activity;
 			sourceTree = "<group>";
 		};
 		663DB3FB26E9F8A10046C277 /* Supporting Files */ = {
@@ -1024,6 +1057,15 @@
 			path = FileOperation;
 			sourceTree = "<group>";
 		};
+		6698F06C2C4F97BD00A6D8E0 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				6698F06D2C4F97E000A6D8E0 /* AEContainerViewController.h */,
+				6698F06E2C4F97E000A6D8E0 /* AEContainerViewController.m */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
 		669A10DC292DB0C2008F307E /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -1040,6 +1082,17 @@
 				669A10DF292DB3B5008F307E /* AEFontsViewController.m */,
 			);
 			path = FontsShow;
+			sourceTree = "<group>";
+		};
+		669A84F52C4FAD6E004B0955 /* WaveSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				669A84F62C4FAD8B004B0955 /* AEWaveSegmentedControl.h */,
+				669A84F72C4FAD8B004B0955 /* AEWaveSegmentedControl.m */,
+				669A84F92C4FAE6D004B0955 /* AEWaveView.h */,
+				669A84FA2C4FAE6D004B0955 /* AEWaveView.m */,
+			);
+			path = WaveSegmentedControl;
 			sourceTree = "<group>";
 		};
 		669B46532AA7FDFA00699C3E /* Hit */ = {
@@ -1150,6 +1203,15 @@
 				66A8B429283662D400B76B11 /* help_icon.gif */,
 			);
 			path = Gif;
+			sourceTree = "<group>";
+		};
+		66A8D6202C50EC7800D515B7 /* PageMenu */ = {
+			isa = PBXGroup;
+			children = (
+				66A8D6212C50EC9700D515B7 /* AEPageMenuController.h */,
+				66A8D6222C50EC9700D515B7 /* AEPageMenuController.m */,
+			);
+			path = PageMenu;
 			sourceTree = "<group>";
 		};
 		66C393282AF0F0FE008E750F /* Data */ = {
@@ -1328,6 +1390,8 @@
 		7A9CD79822783A93004E6D2A /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				66A8D6202C50EC7800D515B7 /* PageMenu */,
+				669A84F52C4FAD6E004B0955 /* WaveSegmentedControl */,
 				664EF1D02AF4CE1600B7B6AB /* NavigationBarHeightManager */,
 				7A9CD78B22782EC4004E6D2A /* CustomLayout */,
 				7A6E01F023C702B200D34AB6 /* AETabBar */,
@@ -1364,6 +1428,7 @@
 		7AA0E93723C458120092DE5B /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				6698F06C2C4F97BD00A6D8E0 /* Container */,
 				667955EF2BC7BB940017B73B /* Swift */,
 				6630572E2B56283600B8C769 /* TextField */,
 				66630A1F2B3BFB2900478E0D /* Random */,
@@ -1389,6 +1454,8 @@
 				7AA0E93423C456BD0092DE5B /* AEHomeViewController.h */,
 				7AA0E93523C456BD0092DE5B /* AEHomeViewController.m */,
 				7AA0E93823C4581D0092DE5B /* View */,
+				66BD0B662C2E60F800D7E46F /* AEParagraphViewController.h */,
+				66BD0B672C2E60F800D7E46F /* AEParagraphViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1621,9 +1688,7 @@
 				"${BUILT_PRODUCTS_DIR}/AEObjCWorking/AEObjCWorking.framework",
 				"${BUILT_PRODUCTS_DIR}/CTMediator/CTMediator.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
-				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${BUILT_PRODUCTS_DIR}/SDCycleScrollView/SDCycleScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
@@ -1631,16 +1696,13 @@
 				"${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 				"${BUILT_PRODUCTS_DIR}/YYWebImage/YYWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AEObjCWorking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CTMediator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDCycleScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
@@ -1648,7 +1710,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1715,6 +1776,7 @@
 				661EF3732627F665009E7037 /* AEReverseList.m in Sources */,
 				7A44DE4F228A481A0078B6A0 /* UIFont+AEFonts.m in Sources */,
 				66913AA2284472D4006FD17E /* AEHeadlineCCell.m in Sources */,
+				66A8D6232C50EC9700D515B7 /* AEPageMenuController.m in Sources */,
 				66A2E67428FD025C00330702 /* AEKnowledgeViewController.m in Sources */,
 				666CF0302611808900BCDF1E /* AEMObject.m in Sources */,
 				661EF3672627E1FD009E7037 /* AEArithmeticViewController.m in Sources */,
@@ -1733,13 +1795,16 @@
 				0C2C0ABC262B173A0038859D /* AEUserCenter.m in Sources */,
 				663F594026B8DF3100B92C3A /* AEDataHelper.m in Sources */,
 				66A78BBB2A47E43300D35077 /* AEPreviewPDFController.m in Sources */,
+				669A84FB2C4FAE6D004B0955 /* AEWaveView.m in Sources */,
 				668ECD9E299B16AB00425C53 /* AESubTableTCell.m in Sources */,
+				6698F06F2C4F97E000A6D8E0 /* AEContainerViewController.m in Sources */,
 				7A76520A23F3CBD300A303DE /* AEIntelligentSortingController.m in Sources */,
 				66A78BBE2A480C7E00D35077 /* AEPreviewPDFViewController.m in Sources */,
 				663DB3FA26E9F6690046C277 /* UIColor+AECategory.m in Sources */,
 				666CEFFC26115D5E00BCDF1E /* AEOCKnowledgeViewController.m in Sources */,
 				6610A181292E1D1B00138FE5 /* AENotification.m in Sources */,
 				66F06F092B6CC35500A9E4EA /* AEGuideViewController.m in Sources */,
+				669A84F42C4FAAAD004B0955 /* AETrialViewController.m in Sources */,
 				663F594326B8E5F200B92C3A /* AEPlistViewController.m in Sources */,
 				6604B74826E9DDF600D9BA56 /* AEAddressSelectView.m in Sources */,
 				6604B74526E9DCD500D9BA56 /* AEAddressTCell.m in Sources */,
@@ -1808,11 +1873,14 @@
 				669C21D72A2EDBD600AAC2BE /* AEReaderViewController.m in Sources */,
 				666CF0482611A03400BCDF1E /* AERuntimeViewController.m in Sources */,
 				666CF00E261166DB00BCDF1E /* AEReusePool.m in Sources */,
+				669A84F82C4FAD8B004B0955 /* AEWaveSegmentedControl.m in Sources */,
 				7A9CD79B22783AC9004E6D2A /* AEConvenientTool.m in Sources */,
 				666CF013261169B500BCDF1E /* AEIndexedTableView.m in Sources */,
 				666CF01B26117B0E00BCDF1E /* AEEventViewController.m in Sources */,
 				0C2C0AC1262B1A7F0038859D /* AEGCDViewController.m in Sources */,
+				66383B522C5257A30040E1B2 /* AEActivityViewController.m in Sources */,
 				0C2C0AB5262B17290038859D /* AEGroupObject.m in Sources */,
+				66BD0B682C2E60F800D7E46F /* AEParagraphViewController.m in Sources */,
 				6604B74226E9DC8E00D9BA56 /* AEAddressSelectViewController.m in Sources */,
 				663057312B56288900B8C769 /* AETextFieldViewController.m in Sources */,
 				66C3932F2AF0F707008E750F /* AEScrollHorizontalViewController.m in Sources */,
@@ -1983,7 +2051,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = N2KQ965WEJ;
@@ -2017,7 +2085,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = N2KQ965WEJ;

@@ -13,6 +13,7 @@
 #import "AEUnconventionalViewController.h"
 #import "AEMineViewController.h"
 #import "AENavigationViewController.h"
+#import "AEActivityViewController.h"
 
 @interface AEMainTabBarController ()
 
@@ -39,13 +40,14 @@
     
     AEHomeViewController *firstViewController = [[AEHomeViewController alloc] init];
     AEUnconventionalViewController *secondViewController = [[AEUnconventionalViewController alloc] init];
-    AEMineViewController *thridViewController = [[AEMineViewController alloc] init];
-    
+    AEMineViewController *mineVC = [[AEMineViewController alloc] init];
+    AEActivityViewController *activity = [[AEActivityViewController alloc] init];
     
     [viewControllers addObject:[self addChildViewController:firstViewController title:@"Home" imageNamed:@"house"]];
 
     [viewControllers addObject:[self addChildViewController:secondViewController title:@"Trial" imageNamed:@"flame"]];
-    [viewControllers addObject:[self addChildViewController:thridViewController title:@"Mine" imageNamed:@"person"]];
+    [viewControllers addObject:[self addChildViewController:activity title:@"Activity" imageNamed:@"figure.run"]];
+    [viewControllers addObject:[self addChildViewController:mineVC title:@"Mine" imageNamed:@"person"]];
     
 
     self.viewControllers = viewControllers;

@@ -10,10 +10,11 @@
 #import "UIImage+AEBlackAndWhite.h"
 #import "UIButton+EnlargeArea.h"
 #import "AEMainTabBarController.h"
-#import <GoogleMobileAds/GoogleMobileAds.h>
+//#import <GoogleMobileAds/GoogleMobileAds.h>
 #import "AESplashViewController.h"
 #import "AEGuideViewController.h"
 
+#import "AEContainerViewController.h"
 @implementation AEAppDelegate
 // MARK: - Life Cycle
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -22,12 +23,12 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enterApp) name:@"enterApp" object:nil];
     
     // Override point for customization after application launch.
-    GADMobileAds *ads = [GADMobileAds sharedInstance];
-    [ads initializationStatus];
-    ads.requestConfiguration.testDeviceIdentifiers = @[@"ca-app-pub-3940256099942544/5575463023", @"ca-app-pub-3940256099942544/2934735716"];
-    [ads startWithCompletionHandler:^(GADInitializationStatus * _Nonnull status) {
-        NSLog(@"status.adapterStatusesByClassName: %@", status.adapterStatusesByClassName);
-    }];
+//    GADMobileAds *ads = [GADMobileAds sharedInstance];
+//    [ads initializationStatus];
+//    ads.requestConfiguration.testDeviceIdentifiers = @[@"ca-app-pub-3940256099942544/5575463023", @"ca-app-pub-3940256099942544/2934735716"];
+//    [ads startWithCompletionHandler:^(GADInitializationStatus * _Nonnull status) {
+//        NSLog(@"status.adapterStatusesByClassName: %@", status.adapterStatusesByClassName);
+//    }];
     
    
     [UIImage ae_imageSwizzldMethedWith:YES];
