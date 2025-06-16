@@ -2,6 +2,12 @@ PODS:
   - AEObjCWorking (0.1.0)
   - CocoaAsyncSocket (7.6.5)
   - CTMediator (46)
+  - LSTPopView (0.3.10):
+    - LSTPopView/Code (= 0.3.10)
+    - LSTTimer
+  - LSTPopView/Code (0.3.10):
+    - LSTTimer
+  - LSTTimer (0.2.10)
   - Masonry (1.1.0)
   - SDCycleScrollView (1.82):
     - SDWebImage (>= 5.0.0)
@@ -22,6 +28,7 @@ DEPENDENCIES:
   - AEObjCWorking (from `../`)
   - CocoaAsyncSocket (~> 7.6.5)
   - CTMediator
+  - LSTPopView
   - Masonry (~> 1.1.0)
   - SDCycleScrollView (>= 1.82)
   - SDWebImage (~> 5.0)
@@ -33,6 +40,8 @@ SPEC REPOS:
   trunk:
     - CocoaAsyncSocket
     - CTMediator
+    - LSTPopView
+    - LSTTimer
     - Masonry
     - SDCycleScrollView
     - SDWebImage
@@ -50,6 +59,8 @@ SPEC CHECKSUMS:
   AEObjCWorking: b0317ef59102766623be05e97648ee2d0fd28e31
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   CTMediator: f1cf58d509fb3192086c367711f039efd769b907
+  LSTPopView: 9379f00f6ce7d1fc620b50ab00ed3ef97b2d4d52
+  LSTTimer: caf8f02ff366ca175cf4c1778d26c166183c1b6f
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SDCycleScrollView: a0d74c3384caa72bdfc81470bdbc8c14b3e1fbcf
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
@@ -59,6 +70,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 2e16dfc3463dd164fd3579e474224b2defa53942
+PODFILE CHECKSUM: 5074903e6726d43601c4bc10a90bfd4548c3e3b3
 
-COCOAPODS: 1.12.0
+COCOAPODS: 1.16.2

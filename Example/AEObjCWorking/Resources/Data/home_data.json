@@ -1,6 +1,7 @@
 {
     "type": "MultiPolygon",
     "home_data": [
+        "AEProgressController",
         "AEContainerViewController",
         "AEParagraphViewController",
         "AETextFieldViewController",

@@ -8,7 +8,7 @@
 
 #import "AEPageMenuController.h"
 
-static const CGFloat kMenuItemWidth   = 90.0f;
+static const CGFloat kMenuItemWidth   = 140.0f;
 static const CGFloat kMenuItemHeight  = 40.0f;
 static const CGFloat kMenuItemMargin  = 10.0f;
 static const CGFloat kSmartTabMargin  =  8.0f;
@@ -236,10 +236,10 @@ AEColorWithHex(int hex)
   AEMenuItem * item = self.menuItems[_currentIndex];
   switch (_menuStyle) {
     case AEPageMenuControllerStyleTab: {
-    item.titleColor = [self menuColorAtIndex:_currentIndex];
-    item.backgroundColor = [UIColor clearColor];
-      }
-      break;
+            item.titleColor = [self menuColorAtIndex:_currentIndex];
+            item.backgroundColor = [UIColor clearColor];
+        }
+          break;
     case AEPageMenuControllerStyleHackaTab: {
     item.titleColor = AEColorWithHex(kHackaHexColor);
     item.backgroundColor = [UIColor clearColor];
@@ -285,18 +285,18 @@ AEColorWithHex(int hex)
       }
       break;
     case AEPageMenuControllerStyleTab: {
-    item.titleColor = [UIColor whiteColor];
-    item.backgroundColor = menuColor;
-    self.menuSeparator.backgroundColor = menuColor.CGColor;
-    self.menuIndicator.backgroundColor = [UIColor clearColor];
+        item.titleColor = [UIColor whiteColor];
+        item.backgroundColor = menuColor;
+        self.menuSeparator.backgroundColor = menuColor.CGColor;
+        self.menuIndicator.backgroundColor = [UIColor clearColor];
       }
       break;
     case AEPageMenuControllerStyleSmartTab: {
-    CGRect frame = item.menuFrame;
-    frame.origin.y = 0.0f;
-    frame.size.height = kMenuItemHeight;
-    item.menuFrame = frame;
-    self.menuIndicator.backgroundColor = menuColor;
+        CGRect frame = item.menuFrame;
+        frame.origin.y = 0.0f;
+        frame.size.height = kMenuItemHeight;
+        item.menuFrame = frame;
+        self.menuIndicator.backgroundColor = menuColor;
       }
       break;
     case AEPageMenuControllerStyleHackaTab: {
@@ -345,7 +345,7 @@ AEColorWithHex(int hex)
 {
   self.menuItems = [NSMutableArray new];
 
-  CGFloat x = 0.0f;
+  CGFloat x = 20.0f;
   CGFloat y = _menuStyle == AEPageMenuControllerStyleSmartTab ||
           _menuStyle == AEPageMenuControllerStyleHackaTab
         ? kSmartTabMargin
@@ -363,28 +363,33 @@ AEColorWithHex(int hex)
     switch (_menuStyle) {
       default:
       case AEPageMenuControllerStylePlain:
-    label.textColor = [UIColor orangeColor];
-    label.backgroundColor = [UIColor clearColor];
-    break;
+        label.textColor = [UIColor orangeColor];
+        label.backgroundColor = [UIColor clearColor];
+            break;
       case AEPageMenuControllerStyleTab:
-    if (i == _currentIndex) {
-      label.textColor = [UIColor whiteColor];
-      label.backgroundColor = menuColor;
-    }
-    else {
-      label.textColor = menuColor;
-      label.backgroundColor = [UIColor clearColor];
-    }
-    break;
+            if (i == _currentIndex) {
+                label.textColor = [UIColor whiteColor];
+                label.backgroundColor = menuColor;
+                for (id layer  in label.layer.sublayers) {
+                    if ([layer isKindOfClass:[CAShapeLayer class]]) {
+                        ((CAShapeLayer*)layer).fillColor = menuColor.CGColor;
+                    }
+                }
+            }
+            else {
+                  label.textColor = menuColor;
+                  label.backgroundColor = [UIColor clearColor];
+            }
+        break;
       case AEPageMenuControllerStyleSmartTab:
-    label.textColor = [UIColor whiteColor];
-    label.backgroundColor = menuColor;
-    if (i == 0) { // XXX: 最初のタブは大きく表示
-      CGRect frame = label.frame;
-      frame.origin.y = 0.0f;
-      frame.size.height = kMenuItemHeight;
-      label.frame = frame;
-    }
+        label.textColor = [UIColor whiteColor];
+        label.backgroundColor = menuColor;
+        if (i == 0) { // XXX: 最初のタブは大きく表示
+          CGRect frame = label.frame;
+          frame.origin.y = 0.0f;
+          frame.size.height = kMenuItemHeight;
+          label.frame = frame;
+        }
     break;
       case AEPageMenuControllerStyleHackaTab:
     menuColor = AEColorWithHex(kHackaHexColor);
@@ -680,7 +685,7 @@ static NSString * const    kBadgeLayerKey  = @"kBadgeLayerKey";
       case AEPageMenuControllerStylePlain:
     break;
       case AEPageMenuControllerStyleTab:
-    [self roundingCornersOfLabel:label];
+            [self roundingCornersAndObliqueAngleOfLabel:label];
     break;
       case AEPageMenuControllerStyleSmartTab:
     [self roundingCornersOfLabel:label];
@@ -823,6 +828,60 @@ static NSString * const    kBadgeLayerKey  = @"kBadgeLayerKey";
     maskLayer.path   = maskPath.CGPath;
     label.layer.mask = maskLayer;
   }
+}
+// 上面圆角+斜角
+-(void)roundingCornersAndObliqueAngleOfLabel:(UILabel *)label
+{
+    @autoreleasepool {
+        // 获取 label 的边界
+        CGRect bounds = label.bounds;
+
+        // 创建一个新的 UIBezierPath，用于定义梯形的路径
+        UIBezierPath *maskPath = [UIBezierPath bezierPath];
+
+        // 定义梯形的顶部外扩量（从每个顶部角落外扩）
+        CGFloat topExpansion = 10;//bounds.size.height*0.5;
+
+        // 移动到左下角（外扩）
+        [maskPath moveToPoint:CGPointMake(CGRectGetMinX(bounds) - topExpansion, CGRectGetMaxY(bounds))];
+        
+        // 添加一条线到左上角
+        [maskPath addLineToPoint:CGPointMake(CGRectGetMinX(bounds), CGRectGetMinY(bounds))];
+        
+        // 添加一条线到右上角
+        [maskPath addLineToPoint:CGPointMake(CGRectGetMaxX(bounds), CGRectGetMinY(bounds))];
+        
+        // 添加一条线到右下角（外扩）
+        [maskPath addLineToPoint:CGPointMake(CGRectGetMaxX(bounds) + topExpansion, CGRectGetMaxY(bounds))];
+        
+        // 关闭路径
+        [maskPath closePath];
+
+//        // 创建 CAShapeLayer，并设置其路径
+//        CAShapeLayer *maskLayer = [CAShapeLayer layer];
+//        
+//        // 设置 CAShapeLayer 的 frame 为包含所有扩展部分的区域
+//        
+//        maskLayer.frame = CGRectMake(CGRectGetMinX(bounds) - topExpansion, CGRectGetMinY(bounds), CGRectGetWidth(bounds) + 2 * topExpansion, CGRectGetHeight(bounds));
+//        
+//        // 设置 path
+//        maskLayer.path = maskPath.CGPath;
+//
+//        // 将 CAShapeLayer 设置为 label 的遮罩
+//        label.layer.mask = maskLayer;
+        
+        CAShapeLayer *debugLayer = [CAShapeLayer layer];
+        debugLayer.frame = CGRectMake(CGRectGetMinX(bounds) - topExpansion, CGRectGetMinY(bounds), CGRectGetWidth(bounds) + 2 * topExpansion, CGRectGetHeight(bounds));
+        debugLayer.path = maskPath.CGPath;
+        debugLayer.fillColor = [UIColor clearColor].CGColor;
+        [label.layer addSublayer:debugLayer];
+
+
+    }
+
+
+	
+
 }
 
 #pragma mark - private method

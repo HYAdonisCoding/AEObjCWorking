@@ -56,6 +56,59 @@
     
     return YES;
 }
+// 弹框检查函数
+NSString *determinePopup(BOOL payeeCheckFlag_1, BOOL isYLJ_2, BOOL victimsFlag_3, BOOL RemindDate_4, BOOL sharescreenFlag_5) {
+    NSMutableArray<NSString *> *results = [NSMutableArray array];
+    
+    // 第一组判断：1 和 2 的组合
+    BOOL group1Triggered = NO;
+    if (payeeCheckFlag_1 && isYLJ_2) {
+        [results addObject:@"2"];
+        group1Triggered = YES;
+    }
+    
+    // 第二组判断：3、4、5 的组合
+    BOOL group2Triggered = NO;
+    if ((victimsFlag_3 && sharescreenFlag_5) || (victimsFlag_3 && RemindDate_4 && sharescreenFlag_5)) {
+        [results addObject:@"6"];
+        group2Triggered = YES;
+    } else if (victimsFlag_3 && RemindDate_4) {
+        [results addObject:@"3"];
+        group2Triggered = YES;
+    }
+    
+    // 判断其他单独情况（如果第一组或第二组没有完全覆盖到）
+    if (!group1Triggered) {
+        if (payeeCheckFlag_1) {
+            [results addObject:@"1"];
+        }
+        if (isYLJ_2) {
+            [results addObject:@"2"];
+        }
+    }
+    
+    if (!group2Triggered) {
+        if (victimsFlag_3) {
+            [results addObject:@"3"];
+        }
+        if (RemindDate_4) {
+            [results addObject:@"4"];
+        }
+        if (sharescreenFlag_5) {
+            [results addObject:@"5"];
+        }
+    }
+    
+    // 如果没有符合条件的弹框，返回无弹框
+    if (results.count == 0) {
+        return @"0";
+    }
+    
+    // 返回弹框结果
+    return [[results sortedArrayUsingComparator:^NSComparisonResult(NSString * _Nonnull obj1, NSString * _Nonnull obj2) {
+        return [obj1 integerValue] > [obj2 integerValue];
+    }] componentsJoinedByString:@", "];
+}
 
 // 进入App
 - (void)enterApp {
@@ -70,6 +123,21 @@
 // 进入首页
 - (void)startApp {
     
+    // 枚举所有 32 种情况
+            for (int i = 0; i < 32; i++) {
+                BOOL payeeCheckFlag_1 = (i & 1) != 0;
+                BOOL isYLJ_2 = (i & 2) != 0;
+                BOOL victimsFlag_3 = (i & 4) != 0;
+                BOOL RemindDate_4 = (i & 8) != 0;
+                BOOL sharescreenFlag_5 = (i & 16) != 0;
+
+                // 计算弹框结果
+                NSString *result = determinePopup(payeeCheckFlag_1, isYLJ_2, victimsFlag_3, RemindDate_4, sharescreenFlag_5);
+
+                // 打印输入值和结果
+                NSLog(@"组合 %d: 1=%d, 2=%d, 3=%d, 4=%d, 5=%d -> 弹框结果: %@",
+                    i + 1, payeeCheckFlag_1, isYLJ_2, victimsFlag_3, RemindDate_4, sharescreenFlag_5, result);
+            }
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     AEMainTabBarController *tabBarController = [[AEMainTabBarController alloc] init];
@@ -77,6 +145,7 @@
     self.window.rootViewController = tabBarController;
     // 设置这个窗口有主窗口并显示
     [self.window makeKeyAndVisible];
+    [self test];
 }
 - (void)applicationWillResignActive:(UIApplication *)application
 {
@@ -117,4 +186,36 @@
 }
 
 
+
+#pragma mark - test question
+/**
+ 其中关键问题是 performSelector:afterDelay: 的实现机制：
+
+ performSelector:afterDelay: 本质是往当前线程的 RunLoop 添加一个 Timer 任务。⚠️ 但 GCD 创建的 子线程默认没有开启 RunLoop，所以这个 selector 永远不会被调用。
+ ✅ 正确使用方式
+
+ 如果你真的想让 test1 被调用，有几个办法：
+
+ 方法一：加到主线程执行（推荐）
+ dispatch_async(dispatch_get_main_queue(), ^{
+     [self performSelector:@selector(test1) withObject:nil afterDelay:0];
+ });
+ 方法二：手动启动子线程的 RunLoop（不推荐，一般不这么搞）
+ [NSTimer scheduledTimerWithTimeInterval:0 target:self selector:@selector(test1) userInfo:nil repeats:NO];
+ [[NSRunLoop currentRunLoop] run];
+ */
+- (void)test {
+    dispatch_queue_t globalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(globalQueue, ^{
+        NSLog(@"test question - 1");
+        [self performSelector:@selector(test1) withObject:nil afterDelay:.0];
+        NSLog(@"test question - 3");
+       
+        
+    });
+}
+
+- (void)test1 {
+    NSLog(@"test question - 2");
+}
 @end
